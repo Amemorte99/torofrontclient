@@ -1,0 +1,15 @@
+.div-default {
+  display: none;
+}
+
+.div-changed {
+  background-color: #fff;
+}
+
+
+#scroldiv
+{
+  height: 250px;
+ overflow-x: hidden;
+ overflow-y: auto;
+}
