@@ -17,3 +17,20 @@
 
 }
 
+
+.cvPrototype{
+  background-color: rgba(9, 151, 124, 0.5);
+
+  height: 90vh;
+  width: 100%;
+  position: relative;
+
+}
+.cvfonction{
+
+  position: absolute;
+  bottom: 2%;
+  margin-left: 20px;
+  margin-right: 20px;
+
+}

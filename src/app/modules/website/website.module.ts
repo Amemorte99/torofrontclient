@@ -80,6 +80,8 @@ import { ReferneceFormComponent } from './components/cvcontainer/form-container/
 import { QualiteFormComponent } from './components/cvcontainer/form-container/components/qualite-form/qualite-form.component';
 import { RealisationFormComponent } from './components/cvcontainer/form-container/components/realisation-form/realisation-form.component';
 import { BasPageFormComponent } from './components/cvcontainer/form-container/components/bas-page-form/bas-page-form.component';
+import { ScrollImgModelComponent } from './components/cvcontainer/scroll-img-model/scroll-img-model.component';
+import { BtnPiedModelComponent } from './components/cvcontainer/btn-pied-model/btn-pied-model.component';
 
 
 
@@ -115,6 +117,8 @@ import { BasPageFormComponent } from './components/cvcontainer/form-container/co
     QualiteFormComponent,
     RealisationFormComponent,
     BasPageFormComponent,
+    ScrollImgModelComponent,
+    BtnPiedModelComponent,
   ],
   imports: [
     CommonModule,
