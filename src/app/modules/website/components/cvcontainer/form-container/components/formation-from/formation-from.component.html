@@ -1,0 +1,289 @@
+
+
+
+ <div class="divforma">
+  <div
+
+  class="btn-group  col-12 txtitre" >
+    <a    data-toggle="collapse"
+    data-toggle="collapse"
+    data-target="#formation"
+    aria-expanded="false"
+    aria-controls="profil"
+     class="btn text-start"><h4>Formation</h4></a>
+    <a
+    data-toggle="collapse"
+    data-target="#formation"
+    aria-expanded="false"
+    aria-controls="profil"  class="btn text-end"><i class="fa-regular fa-plus fa-6x btn" style="border: 2px solid #000; font-size: 15px;"></i></a>
+  </div>
+  <div  class="container px-5 collapse col-md" id="formation">
+    <!-- <form #f="ngForm" (ngSubmit)="save(f.value)"> -->
+    <div class="form-group">
+      <label for="formation">Formation</label>
+      <input
+        #formation="ngModel"
+        [(ngModel)]="cv.formation.nomformation"
+        name="formation"
+        id="formation"
+        type="text"
+        class="form-control"
+        (input)="launchValue()"
+      />
+
+
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="etablissement">Etablissement</label>
+          <input
+            #etablissement="ngModel"
+            [(ngModel)]="cv.formation.etablissement"
+            name="etablissement"
+            id="etablissement"
+            type="text"
+            class="form-control"
+            (input)="launchValue()"
+          />
+
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="villeFormation">Ville</label>
+          <input
+            #ville="ngModel"
+            [(ngModel)]="cv.formation.villeFormation"
+            name="ville"
+            id="ville"
+            type="text"
+            class="form-control"
+            (input)="launchValue()"
+          />
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="dateDebut">Date de début</label>
+          <input
+            #dateDebut="ngModel"
+            [(ngModel)]="cv.formation.dateDebut"
+            name="dateDebut"
+            id="dateDebut"
+            type="date"
+            class="form-control"
+            (input)="launchValue()"
+          />
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="dateFin">Date de fin</label>
+          <input
+            #dateFin="ngModel"
+            [(ngModel)]="cv.formation.dateFin"
+            name="dateFin"
+            id="dateFin"
+            type="date"
+            class="form-control"
+            (input)="launchValue()"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="descriptionformation">Description</label>
+      <textarea #descriptionformation="ngModel"
+        [(ngModel)]="cv.formation.descriptionformation"
+        name="descriptionformation"
+        id="descriptionformation"
+        type="text"
+        class="form-control"
+        (input)="launchValue()" id="" cols="20" rows="5" class="summernote form-control">
+
+        </textarea>
+
+    </div>
+
+
+    <button (click)="increment();addQuantity()" class="btn btn-plus " style="border: 1px solid #000;"><i class="fa-regular fa-plus h-6" ></i>Ajouter une formation</button>
+
+
+
+
+    <div class="" *ngFor="let quantity of quantities().controls; let i=index" [formGroupName]="i">
+
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label for="etablissement">Etablissement</label>
+            <input
+              #etablissement="ngModel"
+              [(ngModel)]="cv.formation.etablissement"
+              name="etablissement"
+              id="etablissement"
+              type="text"
+              class="form-control"
+              (input)="launchValue()"
+            />
+
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-group">
+            <label for="villeFormation">Ville</label>
+            <input
+              #ville="ngModel"
+              [(ngModel)]="cv.formation.villeFormation"
+              name="ville"
+              id="ville"
+              type="text"
+              class="form-control"
+              (input)="launchValue()"
+            />
+
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label for="dateDebut">Date de début</label>
+            <input
+              #dateDebut="ngModel"
+              [(ngModel)]="cv.formation.dateDebut"
+              name="dateDebut"
+              id="dateDebut"
+              type="date"
+              class="form-control"
+              (input)="launchValue()"
+            />
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-group">
+            <label for="dateFin">Date de fin</label>
+            <input
+              #dateFin="ngModel"
+              [(ngModel)]="cv.formation.dateFin"
+              name="dateFin"
+              id="dateFin"
+              type="date"
+              class="form-control"
+              (input)="launchValue()"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="descriptionformation">Description</label>
+
+        <textarea #descriptionformation="ngModel"
+        [(ngModel)]="cv.formation.descriptionformation"
+        name="descriptionformation"
+        id="descriptionformation"
+        type="text"
+        class="form-control"
+        (input)="launchValue()" id="" cols="20" rows="5" class="summernote form-control">
+
+        </textarea>
+
+      </div>
+
+
+
+      <i (click)="removeQuantity(i)" class="fa-solid fa-trash-can" style="font-size: 33px; padding: 2px; color: #09977C; border: 1px solid gainsboro;"></i>
+
+    </div>
+
+
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <button (click)="increment();addQuantity()">ADD</button>{{count}}
+<button (click)="decrement()">SUB</button>
+<form [formGroup]="productForm" (ngSubmit)="onSub()">
+
+    <p>
+      <label for="name">Product Name:</label>
+      <input type="text" id="name" name="name" formControlName="name" class="form-control">
+    </p>
+
+    <table class="table table-bordered" formArrayName="quantities">
+      <tr>
+        <th colspan="2">Add Multiple Quantity:</th>
+        <th width="150px"><button type="button" (click)="addQuantity()" class="btn btn-primary">Add More</button></th>
+      </tr>
+      <tr *ngFor="let quantity of quantities().controls; let i=index" [formGroupName]="i">
+          <h5>player {{i+1}}</h5>
+
+        <td>
+            Quantity :
+            <input type="text" formControlName="qty" class="form-control">
+        </td>
+        <td>
+            Price:
+            <input type="text" formControlName="price" class="form-control">
+        </td>
+        <td>
+            <button (click)="removeQuantity(i)" class="btn btn-danger">Remove</button>
+        </td>
+      </tr>
+    </table>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+
+  </form> -->
+
+
+
+
+
+
+

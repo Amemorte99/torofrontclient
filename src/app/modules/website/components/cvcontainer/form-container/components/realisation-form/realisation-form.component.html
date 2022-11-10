@@ -1,0 +1,61 @@
+<div class="divdes">
+  <div
+  class="btn-group  col-12 txtitre" >
+    <a    data-toggle="collapse"
+    data-target="#realisation"
+    aria-expanded="false"
+    aria-controls="realisation"
+     class="btn text-start"><h4>Realisation</h4></a>
+    <a
+    data-toggle="collapse"
+    data-target="#realisation"
+    aria-expanded="false"
+    aria-controls="realisation"  class="btn text-end"><i class="fa-regular fa-plus fa-6x btn" style="border: 2px solid #000; font-size: 15px;"></i></a>
+  </div>
+  <div class="container px-5 collapse col-12" id="realisation">
+    <div class="form-group row">
+      <label for="titrerealisation">Description</label>
+
+      <textarea  #titrerealisation="ngModel"
+      [(ngModel)]="cv.realisation.description"
+      name="titrerealisation"
+      id="titrerealisation"
+      type="text"
+      placeholder=""
+      class="form-control"
+      (input)="launchValue()" id="" cols="30" rows="5" class="summernote form-control">
+
+      </textarea>
+    </div>
+    <button (click)="increment();addQuantity()" class="btn btn-plus " style="border: 1px solid #000;"><i class="fa-regular fa-plus h-6" ></i>Ajouter une référence</button>
+    <div class="" *ngFor="let quantity of quantities().controls; let i=index" [formGroupName]="i">
+
+      <div class="form-group row">
+      <label for="titrerealisation">Description</label>
+
+      <textarea  #titrerealisation="ngModel"
+      [(ngModel)]="cv.realisation.description"
+      name="titrerealisation"
+      id="titrerealisation"
+      type="text"
+      placeholder=""
+      class="form-control"
+      (input)="launchValue()" id="" cols="30" rows="5" class="summernote form-control">
+
+      </textarea>
+    </div>
+
+
+
+
+       <i (click)="removeQuantity(i)" class="fa-solid fa-trash-can" style="font-size: 33px; padding: 2px; color: #09977C; border: 1px solid gainsboro;"></i>
+
+
+
+   </div>
+
+  </div>
+
+
+
+

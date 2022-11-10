@@ -1,0 +1,32 @@
+<div class="divdes">
+  <div
+
+  class="btn-group  col-12 txtitre" >
+    <a    data-toggle="collapse"
+    data-target="#profil"
+    aria-expanded="false"
+    aria-controls="profil"
+     class="btn text-start"><h4>Profil</h4></a>
+    <a
+    data-toggle="collapse"
+    data-target="#profil"
+    aria-expanded="false"
+    aria-controls="profil"  class="btn text-end"><i class="fa-regular fa-plus fa-6x btn" style="border: 2px solid #000; font-size: 15px;"></i></a>
+  </div>
+  <div class="container px-5 collapse col-12" id="profil">
+    <div class="form-group row">
+      <label for="titreprofil">Description</label>
+
+      <textarea  #titreprofil="ngModel"
+      [(ngModel)]="cv.letitreprofil.description"
+      name="titreprofil"
+      id="titreprofil"
+      type="text"
+      placeholder=""
+      class="form-control"
+      (input)="launchValue()" id="" cols="20" rows="5" class="summernote form-control">
+
+      </textarea>
+    </div>
+  </div>
+</div>

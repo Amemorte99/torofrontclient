@@ -1,0 +1,53 @@
+<header class="mdc-top-app-bar">
+  <div class="mdc-top-app-bar__row">
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start" >
+        <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Open navigation menu">arrow_back
+        </button>
+        <span class="mdc-top-app-bar__title">Curriculum vitae</span>
+
+
+
+    </section>
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-center" >
+
+      <mat-form-field  appearance="fill"class=" nomform">
+        <input matInput #input  value="Ex. lomé" type="text"  >
+        <mat-icon matSuffix> done </mat-icon>
+      </mat-form-field>
+
+    </section>
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+
+
+      <!-- <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Favorite">favorite</button>
+      <button [routerLink]="['/apropos']" class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">search</button>
+      <button [routerLink]="['/apropos']" class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Options">file_download</button> -->
+
+      <button class=" btn btn-primary"><i class="fa fa-download m-1"></i> Télécharger</button>
+    </section>
+  </div>
+</header>
+<main class="mdc-top-app-bar--fixed-adjust">
+  <div class="container-fluid ">
+    <div class="row">
+      <div class="col-md-6   shadow">
+        <div class="container  mt-3 ">
+          <app-form-container></app-form-container>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+
+        *********
+        <app-cvprototype></app-cvprototype>
+
+      </div>
+    </div>
+  </div>
+
+
+</main>
+
+
+
+

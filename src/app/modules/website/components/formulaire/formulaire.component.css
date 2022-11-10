@@ -1,0 +1,67 @@
+.img-forms{
+  background: url('../../../../../assets/images/forms/forms1.jpg');
+  height: 100vh;
+  background-size: cover;
+  background-position: 50% 50%;
+  border-bottom-left-radius: 4rem;
+  border-top-left-radius: 4rem;
+}
+
+.mafroms{
+  border: 20px solid #507c1d;
+
+ }
+ .maformstext{
+  text-shadow: 1px 1px 1px #09977C, 2px 2px 1px #09977C;
+ }
+
+
+
+.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.example-right-align {
+  text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}
+
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, input[type=tel]:focus {
+  box-shadow: none;
+  border:none;
+}
+input[type=email], input[type=password], input[type=text], input[type=tel] {
+  box-shadow: none;
+  height: 22px;
+  outline: none;
+  font-size: 14px;
+}
+
+
+.ngx-file-drop__drop-zone {
+  height: 180px;
+     border-radius: 5px;
+     font-size: 20px;
+     object-fit: contain;
+
+
+ }
+

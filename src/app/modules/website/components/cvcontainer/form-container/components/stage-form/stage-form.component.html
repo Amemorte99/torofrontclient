@@ -1,0 +1,231 @@
+<div class="divstage">
+
+  <div
+
+    class="btn-group  col-12 txtitre" >
+      <a     data-toggle="collapse"
+      data-target="#stage"
+      aria-expanded="false"
+      aria-controls="stage"
+       class="btn text-start"><h4>Stages</h4></a>
+      <a
+      data-toggle="collapse"
+      data-target="#stage"
+      aria-expanded="false"
+      aria-controls="stage"  class="btn text-end"><i class="fa-regular fa-plus fa-6x btn" style="border: 2px solid #000; font-size: 15px;"></i></a>
+    </div>
+
+
+    <div class="container px-5 collapse" id="stage">
+
+      <section class="sectioncour">
+        <!-- <form #f="ngForm" (ngSubmit)="save(f.value)"> -->
+        <div class="form-group">
+          <label for="stageposte">Poste</label>
+          <input
+            #stageposte="ngModel"
+            [(ngModel)]="cv.lesstages.stageposte"
+            name="stageposte"
+            id="stageposte"
+            type="text"
+            class="form-control"
+            (input)="launchValue()"
+          />
+          <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                    Adresse is required.
+                  </div> -->
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label for="periodecour">Employeur</label>
+              <input
+                #employeur="ngModel"
+                [(ngModel)]="cv.lesstages.employeur"
+                name="employeur"
+                id="employeur"
+                type="text"
+                class="form-control"
+                (input)="launchValue()"
+              />
+              <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                        Adresse is required.
+                      </div> -->
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label for="villestage">Ville</label>
+              <input
+                #villestage="ngModel"
+                [(ngModel)]="cv.lesstages.villestage"
+                name="villestage"
+                id="villestage"
+                type="text"
+                class="form-control"
+                (input)="launchValue()"
+              />
+              <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                        Adresse is required.
+                      </div> -->
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label for="periodecour">Date de début</label>
+              <input
+                #dateDebut="ngModel"
+                [(ngModel)]="cv.lesstages.dateDebut"
+                name="dateDebut"
+                id="dateDebut"
+                type="date"
+                class="form-control"
+                (input)="launchValue()"
+              />
+              <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                        Adresse is required.
+                      </div> -->
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label for="villestage">Date de fin</label>
+              <input
+                #dateFin="ngModel"
+                [(ngModel)]="cv.lesstages.dateFin"
+                name="dateFin"
+                id="dateFin"
+                type="date"
+                class="form-control"
+                (input)="launchValue()"
+              />
+              <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                        Adresse is required.
+                      </div> -->
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="nomcour">Description</label>
+          <input
+            #descriptioncour="ngModel"
+            [(ngModel)]="cv.lesstages.description"
+            name="descriptioncour"
+            id="descriptioncour"
+            type="text"
+            class="form-control"
+            (input)="launchValue()"
+          /><br />
+
+
+        </div>
+
+      </section>
+      <button (click)="increment();addQuantity()" class="btn btn-plus " style="border: 1px solid #000;"><i class="fa-regular fa-plus h-6" ></i>Ajouter un stage</button>
+
+
+
+
+      <div class="" *ngFor="let quantity of quantities().controls; let i=index" [formGroupName]="i">
+
+        <div class="form-group">
+          <label for="stageposte">Poste</label>
+          <input
+            #stageposte="ngModel"
+            [(ngModel)]="cv.lesstages.stageposte"
+            name="stageposte"
+            id="stageposte"
+            type="text"
+            class="form-control"
+            (input)="launchValue()"
+          />
+
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label for="periodecour">Employeur</label>
+              <input
+                #employeur="ngModel"
+                [(ngModel)]="cv.lesstages.employeur"
+                name="employeur"
+                id="employeur"
+                type="text"
+                class="form-control"
+                (input)="launchValue()"
+              />
+
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label for="villestage">Ville</label>
+              <input
+                #villestage="ngModel"
+                [(ngModel)]="cv.lesstages.villestage"
+                name="villestage"
+                id="villestage"
+                type="text"
+                class="form-control"
+                (input)="launchValue()"
+              />
+
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label for="periodecour">Date de début</label>
+              <input
+                #dateDebut="ngModel"
+                [(ngModel)]="cv.lesstages.dateDebut"
+                name="dateDebut"
+                id="dateDebut"
+                type="date"
+                class="form-control"
+                (input)="launchValue()"
+              />
+
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label for="villestage">Date de fin</label>
+              <input
+                #dateFin="ngModel"
+                [(ngModel)]="cv.lesstages.dateFin"
+                name="dateFin"
+                id="dateFin"
+                type="date"
+                class="form-control"
+                (input)="launchValue()"
+              />
+
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="nomcour">Description</label>
+          <textarea
+            #descriptioncour="ngModel"
+            [(ngModel)]="cv.lesstages.description"
+            name="descriptioncour"
+            id="descriptioncour"
+            type="text"
+            class="form-control"
+            (input)="launchValue()" cols="30" rows="10" class="summernote form-control"
+          ></textarea>
+
+
+        </div>
+
+          <i (click)="removeQuantity(i)" class="fa-solid fa-trash-can" style="font-size: 33px; padding: 2px; color: #09977C; border: 1px solid gainsboro;"></i>
+
+        </div>
+
+    </div>
+
+</div>

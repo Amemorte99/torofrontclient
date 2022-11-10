@@ -1,0 +1,132 @@
+
+<div class="container-fluid p-3" >
+  <div class="row" >
+
+    <div class="col-3 img-forms"></div>
+    <div class="col-9 mafroms ">
+      <div class="text-center my-5 maformstext">
+        <h3 >Faire partie <span style="color: #09977C;  text-shadow: 1px 1px 1px #09977C, 2px 2px 1px #6F8BA4;">de notre communauté mondiale</span>  n'a jamais été aussi facile</h3>
+       </div>
+      <div class="row">
+        <div class="col-sm-0 col-md-3"></div>
+        <div class="col-sm-12 col-md-6 shadow pt-3 ">
+          <div class="container ">
+             <div class="body-forms">
+               <form action="" class="justify-content-center">
+                <div class="row input-group input-group-default example-container mb-3">
+                  <mat-form-field hintLabel="Max 10 characters" appearance="fill"class="col-sm-12 col-md-6 ">
+                    <mat-label>Enter votre nom</mat-label>
+                    <input matInput #input maxlength="20" placeholder="Ex. Manes" >
+                  </mat-form-field>
+                  <mat-form-field hintLabel="Max 10 characters" appearance="fill" class="col-sm-12 col-md-6 ">
+                    <mat-label>Enter votre prenom</mat-label>
+                    <input matInput #input maxlength="20" placeholder="Ex. Mana" >
+                  </mat-form-field>
+                </div>
+                <div class="row input-group input-group-default example-container mb-3">
+                  <mat-form-field  appearance="fill"class="col-sm-12 col-md-6 ">
+                    <mat-label>Adresse</mat-label>
+                    <input matInput #input  placeholder="Ex. lomé" >
+                  </mat-form-field>
+                  <mat-form-field class="example-container col-sm-12 col-md-6" appearance="fill" >
+                    <mat-label>Telephone</mat-label>
+                    <span matPrefix>+228 &nbsp;</span>
+                    <input type="text" matInput placeholder="555-555-1234">
+                    <mat-icon matSuffix><i class="fa fa-phone"></i></mat-icon>
+                  </mat-form-field>
+
+                  <mat-form-field class="example-full-width col-sm-12 col-md-6 mb-2" appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                           placeholder="Ex. ma@example.com" >
+                    <mat-hint>Errors appear instantly!</mat-hint>
+                    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                      Svp entrer un email valide
+                    </mat-error>
+                    <mat-error *ngIf="emailFormControl.hasError('required')">
+                      Email is <strong>required</strong>
+                    </mat-error>
+                  </mat-form-field>
+                  <mat-form-field color="primary" appearance="fill">
+                    <mat-label>Date de naissance</mat-label>
+                    <input matInput [matDatepicker]="picker2">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2 color="primary"></mat-datepicker>
+                  </mat-form-field>
+
+                  <mat-form-field appearance="fill" class="col-sm-12 col-md-6">
+                    <mat-label>Enter votre mot de passe</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                  </mat-form-field>
+                  <mat-form-field appearance="fill" class="col-sm-12 col-md-6">
+                    <mat-label>Comfirmer votre mot de passe</mat-label>
+                    <input matInput [type]="hide1 ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide1 = !hide1" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide1">
+                      <mat-icon>{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                  </mat-form-field>
+                  <file-upload [control]="control" class="col-12 ngx-file-drop__drop-zone">
+                    <ng-template let-isFileDragDropAvailable="isFileDragDropAvailable" #placeholder>
+                        <div *ngIf="control.size === 0">
+                            <div class="icon">
+                                <svg>...</svg>
+                            </div>
+
+                            <div class="upload-text">
+                                <ng-container *ngIf="isFileDragDropAvailable; else isNotDragDropAvailable">
+                                    <b>Drag and drop</b> files<br> ou click ici
+                                </ng-container>
+                                <ng-template #isNotDragDropAvailable>
+                                    <b>Click ici</b> pour <br> choisir un photo
+                                </ng-template>
+                            </div>
+                        </div>
+                    </ng-template>
+
+                    <ng-template let-i="index" let-file="file" let-control="control" #item>
+                        <div class="overlay">
+                            <span class="delete-button" (click)="control.removeFile(file)">
+                                <svg>...</svg>
+                            </span>
+                            <img *ngIf="control.valid" [src]="uploadedFile | async">
+                        </div>
+                    </ng-template>
+                </file-upload>
+
+                </div>
+
+                 <div class="example-container">
+                   <mat-form-field hintLabel="Max 10 characters" appearance="fill">
+                     <mat-label>Enterr votre nom</mat-label>
+                     <input matInput #input maxlength="20" placeholder="Ex. Nougat">
+                   </mat-form-field>
+
+
+
+
+                   <mat-form-field appearance="fill" floatLabel="always">
+                     <mat-label>Amount</mat-label>
+                     <input matInput type="number" class="example-right-align" placeholder="0">
+                     <span matPrefix>$&nbsp;</span>
+                     <span matSuffix>.00</span>
+                   </mat-form-field>
+                 </div>
+
+
+               </form>
+             </div>
+         </div>
+
+        </div>
+        <div class="col-sm-0 col-md-3"></div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

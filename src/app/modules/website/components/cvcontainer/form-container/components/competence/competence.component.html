@@ -1,0 +1,112 @@
+<div class="divcomp">
+  <div
+
+  class="btn-group  col-12 txtitre" >
+    <a     data-toggle="collapse"
+    data-target="#competence"
+    aria-expanded="false"
+    aria-controls="profil"
+     class="btn text-start"><h4>Compétences</h4></a>
+    <a
+    data-toggle="collapse"
+    data-target="#competence"
+    aria-expanded="false"
+    aria-controls="profil"  class="btn text-end"><i class="fa-regular fa-plus fa-6x btn" style="border: 2px solid #000; font-size: 15px;"></i></a>
+  </div>
+
+
+
+<div class="container px-5 collapse " id="competence">
+  <div>
+    <!-- <form #f="ngForm" (ngSubmit)="save(f.value)"> -->
+    <div class="form-group">
+      <label for="posteproun">Compétences</label>
+      <input
+        #posteproun="ngModel"
+        [(ngModel)]="cv.competence.competence"
+        name="posteproun"
+        id="posteproun"
+        type="text"
+        class="form-control"
+        (input)="launchValue()" cols="30" rows="5" class="summernote form-control"
+      />
+
+
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="form-group">
+          <label for="employeurproun">Niveau</label>
+          <input  #employeurproun="ngModel"
+          [(ngModel)]="cv.competence.niveau"
+          name="employeurproun"
+          id="employeurproun"
+          type="text"
+          (input)="launchValue()"
+            type="range" size="1" class=" input-control  border"
+             min="0" max="5" step="1" value="20" style="outline: none; width: 100%;">
+
+
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+  <button (click)="increment();addQuantity()" class="btn btn-plus " style="border: 1px solid #000;"><i class="fa-regular fa-plus h-6" ></i>Ajouter une competence</button>
+  <!-- <button (click)="decrement()">SUB</button> -->
+
+
+
+  <div class="" *ngFor="let quantity of quantities().controls; let i=index" [formGroupName]="i">
+
+    <div>
+      <!-- <form #f="ngForm" (ngSubmit)="save(f.value)"> -->
+      <div class="form-group">
+        <label for="posteproun">Compétences</label>
+        <input
+          #posteproun="ngModel"
+          [(ngModel)]="cv.competence.competence"
+          name="posteproun"
+          id="posteproun"
+          type="text"
+          class="form-control"
+          (input)="launchValue()" cols="30" rows="5" class="summernote form-control"
+        />
+
+
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="form-group">
+            <label for="employeurproun">Niveau</label>
+            <input  #employeurproun="ngModel"
+            [(ngModel)]="cv.competence.niveau"
+            name="employeurproun"
+            id="employeurproun"
+            type="text"
+            (input)="launchValue()"
+              type="range" size="1" class=" input-control  border"
+               min="0" max="5" step="1" value="20" style="outline: none; width: 100%;">
+
+
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <i (click)="removeQuantity(i)" class="fa-solid fa-trash-can" style="font-size: 33px; padding: 2px; color: #09977C; border: 1px solid gainsboro;"></i>
+
+</div>
+
+
+
+
+  <br />
+</div>
+</div>

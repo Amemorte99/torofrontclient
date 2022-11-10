@@ -1,0 +1,157 @@
+<div class="divcour">
+  <div
+
+    class="btn-group  col-12 txtitre" >
+      <a      data-toggle="collapse"
+      data-target="#cours"
+      aria-expanded="false"
+      aria-controls="cours"
+       class="btn text-start"><h4>Cours</h4></a>
+      <a
+      data-toggle="collapse"
+      data-target="#cours"
+      aria-expanded="false"
+      aria-controls="cours" class="btn text-end"><i class="fa-regular fa-plus fa-6x btn" style="border: 2px solid #000; font-size: 15px;"></i></a>
+</div>
+<div class="container px-5 collapse" id="cours">
+  <section class="sectioncour">
+
+    <div class="form-group">
+      <label for="nomcour">Cours</label>
+      <input
+        #nomcour="ngModel"
+        [(ngModel)]="cv.lescours.nomcour"
+        name="nomcour"
+        id="nomcour"
+        type="text"
+        class="form-control"
+        (input)="launchValue()"
+      />
+
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="periodecour">Période</label>
+          <input
+            #periodecour="ngModel"
+            [(ngModel)]="cv.lescours.periodecour"
+            name="periodecour"
+            id="periodecour"
+            type="text"
+            class="form-control"
+            (input)="launchValue()"
+          />
+          <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                    Adresse is required.
+                  </div> -->
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="cejour">ce jour</label>
+          <input
+            #cejour="ngModel"
+            [(ngModel)]="cv.lescours.cejour"
+            name="cejour"
+            id="cejour"
+            type="text"
+            class="form-control"
+            (input)="launchValue()"
+          />
+          <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                    Adresse is required.
+                  </div> -->
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="nomcour">Description</label>
+      <input
+        #descriptioncour="ngModel"
+        [(ngModel)]="cv.lescours.descriptioncour"
+        name="descriptioncour"
+        id="descriptioncour"
+        type="text"
+        class="form-control"
+        (input)="launchValue()"
+      /><br />
+
+
+    </div>
+
+  </section>
+  <button (click)="increment();addQuantity()" class="btn btn-plus " style="border: 1px solid #000;"><i class="fa-regular fa-plus h-6" ></i>Ajouter un cours</button>
+
+
+
+
+  <div class="" *ngFor="let quantity of quantities().controls; let i=index" [formGroupName]="i">
+
+    <div class="form-group">
+      <label for="nomcour">Cours</label>
+      <input
+        #nomcour="ngModel"
+        [(ngModel)]="cv.lescours.nomcour"
+        name="nomcour"
+        id="nomcour"
+        type="text"
+        class="form-control"
+        (input)="launchValue()"
+      />
+
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="periodecour">Période</label>
+          <input
+            #periodecour="ngModel"
+            [(ngModel)]="cv.lescours.periodecour"
+            name="periodecour"
+            id="periodecour"
+            type="text"
+            class="form-control"
+            (input)="launchValue()"
+          />
+          <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                    Adresse is required.
+                  </div> -->
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="cejour">ce jour</label>
+          <input
+            #cejour="ngModel"
+            [(ngModel)]="cv.lescours.cejour"
+            name="cejour"
+            id="cejour"
+            type="text"
+            class="form-control"
+            (input)="launchValue()"
+          />
+          <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                    Adresse is required.
+                  </div> -->
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="nomcour">Description</label>
+      <input
+        #descriptioncour="ngModel"
+        [(ngModel)]="cv.lescours.descriptioncour"
+        name="descriptioncour"
+        id="descriptioncour"
+        type="text"
+        class="form-control"
+        (input)="launchValue()"
+      /><br />
+
+      <i (click)="removeQuantity(i)" class="fa-solid fa-trash-can" style="font-size: 33px; padding: 2px; color: #09977C; border: 1px solid gainsboro;"></i>
+
+    </div>
+
+</div>
+</div>

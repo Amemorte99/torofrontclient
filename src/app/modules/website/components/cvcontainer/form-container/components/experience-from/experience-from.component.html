@@ -1,0 +1,253 @@
+<div class="divExp">
+  <div
+
+    class="btn-group  col-12 txtitre" >
+      <a  data-toggle="collapse"
+      data-target="#expepro"
+      aria-expanded="false"
+      aria-controls="profil"
+       class="btn text-start"><h4>Expérience professionnelle</h4></a>
+      <a
+      data-toggle="collapse"
+      data-target="#expepro"
+      aria-expanded="false"
+      aria-controls="profil"  class="btn text-end"><i class="fa-regular fa-plus fa-6x btn" style="border: 2px solid #000; font-size: 15px;"></i></a>
+    </div>
+
+
+
+
+
+
+  <div class="container px-5 collapse " id="expepro">
+    <div>
+      <!-- <form #f="ngForm" (ngSubmit)="save(f.value)"> -->
+      <div class="form-group">
+        <label for="posteproun">Poste</label>
+        <input
+          #posteproun="ngModel"
+          [(ngModel)]="cv.experiencepro.experienceproun.posteproun"
+          name="posteproun"
+          id="posteproun"
+          type="text"
+          class="form-control"
+          (input)="launchValue()"
+        />
+        <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                  Adresse is required.
+                </div> -->
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="employeurproun">Employeur</label>
+            <input
+              #employeurproun="ngModel"
+              [(ngModel)]="cv.experiencepro.experienceproun.employeurproun"
+              name="employeurproun"
+              id="employeurproun"
+              type="text"
+              class="form-control"
+              (input)="launchValue()"
+            />
+            <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                      Adresse is required.
+                    </div> -->
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="villeexpeproun">Ville</label>
+            <input
+              #villeexpeproun="ngModel"
+              [(ngModel)]="cv.experiencepro.experienceproun.villeexpeproun"
+              name="villeexpeproun"
+              id="villeexpeproun"
+              type="text"
+              class="form-control"
+              (input)="launchValue()"
+            />
+            <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                      Adresse is required.
+                    </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="datedebutpro">Date de début</label>
+            <input
+              #datedebutproun="ngModel"
+              [(ngModel)]="cv.experiencepro.experienceproun.datedebutproun"
+              name="datedebutproun"
+              id="datedebutproun"
+              type="date"
+              class="form-control"
+              (input)="launchValue()"
+            />
+            <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                      Adresse is required.
+                    </div> -->
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-group">
+            <label for="datefinproun">Date de fin</label>
+            <input
+              #datefinproun="ngModel"
+              [(ngModel)]="cv.experiencepro.experienceproun.datefinproun"
+              name="datefinproun"
+              id="datefinproun"
+              type="date"
+              class="form-control"
+              (input)="launchValue()"
+            />
+            <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                      Adresse is required.
+                    </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="descriptionproun">Description</label>
+
+
+        <textarea #descriptionproun="ngModel"
+        [(ngModel)]="cv.experiencepro.experienceproun.descriptionproun"
+        name="descriptionproun"
+        id="descriptionproun"
+        type="text"
+        class="form-control"
+        (input)="launchValue()" id="" cols="20" rows="5" class="summernote form-control">
+
+        </textarea>
+
+        <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                  Adresse is required.
+                </div> -->
+      </div>
+    </div>
+
+
+
+
+
+      <button (click)="increment();addQuantity()" class="btn btn-plus " style="border: 1px solid #000;"><i class="fa-regular fa-plus h-6" ></i>Ajouter une experience professionelle</button>
+      <!-- <button (click)="decrement()">SUB</button> -->
+
+
+
+      <div class="" *ngFor="let quantity of quantities().controls; let i=index" [formGroupName]="i">
+
+        <div>
+          <!-- <form #f="ngForm" (ngSubmit)="save(f.value)"> -->
+          <div class="form-group">
+            <label for="posteproun">Poste</label>
+            <input
+              #posteproun="ngModel"
+              [(ngModel)]="cv.experiencepro.experienceproun.posteproun"
+              name="posteproun"
+              id="posteproun"
+              type="text"
+              class="form-control"
+              (input)="launchValue()"
+            />
+            <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                      Adresse is required.
+                    </div> -->
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="employeurproun">Employeur</label>
+                <input
+                  #employeurproun="ngModel"
+                  [(ngModel)]="cv.experiencepro.experienceproun.employeurproun"
+                  name="employeurproun"
+                  id="employeurproun"
+                  type="text"
+                  class="form-control"
+                  (input)="launchValue()"
+                />
+                <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                          Adresse is required.
+                        </div> -->
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="villeexpeproun">Ville</label>
+                <input
+                  #villeexpeproun="ngModel"
+                  [(ngModel)]="cv.experiencepro.experienceproun.villeexpeproun"
+                  name="villeexpeproun"
+                  id="villeexpeproun"
+                  type="text"
+                  class="form-control"
+                  (input)="launchValue()"
+                />
+                <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                          Adresse is required.
+                        </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="datedebutpro">Date de début</label>
+                <input
+                  #datedebutproun="ngModel"
+                  [(ngModel)]="cv.experiencepro.experienceproun.datedebutproun"
+                  name="datedebutproun"
+                  id="datedebutproun"
+                  type="date"
+                  class="form-control"
+                  (input)="launchValue()"
+                />
+                <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                          Adresse is required.
+                        </div> -->
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <label for="datefinproun">Date de fin</label>
+                <input
+                  #datefinproun="ngModel"
+                  [(ngModel)]="cv.experiencepro.experienceproun.datefinproun"
+                  name="datefinproun"
+                  id="datefinproun"
+                  type="date"
+                  class="form-control"
+                  (input)="launchValue()"
+                />
+                <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                          Adresse is required.
+                        </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="descriptionproun">Description</label>
+
+
+            <textarea #descriptionproun="ngModel"
+            [(ngModel)]="cv.experiencepro.experienceproun.descriptionproun"
+            name="descriptionproun"
+            id="descriptionproun"
+            type="text"
+            class="form-control"
+            (input)="launchValue()" id="" cols="20" rows="5" class="summernote form-control">
+
+            </textarea>
+          </div>
+          <i (click)="removeQuantity(i)" class="fa-solid fa-trash-can" style="font-size: 33px; padding: 2px; color: #09977C; border: 1px solid gainsboro;"></i>
+
+        </div>
+
+    </div>
+
+  </div>
+ </div>

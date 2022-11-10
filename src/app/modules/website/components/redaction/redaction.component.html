@@ -1,0 +1,130 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+
+          <form #f="ngForm" (ngSubmit)="save(f.value)">
+            <div class="form-group row">
+             <div class="col-md-3">
+              <label for="photoUrl">Photo</label>
+              <ngp-image-picker
+                [_config]="imagePickerConf"
+                ($imageChanged)="onImageChange($event)"
+                class="shadow img-fluid"
+              >
+              </ngp-image-picker>
+             </div>
+             <div class="col-md-9">
+            <div class="row">
+              <div class="col-md-6">
+                  <div class="form-group">
+                <label for="prenom">Prénom</label>
+                <input
+                  #prenom="ngModel"
+                  [(ngModel)]="cv.prenom"
+                  name="prenom"
+                  id="prenom"
+                  type="text"
+                  class="form-control"
+                  required
+                />
+                <div
+                  class="alert alert-danger"
+                  *ngIf="prenom.touched && prenom.invalid"
+                >
+                  Prenom is required.
+                </div>
+              </div>
+              </div>
+              <div class="col-md-6">
+              <label for="prenom">Prénom</label>
+              <input
+                #prenom="ngModel"
+                [(ngModel)]="cv.prenom"
+                name="prenom"
+                id="prenom"
+                type="text"
+                class="form-control"
+                required
+              />
+              <div
+                class="alert alert-danger"
+                *ngIf="prenom.touched && prenom.invalid"
+              >
+                Prenom is required.
+              </div>
+            </div>
+            </div>
+            </div>
+
+              <div class="form-group">
+                <label for="nomfamille">Nom de Famille</label>
+                <input
+                  #nomfamille="ngModel"
+                  [(ngModel)]="cv.nomfamille"
+                  name="nomfamille"
+                  id="nomfamille"
+                  type="text"
+                  class="form-control"
+                  required
+                />
+                <div
+                  class="alert alert-danger"
+                  *ngIf="nomfamille.touched && nomfamille.invalid"
+                >
+                  Nom de Famille is required.
+                </div>
+              </div>
+             </div>
+              <!-- <input
+                #photoUrl="ngModel"
+                [(ngModel)]="cv.photoUrl"
+                name="photoUrl"
+                id="photoUrl"
+                type="file"
+                class="form-control formimg fa fa-user"
+                required
+                url
+              /> -->
+              <!-- <div class="alert alert-danger" *ngIf="photoUrl.touched && imageUrl.invalid">
+                            <div *ngIf="imageUrl.errors?.['required']">Image URL is required.</div>
+                            <div *ngIf="imageUrl.errors?.['url']">Please enter a valid URL.</div>
+                        </div> -->
+
+            <div class="form-group">
+              <label for="mail">Adresse Email</label>
+              <input
+                #mail="ngModel"
+                [(ngModel)]="cv.mail"
+                name="mail"
+                id="mail"
+                type="text"
+                class="form-control"
+                required
+              />
+              <div class="alert alert-danger" *ngIf="mail.touched && mail.invalid">
+                Email is required.
+              </div>
+            </div>
+            <button class="btn btn-primary">Save</button>
+            <!-- <button  type="button" class="btn btn-danger" (click)="delete()">Delete</button> -->
+          </form>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="cv.prenom" class="card" style="width: 20rem">
+        <img
+          class="card-img-top"
+          [src]="cv.photoUrl"
+          alt="user cv photo"
+          *ngIf="cv.photoUrl"
+        />
+        <div class="card-body">
+          <h4 class="card-title">{{ cv.prenom }}</h4>
+          <h4 class="card-title">{{ cv.nomfamille }}</h4>
+          <h4 class="card-title">{{ cv.mail }}</h4>
+        </div>
+      </div>
+      <!-- <product-card [product]="product" [show-actions]="false"></product-card> -->
+    </div>
+  </div>

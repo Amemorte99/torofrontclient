@@ -1,0 +1,200 @@
+<div
+
+    class="btn-group  col-12 txtitre" >
+      <a     data-toggle="collapse"
+      data-target="#references"
+      aria-expanded="false"
+      aria-controls="cours"
+       class="btn text-start"><h4>Réferences</h4></a>
+      <a
+      data-toggle="collapse"
+              data-target="#references"
+              aria-expanded="false"
+              aria-controls="cours"  class="btn text-end"><i class="fa-regular fa-plus fa-6x btn" style="border: 2px solid #000; font-size: 15px;"></i></a>
+  </div>
+
+
+  <div class="container px-5 collapse" id="references">
+    <section class="sectioncour">
+      <!-- <form #f="ngForm" (ngSubmit)="save(f.value)"> -->
+      <div class="form-group">
+        <label for="stageposte">Nom</label>
+        <input
+          #stageposte="ngModel"
+          [(ngModel)]="cv.lesreferences.nomref"
+          name="stageposte"
+          id="stageposte"
+          type="text"
+          class="form-control"
+          (input)="launchValue()"
+        />
+        <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                  Adresse is required.
+                </div> -->
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label for="periodecour">Entreprise</label>
+            <input
+              #employeur="ngModel"
+              [(ngModel)]="cv.lesreferences.entrepriseref"
+              name="employeur"
+              id="employeur"
+              type="text"
+              class="form-control"
+              (input)="launchValue()"
+            />
+
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-group">
+            <label for="villestage">Ville</label>
+            <input
+              #villestage="ngModel"
+              [(ngModel)]="cv.lesreferences.villeref"
+              name="villestage"
+              id="villestage"
+              type="text"
+              class="form-control"
+              (input)="launchValue()"
+            />
+
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label for="periodecour">Numéro de telephone</label>
+            <input
+              #dateDebut="ngModel"
+              [(ngModel)]="cv.lesreferences.telephoneref"
+              name="dateDebut"
+              id="dateDebut"
+              type="text"
+              class="form-control"
+              (input)="launchValue()"
+            />
+            <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                      Adresse is required.
+                    </div> -->
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-group">
+            <label for="villestage">Adresse Mail</label>
+            <input
+              #dateFin="ngModel"
+              [(ngModel)]="cv.lesreferences.mailref"
+              name="dateFin"
+              id="dateFin"
+              type="text"
+              class="form-control"
+              (input)="launchValue()"
+            />
+
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+    <button (click)="increment();addQuantity()" class="btn btn-plus " style="border: 1px solid #000;"><i class="fa-regular fa-plus h-6" ></i>Ajouter une référence</button>
+
+
+
+
+    <div class="" *ngFor="let quantity of quantities().controls; let i=index" [formGroupName]="i">
+
+       <!-- <form #f="ngForm" (ngSubmit)="save(f.value)"> -->
+        <div class="form-group">
+          <label for="stageposte">Nom</label>
+          <input
+            #stageposte="ngModel"
+            [(ngModel)]="cv.lesreferences.nomref"
+            name="stageposte"
+            id="stageposte"
+            type="text"
+            class="form-control"
+            (input)="launchValue()"
+          />
+          <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                    Adresse is required.
+                  </div> -->
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label for="periodecour">Entreprise</label>
+              <input
+                #employeur="ngModel"
+                [(ngModel)]="cv.lesreferences.entrepriseref"
+                name="employeur"
+                id="employeur"
+                type="text"
+                class="form-control"
+                (input)="launchValue()"
+              />
+
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label for="villestage">Ville</label>
+              <input
+                #villestage="ngModel"
+                [(ngModel)]="cv.lesreferences.villeref"
+                name="villestage"
+                id="villestage"
+                type="text"
+                class="form-control"
+                (input)="launchValue()"
+              />
+
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label for="periodecour">Numéro de telephone</label>
+              <input
+                #dateDebut="ngModel"
+                [(ngModel)]="cv.lesreferences.telephoneref"
+                name="dateDebut"
+                id="dateDebut"
+                type="text"
+                class="form-control"
+                (input)="launchValue()"
+              />
+              <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                        Adresse is required.
+                      </div> -->
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label for="villestage">Adresse Mail</label>
+              <input
+                #dateFin="ngModel"
+                [(ngModel)]="cv.lesreferences.mailref"
+                name="dateFin"
+                id="dateFin"
+                type="text"
+                class="form-control"
+                (input)="launchValue()"
+              />
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <i (click)="removeQuantity(i)" class="fa-solid fa-trash-can" style="font-size: 33px; padding: 2px; color: #09977C; border: 1px solid gainsboro;"></i>
+
+    </div>
+  </div>

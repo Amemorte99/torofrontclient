@@ -1,0 +1,241 @@
+<div class="divact">
+
+  <div
+
+class="btn-group  col-12 txtitre" >
+  <a     data-toggle="collapse"
+  data-target="#activite"
+  aria-expanded="false"
+  aria-controls="activite"
+   class="btn text-start"><h4>Activités extra-professionnelles</h4></a>
+  <a
+  data-toggle="collapse"
+              data-target="#activite"
+              aria-expanded="false"
+              aria-controls="activite"  class="btn text-end"><i class="fa-regular fa-plus fa-6x btn" style="border: 2px solid #000; font-size: 15px;"></i></a>
+</div>
+
+<div class="container px-5 collapse" id="activite">
+
+  <section class="sectioncour">
+    <!-- <form #f="ngForm" (ngSubmit)="save(f.value)"> -->
+    <div class="form-group">
+      <label for="stageposte">Poste</label>
+      <input
+        #stageposte="ngModel"
+        [(ngModel)]="cv.lesactiviteextrapro.aproposte"
+        name="stageposte"
+        id="stageposte"
+        type="text"
+        class="form-control"
+        (input)="launchValue()"
+      />
+      <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                Adresse is required.
+              </div> -->
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="periodecour">Employeur</label>
+          <input
+            #employeur="ngModel"
+            [(ngModel)]="cv.lesactiviteextrapro.aproemployeur"
+            name="employeur"
+            id="employeur"
+            type="text"
+            class="form-control"
+            (input)="launchValue()"
+          />
+          <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                    Adresse is required.
+                  </div> -->
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="villestage">Ville</label>
+          <input
+            #villestage="ngModel"
+            [(ngModel)]="cv.lesactiviteextrapro.aproville"
+            name="villestage"
+            id="villestage"
+            type="text"
+            class="form-control"
+            (input)="launchValue()"
+          />
+          <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                    Adresse is required.
+                  </div> -->
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="periodecour">Date de début</label>
+          <input
+            #dateDebut="ngModel"
+            [(ngModel)]="cv.lesactiviteextrapro.aprodatedeb"
+            name="dateDebut"
+            id="dateDebut"
+            type="date"
+            class="form-control"
+            (input)="launchValue()"
+          />
+          <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                    Adresse is required.
+                  </div> -->
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="villestage">Date de fin</label>
+          <input
+            #dateFin="ngModel"
+            [(ngModel)]="cv.lesactiviteextrapro.aprodatefin"
+            name="dateFin"
+            id="dateFin"
+            type="date"
+            class="form-control"
+            (input)="launchValue()"
+          />
+          <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                    Adresse is required.
+                  </div> -->
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="nomcour">Description</label>
+      <input
+        #descriptioncour="ngModel"
+        [(ngModel)]="cv.lesactiviteextrapro.aprodescription"
+        name="descriptioncour"
+        id="descriptioncour"
+        type="text"
+        class="form-control"
+        (input)="launchValue()"
+      /><br />
+
+
+    </div>
+
+  </section>
+  <button (click)="increment();addQuantity()" class="btn btn-plus " style="border: 1px solid #000;"><i class="fa-regular fa-plus h-6" ></i>Ajouter une activité extra professionnelle</button>
+
+
+
+
+  <div class="" *ngFor="let quantity of quantities().controls; let i=index" [formGroupName]="i">
+
+     <!-- <form #f="ngForm" (ngSubmit)="save(f.value)"> -->
+      <div class="form-group">
+        <label for="stageposte">Poste</label>
+        <input
+          #stageposte="ngModel"
+          [(ngModel)]="cv.lesactiviteextrapro.aproposte"
+          name="stageposte"
+          id="stageposte"
+          type="text"
+          class="form-control"
+          (input)="launchValue()"
+        />
+        <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                  Adresse is required.
+                </div> -->
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label for="periodecour">Employeur</label>
+            <input
+              #employeur="ngModel"
+              [(ngModel)]="cv.lesactiviteextrapro.aproemployeur"
+              name="employeur"
+              id="employeur"
+              type="text"
+              class="form-control"
+              (input)="launchValue()"
+            />
+            <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                      Adresse is required.
+                    </div> -->
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-group">
+            <label for="villestage">Ville</label>
+            <input
+              #villestage="ngModel"
+              [(ngModel)]="cv.lesactiviteextrapro.aproville"
+              name="villestage"
+              id="villestage"
+              type="text"
+              class="form-control"
+              (input)="launchValue()"
+            />
+            <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                      Adresse is required.
+                    </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label for="periodecour">Date de début</label>
+            <input
+              #dateDebut="ngModel"
+              [(ngModel)]="cv.lesactiviteextrapro.aprodatedeb"
+              name="dateDebut"
+              id="dateDebut"
+              type="date"
+              class="form-control"
+              (input)="launchValue()"
+            />
+            <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                      Adresse is required.
+                    </div> -->
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-group">
+            <label for="villestage">Date de fin</label>
+            <input
+              #dateFin="ngModel"
+              [(ngModel)]="cv.lesactiviteextrapro.aprodatefin"
+              name="dateFin"
+              id="dateFin"
+              type="date"
+              class="form-control"
+              (input)="launchValue()"
+            />
+            <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                      Adresse is required.
+                    </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="nomcour">Description</label>
+        <textarea
+          #descriptioncour="ngModel"
+          [(ngModel)]="cv.lesactiviteextrapro.aprodescription"
+          name="descriptioncour"
+          id="descriptioncour"
+          type="text"
+          class="form-control"
+          (input)="launchValue()" cols="30" rows="10" class="summernote form-control"
+        ></textarea>
+
+
+      </div>
+
+
+
+      <i (click)="removeQuantity(i)" class="fa-solid fa-trash-can" style="font-size: 33px; padding: 2px; color: #09977C; border: 1px solid gainsboro;"></i>
+
+  </div>
+
+</div>

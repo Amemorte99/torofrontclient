@@ -1,0 +1,19 @@
+.mdc-top-app-bar{
+  background-color: #1d1d20;
+}
+.nomform input[type=text]:focus {
+  box-shadow: none;
+  border:none;
+  color: #fff;
+
+}
+.nomform input[type=text] {
+  box-shadow: none;
+  height: 22px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+
+}
+
