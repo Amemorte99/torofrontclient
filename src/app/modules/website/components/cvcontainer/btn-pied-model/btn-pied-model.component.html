@@ -1,76 +1,66 @@
-<div class="container-fluid">
+<div class="container-fluid ">
+    <div class="shadow w-full mb-3  rounded-lg shadow-lg relative z-10  " [ngClass]="[divStyle]" id="scroldiv">
 
-  <div class="shadow w-full mb-3  rounded-lg shadow-lg relative z-10  "
-    [ngClass]="[divStyle]" id="scroldiv">
 
-   <div class="row d-inline-flex" >
-    <div class="col-3">
-      <div class="">
-        <a type="button" class="group w-90 p-2  focus-visible:ring-4 ring-brand rounded " >
-          <img alt="professional"
-                src="../../../../../../assets/images/cv/2.jpg" class="absolute top-0 start-0 end-0 border shadow" style="width: 100%;">
-        </a>
+        <div class="row d-inline-flex">
+            <div class="col-3">
+                <div class="">
+                    <a (click)="sendDataToParent(1)" type="button" class="group w-90 p-2  focus-visible:ring-4 ring-brand rounded ">
+                        <img alt="professional" src="../../../../../../assets/images/cv/2.jpg" class="absolute top-0 start-0 end-0 border shadow" style="width: 100%;">
+                    </a>
 
-      </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="">
+                    <a (click)="sendDataToParent(2)" type="button" class="group w-90 p-2  focus-visible:ring-4 ring-brand rounded select-none">
+                        <img alt="professional" src="../../../../../../assets/images/cv/2.jpg" class="absolute top-0 start-0 end-0 border shadow" style="width: 100%;">
+                    </a>
+
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="">
+                    <a type="button" class="group w-90 p-2  focus-visible:ring-4 ring-brand rounded select-none">
+                        <img alt="professional" src="../../../../../../assets/images/cv/1.jpg" class="absolute top-0 start-0 end-0 border shadow" style="width: 100%;">
+                    </a>
+
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="">
+                    <a type="button" class="group w-90 p-2  focus-visible:ring-4 ring-brand rounded select-none">
+                        <img alt="professional" src="../../../../../../assets/images/cv/2.jpg" class="absolute top-0 start-0 end-0 border shadow" style="width: 100%;">
+                    </a>
+
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="">
+                    <a type="button" class="group w-90 p-2  focus-visible:ring-4 ring-brand rounded select-none">
+                        <img alt="professional" src="../../../../../../assets/images/cv/2.jpg" class="absolute top-0 start-0 end-0 border shadow" style="width: 100%;">
+                    </a>
+
+                </div>
+            </div>
+
+
+        </div>
     </div>
-    <div class="col-3">
-      <div class="">
-        <a type="button" class="group w-90 p-2  focus-visible:ring-4 ring-brand rounded select-none" >
-          <img alt="professional"
-                src="../../../../../../assets/images/cv/2.jpg" class="absolute top-0 start-0 end-0 border shadow" style="width: 100%;">
-        </a>
+    <div class="rounded-lg shadow-lg bg-white border border-gray-200 w-full flex items-center p-2">
 
-      </div>
-    </div>
-    <div class="col-3">
-      <div class="">
-        <a type="button" class="group w-90 p-2  focus-visible:ring-4 ring-brand rounded select-none" >
-          <img alt="professional"
-                src="../../../../../../assets/images/cv/1.jpg" class="absolute top-0 start-0 end-0 border shadow" style="width: 100%;">
-        </a>
-
-      </div>
-    </div>
-    <div class="col-3">
-      <div class="">
-        <a type="button" class="group w-90 p-2  focus-visible:ring-4 ring-brand rounded select-none" >
-          <img alt="professional"
-                src="../../../../../../assets/images/cv/2.jpg" class="absolute top-0 start-0 end-0 border shadow" style="width: 100%;">
-        </a>
-
-      </div>
-    </div>
-    <div class="col-3">
-      <div class="">
-        <a type="button" class="group w-90 p-2  focus-visible:ring-4 ring-brand rounded select-none" >
-          <img alt="professional"
-                src="../../../../../../assets/images/cv/2.jpg" class="absolute top-0 start-0 end-0 border shadow" style="width: 100%;">
-        </a>
-
-      </div>
-    </div>
-
-
-   </div>
-  </div>
-  <div class="rounded-lg shadow-lg bg-white border border-gray-200 w-full flex items-center p-2">
-
-    <div class="btn-group col-12">
-      <section class=" btn-group mdc-top-app-bar__section mdc-top-app-bar__section--align-start "
-        (click)="toggleChange()">
-        <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button"
-          aria-label="Open navigation menu">widgets
+        <div class="btn-group col-12">
+            <section class=" btn-group mdc-top-app-bar__section mdc-top-app-bar__section--align-start " (click)="toggleChange()">
+                <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Open navigation menu">widgets
         </button>
-        <span class="mdc-top-app-bar__title">Modèles &nbsp;</span>
+                <span class="mdc-top-app-bar__title">Modèles &nbsp;</span>
 
-      </section>
+            </section>
 
 
-      <button
-        class="material-icons mdc-top-app-bar__action-item mdc-icon-button  mdc-top-app-bar__section--align-end"
-        aria-label="Options"  > aspect_ratio</button>
+            <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button  mdc-top-app-bar__section--align-end" aria-label="Options"> aspect_ratio</button>
+
+        </div>
 
     </div>
-
-  </div>
 </div>

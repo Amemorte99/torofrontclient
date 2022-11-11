@@ -8,11 +8,16 @@ import {MDCTopAppBar} from '@material/top-app-bar';
 })
 export class CvcontainerComponent implements OnInit {
 
-
+  dataValue: any
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  sendDataCvSecond(e: any) {
+    console.log(e)
+    this.dataValue = e
   }
 
 }

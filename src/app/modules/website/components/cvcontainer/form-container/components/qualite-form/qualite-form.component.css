@@ -1,47 +1,61 @@
 :root {
-  --color-brand-50: #f5f9ff;
-  --color-brand-100: #d8e6ff;
-  --color-brand-200: #b9d1ff;
-  --color-brand-300: #789eff;
-  --color-brand-400: #416cff;
-  --color-brand-500: #173dff;
-  --color-brand-rgb: 23,61,255;
-  --color-background: #f5f5f5;
-  --font-family-header: "ui-sans-serif";
-  --font-family-sans: "ui-sans-serif";
-  --border-radius-button: 5px;
-}
-h4{
-  font-size: 16px;
-  font-weight: 700;
-  color: #000;
-}
-label{
-
-  font-size: 14px;
-  font-weight: 500;
-
-}
-html{
-  -webkit-text-size-adjust: 100%;
-  font-feature-settings: normal;
-  font-family:  var(--font-family-sans),ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";;
+    --color-brand-50: #f5f9ff;
+    --color-brand-100: #d8e6ff;
+    --color-brand-200: #b9d1ff;
+    --color-brand-300: #789eff;
+    --color-brand-400: #416cff;
+    --color-brand-500: #173dff;
+    --color-brand-rgb: 23, 61, 255;
+    --color-background: #f5f5f5;
+    --font-family-header: "ui-sans-serif";
+    --font-family-sans: "ui-sans-serif";
+    --border-radius-button: 5px;
 }
 
-
-
-input[type=email], input[type=password], input[type=text], input[type=tel] {
-  box-shadow: none;
-  height: 45px;
-  outline: none;
-  font-size: 14px;
-  border-radius: 0.3em;
-  background-color: #f5f5f5;
-}
-input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, input[type=tel]:focus {
-  box-shadow: none;
-  border: 1px solid #09977C;
-  border-radius: 0.3em;
-
+h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
 }
 
+label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    font-feature-settings: normal;
+    font-family: var(--font-family-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    ;
+}
+
+input[type=email],
+input[type=password],
+input[type=text],
+input[type=tel],
+input[type=date] {
+    box-shadow: none;
+    height: 45px;
+    outline: none;
+    font-size: 14px;
+    border-radius: 0.3em;
+    background-color: #f5f5f5;
+}
+
+input[type=email]:focus,
+input[type=password]:focus,
+input[type=text]:focus,
+input[type=tel]:focus,
+input[type=date]:focus,
+textarea:focus {
+    box-shadow: none;
+    border: 1px solid #09977C;
+    border-radius: 0.3em;
+}
+
+textarea {
+    box-shadow: none;
+    border: none;
+    border-radius: 0.3em;
+}

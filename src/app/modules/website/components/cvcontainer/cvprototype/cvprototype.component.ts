@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-cvprototype',
@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cvprototype.component.css']
 })
 export class CvprototypeComponent implements OnInit {
+  @Input() cv: any
 
+  value = 0;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+
+  sendInformation(event:any){
+    this.value = event
+  }
 }

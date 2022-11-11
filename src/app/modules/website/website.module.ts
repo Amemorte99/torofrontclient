@@ -81,6 +81,9 @@ import { QualiteFormComponent } from './components/cvcontainer/form-container/co
 import { RealisationFormComponent } from './components/cvcontainer/form-container/components/realisation-form/realisation-form.component';
 import { BasPageFormComponent } from './components/cvcontainer/form-container/components/bas-page-form/bas-page-form.component';
 import { BtnPiedModelComponent } from './components/cvcontainer/btn-pied-model/btn-pied-model.component';
+import { CvType1Component } from './components/cvcontainer/cvprototype/components/cv-type1/cv-type1.component';
+import { CvType2Component } from './components/cvcontainer/cvprototype/components/cv-type2/cv-type2.component';
+
 
 
 
@@ -117,6 +120,9 @@ import { BtnPiedModelComponent } from './components/cvcontainer/btn-pied-model/b
     RealisationFormComponent,
     BasPageFormComponent,
     BtnPiedModelComponent,
+    CvType1Component,
+    CvType2Component,
+
   ],
   imports: [
     CommonModule,

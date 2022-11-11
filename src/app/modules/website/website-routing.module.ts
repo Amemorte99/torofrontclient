@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { CvcontainerComponent } from './components/cvcontainer/cvcontainer.component';
+import { CvType1Component } from './components/cvcontainer/cvprototype/components/cv-type1/cv-type1.component';
 import { FormationComponent } from './components/formation/formation.component';
 import { FormulaireComponent } from './components/formulaire/formulaire.component';
 import { HomeComponent } from './components/home/home.component';
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path:'contact',component:ContactComponent},
   {path:'inscription',component:FormulaireComponent},
   {path:'fairecv',component:CvcontainerComponent},
+  {path:'cv1',component:CvType1Component},
 
 ];
 

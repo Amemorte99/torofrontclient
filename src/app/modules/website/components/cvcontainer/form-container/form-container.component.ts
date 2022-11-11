@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ɵSafeResourceUrl } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ɵSafeResourceUrl } from '@angular/core';
 import { ImagePickerConf } from 'ngp-image-picker';
 
 @Component({
@@ -8,6 +8,7 @@ import { ImagePickerConf } from 'ngp-image-picker';
 })
 export class FormContainerComponent implements OnInit {
 
+  @Output() sendDataCvSecond: EventEmitter<any> = new EventEmitter()
   //  }
   constructor(
     // private cpService : ColorPickerService,
@@ -24,6 +25,11 @@ export class FormContainerComponent implements OnInit {
     // this.cvValue = cv
     // console.log(this.cvValue)
 
+  }
+
+  sendDataCv(e: any) {
+    console.log(e)
+    this.sendDataCvSecond.emit(e)
   }
 
 

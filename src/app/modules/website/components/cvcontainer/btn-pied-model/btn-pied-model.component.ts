@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-btn-pied-model',
@@ -6,13 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./btn-pied-model.component.css']
 })
 export class BtnPiedModelComponent implements OnInit {
-
+  @Output() sendInformation: EventEmitter<any> = new EventEmitter()
   divStyle = 'div-default';
 
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  sendDataToParent(value:number ){
+    this.sendInformation.emit(value)
   }
 
   toggleChange(): void {

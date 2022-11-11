@@ -24,7 +24,7 @@
             <div class="form-group">
               <label for="prenom">Prénom</label>
               <input #prenom="ngModel" [(ngModel)]="cv.prenom" name="prenom" id="prenom" type="text"
-                class="form-control" (input)="launchValue()" required />
+                class="form-control" (input)="launchValueOne($event)" required />
               <!-- <div
                       class="alert alert-danger"
                       *ngIf="prenom.touched && prenom.invalid"
@@ -37,7 +37,7 @@
             <div class="form-group">
               <label for="nomfamille">Nom de Famille</label>
               <input #nomfamille="ngModel" [(ngModel)]="cv.nomfamille" name="nomfamille" id="nomfamille" type="text"
-                class="form-control" (input)="launchValue()" required />
+                class="form-control" (input)="launchValueOne($event)" required />
               <!-- <div
                       class="alert alert-danger"
                       *ngIf="nomfamille.touched && nomfamille.invalid"
