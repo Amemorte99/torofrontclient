@@ -1,20 +1,13 @@
 <h1>
     {{ cv?.prenom }}
 </h1>
-<div class="container shadow bg-white mt-2 mb-2 " style="max-width: 729.82px; max-height: 78vh; border-radius: 0.3rem; overflow-y: scroll;">
+<div class="container shadow bg-white  " style="max-width: 800.82px; max-height: 78vh; border-radius: 0.3rem; overflow: hidden; overflow-y: scroll;">
 
-    <span *ngIf="value == 0">Tout le monde va bien  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi totam reprehenderit sapiente odio ut facilis saepe mollitia, voluptatibus, laudantium aspernatur corrupti tenetur ipsum. Possimus
-    amet ratione, vitae tempore autem asperiores! Deleniti architecto nisi porro, ullam commodi nam atque nemo dolorem earum accusantium quaerat est neque nostrum perspiciatis molestiae dolor! Architecto voluptas sunt aperiam non! Voluptatum, molestias
-    ipsa! Magnam, dolor quia. Magnam, sint. Maiores earum voluptatum mollitia reprehenderit veritatis at recusandae inventore voluptatem deleniti quae numquam quaerat repellendus, obcaecati ex possimus eius enim dolorum error? Vitae eum dignissimos veritatis
-    necessitatibus voluptatum? Repudiandae velit perspiciatis hic itaque? Explicabo necessitatibus quaerat, veritatis odio doloribus saepe? Doloribus, adipisci quam provident veritatis laboriosam incidunt optio distinctio aliquam minima, quaerat aperiam
-    maxime expedita nam quia soluta. Minima architecto eius excepturi harum dolores inventore totam eum. Esse eum, maxime sapiente provident nostrum nihil incidunt suscipit autem aperiam vitae, earum obcaecati molestiae, illo perferendis rerum dolorem?
-    Est, officia? Quaerat illo error corrupti asperiores eveniet laudantium possimus atque at! Laborum facilis atque tempora quam quae, placeat nobis impedit saepe perspiciatis eos temporibus esse iste eius at repellendus error fuga! Voluptatem officiis
-    vitae perferendis nihil illum deleniti numquam! Deleniti inventore nobis rem odit mollitia perferendis numquam corporis quos? Ab sint ut natus ratione eum accusantium culpa soluta dolor, aliquam earum? Cum placeat fugiat deleniti laudantium maxime
-    quisquam iure enim ipsa aliquid earum? Molestiae provident voluptatem illum explicabo sed cum, delectus quaerat! Culpa ex, odio temporibus tempora veritatis architecto hic provident!
-  </span>
 
-    <app-cv-type1 *ngIf="value == 1" class="container-xxl" style="max-width: 629.82px; height: 78vh; border-radius: 0.3rem; overflow-y: scroll;"></app-cv-type1>
-    <app-cv-type2 *ngIf="value == 2"></app-cv-type2>
+
+    <app-cv-type1 *ngIf="value == 1" class="container-xxl"></app-cv-type1>
+    <app-cv-type2 *ngIf="value == 2" class="container-xxl"></app-cv-type2>
+    <app-cv-type3 *ngIf="value == 3" class="container-xxl"></app-cv-type3>
 
 
 
@@ -23,7 +16,7 @@
 </div>
 
 
-<div class="col-12 pr-5 cvfonction">
+<div class="col-12  cvfonction ">
 
     <app-btn-pied-model (sendInformation)="sendInformation($event)"></app-btn-pied-model>
 

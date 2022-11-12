@@ -83,6 +83,7 @@ import { BasPageFormComponent } from './components/cvcontainer/form-container/co
 import { BtnPiedModelComponent } from './components/cvcontainer/btn-pied-model/btn-pied-model.component';
 import { CvType1Component } from './components/cvcontainer/cvprototype/components/cv-type1/cv-type1.component';
 import { CvType2Component } from './components/cvcontainer/cvprototype/components/cv-type2/cv-type2.component';
+import { CvType3Component } from './components/cvcontainer/cvprototype/components/cv-type3/cv-type3.component';
 
 
 
@@ -122,6 +123,7 @@ import { CvType2Component } from './components/cvcontainer/cvprototype/component
     BtnPiedModelComponent,
     CvType1Component,
     CvType2Component,
+    CvType3Component,
 
   ],
   imports: [

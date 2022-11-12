@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CvprototypeComponent implements OnInit {
   @Input() cv: any
 
-  value = 0;
+  value = 1;
   constructor() { }
 
   ngOnInit(): void {

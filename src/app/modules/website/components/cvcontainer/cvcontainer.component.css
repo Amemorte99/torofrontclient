@@ -1,38 +1,32 @@
-.mdc-top-app-bar{
-  background-color: #1d1d20;
+.mdc-top-app-bar {
+    background-color: #1d1d20;
 }
+
 .nomform input[type=text]:focus {
-  box-shadow: none;
-  border:none;
-  color: #fff;
-
+    box-shadow: none;
+    border: none;
+    color: #fff;
 }
+
 .nomform input[type=text] {
-  box-shadow: none;
-  height: 22px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #fff;
-  text-align: center;
-
+    box-shadow: none;
+    height: 22px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
 }
 
-
-.cvPrototype{
-  background-color: rgba(9, 151, 124, 0.5);
-
-  height: 90vh;
-  width: 100%;
-  position: relative;
-
+.cvPrototype {
+    height: 90vh;
+    width: 100%;
+    position: relative;
 }
-
-
 
 .div-default {
-  display: none;
+    display: none;
 }
 
 .div-changed {
- width: 100vh;
+    width: 100vh;
 }
