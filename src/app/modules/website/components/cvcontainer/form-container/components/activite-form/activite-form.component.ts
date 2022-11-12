@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
+import { CvDataModel } from 'src/app/models/cv-data.models';
+import { LesactiviteextraproModel } from 'src/app/models/lesactivitesextrapro.models';
 
 @Component({
   selector: 'app-activite-form',
@@ -12,6 +14,7 @@ export class ActiviteFormComponent implements OnInit {
   myCount: any = 0;
   myproductForm!: FormGroup;
 
+  cvActiviteData!: LesactiviteextraproModel;
 
   @Input()
   count: any = 0;
@@ -88,23 +91,20 @@ export class ActiviteFormComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.cvActiviteData = {
+        aproposte: "",
+        aproemployeur: "",
+        aproville: "",
+        aprodatedeb: "",
+        aprodatefin: "",
+        aprodescription: ""
+    };
+
   }
 
-  cv = {
-
-    lesactiviteextrapro: {
-      aproposte: "",
-      aproemployeur: "",
-      aproville: "",
-      aprodatedeb: "",
-      aprodatefin: "",
-      aprodescription: ""
-    },
-
-
-  };
+  
   launchValue() {
-
+   
   }
 
 }

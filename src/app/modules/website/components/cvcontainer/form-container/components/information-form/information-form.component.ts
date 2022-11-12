@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, OnChanges, OnInit, Output } from '@angular/core';
 import { ImagePickerConf } from 'ngp-image-picker';
+import { InformationsPersonnelleModel } from 'src/app/models/informations-personnelle.models';
 
 @Component({
   selector: 'app-information-form',
@@ -9,21 +10,7 @@ import { ImagePickerConf } from 'ngp-image-picker';
 })
 export class InformationFormComponent implements OnInit, OnChanges {
   @Output() sendDataCv: EventEmitter<any> = new EventEmitter()
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-  launchValue() {}
-
-  launchValueOne(e: any) {
-    this.cv.prenom = e.target.value
-
-
-      this.sendDataCv.emit(this.cv)
-  }
-
-  cv: any = {
+  cvInformationPersnnelleData: InformationsPersonnelleModel = {
     photoUrl: "",
     photoUrl2: "./assets/images/cvimg/cv.jpg",
     prenom: "",
@@ -49,13 +36,27 @@ export class InformationFormComponent implements OnInit, OnChanges {
     // width: '320px',
     // height: '240px',
   };
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  launchValue() {}
+
+  launchValueOne(e: any) {
+    this.cvInformationPersnnelleData.prenom = e.target.value
+
+
+      this.sendDataCv.emit(this.cvInformationPersnnelleData)
+  }
+
 
   onImageChange(image: any) {
-    this.cv.photoUrl = image
+    this.cvInformationPersnnelleData.photoUrl = image
   }
   onImageChanged = (image: any) => {
 
-    this.cv.photoUrl == image;
+    this.cvInformationPersnnelleData.photoUrl == image;
 
   };
 
@@ -63,7 +64,7 @@ export class InformationFormComponent implements OnInit, OnChanges {
     console.log("cocou")
     //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
     //Add '${implements OnChanges}' to the class.
-      this.sendDataCv.emit(this.cv)
+      this.sendDataCv.emit(this.cvInformationPersnnelleData)
   }
 
 }

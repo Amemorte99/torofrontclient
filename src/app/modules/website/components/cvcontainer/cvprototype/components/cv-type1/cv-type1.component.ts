@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-cv-type1',
@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CvType1Component implements OnInit {
 
+  @Input() cvData: any;
+  
   constructor() { }
 
   ngOnInit(): void {

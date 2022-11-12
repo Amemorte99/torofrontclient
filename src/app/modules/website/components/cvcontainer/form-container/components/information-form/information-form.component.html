@@ -23,7 +23,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="prenom">Prénom</label>
-              <input #prenom="ngModel" [(ngModel)]="cv.prenom" name="prenom" id="prenom" type="text"
+              <input #prenom="ngModel" [(ngModel)]="cvInformationPersnnelleData.prenom" name="prenom" id="prenom" type="text"
                 class="form-control" (input)="launchValueOne($event)" required />
               <!-- <div
                       class="alert alert-danger"
@@ -36,7 +36,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="nomfamille">Nom de Famille</label>
-              <input #nomfamille="ngModel" [(ngModel)]="cv.nomfamille" name="nomfamille" id="nomfamille" type="text"
+              <input #nomfamille="ngModel" [(ngModel)]="cvInformationPersnnelleData.nomfamille" name="nomfamille" id="nomfamille" type="text"
                 class="form-control" (input)="launchValueOne($event)" required />
               <!-- <div
                       class="alert alert-danger"
@@ -49,7 +49,7 @@
         </div>
         <div class="form-group text-gray-400 text-base">
           <label for="mail">Email</label>
-          <input #mail="ngModel" [(ngModel)]="cv.mail" name="mail" id="mail" type="text" class="form-control"
+          <input #mail="ngModel" [(ngModel)]="cvInformationPersnnelleData.mail" name="mail" id="mail" type="text" class="form-control"
             (input)="launchValue()" />
           <!-- <div
                   class="alert alert-danger"
@@ -62,7 +62,7 @@
     </div>
     <div class="form-group">
       <label for="titreprofil">Titre du profil</label>
-      <input #titreprofil="ngModel" [(ngModel)]="cv.titreprofil" name="titreprofil" id="titreprofil" type="text"
+      <input #titreprofil="ngModel" [(ngModel)]="cvInformationPersnnelleData.titreprofil" name="titreprofil" id="titreprofil" type="text"
         placeholder="" class="form-control" (input)="launchValue()" />
       <!-- <div class="alert alert-danger" *ngIf="titreprofil.touched && titreprofil.invalid">
               Titre profil is required.
@@ -70,7 +70,7 @@
     </div>
     <div class="form-group">
       <label for="titreprofil">Numéro de Téléphone</label>
-      <input #tel="ngModel" [(ngModel)]="cv.tel" name="tel" id="tel" type="text" class="form-control"
+      <input #tel="ngModel" [(ngModel)]="cvInformationPersnnelleData.tel" name="tel" id="tel" type="text" class="form-control"
         (input)="launchValue()" />
       <!-- <div class="alert alert-danger" *ngIf="tel.touched && tel.invalid">
               Numéro de téléphone is required.
@@ -78,7 +78,7 @@
     </div>
     <div class="form-group">
       <label for="adresse">Adresse</label>
-      <input #adresse="ngModel" [(ngModel)]="cv.adresse" name="adresse" id="adresse" type="text" class="form-control"
+      <input #adresse="ngModel" [(ngModel)]="cvInformationPersnnelleData.adresse" name="adresse" id="adresse" type="text" class="form-control"
         (input)="launchValue()" />
       <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
               Adresse is required.
@@ -88,7 +88,7 @@
       <div class="col-6">
         <div class="form-group">
           <label for="codepostal">Code Postal</label>
-          <input #codepostal="ngModel" [(ngModel)]="cv.codepostal" name="codepostal" id="codepostal" type="text"
+          <input #codepostal="ngModel" [(ngModel)]="cvInformationPersnnelleData.codepostal" name="codepostal" id="codepostal" type="text"
             class="form-control" (input)="launchValue()" />
           <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
                   Adresse is required.
@@ -98,7 +98,7 @@
       <div class="col-6">
         <div class="form-group">
           <label for="ville">Ville</label>
-          <input #ville="ngModel" [(ngModel)]="cv.ville" name="ville" id="ville" type="text" class="form-control"
+          <input #ville="ngModel" [(ngModel)]="cvInformationPersnnelleData.ville" name="ville" id="ville" type="text" class="form-control"
             (input)="launchValue()" />
           <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
                   Adresse is required.
@@ -123,7 +123,7 @@
           <div class="col-12">
             <div class="form-group">
               <label for="nomfamille">Date de Naissance</label>
-              <input #nomfamille="ngModel" [(ngModel)]="cv.dateNaissance" name="dateNaissance" id="dateNaissance"
+              <input #nomfamille="ngModel" [(ngModel)]="cvInformationPersnnelleData.dateNaissance" name="dateNaissance" id="dateNaissance"
                 type="date" class="form-control" (input)="launchValue()" required />
 
             </div>
@@ -150,7 +150,7 @@
         <div class="col-12">
           <div class="form-group">
             <label for="nomfamille">Lieu de Naissance</label>
-            <input #nomfamille="ngModel" [(ngModel)]="cv.lieuNaissance" name="lieuNaissance" id="lieuNaissance"
+            <input #nomfamille="ngModel" [(ngModel)]="cvInformationPersnnelleData.lieuNaissance" name="lieuNaissance" id="lieuNaissance"
               type="text" class="form-control" (input)="launchValue()" required />
 
           </div>
@@ -172,7 +172,7 @@
       <div class="col-12">
         <div class="form-group">
           <label for="nomfamille">Etat civile</label>
-          <input #nomfamille="ngModel" [(ngModel)]="cv.etatCivil" name="etatCivil" id="etatCivil"
+          <input #nomfamille="ngModel" [(ngModel)]="cvInformationPersnnelleData.etatCivil" name="etatCivil" id="etatCivil"
             type="text" class="form-control" (input)="launchValue()" required />
 
         </div>
@@ -196,7 +196,7 @@
       <div class="col-12">
         <div class="form-group">
           <label for="nomfamille">Permis de conduire</label>
-          <input #nomfamille="ngModel" [(ngModel)]="cv.permisConduire" name="permisConduire" id="permisConduire"
+          <input #nomfamille="ngModel" [(ngModel)]="cvInformationPersnnelleData.permisConduire" name="permisConduire" id="permisConduire"
             type="text" class="form-control" (input)="launchValue()" required />
 
         </div>

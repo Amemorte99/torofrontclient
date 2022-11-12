@@ -13,7 +13,7 @@
             <!-- <form #f="ngForm" (ngSubmit)="save(f.value)"> -->
             <div class="form-group">
                 <label for="stageposte">Poste</label>
-                <input #stageposte="ngModel" [(ngModel)]="cv.lesactiviteextrapro.aproposte" name="stageposte" id="stageposte" type="text" class="form-control" (input)="launchValue()" />
+                <input #stageposte="ngModel" [(ngModel)]="cvActiviteData.aproposte" name="stageposte" id="stageposte" type="text" class="form-control" (input)="launchValue()" />
                 <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
                 Adresse is required.
               </div> -->
@@ -22,7 +22,7 @@
                 <div class="col-6">
                     <div class="form-group">
                         <label for="periodecour">Employeur</label>
-                        <input #employeur="ngModel" [(ngModel)]="cv.lesactiviteextrapro.aproemployeur" name="employeur" id="employeur" type="text" class="form-control" (input)="launchValue()" />
+                        <input #employeur="ngModel" [(ngModel)]="cvActiviteData.aproemployeur" name="employeur" id="employeur" type="text" class="form-control" (input)="launchValue()" />
                         <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
                     Adresse is required.
                   </div> -->
@@ -31,7 +31,7 @@
                 <div class="col-6">
                     <div class="form-group">
                         <label for="villestage">Ville</label>
-                        <input #villestage="ngModel" [(ngModel)]="cv.lesactiviteextrapro.aproville" name="villestage" id="villestage" type="text" class="form-control" (input)="launchValue()" />
+                        <input #villestage="ngModel" [(ngModel)]="cvActiviteData.aproville" name="villestage" id="villestage" type="text" class="form-control" (input)="launchValue()" />
                         <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
                     Adresse is required.
                   </div> -->
@@ -42,7 +42,7 @@
                 <div class="col-6">
                     <div class="form-group">
                         <label for="periodecour">Date de début</label>
-                        <input #dateDebut="ngModel" [(ngModel)]="cv.lesactiviteextrapro.aprodatedeb" name="dateDebut" id="dateDebut" type="date" class="form-control" (input)="launchValue()" />
+                        <input #dateDebut="ngModel" [(ngModel)]="cvActiviteData.aprodatedeb" name="dateDebut" id="dateDebut" type="date" class="form-control" (input)="launchValue()" />
                         <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
                     Adresse is required.
                   </div> -->
@@ -51,7 +51,7 @@
                 <div class="col-6">
                     <div class="form-group">
                         <label for="villestage">Date de fin</label>
-                        <input #dateFin="ngModel" [(ngModel)]="cv.lesactiviteextrapro.aprodatefin" name="dateFin" id="dateFin" type="date" class="form-control" (input)="launchValue()" />
+                        <input #dateFin="ngModel" [(ngModel)]="cvActiviteData.aprodatefin" name="dateFin" id="dateFin" type="date" class="form-control" (input)="launchValue()" />
                         <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
                     Adresse is required.
                   </div> -->
@@ -60,7 +60,7 @@
             </div>
             <div class="form-group">
                 <label for="nomcour">Description</label>
-                <input #descriptioncour="ngModel" [(ngModel)]="cv.lesactiviteextrapro.aprodescription" name="descriptioncour" id="descriptioncour" type="text" class="form-control" (input)="launchValue()" /><br />
+                <input #descriptioncour="ngModel" [(ngModel)]="cvActiviteData.aprodescription" name="descriptioncour" id="descriptioncour" type="text" class="form-control" (input)="launchValue()" /><br />
 
 
             </div>
@@ -76,7 +76,7 @@
             <!-- <form #f="ngForm" (ngSubmit)="save(f.value)"> -->
             <div class="form-group">
                 <label for="stageposte">Poste</label>
-                <input #stageposte="ngModel" [(ngModel)]="cv.lesactiviteextrapro.aproposte" name="stageposte" id="stageposte" type="text" class="form-control" (input)="launchValue()" />
+                <input #stageposte="ngModel" [(ngModel)]="cvActiviteData.aproposte" name="stageposte" id="stageposte" type="text" class="form-control" (input)="launchValue()" />
                 <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
                   Adresse is required.
                 </div> -->
@@ -85,7 +85,7 @@
                 <div class="col-6">
                     <div class="form-group">
                         <label for="periodecour">Employeur</label>
-                        <input #employeur="ngModel" [(ngModel)]="cv.lesactiviteextrapro.aproemployeur" name="employeur" id="employeur" type="text" class="form-control" (input)="launchValue()" />
+                        <input #employeur="ngModel" [(ngModel)]="cvActiviteData.aproemployeur" name="employeur" id="employeur" type="text" class="form-control" (input)="launchValue()" />
                         <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
                       Adresse is required.
                     </div> -->
@@ -94,7 +94,7 @@
                 <div class="col-6">
                     <div class="form-group">
                         <label for="villestage">Ville</label>
-                        <input #villestage="ngModel" [(ngModel)]="cv.lesactiviteextrapro.aproville" name="villestage" id="villestage" type="text" class="form-control" (input)="launchValue()" />
+                        <input #villestage="ngModel" [(ngModel)]="cvActiviteData.aproville" name="villestage" id="villestage" type="text" class="form-control" (input)="launchValue()" />
                         <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
                       Adresse is required.
                     </div> -->
@@ -105,7 +105,7 @@
                 <div class="col-6">
                     <div class="form-group">
                         <label for="periodecour">Date de début</label>
-                        <input #dateDebut="ngModel" [(ngModel)]="cv.lesactiviteextrapro.aprodatedeb" name="dateDebut" id="dateDebut" type="date" class="form-control" (input)="launchValue()" />
+                        <input #dateDebut="ngModel" [(ngModel)]="cvActiviteData.aprodatedeb" name="dateDebut" id="dateDebut" type="date" class="form-control" (input)="launchValue()" />
                         <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
                       Adresse is required.
                     </div> -->
@@ -114,7 +114,7 @@
                 <div class="col-6">
                     <div class="form-group">
                         <label for="villestage">Date de fin</label>
-                        <input #dateFin="ngModel" [(ngModel)]="cv.lesactiviteextrapro.aprodatefin" name="dateFin" id="dateFin" type="date" class="form-control" (input)="launchValue()" />
+                        <input #dateFin="ngModel" [(ngModel)]="cvActiviteData.aprodatefin" name="dateFin" id="dateFin" type="date" class="form-control" (input)="launchValue()" />
                         <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
                       Adresse is required.
                     </div> -->
@@ -123,7 +123,7 @@
             </div>
             <div class="form-group">
                 <label for="nomcour">Description</label>
-                <textarea #descriptioncour="ngModel" [(ngModel)]="cv.lesactiviteextrapro.aprodescription" name="descriptioncour" id="descriptioncour" type="text" class="form-control" (input)="launchValue()" cols="30" rows="10" class="summernote form-control"></textarea>
+                <textarea #descriptioncour="ngModel" [(ngModel)]="cvActiviteData.aprodescription" name="descriptioncour" id="descriptioncour" type="text" class="form-control" (input)="launchValue()" cols="30" rows="10" class="summernote form-control"></textarea>
 
 
             </div>
