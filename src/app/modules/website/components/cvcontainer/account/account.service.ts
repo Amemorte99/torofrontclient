@@ -11,7 +11,9 @@ export class AccountService {
 
   public amount:number =100;
 
-  public cvInfo? : {
+  public nomfamille?:string;
+
+  public cvInfo : {
     photoUrl?: string,
     photoUrl2?: string,
     prenom?: string,
@@ -25,8 +27,12 @@ export class AccountService {
     dateNaissance?: string,
     lieuNaissance?:string,
     etatCivil?:string,
-    permisConduire?:string
+    permisConduire?:string,
 
-  }
+    //profil
+    description?: string
+
+  } = {}
+
   constructor() { }
 }

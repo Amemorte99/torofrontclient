@@ -12,7 +12,7 @@ export class CvType1Component implements OnInit {
 
   @Input() cvData: any;
 
-  constructor(private accountService : AccountService) { }
+  constructor(public accountService : AccountService) { }
 
   ngOnInit(): void {
   }
@@ -27,12 +27,17 @@ export class CvType1Component implements OnInit {
 
 
   public get cvInfo(): any{
-    return this.accountService.amount;
+    return this.accountService.cvInfo;
   }
   public set cvInfo(cvData : any){
     this.accountService.cvInfo =cvData;
   }
 
+
+
+
+
+  
 
 
 }
