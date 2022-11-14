@@ -9,12 +9,7 @@ import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 
 
 })
-/**
- * ____ Initialiser le tableau avec un seul élément
- * _____ AJouter dans le localstorage a l'init
- * _____ Récupérer la valeur dans le localstorage
- * _____ Add formation : AJouter un nouvel élement dans le tableau , le stocker dans le localstorage ,rafraichir le composant
- */
+
 export class FormationFromComponent implements OnInit {
 
 
