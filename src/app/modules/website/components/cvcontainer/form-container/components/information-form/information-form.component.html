@@ -1,5 +1,6 @@
 <div class="divinf">
 
+
   <div class="btn-group  col-12 txtitre">
     <a data-toggle="collapse" data-target="#infoperso" aria-expanded="false" aria-controls="infoperso"
       class="btn text-start">
@@ -12,6 +13,7 @@
 
 
   <div class=" container px-5 collapse col-12" id="infoperso">
+    <button class="btn btn-primary" (click)="deposit()">+</button>
     <div class="form-group row">
       <div class="col-md-3">
         <label for="photoUrl">Photo</label>
@@ -37,7 +39,7 @@
             <div class="form-group">
               <label for="nomfamille">Nom de Famille</label>
               <input #nomfamille="ngModel" [(ngModel)]="cvInformationPersnnelleData.nomfamille" name="nomfamille" id="nomfamille" type="text"
-                class="form-control" (input)="launchValueOne($event)" required />
+                class="form-control" (input)="launchValue()" required />
               <!-- <div
                       class="alert alert-danger"
                       *ngIf="nomfamille.touched && nomfamille.invalid"

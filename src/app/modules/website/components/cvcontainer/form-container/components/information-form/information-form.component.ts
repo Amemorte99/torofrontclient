@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, OnChanges, OnInit, Output } from '@angular/core';
 import { ImagePickerConf } from 'ngp-image-picker';
+import { CvDataModel } from 'src/app/models/cv-data.models';
 import { InformationsPersonnelleModel } from 'src/app/models/informations-personnelle.models';
+import { AccountService } from '../../../account/account.service';
 
 @Component({
   selector: 'app-information-form',
@@ -10,6 +12,11 @@ import { InformationsPersonnelleModel } from 'src/app/models/informations-person
 })
 export class InformationFormComponent implements OnInit, OnChanges {
   @Output() sendDataCv: EventEmitter<any> = new EventEmitter()
+
+
+  @Output() toparentOutput: EventEmitter<any> = new EventEmitter();
+
+
   cvInformationPersnnelleData: InformationsPersonnelleModel = {
     photoUrl: "",
     photoUrl2: "./assets/images/cvimg/cv.jpg",
@@ -36,12 +43,13 @@ export class InformationFormComponent implements OnInit, OnChanges {
     // width: '320px',
     // height: '240px',
   };
-  constructor() { }
+  constructor(private accountService : AccountService) { }
+
 
   ngOnInit(): void {
   }
 
-  launchValue() {}
+
 
   launchValueOne(e: any) {
     this.cvInformationPersnnelleData.prenom = e.target.value
@@ -67,4 +75,18 @@ export class InformationFormComponent implements OnInit, OnChanges {
       this.sendDataCv.emit(this.cvInformationPersnnelleData)
   }
 
+  public deposit(): void{
+    this.amount +=100;
+  }
+
+  public get amount(): number{
+    return this.accountService.amount;
+  }
+  public set amount(valuee : number){
+    this.accountService.amount =valuee;
+  }
+
+  launchValue() {
+    this.toparentOutput.emit(this.cvInformationPersnnelleData)
+  }
 }

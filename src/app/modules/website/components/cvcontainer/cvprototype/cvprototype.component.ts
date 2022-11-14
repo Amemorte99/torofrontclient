@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AccountService } from '../account/account.service';
 
 @Component({
   selector: 'app-cvprototype',
@@ -9,7 +10,7 @@ export class CvprototypeComponent implements OnInit {
   @Input() cv: any
 
   value = 1;
-  constructor() { }
+  constructor(private accountService : AccountService) { }
 
   ngOnInit(): void {
   }
@@ -18,4 +19,7 @@ export class CvprototypeComponent implements OnInit {
   sendInformation(event:any){
     this.value = event
   }
+
+
+
 }

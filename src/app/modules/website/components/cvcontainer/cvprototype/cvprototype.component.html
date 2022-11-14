@@ -1,11 +1,12 @@
 <h1>
     {{ cv?.prenom }}
 </h1>
+
 <div class="container shadow bg-white  " style="max-width: 800.82px; max-height: 78vh; border-radius: 0.3rem; overflow: hidden; overflow-y: scroll;">
 
 
 
-    <app-cv-type1 *ngIf="value == 1" class="container-xxl"></app-cv-type1>
+    <app-cv-type1 *ngIf="value == 1" class="container-xxl"  ></app-cv-type1>
     <app-cv-type2 *ngIf="value == 2" class="container-xxl"></app-cv-type2>
     <app-cv-type3 *ngIf="value == 3" class="container-xxl"></app-cv-type3>
 
