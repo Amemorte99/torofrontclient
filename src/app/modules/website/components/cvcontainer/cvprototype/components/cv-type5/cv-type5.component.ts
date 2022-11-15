@@ -2,16 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { AccountService } from '../../../account/account.service';
 
 @Component({
-  selector: 'app-cv-type3',
-  templateUrl: './cv-type3.component.html',
-  styleUrls: ['./cv-type3.component.css']
+  selector: 'app-cv-type5',
+  templateUrl: './cv-type5.component.html',
+  styleUrls: ['./cv-type5.component.css']
 })
-export class CvType3Component implements OnInit {
+export class CvType5Component implements OnInit {
+
 
   constructor(public accountService : AccountService) { }
 
   ngOnInit(): void {
   }
+
 
   public get cvInfo(): any{
     return this.accountService.cvInfo;

@@ -85,6 +85,7 @@ import { CvType1Component } from './components/cvcontainer/cvprototype/component
 import { CvType2Component } from './components/cvcontainer/cvprototype/components/cv-type2/cv-type2.component';
 import { CvType3Component } from './components/cvcontainer/cvprototype/components/cv-type3/cv-type3.component';
 import { CvType4Component } from './components/cvcontainer/cvprototype/components/cv-type4/cv-type4.component';
+import { CvType5Component } from './components/cvcontainer/cvprototype/components/cv-type5/cv-type5.component';
 
 
 
@@ -126,6 +127,7 @@ import { CvType4Component } from './components/cvcontainer/cvprototype/component
     CvType2Component,
     CvType3Component,
     CvType4Component,
+    CvType5Component,
 
   ],
   imports: [
