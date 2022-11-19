@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {MDCTopAppBar} from '@material/top-app-bar';
-import { AccountService } from './account/account.service';
+import { Component, OnInit } from "@angular/core"
+
 
 @Component({
   selector: 'app-cvcontainer',
@@ -20,7 +19,7 @@ export class CvcontainerComponent implements OnInit {
     console.log(e)
     this.dataValue = e
   }
- 
+
 
 }
 

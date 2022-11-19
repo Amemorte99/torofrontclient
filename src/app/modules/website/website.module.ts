@@ -86,7 +86,7 @@ import { CvType2Component } from './components/cvcontainer/cvprototype/component
 import { CvType3Component } from './components/cvcontainer/cvprototype/components/cv-type3/cv-type3.component';
 import { CvType4Component } from './components/cvcontainer/cvprototype/components/cv-type4/cv-type4.component';
 import { CvType5Component } from './components/cvcontainer/cvprototype/components/cv-type5/cv-type5.component';
-import { NgxPrintModule } from 'ngx-print';
+import { NgxPrintElementModule } from 'ngx-print-element';
 
 
 
@@ -134,7 +134,6 @@ import { NgxPrintModule } from 'ngx-print';
   imports: [
     CommonModule,
     SharedModule,
-
     LayoutsModule,
     NgpImagePickerModule,
     FormsModule,
@@ -209,7 +208,7 @@ import { NgxPrintModule } from 'ngx-print';
     MatTableModule,
     FileUploadModule,
     NgxSummernoteModule,
-    NgxPrintModule
+    NgxPrintElementModule,
 
 
 
