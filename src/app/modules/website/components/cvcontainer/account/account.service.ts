@@ -32,6 +32,27 @@ export class AccountService {
     //profil
     description?: string
 
+    nomformation?: string,
+    etablissement?: string,
+    villeFormation?: string,
+    dateDebut?: string,
+    dateFin?: string,
+    descriptionformation?: string,
+   
+
+
+
+
+    formation? : any []
+    
+
+
+ 
+    
+   
+      
+    
+
   } = {}
 
   constructor() { }

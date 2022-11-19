@@ -4,6 +4,17 @@
 
 <h1>{{cvInfo?.description}}</h1>
 
+<td>{{cvInfo?.nomformation}}</td>
+
+<tbody>
+    <tr *ngFor="let item of cvInfo.formation">
+       
+        
+        <td>{{item.cvInfo?.nomformationT}}</td>
+     
+    </tr>
+<tbody>)
+
 
 
 <button [print]="['print-section', config2]" class="btn btn-main-2 mb-2">Print table</button>

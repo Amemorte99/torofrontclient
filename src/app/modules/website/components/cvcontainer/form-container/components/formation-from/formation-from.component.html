@@ -23,12 +23,12 @@
       <label for="formation">Formation</label>
       <input
         #formation="ngModel"
-        [(ngModel)]="cv.formation.nomformation"
+        [(ngModel)]="accountService.cvInfo.nomformation"
         name="formation"
         id="formation"
         type="text"
         class="form-control"
-        (input)="launchValue()"
+        (input)="launchValueOne($event, 'formation')"
       />
 
 
@@ -39,7 +39,7 @@
           <label for="etablissement">Etablissement</label>
           <input
             #etablissement="ngModel"
-            [(ngModel)]="cv.formation.etablissement"
+            [(ngModel)]="accountService.cvInfo.etablissement"
             name="etablissement"
             id="etablissement"
             type="text"
@@ -54,7 +54,7 @@
           <label for="villeFormation">Ville</label>
           <input
             #ville="ngModel"
-            [(ngModel)]="cv.formation.villeFormation"
+            [(ngModel)]="accountService.cvInfo.villeFormation"
             name="ville"
             id="ville"
             type="text"
@@ -72,7 +72,7 @@
           <label for="dateDebut">Date de début</label>
           <input
             #dateDebut="ngModel"
-            [(ngModel)]="cv.formation.dateDebut"
+            [(ngModel)]="accountService.cvInfo.dateDebut"
             name="dateDebut"
             id="dateDebut"
             type="date"
@@ -86,7 +86,7 @@
           <label for="dateFin">Date de fin</label>
           <input
             #dateFin="ngModel"
-            [(ngModel)]="cv.formation.dateFin"
+            [(ngModel)]="accountService.cvInfo.dateFin"
             name="dateFin"
             id="dateFin"
             type="date"
@@ -99,7 +99,7 @@
     <div class="form-group">
       <label for="descriptionformation">Description</label>
       <textarea #descriptionformation="ngModel"
-        [(ngModel)]="cv.formation.descriptionformation"
+        [(ngModel)]="accountService.cvInfo.descriptionformation"
         name="descriptionformation"
         id="descriptionformation"
         type="text"
@@ -111,20 +111,31 @@
     </div>
 
 
-    <button (click)="increment();addQuantity()" class="btn btn-plus " style="border: 1px solid #000;"><i class="fa-regular fa-plus h-6" ></i>Ajouter une formation</button>
+    <button (click)="increment();addFormation()" class="btn btn-plus " style="border: 1px solid #000;"><i class="fa-regular fa-plus h-6" ></i>Ajouter une formation</button>
 
 
 
 
-    <div class="" *ngFor="let quantity of quantities().controls; let i=index" [formGroupName]="i">
+    <div class="" *ngFor="let formation of formations().controls; let i=index" [formGroupName]="i">
 
+      <div class="form-group">
+        <label for="formation">Formation</label>
+        <input
+          #formation="ngModel"
+          [(ngModel)]="accountService.cvInfo.nomformation"
+          name="formation"
+          id="formation"
+          type="text"
+          class="form-control"
+          (input)="launchValueOne($event, 'formationT')"
+        />
       <div class="row">
         <div class="col-6">
           <div class="form-group">
             <label for="etablissement">Etablissement</label>
             <input
               #etablissement="ngModel"
-              [(ngModel)]="cv.formation.etablissement"
+              [(ngModel)]="accountService.cvInfo.etablissement"
               name="etablissement"
               id="etablissement"
               type="text"
@@ -139,7 +150,7 @@
             <label for="villeFormation">Ville</label>
             <input
               #ville="ngModel"
-              [(ngModel)]="cv.formation.villeFormation"
+              [(ngModel)]="accountService.cvInfo.villeFormation"
               name="ville"
               id="ville"
               type="text"
@@ -157,7 +168,7 @@
             <label for="dateDebut">Date de début</label>
             <input
               #dateDebut="ngModel"
-              [(ngModel)]="cv.formation.dateDebut"
+              [(ngModel)]="accountService.cvInfo.dateDebut"
               name="dateDebut"
               id="dateDebut"
               type="date"
@@ -171,7 +182,7 @@
             <label for="dateFin">Date de fin</label>
             <input
               #dateFin="ngModel"
-              [(ngModel)]="cv.formation.dateFin"
+              [(ngModel)]="accountService.cvInfo.dateFin"
               name="dateFin"
               id="dateFin"
               type="date"
@@ -185,7 +196,7 @@
         <label for="descriptionformation">Description</label>
 
         <textarea #descriptionformation="ngModel"
-        [(ngModel)]="cv.formation.descriptionformation"
+        [(ngModel)]="accountService.cvInfo.descriptionformation"
         name="descriptionformation"
         id="descriptionformation"
         type="text"
@@ -198,7 +209,7 @@
 
 
 
-      <i (click)="removeQuantity(i)" class="fa-solid fa-trash-can" style="font-size: 33px; padding: 2px; color: #09977C; border: 1px solid gainsboro;"></i>
+      <i (click)="removeFormation(i)" class="fa-solid fa-trash-can" style="font-size: 33px; padding: 2px; color: #09977C; border: 1px solid gainsboro;"></i>
 
     </div>
 
