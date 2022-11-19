@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
+import { AccountService } from '../../../account/account.service';
 
 
 @Component({
@@ -24,22 +25,22 @@ export class FormationFromComponent implements OnInit {
 
 
 
-
-
   @Input()
   count: any = 0;
   @Output()
   change: EventEmitter<number> = new EventEmitter<any>();
   @Output()  onFormGroupChange:EventEmitter<any> = new EventEmitter<any>();
   @Input() productForm!: FormGroup;
-  constructor(private fb:FormBuilder) {
+
+  
+  constructor(private fb:FormBuilder,public accountService: AccountService) {
     this.productForm = this.fb.group({
       name: '',
-      quantities: this.fb.array([]) ,
+      formations: this.fb.array([]) ,
     });
     this.myproductForm = this.fb.group({
       name: '',
-      quantities: this.fb.array([]) ,
+      formations: this.fb.array([]) ,
     });
   }
   formCheck :any  = ''
@@ -65,11 +66,11 @@ export class FormationFromComponent implements OnInit {
   }
 
  }
- quantities() : FormArray {
-  return this.productForm.get("quantities") as FormArray
+ formations() : FormArray {
+  return this.productForm.get("formations") as FormArray
  }
 
- newQuantity(): FormGroup {
+ newFormation(): FormGroup {
   return this.fb.group({
     nomformation: "",
     etablissement: "",
@@ -80,13 +81,13 @@ export class FormationFromComponent implements OnInit {
   })
  }
 
- addQuantity() {
-  this.quantities().push(this.newQuantity());
+ addFormation() {
+  this.formations().push(this.newFormation());
 
  }
 
- removeQuantity(i:number) {
-  this.quantities().removeAt(i);
+ removeFormation(i:number) {
+  this.formations().removeAt(i);
  }
 
  onSub() {
@@ -115,9 +116,31 @@ export class FormationFromComponent implements OnInit {
 
 
   };
+  
   launchValue() {
 
   }
+  
+  launchValueOne(e: any, type: string) {
+    // this.cvInformationPersnnelleData.prenom = e.target.value
+    let cv = this.accountService.cvInfo;
+    //this.quantities.controls[index].value.material = item.nombre
+  
+    //   this.sendDataCv.emit(this.cvInformationPersnnelleData)
+    
+    console.log(cv);
+    console.log(e.target.value);
+    if (type == 'formation') {
+      cv.nomformation = e.target.value;
+
+      this.accountService.cvInfo.formation?.push(this.accountService.cvInfo.formation)
+    
+    }  else if (type == 'formationT') {
+      cv.nomformation = e.target.value;
+    }
+    
+  }
+
 
 
 
