@@ -91,23 +91,7 @@ body {
     margin-bottom: 0;
 }
 
-.resume .resume_left ul li .icon {
-    width: 45px;
-    height: 25px;
-    background: #e12454;
-    color: #e12454;
-    margin-right: 10px;
-    font-size: 16px;
-    position: relative;
-}
 
-.resume .icon i,
-.resume .resume_right .resume_hobby ul li i {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
 .resume .resume_left ul li .data {
     color: #b1eaff;
@@ -219,9 +203,7 @@ body {
     color: #000;
 }
 
-.resume .resume_right .resume_hobby ul li i {
-    font-size: 30px;
-}
+
 
 .resume .resume_right .resume_hobby ul li:before {
     content: "";
