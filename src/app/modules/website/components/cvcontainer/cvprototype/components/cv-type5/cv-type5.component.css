@@ -1,0 +1,5 @@
+*{
+    outline: none;
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust:exact !important;
+}

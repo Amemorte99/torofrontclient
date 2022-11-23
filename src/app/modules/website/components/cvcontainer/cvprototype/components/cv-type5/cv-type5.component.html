@@ -1,176 +1,66 @@
+<h1>{{cvInfo?.prenom}}</h1>
+<h1>{{cvInfo?.nomfamille}}</h1>
+<h1>{{cvInfo?.adresse}}</h1>
+
+<h1>{{cvInfo?.description}}</h1>
+
+<td>{{cvInfo?.nomformation}}</td>
+
+
+
+
 <button [print]="['print-section', config2]" class="btn btn-main-2 mb-2">Print table</button>
 
 
 
-            <div class="container justify-content-start p-5">
-              <div id="print-section" class="container shadow bg-white p-3 mx-5 justify-content-center">
-          
-                <div class="row">
-                    <div class="col-8 text-justify ">
-                        <div class="container- justify-content-center py-2  mb-5" >
+
+<article class="resume-wrapper text-center position-relative " id="print-section">
+    <div class="resume-wrapper-inner mx-auto text-start bg-white ">
+        <header class="resume-header container pt-4 pt-md-0" >
+            <div class="row">
+              
+                <!--//col-->
+                <div class="col">
+                    <div class="row p-4 justify-content-center justify-content-md-between">
+                        <div class="primary-info col-auto ">
                             <h1 class="justify-content-center px-3">KOTOR A. <span style="color: #e12454;">VICTOR</span></h1>
                             <h6 class="px-3 justify-content-center">COMMUNICATION /MARKETING</h6>
-          
-                        </div>
-                        <div class="resume_right   mx-0 mb-4" style="width: 100%;" >
-                            <div class="container  py-2 " >
-                               
-                                <div class="row">
-                                    <div class="col-1">
-                                        <ul class="justify-content-center" style=" list-style:none; width: 30px; height: auto; border: 2px solid #e12454; border-radius: 4rem; color: #e12454;padding: 2px;" >
-                                            <li class="">
-                                                <i class="far fa-envelope fa-fw me-2"
-                                                    data-fa-transform="grow-3"></i>
-                                                    
-                                            </li>
-                                            <li class="">
-                                                <i class="fas fa-phone-volume fa-fw me-2"
-                                                    data-fa-transform="grow-6">
-                                                </i>
-                                            </li>
-                                            <li class="">
-                                                <i class="fas fa-home fa-fw me-2"
-                                                        data-fa-transform="grow-6">
-                                                </i>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-10" >
-                                        <ul class="list-unstyled text-justify-start" >
-                                            <li class="">
-                                                    Steve.Doe@website.com
-                                            </li>
-                                            <li class="">
-                                                0123 456 78900
-                                            </li>
-                                            <li class="">
-                                               0123 456 78900
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-          
-          
-          
-                            </div>
-                            <div class="container resume_item resume_about ">
-                                <div class="title mt-4 ">
-                                    <p class="bold " style="color: #e12454; font-weight: 900;">PROFIL</p>
-                                </div>
-          
-                                <p class=" p-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis illo fugit officiis distinctio culpa officia totam atque exercitationem inventore repudiandae?</p>
-                            </div>
-                            <div class=" resume_item resume_work mx-0 pr-2 container">
-                                <div class="title ">
-                                    <p class="bold " style="color: #e12454; font-weight: 900;">Expérience professionnelles </p>
-                                </div>
-                                <div class="row p-2">
-                                    <div class="col-4">
-                                        <div class="date ">2017 - Present</div>
-          
-                                    </div>
-                                    <div class="col-8">
-                                        <ul style="list-style:none;">
-                                            <li>
-                                                <div class="info pr-1">
-                                                    <div class="bold "><h6>Lorem ipsum dolor sit amet.</h6></div>
-                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, voluptatibus!</p>
-                                                </div>
-                                            </li>
-                                        </ul>
-          
-                                    </div>
-          
-                                    <div class="col-4">
-                                        <div class="date ">2019 - 2020</div>
-          
-                                    </div>
-                                    <div class="col-8">
-                                        <ul>
-                                            <li>
-                                                <div class="info pr-1">
-                                                    <div class="bold pr-1"><h6>Lorem ipsum dolor sit amet.</h6></div>
-                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, voluptatibus!</p>
-                                                </div>
-                                            </li>
-                                        </ul>
-          
-                                    </div>
-                                    <div class="col-4"     
-                                    >
-                                        <div class="date ">2017 - 2018</div>
-          
-                                    </div>
-                                    <div class="col-8">
-                                        <ul>
-                                            <li>
-                                                <div class="info pr-1">
-                                                    <div class="bold pr-1"><h6>Lorem ipsum dolor sit amet.</h6></div>
-                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, voluptatibus!</p>
-                                                </div>
-                                            </li>
-                                        </ul>
-          
-                                    </div>
-          
-          
-          
-          
-                                </div>
-          
-                            </div>
-                            <div class="container resume_skills my-1">
-                                <div class="resume_itemi resume_skills ">
-                                    <div class="title ">
-                                        <p class="bold " style="color: #e12454; font-weight: 900;">RÉFERENCES</p>
-                                    </div>
-                                   <div class="row p-1">
-                                        <div class="col-6">
-                                            <ul >
-                                                <li class=" pb-1 mb-1">
-          
-                                                    <div class="info ">
-                                                        <div class="semi-bold pb-1"><h5>Mr joe</h5></div>
-                                                        <p class="mb-0" style="font-size: 14px;"> voluptatibus!</p>
-                                                        <div class="date mt-0">Tel:228 9678 787</div>
-                                                    </div>
-                                                </li>
-                                                <li class=" pb-1 mb-1">
-                                                    <div class="info ">
-                                                        <div class="semi-bold "><h5>Mme jane</h5></div>
-                                                        <p class="mb-0" style="font-size: 14px;">Lorem ipsum dolor sit amet voluptatibus!</p>
-                                                        <div class="date mt-0">Tel:228 9678 787</div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-6">
-                                            <ul >
-                                                <li class=" pb-1 mb-1">
-          
-                                                    <div class="info ">
-                                                        <div class="semi-bold pb-1"><h5>Mr joe</h5></div>
-                                                        <p class="mb-0" style="font-size: 14px;"> voluptatibus!</p>
-                                                        <div class="date mt-0">Tel:228 9678 787</div>
-                                                    </div>
-                                                </li>
-                                                <li class=" pb-1 mb-1">
-                                                    <div class="info ">
-                                                        <div class="semi-bold "><h5>Mme jane</h5></div>
-                                                        <p class="mb-0" style="font-size: 14px;">Lorem ipsum dolor sit amet voluptatibus!</p>
-                                                        <div class="date mt-0">Tel:228 9678 787</div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                   </div>
+                         <div class="row mt-4">
+                            <div class="col-1">
+                                <ul class="justify-content-center" style=" list-style:none; width: 30px; height: auto; border: 2px solid #e12454; border-radius: 4rem; color: #e12454;padding: 2px;" >
+                                    <li class="">
+                                        <i class="far fa-envelope fa-fw me-2"
+                                            data-fa-transform="grow-3"></i>
+                                            
+                                    </li>
+                                    <li class="">
+                                        <i class="fas fa-phone-volume fa-fw me-2"
+                                            data-fa-transform="grow-6">
+                                        </i>
+                                    </li>
+                                    <li class="">
+                                        <i class="fas fa-home fa-fw me-2"
+                                                data-fa-transform="grow-6">
+                                        </i>
+                                    </li>
+                                </ul>
+                              </div>
+                                <div class="col-10 px-3" >
+                                    <ul class="list-unstyled text-justify-start" >
+                                        <li class="">
+                                                Steve.Doe@website.com
+                                        </li>
+                                        <li class="">
+                                            0123 456 78900
+                                        </li>
+                                        <li class="">
+                                           0123 456 78900
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
-                        </div>
-          
-                    </div>
-
-                    <div class="col-4 pl-1 ">
+                         </div>
+                        <!--//primary-info-->
                         <div class="secondary-info col-auto mt-2 mb-5" style=" width: 205px; height: 185px; border-right: 9px solid #e12454; border-radius: 50%;">
                           
                             <img src="https://i.imgur.com/eCijVBe.png " alt="profile_pic"
@@ -179,103 +69,258 @@
 
                                
                         </div>
-                        <div class="container mt-5">
-                           
-                            <div class="col mt-5">
-                                <p class="bold " style="color: #e12454; font-weight: 900;">EDUCATIONS</p>
-                            </div>
-                            
-                            <div class="col-12">
-                                <ul style="list-style:none;">
-                                    <li>
-                                        <div class=" text-black">
-                                            <h4 style="font-weight: 600; font-size: 14px" class="m-0">LICENCE</h4>
-                                           
-                                            <P class="semi-boldi m-0" style="font-size: 11px;">Lorem ipsum dolor </P>
-                                            <h6 style="font-size: 9px;" class="m-0">2019 - 2022</h6>
-          
-                                        </div>
-                                    </li>
-                                </ul>
-          
-                            </div>
-                            <div class="col-12">
-                                <ul style="list-style:none;">
-                                    <li>
-                                        <div class=" text-black">
-                                            <h4 style="font-weight: 600; font-size: 14px" class="m-0">LICENCE</h4>
-                                           
-                                            <P class="semi-boldi m-0" style="font-size: 11px;">Lorem ipsum dolor </P>
-                                            <h6 style="font-size: 9px;" class="m-0">2019 - 2022</h6>
-          
-                                        </div>
-                                    </li>
-                                </ul>
-          
-                            </div>
-
-                            <div class="col mt-5">
-                                <p class="bold " style="color: #e12454; font-weight: 900;">LANGUES</p>
-                            </div>
-                            <div class="col-12">
-                                <ul >
-                                    <li>
-                                        <div class=" text-black">
-                                            <P class="semi-boldi m-0" style="font-size: 11px;">Kim</P>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class=" text-black">
-                                           
-                                            <P class="semi-boldi m-0" style="font-size: 11px;">Anglais </P>
-                                           
-                                        </div>
-                                    </li>
-                                </ul>
-          
-                            </div>
-                            <div class="title ">
-                                <p class="bold " style="color: #e12454; font-weight: 900;">COMPÉTENCES</p>
-                            </div>
-                            <ul>
-                                <li>
-                                    <div class=" text-black">
-                                        <P class="semi-boldi m-0" style="font-size: 11px;">Maths</P>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class=" text-black">
-                                       
-                                        <P class="semi-boldi m-0" style="font-size: 11px;">Word </P>
-                                       
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class=" text-black">
-                                        <P class="semi-boldi m-0" style="font-size: 11px;">Excel</P>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class=" text-black">
-                                       
-                                        <P class="semi-boldi m-0" style="font-size: 11px;">Power point </P>
-                                       
-                                    </div>
-                                </li>
-                            </ul>
-                           
-                            
-                        </div>
-                        
+                        <!--//secondary-info-->
                     </div>
-                   
+                    <!--//row-->
+
                 </div>
-          
-              </div>
-          
-          
+                <!--//col-->
             </div>
-          
+            <!--//row-->
+        </header>
+        <div class="resume-body px-5 pt-3">
+            <section class="resume-section summary-section mb-1">
+                        <section class="resume-section experience-section mb-2">
+                          <div class="row">
+                                <div class="col-8">
+                                    <h4 class="resume-section-title text-justify font-weight-bold  mb-2" style="color: #e12454; font-weight: 900;">Profil
+                                    </h4>
+                                    <div class="resume-section-content">
+                                        <p class=" text-justify" style="font-size: 14px;">
+                                            adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
+                                            magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+                                            pellentesque eu, pretium quis, sem. Nulla
+                                            consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget. Lorem
+                                            ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                                    </div>
+                                    <h4 class="text-justify text-uppercase font-weight-bold pb-3 mb-3" style="color: #e12454; font-weight: 900;">
+                                        Experiences</h4>
+                                    <div class="resume-section-content">
+                                        <div class="resume-timeline position-relative">
+                                            <article class="resume-timeline-item position-relative pb-5 ">
+                                                <div class="row">
+                                                    <div class="col-4 text-black">
+                                                        <div class=" text-justify" >2020 - Present</div>
+                                                    </div>
+                                                    <div class="col-8">
+                                                        <div class="resume-timeline-item-header mb-2">
+                                                            <div class="d-flex flex-column flex-md-row">
+                                                                <h5
+                                                                    class="resume-position-title font-weight-bold mb-1 text-justify text-black">
+                                                                    Lead Developer</h5>
+                                                            </div>
+                                                            <!--//row-->
+        
+                                                        </div>
+                                                        <!--//resume-timeline-item-header-->
+                                                        <div class="resume-timeline-item-desc">
+                                                            <p class="text-justify" style="font-size: 14px;">Role description goes here ipsum dolor sit
+                                                                amet,
+                                                                consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                                                                Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                                                parturient
+                                                                montes, nascetur ridiculus
+                                                                mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
+                                                                quis,
+                                                                sem. Donec pede justo, fringilla vel.</p>
+                                                        </div>
+                                                        <!--//resume-timeline-item-desc-->
+        
+                                                    </div>
+                                                </div>
+        
+        
+        
+                                            </article>
+                                            <article class="resume-timeline-item position-relative pb-2">
+                                                <div class="row">
+                                                    <div class="col-4">
+                                                        <div class=" text-justify text-black" >2020 - Present</div>
+                                                    </div>
+                                                    <div class="col-8">
+                                                        <div class="resume-timeline-item-header mb-2">
+                                                            <div class="d-flex flex-column flex-md-row">
+                                                                <h5
+                                                                    class="resume-position-title font-weight-bold mb-1 text-justify text-black">
+                                                                    Lead Developer</h5>
+                                                            </div>
+                                                            <!--//row-->
+        
+                                                        </div>
+                                                        <!--//resume-timeline-item-header-->
+                                                        <div class="resume-timeline-item-desc">
+                                                            <p class="text-justify" style="font-size: 14px;">Role description goes here ipsum dolor sit
+                                                                amet,
+                                                                consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                                                                Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                                                parturient
+                                                                montes, nascetur ridiculus
+                                                                mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
+                                                                quis,
+                                                                sem. Donec pede justo, fringilla vel.</p>
+                                                        </div>
+                                                        <!--//resume-timeline-item-desc-->
+        
+                                                    </div>
+                                                </div>
+        
+        
+        
+                                            </article>
+                                            <article class="resume-timeline-item position-relative pb-2">
+                                                <div class="row">
+                                                    <div class="col-4">
+                                                        <div class=" text-justify text-black">2020 - Present</div>
+                                                    </div>
+                                                    <div class="col-8">
+                                                        <div class="resume-timeline-item-header mb-2">
+                                                            <div class="d-flex flex-column flex-md-row">
+                                                                <h5
+                                                                    class="resume-position-title font-weight-bold mb-1 text-justify">
+                                                                    Lead Developer</h5>
+                                                            </div>
+                                                            <!--//row-->
+        
+                                                        </div>
+                                                        <!--//resume-timeline-item-header-->
+                                                        <div class="resume-timeline-item-desc">
+                                                            <p class="text-justify" style="font-size: 14px;">Role description goes here ipsum dolor sit
+                                                                amet,
+                                                                consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                                                                Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                                                parturient
+                                                                montes, nascetur ridiculus
+                                                                mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
+                                                                quis,
+                                                                sem. Donec pede justo, fringilla vel.</p>
+                                                        </div>
+                                                        <!--//resume-timeline-item-desc-->
+        
+                                                    </div>
+                                                </div>
+        
+        
+        
+                                            </article>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4" style="color: black;">
+                                    <div class="container ">
+
+
+                                       <div class="educ">
+                                            <h4 class="resume-section-title text-justify font-weight-bold  mb-2" style="color: #e12454; font-weight: 900;">EDUCATIONS
+                                            </h4>
+                                            <div class="resume-section-content mt-3 mb-2">
+                                                <h1 class=" text-justify m-0" style="font-size: 16px;">Anglais</h1>
+                                                <p class=" text-justify m-0" style="font-size: 14px; ">
+                                                        ipsum dolor </p>
+                                            <h1 class=" text-justify m-0" style="font-size: 14px;">Anglais</h1>       
+                                            </div>
+
+                                            
+                                            <div class="resume-section-content mt-3 mb-2">
+                                                <h1 class=" text-justify m-0" style="font-size: 16px;">Anglais</h1>
+                                                <p class=" text-justify m-0" style="font-size: 14px; ">
+                                                        ipsum dolor sit elit.</p>
+                                            <h1 class=" text-justify m-0" style="font-size: 14px;">Anglais</h1>       
+                                            </div>
+                                       </div>
+
+                                       <div class="lan">
+                                            <h4 class="resume-section-title text-justify font-weight-bold  mb-2" style="color: #e12454; font-weight: 900;">LANGUES
+                                            </h4>
+                                            <div class="resume-section-content mt-3 mb-3">
+                                                <h1 class=" text-justify m-0" style="font-size: 16px;">Anglais</h1>
+                                                <h1 class=" text-justify m-0" style="font-size: 16px;">Anglais</h1> 
+                                                <h1 class=" text-justify m-0" style="font-size: 16px;">Anglais</h1>       
+                                            </div>
+
+                                        
+                                        
+                                         </div>
+                                         <div class="com">
+                                            <h4 class="resume-section-title text-justify font-weight-bold  mb-2" style="color: #e12454; font-weight: 900;">COMPETENCES
+                                            </h4>
+                                            <div class="resume-section-content mt-3 mb-3">
+                                                <h1 class=" text-justify m-0" style="font-size: 16px;">Anglais</h1>
+                                                <h1 class=" text-justify m-0" style="font-size: 16px;">Anglais</h1> 
+                                                <h1 class=" text-justify m-0" style="font-size: 16px;">Anglais</h1>       
+                                            </div>
+                                        
+                                         </div>
+                                   
+                                    </div>
+
+                                </div>
+                              
+                         </div>
+                            
+                            <!--Centre d'interet-->
+                            <div class="col-lg-12">
+                                <h4 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3 text-justify">Centre
+                                    D'interet et loisirs</h4>
+        
+        
+                                <div class="resume-timeline position-relative">
+                                    <article class="resume-timeline-item position-relative pb-2 ">
+                                        <div class="row">
+                                            <div class="col-3"></div>
+                                            <div class="col-9">
+                                                <div class="row resume-timeline-item-header mb-2">
+                                                    <div class="d-flex flex-column flex-md-row col-3">
+                                                        <h6 class="resume-position-title font-weight-bold mb-1 text-justify">
+                                                            Lead
+                                                            Developer</h6>
+                                                    </div>
+                                                    <div class="d-flex flex-column flex-md-row col-3">
+                                                        <h6 class="resume-position-title font-weight-bold mb-1 text-justify">
+                                                            Lead
+                                                            Developer</h6>
+                                                    </div>
+                                                    <div class="d-flex flex-column flex-md-row col-3">
+                                                        <h6 class="resume-position-title font-weight-bold mb-1 text-justify">
+                                                            Lead
+                                                            Developer</h6>
+                                                    </div>
+                                                    <div class="d-flex flex-column flex-md-row col-3">
+                                                        <h6 class="resume-position-title font-weight-bold mb-1 text-justify">
+                                                            Lead
+                                                            Developer</h6>
+                                                    </div>
+                                                </div>
+        
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+        
+                        </section>
+            </section>
+
+        </div>
+        <!--//resume-body-->
+
+
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
