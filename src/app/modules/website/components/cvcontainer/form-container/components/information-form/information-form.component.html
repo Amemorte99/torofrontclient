@@ -40,12 +40,7 @@
               <label for="nomfamille">Nom de Famille</label>
               <input #nomfamille="ngModel" [(ngModel)]="cvInformationPersnnelleData.nomfamille" name="nomfamille" id="nomfamille" type="text"
                 class="form-control" (input)="launchValueOne($event, 'nom')" required />
-              <!-- <div
-                      class="alert alert-danger"
-                      *ngIf="nomfamille.touched && nomfamille.invalid"
-                    >
-                      Nom de Famille is required.
-                    </div> -->
+            
             </div>
           </div>
         </div>

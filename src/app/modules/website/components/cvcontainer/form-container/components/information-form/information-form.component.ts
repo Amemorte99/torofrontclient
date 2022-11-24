@@ -7,7 +7,6 @@ import {
   Output,
 } from '@angular/core';
 import { ImagePickerConf } from 'ngp-image-picker';
-import { CvDataModel } from 'src/app/models/cv-data.models';
 import { InformationsPersonnelleModel } from 'src/app/models/informations-personnelle.models';
 import { AccountService } from '../../../account/account.service';
 

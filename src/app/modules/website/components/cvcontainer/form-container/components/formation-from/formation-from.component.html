@@ -121,22 +121,20 @@
       <div class="form-group">
         <label for="formation">Formation</label>
         <input
-          #formation="ngModel"
-          [(ngModel)]="accountService.cvInfo.nomformation"
-          name="formation"
+        
+        
           id="formation"
           type="text"
           class="form-control"
-          (input)="launchValueOne($event, 'formationT')"
+         
         />
       <div class="row">
         <div class="col-6">
           <div class="form-group">
             <label for="etablissement">Etablissement</label>
             <input
-              #etablissement="ngModel"
-              [(ngModel)]="accountService.cvInfo.etablissement"
-              name="etablissement"
+            
+             
               id="etablissement"
               type="text"
               class="form-control"
@@ -149,9 +147,8 @@
           <div class="form-group">
             <label for="villeFormation">Ville</label>
             <input
-              #ville="ngModel"
-              [(ngModel)]="accountService.cvInfo.villeFormation"
-              name="ville"
+              
+              
               id="ville"
               type="text"
               class="form-control"
@@ -167,9 +164,8 @@
           <div class="form-group">
             <label for="dateDebut">Date de début</label>
             <input
-              #dateDebut="ngModel"
-              [(ngModel)]="accountService.cvInfo.dateDebut"
-              name="dateDebut"
+            
+              
               id="dateDebut"
               type="date"
               class="form-control"
@@ -181,9 +177,8 @@
           <div class="form-group">
             <label for="dateFin">Date de fin</label>
             <input
-              #dateFin="ngModel"
-              [(ngModel)]="accountService.cvInfo.dateFin"
-              name="dateFin"
+              
+             
               id="dateFin"
               type="date"
               class="form-control"
@@ -195,9 +190,8 @@
       <div class="form-group">
         <label for="descriptionformation">Description</label>
 
-        <textarea #descriptionformation="ngModel"
-        [(ngModel)]="accountService.cvInfo.descriptionformation"
-        name="descriptionformation"
+        <textarea 
+        
         id="descriptionformation"
         type="text"
         class="form-control"

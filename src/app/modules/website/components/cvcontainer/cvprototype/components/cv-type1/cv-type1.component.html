@@ -1,19 +1,8 @@
-<h1>{{cvInfo?.prenom}}</h1>
-<h1>{{cvInfo?.nomfamille}}</h1>
+
 <h1>{{cvInfo?.adresse}}</h1>
 
-<h1>{{cvInfo?.description}}</h1>
 
-<td>{{cvInfo?.nomformation}}</td>
 
-<tbody>
-    <tr *ngFor="let item of cvInfo.formation">
-       
-        
-        <td>{{item.cvInfo?.nomformationT}}</td>
-     
-    </tr>
-<tbody>)
 
 
 
@@ -33,13 +22,15 @@
                 <div class="col">
                     <div class="row p-4 justify-content-center justify-content-md-between">
                         <div class="primary-info col-auto ">
-                            <h3 class="name mt-0 mb-1 text-white text-uppercase  text-justify">Steve Doe</h3>
-                            <div class="title mb-3 text-white text-justify">Full Stack Developer</div>
+                            <h3 class="name mt-0 mb-1 text-white text-uppercase  text-justify">{{cvInfo?.prenom + " " + cvInfo?.nomfamille }}</h3>
+                            <div class="title mb-3 text-white text-justify">{{cvInfo?.titreprofil}}</div>
                             <ul class="list-unstyled">
                                 <li class="mb-2 text-white text-justify"><i class="far fa-envelope fa-fw me-2"
-                                        data-fa-transform="grow-3"></i>Steve.Doe@website.com</li>
+                                        data-fa-transform="grow-3"></i>{{cvInfo?.mail}}</li>
                                 <li class="text-white text-justify"><i class="fas fa-mobile-alt fa-fw me-2"
-                                        data-fa-transform="grow-6"></i>0123 456 78900</li>
+                                        data-fa-transform="grow-6"></i>{{cvInfo?.tel}}</li>
+                                <li class="text-white text-justify"><i class="fas fa-home fa-fw me-2"
+                                            data-fa-transform="grow-6"></i>{{cvInfo?.codepostal + "/"+ cvInfo?.adresse + "/"+ cvInfo?.ville}}</li>
                             </ul>
                         </div>
                         <!--//primary-info-->
@@ -61,18 +52,7 @@
                 <h4 class="resume-section-title text-justify font-weight-bold  mb-2" style="color: #343a40;">Profil
                 </h4>
                 <div class="resume-section-content">
-                    <p class=" text-justify">Summarise your career here. <a class="text-reset text-link"
-                            href="https://themes.3rdwavemedia.com/resources/sketch-template/pillar-sketch-sketch-resume-template-for-developers/"
-                            target="_blank">You can make a PDF version of your resume using our free Sketch template
-                            here</a>.
-                        Aenean commodo ligula eget dolor aenean massa. Cum sociis natoque penatibus et magnis dis
-                        parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu.
-                        Lorem ipsum dolor sit amet, consectetuer
-                        adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
-                        magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
-                        pellentesque eu, pretium quis, sem. Nulla
-                        consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget. Lorem
-                        ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                    <p class=" text-justify">{{cvInfo?.description}}</p>
                 </div>
                 <!--//summary-section-->
                 <div class="row">
