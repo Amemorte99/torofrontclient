@@ -28,7 +28,7 @@
       </textarea>
     </div>
     <button (click)="increment();addQuantity()" class="btn btn-plus " style="border: 1px solid #000;"><i class="fa-regular fa-plus h-6" ></i>Ajouter une référence</button>
-    <div class="" *ngFor="let quantity of quantities().controls; let i=index" [formGroupName]="i">
+    <div class="" *ngFor="let quantity of quantities().controls; let i=index" >
 
       <div class="form-group row">
       <label for="titrerealisation">Description</label>

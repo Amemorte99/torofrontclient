@@ -16,14 +16,37 @@
 
 
 
-  <div class=" container px-5 collapse " id="centreInteret">
+  <div class="   collapse " id="centreInteret">
     <!-- <form #f="ngForm" (ngSubmit)="save(f.value)"> -->
       <div class="col-12">
         <div class="form-group">
           <label for="interet">interet</label>
           <input
-            #etablissement="ngModel"
-            [(ngModel)]="cv.interet"
+          
+            name="interet"
+            id="interet"
+            type="text"
+            class="form-control"
+            (input)="launchValue()"
+          />
+         
+
+        </div>
+      </div>
+
+
+
+    <button (click)="increment();addQuantity()" class="btn btn-plus " style="border: 1px solid #000;"><i class="fa-regular fa-plus h-6" ></i>Ajouter un Centre d'interet</button>
+
+  </div>
+  <div class="container" *ngFor="let quantity of quantities().controls; let i=index" >
+
+    <div class="row">
+      <div class="col-12">
+        <div class="form-group">
+          <label for="interet">interet</label>
+          <input
+           
             name="interet"
             id="interet"
             type="text"
@@ -34,39 +57,10 @@
         </div>
       </div>
 
-
-
-    <button (click)="increment();addQuantity()" class="btn btn-plus " style="border: 1px solid #000;"><i class="fa-regular fa-plus h-6" ></i>Ajouter un Centre d'interet</button>
-
-
-
-
-    <div class="container" *ngFor="let quantity of quantities().controls; let i=index" [formGroupName]="i">
-
-      <div class="row">
-        <div class="col-12">
-          <div class="form-group">
-            <label for="interet">interet</label>
-            <input
-             
-              name="interet"
-              id="interet"
-              type="text"
-              class="form-control"
-              (input)="launchValue()"
-            />
-
-          </div>
-        </div>
-
-      </div>
-
-      <i (click)="removeQuantity(i)" class="fa-solid fa-trash-can" style="font-size: 33px; padding: 2px; color: #09977C; border: 1px solid gainsboro;"></i>
-
     </div>
 
-
-
+    <i (click)="removeQuantity(i)" class="fa-solid fa-trash-can" style="font-size: 33px; padding: 2px; color: #09977C; border: 1px solid gainsboro;"></i>
 
   </div>
+
 </div>
