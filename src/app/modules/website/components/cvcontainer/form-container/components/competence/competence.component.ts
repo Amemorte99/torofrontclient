@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
+import { AccountService } from '../../../account/account.service';
 
 @Component({
   selector: 'app-competence',
@@ -17,7 +18,7 @@ export class CompetenceComponent implements OnInit {
   change: EventEmitter<number> = new EventEmitter<any>();
   @Output()  onFormGroupChange:EventEmitter<any> = new EventEmitter<any>();
   @Input() productForm!: FormGroup;
-  constructor(private fb:FormBuilder) {
+  constructor(private fb:FormBuilder,public accountService: AccountService) {
     this.productForm = this.fb.group({
       name: '',
       quantities: this.fb.array([]) ,
@@ -96,5 +97,22 @@ export class CompetenceComponent implements OnInit {
   launchValue() {
 
   }
+
+
+  launchValueOne(e: any, type: string) {
+    // this.cvInformationPersnnelleData.prenom = e.target.value
+    let cv = this.accountService.cvInfo;
+
+    //   this.sendDataCv.emit(this.cvInformationPersnnelleData)
+
+
+    if (type == 'competence') {
+      cv.competence = e.target.value;
+    }
+
+
+
+  }
+
 
 }

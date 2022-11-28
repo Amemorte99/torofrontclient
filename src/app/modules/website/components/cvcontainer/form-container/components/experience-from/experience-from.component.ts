@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
+import { AccountService } from '../../../account/account.service';
 
 @Component({
   selector: 'app-experience-from',
@@ -24,7 +25,7 @@ export class ExperienceFromComponent implements OnInit {
   change: EventEmitter<number> = new EventEmitter<any>();
   @Output()  onFormGroupChange:EventEmitter<any> = new EventEmitter<any>();
   @Input() productForm!: FormGroup;
-  constructor(private fb:FormBuilder) {
+  constructor(private fb:FormBuilder,public accountService: AccountService) {
     this.productForm = this.fb.group({
       name: '',
       quantities: this.fb.array([]) ,
@@ -115,20 +116,75 @@ export class ExperienceFromComponent implements OnInit {
         datedebutproun: "",
         datefinproun: "",
         descriptionproun: ""
-      },    experienceprodeux: {
-        posteprodeux: "",
-        employeurprodeux: "",
-        villeexpeprodeux: "",
-        datedebutprodeux: "",
-        datefinprodeux: "",
-        descriptionprodeux: ""
       }
+
     }
 
   };
 
 
   launchValue() {
+
+  }
+
+
+  launchValueOne(e: any, type: string) {
+    // this.cvInformationPersnnelleData.prenom = e.target.value
+    let cv = this.accountService.cvInfo;
+
+    //   this.sendDataCv.emit(this.cvInformationPersnnelleData)
+
+
+    if (type == 'postepro') {
+      cv.posteproun = e.target.value;
+    }  else if (type == 'employeurpro') {
+      cv.employeurproun = e.target.value;
+    }
+     else if (type == 'datedebutpro') {
+      cv.datedebutproun = e.target.value;
+    }else if (type == 'descriptionpro') {
+      cv.descriptionproun = e.target.value;
+    }else if (type == 'postepro') {
+      cv.posteproun = e.target.value;
+    }
+    else if (type == 'employeurpro') {
+      cv.employeurproun = e.target.value;
+    }else if (type == 'villexpepro') {
+      cv.villexpeproun = e.target.value;
+    }else if (type == 'datedebutpro') {
+      cv.datedebutproun = e.target.value;
+    }else if (type == 'datefinpro') {
+      cv.datefinproun = e.target.value;
+    }else if (type == 'descriptionpro') {
+      cv.descriptionproun = e.target.value;
+    }else if (type == 'permis') {
+      cv.permisConduire = e.target.value;
+    }
+
+    else if (type == 'postepro1') {
+      cv.posteproun1 = e.target.value;
+    }  else if (type == 'employeurpro1') {
+      cv.employeurproun1 = e.target.value;
+    }
+     else if (type == 'datedebutpro') {
+      cv.datedebutproun1 = e.target.value;
+    }else if (type == 'descriptionpro1') {
+      cv.descriptionproun1 = e.target.value;
+    }else if (type == 'postepro1') {
+      cv.posteproun1 = e.target.value;
+    }
+    else if (type == 'employeurpro1') {
+      cv.employeurproun1 = e.target.value;
+    }else if (type == 'villexpepro1') {
+      cv.villexpeproun1 = e.target.value;
+    }else if (type == 'datedebutpro1') {
+      cv.datedebutproun1 = e.target.value;
+    }else if (type == 'datefinpro1') {
+      cv.datefinproun1 = e.target.value;
+    }else if (type == 'descriptionpro1') {
+      cv.descriptionproun1 = e.target.value;
+    }
+
 
   }
 

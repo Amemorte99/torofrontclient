@@ -14,8 +14,7 @@ export class AccountService {
   public nomfamille?:string;
 
   public cvInfo : {
-    photoUrl?: string,
-    photoUrl2?: string,
+    photoUrl?: any,
     prenom?: string,
     nomfamille?: string,
     mail?: string,
@@ -29,8 +28,27 @@ export class AccountService {
     etatCivil?:string,
     permisConduire?:string,
 
+
+
+    //experience
+      posteproun?:string,
+      employeurproun?: string,
+      villexpeproun?: string,
+      datedebutproun?: string,
+      datefinproun?: string,
+      descriptionproun?: string,
+
+      posteproun1?:string,
+      employeurproun1?: string,
+      villexpeproun1?: string,
+      datedebutproun1?: string,
+      datefinproun1?: string,
+      descriptionproun1?: string,
+
+
+
     //profil
-    description?: string
+    description?: string,
 
     nomformation?: string,
     etablissement?: string,
@@ -38,20 +56,30 @@ export class AccountService {
     dateDebut?: string,
     dateFin?: string,
     descriptionformation?: string,
-   
+
 
 
 
 
     formation? : any []
-    
 
 
- 
-    
-   
-      
-    
+
+    //langue
+    langue?:string
+
+    //competence
+    competence?:string,
+
+
+
+
+
+
+
+
+
+
 
   } = {}
 

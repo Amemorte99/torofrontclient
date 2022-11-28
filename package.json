@@ -26,6 +26,7 @@
     "bootstrap": "^4.5.0",
     "bootstrap-icons": "^1.9.1",
     "jquery": "^3.6.1",
+    "ng-input-file": "^1.0.1",
     "ngp-image-picker": "^2.3.3",
     "ngslide": "^0.0.1",
     "ngslides": "^1.0.0",

@@ -19,18 +19,19 @@
 
 
 
+
   <div class="container px-5 collapse " id="expepro">
     <div>
       <!-- <form #f="ngForm" (ngSubmit)="save(f.value)"> -->
       <div class="form-group">
         <label for="posteproun">Poste</label>
         <input
-          
+
           name="posteproun"
           id="posteproun"
           type="text"
           class="form-control"
-          (input)="launchValue()"
+          (input)="launchValueOne($event,'postepro')"
         />
         <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
                   Adresse is required.
@@ -41,12 +42,12 @@
           <div class="form-group">
             <label for="employeurproun">Employeur</label>
             <input
-             
+
               name="employeurproun"
               id="employeurproun"
               type="text"
               class="form-control"
-              (input)="launchValue()"
+              (input)="launchValueOne($event,'employeurproun')"
             />
             <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
                       Adresse is required.
@@ -57,12 +58,12 @@
           <div class="form-group">
             <label for="villeexpeproun">Ville</label>
             <input
-             
+
               name="villeexpeproun"
               id="villeexpeproun"
               type="text"
               class="form-control"
-              (input)="launchValue()"
+              (input)="launchValueOne($event,'villexpepro')"
             />
             <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
                       Adresse is required.
@@ -75,12 +76,12 @@
           <div class="form-group">
             <label for="datedebutpro">Date de début</label>
             <input
-            
+
               name="datedebutproun"
               id="datedebutproun"
               type="date"
               class="form-control"
-              (input)="launchValue()"
+              (input)="launchValueOne($event,'datedebutpro')"
             />
             <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
                       Adresse is required.
@@ -91,12 +92,12 @@
           <div class="form-group">
             <label for="datefinproun">Date de fin</label>
             <input
-           
+
               name="datefinproun"
               id="datefinproun"
               type="date"
               class="form-control"
-              (input)="launchValue()"
+              (input)="launchValueOne($event,'datefinpro')"
             />
             <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
                       Adresse is required.
@@ -108,12 +109,115 @@
         <label for="descriptionproun">Description</label>
 
 
-        <textarea 
+        <textarea
         name="descriptionproun"
         id="descriptionproun"
         type="text"
         class="form-control"
-        (input)="launchValue()" id="" cols="20" rows="5" class="summernote form-control">
+        (input)="launchValueOne($event,'descriptionpro')" id="" cols="20" rows="5" class="summernote form-control">
+
+        </textarea>
+
+        <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                  Adresse is required.
+                </div> -->
+      </div>
+    </div>
+
+    <div>
+      <!-- <form #f="ngForm" (ngSubmit)="save(f.value)"> -->
+      <div class="form-group">
+        <label for="posteproun">Poste</label>
+        <input
+
+          name="posteproun"
+          id="posteproun"
+          type="text"
+          class="form-control"
+          (input)="launchValueOne($event,'postepro1')"
+        />
+        <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                  Adresse is required.
+                </div> -->
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="employeurproun">Employeur</label>
+            <input
+
+              name="employeurproun"
+              id="employeurproun"
+              type="text"
+              class="form-control"
+              (input)="launchValueOne($event,'employeurproun1')"
+            />
+            <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                      Adresse is required.
+                    </div> -->
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="villeexpeproun">Ville</label>
+            <input
+
+              name="villeexpeproun"
+              id="villeexpeproun"
+              type="text"
+              class="form-control"
+              (input)="launchValueOne($event,'villexpepro1')"
+            />
+            <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                      Adresse is required.
+                    </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="datedebutpro">Date de début</label>
+            <input
+
+              name="datedebutproun"
+              id="datedebutproun"
+              type="date"
+              class="form-control"
+              (input)="launchValueOne($event,'datedebutpro1')"
+            />
+            <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                      Adresse is required.
+                    </div> -->
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-group">
+            <label for="datefinproun">Date de fin</label>
+            <input
+
+              name="datefinproun"
+              id="datefinproun"
+              type="date"
+              class="form-control"
+              (input)="launchValueOne($event,'datefinpro1')"
+            />
+            <!-- <div class="alert alert-danger" *ngIf="adresse.touched && adresse.invalid">
+                      Adresse is required.
+                    </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="descriptionproun">Description</label>
+
+
+        <textarea
+        name="descriptionproun"
+        id="descriptionproun"
+        type="text"
+        class="form-control"
+        (input)="launchValueOne($event,'descriptionpro1')" id="" cols="20" rows="5" class="summernote form-control">
 
         </textarea>
 
@@ -139,7 +243,7 @@
           <div class="form-group">
             <label for="posteproun">Poste</label>
             <input
-              
+
               name="posteproun"
               id="posteproun"
               type="text"
@@ -155,7 +259,7 @@
               <div class="form-group">
                 <label for="employeurproun">Employeur</label>
                 <input
-                 
+
                   name="employeurproun"
                   id="employeurproun"
                   type="text"
@@ -171,7 +275,7 @@
               <div class="form-group">
                 <label for="villeexpeproun">Ville</label>
                 <input
-                 
+
                   name="villeexpeproun"
                   id="villeexpeproun"
                   type="text"
@@ -189,7 +293,7 @@
               <div class="form-group">
                 <label for="datedebutpro">Date de début</label>
                 <input
-                 
+
                   name="datedebutproun"
                   id="datedebutproun"
                   type="date"
@@ -205,7 +309,7 @@
               <div class="form-group">
                 <label for="datefinproun">Date de fin</label>
                 <input
-                
+
                   name="datefinproun"
                   id="datefinproun"
                   type="date"
@@ -222,7 +326,7 @@
             <label for="descriptionproun">Description</label>
 
 
-            <textarea 
+            <textarea
             name="descriptionproun"
             id="descriptionproun"
             type="text"

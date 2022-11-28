@@ -1,12 +1,11 @@
 
-<h1>{{cvInfo?.adresse}}</h1>
 
 
 
 
 
 
-<button [print]="['print-section', config2]" class="btn btn-main-2 mb-2">Print table</button>
+<button [print]="['print-section', config2]" class="btn btn-main-2 mb-2">Print table {{cvInfo?.photoUrl}}</button>
 
 
 
@@ -17,6 +16,7 @@
             <div class="row">
                 <div class="col-block col-md-auto resume-picture-holder text-center text-md-start">
                     <img class="picture" src="assets/images/profile.jpg" alt="">
+                    <img src="{{cvInfo?.photoUrl}}" alt="">
                 </div>
                 <!--//col-->
                 <div class="col">
@@ -51,8 +51,8 @@
             <section class="resume-section summary-section mb-1">
                 <h4 class="resume-section-title text-justify font-weight-bold  mb-2" style="color: #343a40;">Profil
                 </h4>
-                <div class="resume-section-content">
-                    <p class=" text-justify">{{cvInfo?.description}}</p>
+                <div class="resume-section-content"  >
+                    <p class="text-justify" >{{cvInfo?.description}}</p>
                 </div>
                 <!--//summary-section-->
                 <div class="row">
@@ -62,41 +62,74 @@
                                 Experiences</h4>
                             <div class="resume-section-content">
                                 <div class="resume-timeline position-relative">
-                                    <article class="resume-timeline-item position-relative pb-5">
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <div class=" text-justify" style="color: #343a40;">2020 - Present</div>
-                                            </div>
-                                            <div class="col-8">
-                                                <div class="resume-timeline-item-header mb-2">
-                                                    <div class="d-flex flex-column flex-md-row">
-                                                        <h5
-                                                            class="resume-position-title font-weight-bold mb-1 text-justify">
-                                                            Lead Developer</h5>
-                                                    </div>
-                                                    <!--//row-->
+                                  <article class="resume-timeline-item position-relative pb-2">
+                                    <div class="row">
 
-                                                </div>
-                                                <!--//resume-timeline-item-header-->
-                                                <div class="resume-timeline-item-desc">
-                                                    <p class="text-justify">Role description goes here ipsum dolor sit
-                                                        amet,
-                                                        consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                                                        Aenean massa. Cum sociis natoque penatibus et magnis dis
-                                                        parturient
-                                                        montes, nascetur ridiculus
-                                                        mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
-                                                        quis,
-                                                        sem. Donec pede justo, fringilla vel.</p>
-                                                </div>
-                                                <!--//resume-timeline-item-desc-->
 
-                                            </div>
+                                        <div class="col">
+                                            <div class=" text-justify" style="color: #343a40;"> {{cvInfo?.datedebutproun +" /"+ cvInfo?.datefinproun}}</div>
                                         </div>
+                                        <div class="col">
+                                            <div class="resume-timeline-item-header mb-2">
+                                                <div class="d-flex flex-column flex-md-row">
+                                                    <h5
+
+                                                        class="resume-position-title font-weight-bold mb-1 text-justify">
+                                                        {{cvInfo?.posteproun}}</h5>
+                                                </div>
+                                                <!--//row-->
 
 
 
-                                    </article>
+
+                                            </div>
+                                            <!--//resume-timeline-item-header-->
+                                            <div class="resume-timeline-item-desc">
+                                                <p class="text-justify">{{cvInfo?.descriptionproun}}</p>
+                                                <h6 class="text-justify" style="font-size: 11px;"><b>{{cvInfo?.posteprodun +"   " +cvInfo?.villexpeproun}}</b></h6>
+                                            </div>
+                                            <!--//resume-timeline-item-desc-->
+
+                                        </div>
+                                    </div>
+
+
+
+                                </article>
+                                <article class="resume-timeline-item position-relative pb-2">
+                                  <div class="row">
+
+
+                                      <div class="col">
+                                          <div class=" text-justify" style="color: #343a40;"> {{cvInfo?.datedebutproun1 +" /"+ cvInfo?.datefinproun1}}</div>
+                                      </div>
+                                      <div class="colS">
+                                          <div class="resume-timeline-item-header mb-2">
+                                              <div class="d-flex flex-column flex-md-row">
+                                                  <h5
+
+                                                      class="resume-position-title font-weight-bold mb-1 text-justify">
+                                                      {{cvInfo?.posteproun1}}</h5>
+                                              </div>
+                                              <!--//row-->
+
+
+
+
+                                          </div>
+                                          <!--//resume-timeline-item-header-->
+                                          <div class="resume-timeline-item-desc">
+                                              <p class="text-justify">{{cvInfo?.descriptionproun1}}</p>
+                                              <h6 class="text-justify" style="font-size: 11px;"><b>{{cvInfo?.posteprodun1 +"   " +cvInfo?.villexpeproun1}}</b></h6>
+                                          </div>
+                                          <!--//resume-timeline-item-desc-->
+
+                                      </div>
+                                  </div>
+
+
+
+                              </article>
                                     <article class="resume-timeline-item position-relative pb-2">
                                         <div class="row">
                                             <div class="col-4">
@@ -169,11 +202,71 @@
                                     </article>
                                 </div>
                             </div>
+
+
+
+                            <h4 class="text-justify text-uppercase font-weight-bold pb-3 mb-3" style="color: #343a40;">
+                              Formation</h4>
+                          <div class="resume-section-content">
+                              <div class="resume-timeline position-relative">
+
+                                  <article class="resume-timeline-item position-relative pb-2">
+                                      <div class="row">
+                                          <div class="col-4">
+                                              <div class=" text-justify" style="color: #343a40;"> {{cvInfo?.dateDebut +"/"+ cvInfo?.dateFin}}</div>
+                                          </div>
+                                          <div class="col-8">
+                                              <div class="resume-timeline-item-header mb-2">
+                                                  <div class="d-flex flex-column flex-md-row">
+                                                      <h5
+
+                                                          class="resume-position-title font-weight-bold mb-1 text-justify">
+                                                          {{cvInfo?.nomformation}}</h5>
+                                                  </div>
+                                                  <!--//row-->
+
+
+
+
+                                              </div>
+                                              <!--//resume-timeline-item-header-->
+                                              <div class="resume-timeline-item-desc">
+                                                  <p class="text-justify">{{cvInfo?.descriptionformation}}</p>
+                                                  <h6 class="text-justify" style="font-size: 11px;"><b>{{cvInfo?.villeFormation +"   " +cvInfo?.etablissement}}</b></h6>
+                                              </div>
+                                              <!--//resume-timeline-item-desc-->
+
+                                          </div>
+                                      </div>
+
+
+
+                                  </article>
+
+                              </div>
+                          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                             <div class="col-lg-12">
                                 <h4 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3 text-justify">
                                     Compétences</h4>
-        
-        
+
+
                                 <div class="resume-timeline position-relative">
                                     <article class="resume-timeline-item position-relative pb-2 ">
                                         <div class="row">
@@ -182,11 +275,10 @@
                                                 <div class="resume-timeline-item-header mb-2">
                                                     <div class="d-flex flex-column flex-md-row">
                                                         <h5 class="resume-position-title font-weight-bold mb-1 text-justify">
-                                                            Lead
-                                                            Developer</h5>
+                                                          {{cvInfo?.competence}}</h5>
                                                     </div>
                                                 </div>
-                                                <!--//resume-timeline-item-header-->
+                                                <!--//resume-timeline-item-header
                                                 <div class="resume-timeline-item-desc">
                                                     <ul class="list-unstyled mb-4">
                                                         <li class="mb-2">
@@ -197,8 +289,8 @@
                                                             </div>
                                                         </li>
                                                     </ul>
-                                                </div>
-        
+                                                </div>-->
+
                                             </div>
                                         </div>
                                     </article>
@@ -208,8 +300,8 @@
                             <div class="col-lg-12">
                                 <h4 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3 text-justify">Langue
                                 </h4>
-        
-        
+
+
                                 <div class="resume-timeline position-relative">
                                     <article class="resume-timeline-item position-relative pb-2 ">
                                         <div class="row">
@@ -218,14 +310,14 @@
                                                 <div class="resume-timeline-item-header mb-2">
                                                     <div class="d-flex flex-column flex-md-row">
                                                         <h5 class="resume-position-title font-weight-bold mb-1 text-justify">
-                                                            Kim</h5>
+                                                          {{cvInfo?.langue}}</h5>
                                                     </div>
                                                 </div>
                                                 <!--//resume-timeline-item-header-->
-                                                <div class="resume-timeline-item-desc">
+                                               <!--  <div class="resume-timeline-item-desc">
                                                     <ul class="list-unstyled mb-4">
                                                         <li class="mb-2">
-        
+
                                                             <div class="progress resume-progress">
                                                                 <div class="progress-bar theme-progress-bar-dark"
                                                                     role="progressbar" style="width: 98%; height:20px"
@@ -234,20 +326,20 @@
                                                             </div>
                                                         </li>
                                                     </ul>
-                                                </div>
-        
+                                                </div> -->
+
                                             </div>
                                         </div>
                                     </article>
                                 </div>
                             </div>
-        
+
                             <!--Centre d'interet-->
                             <div class="col-lg-12">
                                 <h4 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3 text-justify">Centre
                                     D'interet et loisirs</h4>
-        
-        
+
+
                                 <div class="resume-timeline position-relative">
                                     <article class="resume-timeline-item position-relative pb-2 ">
                                         <div class="row">
@@ -275,17 +367,17 @@
                                                             Developer</h6>
                                                     </div>
                                                 </div>
-        
+
                                             </div>
                                         </div>
                                     </article>
                                 </div>
                             </div>
-        
+
                         </section>
                         <!--//experience-section-->
                     </div>
-                    
+
 
 
 
@@ -293,7 +385,7 @@
 
 
 
-                  
+
 
 
 

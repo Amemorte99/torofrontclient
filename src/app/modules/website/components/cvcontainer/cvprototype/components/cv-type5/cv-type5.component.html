@@ -1,10 +1,4 @@
-<h1>{{cvInfo?.prenom}}</h1>
-<h1>{{cvInfo?.nomfamille}}</h1>
-<h1>{{cvInfo?.adresse}}</h1>
 
-<h1>{{cvInfo?.description}}</h1>
-
-<td>{{cvInfo?.nomformation}}</td>
 
 
 
@@ -18,20 +12,27 @@
     <div class="resume-wrapper-inner mx-auto text-start bg-white ">
         <header class="resume-header container pt-4 pt-md-0" >
             <div class="row">
-              
+
+
+
+
+
+
+
+
                 <!--//col-->
                 <div class="col">
                     <div class="row p-4 justify-content-center justify-content-md-between">
                         <div class="primary-info col-auto ">
-                            <h1 class="justify-content-center px-3">KOTOR A. <span style="color: #e12454;">VICTOR</span></h1>
-                            <h6 class="px-3 justify-content-center">COMMUNICATION /MARKETING</h6>
+                            <h1 class="justify-content-center px-3">{{cvInfo?.nomfamille}} <span style="color: #e12454;">{{cvInfo?.prenom}}</span></h1>
+                            <h6 class="px-3 justify-content-center">{{cvInfo?.titreprofil}}</h6>
                          <div class="row mt-4">
                             <div class="col-1">
                                 <ul class="justify-content-center" style=" list-style:none; width: 30px; height: auto; border: 2px solid #e12454; border-radius: 4rem; color: #e12454;padding: 2px;" >
                                     <li class="">
                                         <i class="far fa-envelope fa-fw me-2"
                                             data-fa-transform="grow-3"></i>
-                                            
+
                                     </li>
                                     <li class="">
                                         <i class="fas fa-phone-volume fa-fw me-2"
@@ -48,13 +49,13 @@
                                 <div class="col-10 px-3" >
                                     <ul class="list-unstyled text-justify-start" >
                                         <li class="">
-                                                Steve.Doe@website.com
+                                          {{cvInfo?.mail}}
                                         </li>
                                         <li class="">
-                                            0123 456 78900
+                                          {{cvInfo?.tel}}
                                         </li>
                                         <li class="">
-                                           0123 456 78900
+                                          {{cvInfo?.adresse}}
                                         </li>
                                     </ul>
                                 </div>
@@ -62,12 +63,12 @@
                          </div>
                         <!--//primary-info-->
                         <div class="secondary-info col-auto mt-2 mb-5" style=" width: 205px; height: 185px; border-right: 9px solid #e12454; border-radius: 50%;">
-                          
+
                             <img src="https://i.imgur.com/eCijVBe.png " alt="profile_pic"
                                 style="height: 180px; width: 180px; border-radius: 50%; ">
                                 <div class="" style="width: 20px; height: 20px; background-color: #e12454; margin-left: 10px;  margin-top: -25px; border-radius: 50%;"></div>
 
-                               
+
                         </div>
                         <!--//secondary-info-->
                     </div>
@@ -85,13 +86,33 @@
                                 <div class="col-8">
                                     <h4 class="resume-section-title text-justify font-weight-bold  mb-2" style="color: #e12454; font-weight: 900;">Profil
                                     </h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //langue
+            langue?:string
+
+            //competence
+            competence?:string,
+
                                     <div class="resume-section-content">
                                         <p class=" text-justify" style="font-size: 14px;">
-                                            adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
-                                            magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
-                                            pellentesque eu, pretium quis, sem. Nulla
-                                            consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget. Lorem
-                                            ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                                            {{cvInfo?.description}}</p>
                                     </div>
                                     <h4 class="text-justify text-uppercase font-weight-bold pb-3 mb-3" style="color: #e12454; font-weight: 900;">
                                         Experiences</h4>
@@ -100,73 +121,59 @@
                                             <article class="resume-timeline-item position-relative pb-5 ">
                                                 <div class="row">
                                                     <div class="col-4 text-black">
-                                                        <div class=" text-justify" >2020 - Present</div>
+                                                        <div class=" text-justify" > {{cvInfo?.datedebutproun + " /" + cvInfo?.datefinproun}}</div>
                                                     </div>
                                                     <div class="col-8">
                                                         <div class="resume-timeline-item-header mb-2">
                                                             <div class="d-flex flex-column flex-md-row">
                                                                 <h5
                                                                     class="resume-position-title font-weight-bold mb-1 text-justify text-black">
-                                                                    Lead Developer</h5>
+                                                                   {{cvInfo?.posteproun}}</h5>
                                                             </div>
                                                             <!--//row-->
-        
+
                                                         </div>
                                                         <!--//resume-timeline-item-header-->
                                                         <div class="resume-timeline-item-desc">
                                                             <p class="text-justify" style="font-size: 14px;">Role description goes here ipsum dolor sit
-                                                                amet,
-                                                                consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                                                                Aenean massa. Cum sociis natoque penatibus et magnis dis
-                                                                parturient
-                                                                montes, nascetur ridiculus
-                                                                mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
-                                                                quis,
-                                                                sem. Donec pede justo, fringilla vel.</p>
+                                                                {{cvInfo?.descriptionproun}}</p>
                                                         </div>
                                                         <!--//resume-timeline-item-desc-->
-        
+
                                                     </div>
                                                 </div>
-        
-        
-        
+
+
+
                                             </article>
-                                            <article class="resume-timeline-item position-relative pb-2">
-                                                <div class="row">
-                                                    <div class="col-4">
-                                                        <div class=" text-justify text-black" >2020 - Present</div>
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <div class="resume-timeline-item-header mb-2">
-                                                            <div class="d-flex flex-column flex-md-row">
-                                                                <h5
-                                                                    class="resume-position-title font-weight-bold mb-1 text-justify text-black">
-                                                                    Lead Developer</h5>
-                                                            </div>
-                                                            <!--//row-->
-        
-                                                        </div>
-                                                        <!--//resume-timeline-item-header-->
-                                                        <div class="resume-timeline-item-desc">
-                                                            <p class="text-justify" style="font-size: 14px;">Role description goes here ipsum dolor sit
-                                                                amet,
-                                                                consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                                                                Aenean massa. Cum sociis natoque penatibus et magnis dis
-                                                                parturient
-                                                                montes, nascetur ridiculus
-                                                                mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
-                                                                quis,
-                                                                sem. Donec pede justo, fringilla vel.</p>
-                                                        </div>
-                                                        <!--//resume-timeline-item-desc-->
-        
-                                                    </div>
-                                                </div>
-        
-        
-        
-                                            </article>
+                                            <article class="resume-timeline-item position-relative pb-5 ">
+                                              <div class="row">
+                                                  <div class="col-4 text-black">
+                                                      <div class=" text-justify" > {{cvInfo?.datedebutproun1 + " /" + cvInfo?.datefinproun1}}</div>
+                                                  </div>
+                                                  <div class="col-8">
+                                                      <div class="resume-timeline-item-header mb-2">
+                                                          <div class="d-flex flex-column flex-md-row">
+                                                              <h5
+                                                                  class="resume-position-title font-weight-bold mb-1 text-justify text-black">
+                                                                 {{cvInfo?.posteproun1}}</h5>
+                                                          </div>
+                                                          <!--//row-->
+
+                                                      </div>
+                                                      <!--//resume-timeline-item-header-->
+                                                      <div class="resume-timeline-item-desc">
+                                                          <p class="text-justify" style="font-size: 14px;">
+                                                              {{cvInfo?.descriptionproun1}}</p>
+                                                      </div>
+                                                      <!--//resume-timeline-item-desc-->
+
+                                                  </div>
+                                              </div>
+
+
+
+                                          </article>
                                             <article class="resume-timeline-item position-relative pb-2">
                                                 <div class="row">
                                                     <div class="col-4">
@@ -180,7 +187,7 @@
                                                                     Lead Developer</h5>
                                                             </div>
                                                             <!--//row-->
-        
+
                                                         </div>
                                                         <!--//resume-timeline-item-header-->
                                                         <div class="resume-timeline-item-desc">
@@ -195,12 +202,12 @@
                                                                 sem. Donec pede justo, fringilla vel.</p>
                                                         </div>
                                                         <!--//resume-timeline-item-desc-->
-        
+
                                                     </div>
                                                 </div>
-        
-        
-        
+
+
+
                                             </article>
                                         </div>
                                     </div>
@@ -209,22 +216,23 @@
                                     <div class="container ">
 
 
+
                                        <div class="educ">
                                             <h4 class="resume-section-title text-justify font-weight-bold  mb-2" style="color: #e12454; font-weight: 900;">EDUCATIONS
                                             </h4>
                                             <div class="resume-section-content mt-3 mb-2">
-                                                <h1 class=" text-justify m-0" style="font-size: 16px;">Anglais</h1>
+                                                <h1 class=" text-justify m-0" style="font-size: 16px;">{{cvInfo?.nomformation}}</h1>
                                                 <p class=" text-justify m-0" style="font-size: 14px; ">
-                                                        ipsum dolor </p>
-                                            <h1 class=" text-justify m-0" style="font-size: 14px;">Anglais</h1>       
+                                                        {{cvInfo?.dateDebut +" /"+cvInfo?.dateFin}}</p>
+                                            <h1 class=" text-justify m-0" style="font-size: 14px;">{{cvInfo?.descriptionformation}}</h1>
                                             </div>
 
-                                            
+
                                             <div class="resume-section-content mt-3 mb-2">
                                                 <h1 class=" text-justify m-0" style="font-size: 16px;">Anglais</h1>
                                                 <p class=" text-justify m-0" style="font-size: 14px; ">
                                                         ipsum dolor sit elit.</p>
-                                            <h1 class=" text-justify m-0" style="font-size: 14px;">Anglais</h1>       
+                                            <h1 class=" text-justify m-0" style="font-size: 14px;">Anglais</h1>
                                             </div>
                                        </div>
 
@@ -232,37 +240,34 @@
                                             <h4 class="resume-section-title text-justify font-weight-bold  mb-2" style="color: #e12454; font-weight: 900;">LANGUES
                                             </h4>
                                             <div class="resume-section-content mt-3 mb-3">
-                                                <h1 class=" text-justify m-0" style="font-size: 16px;">Anglais</h1>
-                                                <h1 class=" text-justify m-0" style="font-size: 16px;">Anglais</h1> 
-                                                <h1 class=" text-justify m-0" style="font-size: 16px;">Anglais</h1>       
+                                                <h1 class=" text-justify m-0" style="font-size: 16px;">{{cvInfo?.langue}}</h1>
+
                                             </div>
 
-                                        
-                                        
+
+
                                          </div>
                                          <div class="com">
                                             <h4 class="resume-section-title text-justify font-weight-bold  mb-2" style="color: #e12454; font-weight: 900;">COMPETENCES
                                             </h4>
                                             <div class="resume-section-content mt-3 mb-3">
-                                                <h1 class=" text-justify m-0" style="font-size: 16px;">Anglais</h1>
-                                                <h1 class=" text-justify m-0" style="font-size: 16px;">Anglais</h1> 
-                                                <h1 class=" text-justify m-0" style="font-size: 16px;">Anglais</h1>       
+                                                <h1 class=" text-justify m-0" style="font-size: 16px;">{{cvInfo?.competence}}</h1>
                                             </div>
-                                        
+
                                          </div>
-                                   
+
                                     </div>
 
                                 </div>
-                              
+
                          </div>
-                            
+
                             <!--Centre d'interet-->
                             <div class="col-lg-12">
                                 <h4 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3 text-justify">Centre
                                     D'interet et loisirs</h4>
-        
-        
+
+
                                 <div class="resume-timeline position-relative">
                                     <article class="resume-timeline-item position-relative pb-2 ">
                                         <div class="row">
@@ -290,13 +295,13 @@
                                                             Developer</h6>
                                                     </div>
                                                 </div>
-        
+
                                             </div>
                                         </div>
                                     </article>
                                 </div>
                             </div>
-        
+
                         </section>
             </section>
 

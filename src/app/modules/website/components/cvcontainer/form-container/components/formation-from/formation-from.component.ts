@@ -32,7 +32,7 @@ export class FormationFromComponent implements OnInit {
   @Output()  onFormGroupChange:EventEmitter<any> = new EventEmitter<any>();
   @Input() productForm!: FormGroup;
 
-  
+
   constructor(private fb:FormBuilder,public accountService: AccountService) {
     this.productForm = this.fb.group({
       name: '',
@@ -116,29 +116,36 @@ export class FormationFromComponent implements OnInit {
 
 
   };
-  
+
   launchValue() {
 
   }
-  
+
   launchValueOne(e: any, type: string) {
     // this.cvInformationPersnnelleData.prenom = e.target.value
     let cv = this.accountService.cvInfo;
     //this.quantities.controls[index].value.material = item.nombre
-  
+
     //   this.sendDataCv.emit(this.cvInformationPersnnelleData)
-    
+
     console.log(cv);
     console.log(e.target.value);
     if (type == 'formation') {
       cv.nomformation = e.target.value;
 
-      this.accountService.cvInfo.formation?.push(this.accountService.cvInfo.formation)
-    
-    }  else if (type == 'formationT') {
-      cv.nomformation = e.target.value;
+    } else if (type == 'etablissement') {
+      cv.etablissement = e.target.value;
+    } else if (type == 'villeFormation') {
+      cv.villeFormation = e.target.value;
+    }else if (type == 'dateDebut') {
+      cv.dateDebut = e.target.value;
+    }else if (type == 'dateFin') {
+      cv.dateFin = e.target.value;
     }
-    
+    else if (type == 'descriptionformation') {
+      cv.descriptionformation = e.target.value;
+    }
+
   }
 
 

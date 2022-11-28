@@ -17,7 +17,7 @@ import { AccountService } from '../../../account/account.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InformationFormComponent implements OnInit  {
-  
+
 
   cvInformationPersnnelleData: InformationsPersonnelleModel = {
     photoUrl: '',
@@ -81,13 +81,15 @@ export class InformationFormComponent implements OnInit  {
     }else if (type == 'permis') {
       cv.permisConduire = e.target.value;
     }
-    
+
+
   }
 
   onImageChange(image: any) {
     this.cvInformationPersnnelleData.photoUrl = image;
   }
   onImageChanged = (image: any) => {
+    console.log("tfjkll"+image);
     this.cvInformationPersnnelleData.photoUrl == image;
   };
 
@@ -115,5 +117,5 @@ export class InformationFormComponent implements OnInit  {
     this.accountService.cvInfo = cvData;
   }
 
- 
+
 }

@@ -53,7 +53,7 @@ export class CvType1Component implements OnInit {
     StyleSheet: "cv-type1.component.css",
     styles: ['td { border: 1px solid black; color: green; }', 'table { border: 1px solid black; color: red }', 'header, table, footer { margin: auto; text-align: center; }']
   }
-  
+
 
 
 }
