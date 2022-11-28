@@ -121,9 +121,11 @@
 
 
 
-    <div class="" *ngFor="let formation of formations().controls; let i=index" [formGroupName]="i">
+    <div class="" *ngFor="let formation of formations().controls; let i=index" >
 
       <div class="form-group">
+
+        
         <label for="formation">Formation</label>
         <input
 
@@ -131,7 +133,12 @@
           id="formation"
           type="text"
           class="form-control"
+          name="formation.nomformationT"
 
+          (input)="tableauData($event,'formationT[i]')"
+
+          
+          
         />
       <div class="row">
         <div class="col-6">

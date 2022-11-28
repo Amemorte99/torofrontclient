@@ -21,6 +21,14 @@ export class FormationFromComponent implements OnInit {
   myCount: any = 0;
   myproductForm!: FormGroup;
 
+/*   formationT=[];
+  nomformationT= [];
+    etablissementT= [];
+    villeFormationT= [];
+    dateDebutT= [];
+    dateFinT= [];
+    descriptionformationT= []; */
+
 
 
 
@@ -71,13 +79,18 @@ export class FormationFromComponent implements OnInit {
  }
 
  newFormation(): FormGroup {
+
   return this.fb.group({
-    nomformation: "",
-    etablissement: "",
-    villeFormation: '',
-    dateDebut: "",
-    dateFin: "",
-    descriptionformation: ""
+  
+
+
+
+    nomformationT: "",
+    etablissementT: "",
+    villeFormationT: "",
+    dateDebutT: "",
+    dateFinT: "",
+    descriptionformationT: "",
   })
  }
 
@@ -102,20 +115,7 @@ export class FormationFromComponent implements OnInit {
 
   }
 
-  cv = {
 
-
-    formation: {
-      nomformation: "",
-      etablissement: "",
-      villeFormation: '',
-      dateDebut: "",
-      dateFin: "",
-      descriptionformation: ""
-    }
-
-
-  };
 
   launchValue() {
 
@@ -145,8 +145,54 @@ export class FormationFromComponent implements OnInit {
     else if (type == 'descriptionformation') {
       cv.descriptionformation = e.target.value;
     }
+    
+    
+    
+
+
+
+
+    
 
   }
+
+  tableauData(e: any,type :string){
+
+    let cv = this.accountService.cvInfo;
+
+
+      console.log(cv);
+    console.log(e.target.value);
+
+
+    if (type == 'formationT[]') {
+      cv.nomformationT = e.target.value;
+
+    } else if (type == 'etablissementT') {
+      cv.etablissementT = e.target.value;
+    } else if (type == 'villeFormationT') {
+      cv.villeFormationT = e.target.value;
+    }else if (type == 'dateDebutT') {
+      cv.dateDebutT = e.target.value;
+    }else if (type == 'dateFinT') {
+      cv.dateFinT = e.target.value;
+    }
+    else if (type == 'descriptionformation') {
+      cv.descriptionformationT = e.target.value;
+
+
+      cv.descriptionformationT== e.target.value;
+      //this.post.push
+    }
+
+
+
+    
+  }
+
+  
+
+
 
 
 

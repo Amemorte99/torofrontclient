@@ -50,12 +50,24 @@ export class AccountService {
     //profil
     description?: string,
 
+
+    //formation
     nomformation?: string,
     etablissement?: string,
     villeFormation?: string,
     dateDebut?: string,
     dateFin?: string,
     descriptionformation?: string,
+
+    //formatiob tableau
+
+    nomformationT?: any[];
+    etablissementT?: [],
+    villeFormationT?: [],
+    dateDebutT?: [],
+    dateFinT?: [],
+    descriptionformationT?: [],
+
 
 
 
