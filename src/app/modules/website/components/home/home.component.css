@@ -339,3 +339,17 @@ font-family: Nunito,sans-serif;
   border-color: #e12454;
 }
 
+
+.feature-item {
+  background-color: #09977C;
+  color: #fff;
+}
+
+
+.feature-item i,h4{
+
+
+  color: #fff;
+
+}
+

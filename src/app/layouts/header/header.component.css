@@ -44,7 +44,7 @@ body{
       display: flex;
       justify-content: center;
       align-items: center;
-      color: white;
+      color: #09977C;
       background-color: #536bf6;
       font-size: 10px;
           bottom: 40px;
@@ -103,21 +103,24 @@ body{
     position: absolute;
     right: 0;
     top: 50%;
+    
     transform: translateY(-50%);
   }
+ 
   .masearch{
     border-radius: 2rem;
     padding: 0.6rem 1rem;
-    color: #FFF;
-    background-color: #a9ece027;
+    color: #09977C;
+    background-color: #FFF;
     border: 3px solid #fff;
 
     background-clip: padding-box;
    transition: all .15s ease-in-out;
 
   }
+ 
   .masearch::placeholder {
-    color: #FFF;
+    color: #09977C;
   }
   .masearch:focus {
     border-top: 1px solid #fff;
@@ -130,5 +133,12 @@ body{
     left: -10px;
     font-size: 19px;
     top: 5px;
-    color: #fff;
+    color: #09977C;
+  }
+
+
+  .navbar-brand img{
+
+    height: 45px;
+
   }
