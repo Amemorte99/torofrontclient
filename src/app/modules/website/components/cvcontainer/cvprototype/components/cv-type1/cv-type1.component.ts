@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { NgxExtendedPdfViewerService, ProgressBarEvent } from 'ngx-extended-pdf-viewer';
 import { NgxPrintElementService } from 'ngx-print-element';
 import { AccountService } from '../../../account/account.service';
 
@@ -8,12 +9,16 @@ import { AccountService } from '../../../account/account.service';
   styleUrls: ['./cv-type1.component.css']
 })
 export class CvType1Component implements OnInit {
+
+
+  
   @Input() cv: any = {}
 
 
   @Input() cvData: any;
 
-  constructor(public accountService : AccountService,public print: NgxPrintElementService) { }
+  constructor(public accountService : AccountService,public printt: NgxPrintElementService,public pdfService: NgxExtendedPdfViewerService) { }
+
 
   ngOnInit(): void {
   }
@@ -55,5 +60,49 @@ export class CvType1Component implements OnInit {
   }
 
 
+  public printPercentage = 0;
+  public totalPages = 0;
+  public currentPageRendered = 0;
+  public showProgress = false;
+  public showCompleted = false;
+  public hideBuiltInProgress = true;
+
+ 
+
+  public onBeforePrint() {
+    if (this.hideBuiltInProgress) {
+      const node = document.querySelector('.pdf-wrapper #printServiceDialog') as Element;
+      node.setAttribute('style', 'display:none!important');
+    }
+    this.showCompleted = false;
+    this.showProgress = true;
+  }
+
+  public onAfterPrint() {
+    const node = document.querySelector('.pdf-wrapper #printServiceDialog') as Element;
+    node.removeAttribute('style');
+    this.showCompleted = true;
+    this.showProgress = false;
+  }
+
+  public print() {
+    this.pdfService.print();
+  }
+
+  public cancel() {
+    document.getElementById('printCancel')?.click();
+  }
+
+  get isPrintCancelled(): boolean {
+    return this.totalPages !== this.currentPageRendered;
+  }
+
+  public onProgress(event: ProgressBarEvent): void {
+    if (this.showProgress) {
+      this.totalPages = event.total;
+      this.printPercentage = event.percent;
+      this.currentPageRendered = event.page ?? 0;
+    }
+  }
 
 }

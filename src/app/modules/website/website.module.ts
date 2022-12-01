@@ -87,6 +87,7 @@ import { CvType3Component } from './components/cvcontainer/cvprototype/component
 import { CvType4Component } from './components/cvcontainer/cvprototype/components/cv-type4/cv-type4.component';
 import { CvType5Component } from './components/cvcontainer/cvprototype/components/cv-type5/cv-type5.component';
 import { NgxPrintElementModule } from 'ngx-print-element';
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 
 
 
@@ -209,6 +210,7 @@ import { NgxPrintElementModule } from 'ngx-print-element';
     FileUploadModule,
     NgxSummernoteModule,
     NgxPrintElementModule,
+    NgxExtendedPdfViewerModule
 
 
 

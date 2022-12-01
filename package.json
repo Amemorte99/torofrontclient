@@ -31,6 +31,7 @@
     "ngslide": "^0.0.1",
     "ngslides": "^1.0.0",
     "ngx-bootstrap": "^9.0.0",
+    "ngx-extended-pdf-viewer": "^15.1.0",
     "ngx-print": "^1.2.1",
     "ngx-print-element": "^2.0.16",
     "ngx-summernote": "^0.8.8",
