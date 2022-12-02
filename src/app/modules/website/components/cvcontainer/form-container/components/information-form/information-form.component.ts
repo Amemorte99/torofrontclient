@@ -19,6 +19,11 @@ import { AccountService } from '../../../account/account.service';
 export class InformationFormComponent implements OnInit  {
 
 
+ /* private storageKey = 'user-background';
+  private defaultColor = '#bedac9';
+  userBackgroundColor : any ;*/
+
+
   cvInformationPersnnelleData: InformationsPersonnelleModel = {
     photoUrl: '',
     photoUrl2: './assets/images/cvimg/cv.jpg',
@@ -45,7 +50,9 @@ export class InformationFormComponent implements OnInit  {
   };
   constructor(public accountService: AccountService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    //this.loadBackgroundPreferences();
+  }
 
   launchValueOne(e: any, type: string) {
     // this.cvInformationPersnnelleData.prenom = e.target.value
@@ -107,15 +114,30 @@ export class InformationFormComponent implements OnInit  {
   }
 
 
+  
 
 
-  //get set de cv
-  public get cvInfo(): any {
-    return this.accountService.cvInfo;
+/*   private loadBackgroundPreferences(): void {
+    this.userBackgroundColor = this.getBackgroundColor();
+    window.document.body.style.backgroundColor = this.getBackgroundColor();
   }
-  public set cvInfo(cvData: any) {
-    this.accountService.cvInfo = cvData;
+  removePreferences(): void {
+    localStorage.removeItem(this.storageKey);
+    this.loadBackgroundPreferences();
   }
+  saveBackgroundColor(color: string): void {
+    localStorage.setItem(this.storageKey, color);
+    this.loadBackgroundPreferences();
+  }
+  private getBackgroundColor(): string {
+     return localStorage.getItem(this.storageKey) || this.defaultColor;
+  }*/
+
+
+
+
+
+
 
 
 }
