@@ -5,19 +5,16 @@
 
 
 
-<button [print]="['print-section', config2]" class="btn btn-main-2 mb-2">Print table {{cvInfo?.photoUrl}}</button>
+<button [print]="['print-section', config2]" class="btn btn-main-2 mb-2">Print table </button>
 
 
 
 
-<article class="resume-wrapper text-center position-relative shadow-lg" (amount)="amount" id="print-section">
-    <div class="resume-wrapper-inner mx-auto text-start bg-white shadow-lg">
+<article class="resume-wrapper text-center position-relative " (amount)="amount" id="print-section">
+    <div class="resume-wrapper-inner mx-auto text-start bg-white ">
         <header class="resume-header pt-4 pt-md-0" style="background-color: #343a40;">
             <div class="row">
-                <div class="col-block col-md-auto resume-picture-holder text-center text-md-start">
-                    <img class="picture" src="assets/images/profile.jpg" alt="">
-                    <img src="{{cvInfo?.photoUrl}}" alt="">
-                </div>
+               
                 <!--//col-->
                 <div class="col">
                     <div class="row p-4 justify-content-center justify-content-md-between">
@@ -35,8 +32,7 @@
                         </div>
                         <!--//primary-info-->
                         <div class="secondary-info col-auto mt-2">
-                            <img src="https://i.imgur.com/eCijVBe.png " alt="profile_pic"
-                                style="height: 160px; border-radius: 50%;">
+                                <img src="{{cvInfo?.photoUrl}}" alt="profile_pic"   style="height: 150px; width: 170px; border-radius: 50%;">
                         </div>
                         <!--//secondary-info-->
                     </div>

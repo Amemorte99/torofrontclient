@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Inject, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { AccountService } from '../../../account/account.service';
 
 
@@ -20,6 +21,7 @@ export class FormationFromComponent implements OnInit {
   title = 'bbbb';
   myCount: any = 0;
   myproductForm!: FormGroup;
+  formCheck :any  = ''
 
 /*   formationT=[];
   nomformationT= [];
@@ -35,23 +37,36 @@ export class FormationFromComponent implements OnInit {
 
   @Input()
   count: any = 0;
+
+
   @Output()
   change: EventEmitter<number> = new EventEmitter<any>();
   @Output()  onFormGroupChange:EventEmitter<any> = new EventEmitter<any>();
   @Input() productForm!: FormGroup;
 
 
-  constructor(private fb:FormBuilder,public accountService: AccountService) {
+
+
+
+
+
+  constructor(private fb:FormBuilder,public accountService: AccountService,@Inject(MAT_DATE_LOCALE) public editData:any) {
     this.productForm = this.fb.group({
       name: '',
       formations: this.fb.array([]) ,
     });
     this.myproductForm = this.fb.group({
       name: '',
-      formations: this.fb.array([]) ,
+      formations: this.fb.array([]),
+
+      //new
+      itemRows: this.fb.array([this.newFormation()])
     });
+
+
+    
   }
-  formCheck :any  = ''
+
   public onFormGroupChangeEvent(_event: any) {
       this.myproductForm = _event
     this.formCheck = _event;
@@ -81,16 +96,12 @@ export class FormationFromComponent implements OnInit {
  newFormation(): FormGroup {
 
   return this.fb.group({
-  
-
-
-
-    nomformationT: "",
-    etablissementT: "",
-    villeFormationT: "",
-    dateDebutT: "",
-    dateFinT: "",
-    descriptionformationT: "",
+    nomformationT: [''],
+    etablissementT: [''],
+    villeFormationT: [''],
+    dateDebutT: [''],
+    dateFinT: [''],
+    descriptionformationT: [''],
   })
  }
 
@@ -146,11 +157,6 @@ export class FormationFromComponent implements OnInit {
       cv.descriptionformation = e.target.value;
     }
     
-    
-    
-
-
-
 
     
 
@@ -186,6 +192,8 @@ export class FormationFromComponent implements OnInit {
     }
 
 
+
+    
 
     
   }

@@ -18,6 +18,13 @@ import { AccountService } from '../../../account/account.service';
 })
 export class InformationFormComponent implements OnInit  {
 
+  imagee: any
+
+
+ /* private storageKey = 'user-background';
+  private defaultColor = '#bedac9';
+  userBackgroundColor : any ;*/
+
 
   cvInformationPersnnelleData: InformationsPersonnelleModel = {
     photoUrl: '',
@@ -45,7 +52,13 @@ export class InformationFormComponent implements OnInit  {
   };
   constructor(public accountService: AccountService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    //this.loadBackgroundPreferences();
+
+
+    /*let image=JSON.parse(localStorage.getItem("image")!)
+    alert(image)*/
+  }
 
   launchValueOne(e: any, type: string) {
     // this.cvInformationPersnnelleData.prenom = e.target.value
@@ -89,8 +102,18 @@ export class InformationFormComponent implements OnInit  {
     this.cvInformationPersnnelleData.photoUrl = image;
   }
   onImageChanged = (image: any) => {
-    console.log("tfjkll"+image);
-    this.cvInformationPersnnelleData.photoUrl == image;
+    localStorage.setItem("image",image)
+
+    //let imagee=localStorage.getItem("image")
+   
+    //alert(imagee)
+
+    //this.imagee=localStorage.getItem("image")
+
+    let cv = this.accountService.cvInfo;
+
+
+    cv.photoUrl=localStorage.getItem("image")
   };
 
 
@@ -107,15 +130,30 @@ export class InformationFormComponent implements OnInit  {
   }
 
 
+  
 
 
-  //get set de cv
-  public get cvInfo(): any {
-    return this.accountService.cvInfo;
+/*   private loadBackgroundPreferences(): void {
+    this.userBackgroundColor = this.getBackgroundColor();
+    window.document.body.style.backgroundColor = this.getBackgroundColor();
   }
-  public set cvInfo(cvData: any) {
-    this.accountService.cvInfo = cvData;
+  removePreferences(): void {
+    localStorage.removeItem(this.storageKey);
+    this.loadBackgroundPreferences();
   }
+  saveBackgroundColor(color: string): void {
+    localStorage.setItem(this.storageKey, color);
+    this.loadBackgroundPreferences();
+  }
+  private getBackgroundColor(): string {
+     return localStorage.getItem(this.storageKey) || this.defaultColor;
+  }*/
+
+
+
+
+
+
 
 
 }

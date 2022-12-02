@@ -10,7 +10,7 @@ import { AccountService } from '../../../account/account.service';
 })
 export class CvType1Component implements OnInit {
 
-
+  imagee:any;
   
   @Input() cv: any = {}
 
@@ -21,6 +21,9 @@ export class CvType1Component implements OnInit {
 
 
   ngOnInit(): void {
+    this.imagee=localStorage.getItem("image")
+   
+    //alert("MANES MANA"+this.imagee)
   }
 
 

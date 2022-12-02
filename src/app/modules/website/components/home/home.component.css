@@ -343,6 +343,7 @@ font-family: Nunito,sans-serif;
 .feature-item {
   background-color: #09977C;
   color: #fff;
+  border: 2px solid #fff;
 }
 
 
