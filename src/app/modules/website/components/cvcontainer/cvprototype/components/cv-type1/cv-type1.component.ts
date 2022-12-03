@@ -16,6 +16,7 @@ export class CvType1Component implements OnInit {
 
 
   @Input() cvData: any;
+  
 
   constructor(public accountService : AccountService,public printt: NgxPrintElementService,public pdfService: NgxExtendedPdfViewerService) { }
 

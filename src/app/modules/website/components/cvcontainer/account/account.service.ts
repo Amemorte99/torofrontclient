@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { InformationsPersonnelleModel } from 'src/app/models/informations-personnelle.models';
 
 @Injectable({
@@ -78,15 +79,12 @@ export class AccountService {
 
 
     //langue
-    langue?:string
+    
+
+   userlangRecv?: Object;
 
     //competence
     competence?:string,
-
-
-
-
-
 
 
 

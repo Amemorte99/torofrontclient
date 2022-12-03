@@ -50,7 +50,7 @@ export class FormationFromComponent implements OnInit {
 
 
 
-  constructor(private fb:FormBuilder,public accountService: AccountService,@Inject(MAT_DATE_LOCALE) public editData:any) {
+  constructor(private fb:FormBuilder,public accountService: AccountService) {
     this.productForm = this.fb.group({
       name: '',
       formations: this.fb.array([]) ,
@@ -59,8 +59,6 @@ export class FormationFromComponent implements OnInit {
       name: '',
       formations: this.fb.array([]),
 
-      //new
-      itemRows: this.fb.array([this.newFormation()])
     });
 
 
@@ -128,77 +126,12 @@ export class FormationFromComponent implements OnInit {
 
 
 
-  launchValue() {
-
-  }
-
-  launchValueOne(e: any, type: string) {
-    // this.cvInformationPersnnelleData.prenom = e.target.value
-    let cv = this.accountService.cvInfo;
-    //this.quantities.controls[index].value.material = item.nombre
-
-    //   this.sendDataCv.emit(this.cvInformationPersnnelleData)
-
-    console.log(cv);
-    console.log(e.target.value);
-    if (type == 'formation') {
-      cv.nomformation = e.target.value;
-
-    } else if (type == 'etablissement') {
-      cv.etablissement = e.target.value;
-    } else if (type == 'villeFormation') {
-      cv.villeFormation = e.target.value;
-    }else if (type == 'dateDebut') {
-      cv.dateDebut = e.target.value;
-    }else if (type == 'dateFin') {
-      cv.dateFin = e.target.value;
-    }
-    else if (type == 'descriptionformation') {
-      cv.descriptionformation = e.target.value;
-    }
-    
-
-    
-
-  }
-
-  tableauData(e: any,type :string){
-
-    let cv = this.accountService.cvInfo;
-
-
-      console.log(cv);
-    console.log(e.target.value);
-
-
-    if (type == 'formationT[]') {
-      cv.nomformationT = e.target.value;
-
-    } else if (type == 'etablissementT') {
-      cv.etablissementT = e.target.value;
-    } else if (type == 'villeFormationT') {
-      cv.villeFormationT = e.target.value;
-    }else if (type == 'dateDebutT') {
-      cv.dateDebutT = e.target.value;
-    }else if (type == 'dateFinT') {
-      cv.dateFinT = e.target.value;
-    }
-    else if (type == 'descriptionformation') {
-      cv.descriptionformationT = e.target.value;
-
-
-      cv.descriptionformationT== e.target.value;
-      //this.post.push
-    }
 
 
 
-    
-
+  launchValueOne(e: any, a : string){
     
   }
-
-  
 
 
 
