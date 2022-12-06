@@ -88,6 +88,9 @@ import { CvType4Component } from './components/cvcontainer/cvprototype/component
 import { CvType5Component } from './components/cvcontainer/cvprototype/components/cv-type5/cv-type5.component';
 import { NgxPrintElementModule } from 'ngx-print-element';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+import { DetStagiaireComponent } from './components/det-stagiaire/det-stagiaire.component';
+import { DetEmploiComponent } from './components/det-emploi/det-emploi.component';
+import { DetRecruteurComponent } from './components/det-recruteur/det-recruteur.component';
 
 
 
@@ -130,6 +133,9 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
     CvType3Component,
     CvType4Component,
     CvType5Component,
+    DetStagiaireComponent,
+    DetEmploiComponent,
+    DetRecruteurComponent,
 
   ],
   imports: [
