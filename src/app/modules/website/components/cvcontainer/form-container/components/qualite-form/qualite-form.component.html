@@ -16,63 +16,41 @@
 
 
 
+
+
+
+
 <div class="container px-5 collapse " id="qualite">
-  <div>
-    <!-- <form #f="ngForm" (ngSubmit)="save(f.value)"> -->
-    <div class="form-group">
-      <label for="posteproun">qualite</label>
-      <input
-        #posteproun="ngModel"
-        [(ngModel)]="cv.qualite.qualite"
-        name="posteproun"
-        id="posteproun"
-        type="text"
-        class="form-control"
-        (input)="launchValue()" cols="30" rows="5" class="summernote form-control"
-      />
-
-
-    </div>
-
-
-
-  </div>
-
-  <button (click)="increment();addQuantity()" class="btn btn-plus " style="border: 1px solid #000;"><i class="fa-regular fa-plus h-6" ></i>Ajouter une qualité</button>
-  <!-- <button (click)="decrement()">SUB</button> -->
-
-
-
-  <div class="" *ngFor="let quantity of quantities().controls; let i=index" >
-
-    <div>
-      <!-- <form #f="ngForm" (ngSubmit)="save(f.value)"> -->
-      <div class="form-group">
-        <label for="posteproun">langue</label>
-        <input
-          
-          name="posteproun"
-          id="posteproun"
-          type="text"
-          class="form-control"
-          (input)="launchValue()" cols="30" rows="5" class="summernote form-control"
-        />
-
-
+  <div class="example-form" [formGroup]="userForm">
+     
+      <div class="address-container" *ngFor="let group of qualiteArray.controls; let i = index;" formArrayName="qualite">
+        <div class="form-group " [formGroupName]='i'>
+          <div class="form-group">
+            <label for="posteproun">qualite</label>
+            <input
+             
+            (input)="onSubOne($event)"
+            formControlName="qualite"
+              name="posteproun"
+              id="posteproun"
+              type="text"
+              class="form-control"
+               cols="30" rows="5" class="summernote form-control"
+            />
+      
+      
+          </div>
+         
+          <i  *ngIf="i>0"  (click)="removeAddress(i)" class="fa-solid fa-trash-can" style="font-size: 33px; padding: 2px; color: #09977C; border: 1px solid gainsboro;"></i>
+         
+        
+        </div>
       </div>
-
-
-
+      <div class="form-row org-desc-parent-margin">
+        <button (click)="addAddress();" class="btn btn-plus " style="border: 1px solid #000;"><i class="fa-regular fa-plus h-6" ></i>Ajouter une langue</button>
+      </div>
     </div>
 
-    <i (click)="removeQuantity(i)" class="fa-solid fa-trash-can" style="font-size: 33px; padding: 2px; color: #09977C; border: 1px solid gainsboro;"></i>
-
-</div>
-
-
-
-
-  <br />
 </div>
 </div>
 

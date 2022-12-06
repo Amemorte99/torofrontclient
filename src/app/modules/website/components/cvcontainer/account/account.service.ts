@@ -74,7 +74,9 @@ export class AccountService {
 
 
 
-    formation? : any []
+    formation? : any [],
+
+    qualite?:any[],
 
 
 
