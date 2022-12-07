@@ -1,3 +1,21 @@
+
+@import '../../../../../../node_modules/intl-tel-input/build/css/intlTelInput.css';
+
+
+
+
+
+
+
+
+
+
+
+
+
+intl-tel-input { width: 100% !important; }
+
+
 .img-forms{
   background: url('../../../../../assets/images/forms/forms1.jpg');
   height: 100vh;
@@ -74,3 +92,40 @@ input[type=email], input[type=password], input[type=text], input[type=tel] {
   .card-registration .select-arrow {
   top: 13px;
   }
+
+
+  .logo{
+
+
+    border: 20px solid white; 
+    border-radius: 70%;
+  }
+
+  input[type=email],
+  input[type=password],
+  input[type=tel],
+  input[type=date],
+  input[type="text"]{
+    box-shadow: none;
+    height: 45px;
+    outline: none;
+    font-size: 14px;
+    border-radius: 0.3em;
+    background-color: #f5f5f5;
+  }
+
+  input[type=email]:focus,
+input[type=password]:focus,
+input[type=text]:focus,
+input[type=tel]:focus,
+input[type=date]:focus,
+textarea:focus {
+    box-shadow: none;
+    border: 1px solid #09977C;
+    border-radius: 0.3em;
+}
+
+textarea {
+    box-shadow: none;
+    border-radius: 0.3em;
+}

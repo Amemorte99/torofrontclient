@@ -91,6 +91,7 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import { DetStagiaireComponent } from './components/det-stagiaire/det-stagiaire.component';
 import { DetEmploiComponent } from './components/det-emploi/det-emploi.component';
 import { DetRecruteurComponent } from './components/det-recruteur/det-recruteur.component';
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 
 
 
@@ -216,7 +217,8 @@ import { DetRecruteurComponent } from './components/det-recruteur/det-recruteur.
     FileUploadModule,
     NgxSummernoteModule,
     NgxPrintElementModule,
-    NgxExtendedPdfViewerModule
+    NgxExtendedPdfViewerModule,
+    NgxIntlTelInputModule
 
 
 

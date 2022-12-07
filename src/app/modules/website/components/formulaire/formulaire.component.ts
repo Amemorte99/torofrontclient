@@ -3,6 +3,8 @@ import { Component, NgZone, OnInit, ViewChild } from '@angular/core';
 import { FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { FileUploadControl, FileUploadValidators } from '@iplab/ngx-file-upload';
+import { ImagePickerConf } from 'ngp-image-picker';
+import { SearchCountryField, CountryISO, PhoneNumberFormat } from 'ngx-intl-tel-input';
 import { BehaviorSubject, Subscription, take } from 'rxjs';
 
 @Component({
@@ -16,6 +18,44 @@ export class FormulaireComponent implements OnInit {
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
 
   matcher = new MyErrorStateMatcher();
+
+
+
+  imagePickerConf: ImagePickerConf = {
+    borderRadius: "6px",
+    language: "fr",
+    width: "240PX",
+    height: "240PX",
+    //hideDeleteBtn: true,
+    //hideDownloadBtn: true,
+    //hideEditBtn: true,
+  };
+
+  separateDialCode = true;
+  SearchCountryField = SearchCountryField;
+  CountryISO = CountryISO;
+  
+  PhoneNumberFormat = PhoneNumberFormat;
+  preferredCountries: CountryISO[] = [
+    CountryISO.UnitedStates,
+    CountryISO.UnitedKingdom,
+  ];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   constructor() {}
   ngOnInit(): void {
@@ -53,6 +93,12 @@ export class FormulaireComponent implements OnInit {
           this.uploadedFile.next(null);
       }
   }
+
+  onImageChanged(e:any){
+
+  }
+
+
 
 
 }
