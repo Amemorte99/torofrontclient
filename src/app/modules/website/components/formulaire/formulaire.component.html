@@ -1,3 +1,110 @@
+<!-- <div class="container py-5">
+      
+  <div class="row"> 
+    <div class="col-md-12 col-md-offset-3">
+        <form [formGroup]="personalDetails" id="msform">
+          
+            <ul id="progressbar">
+                <li [ngClass]="step>=1 ? 'active ' : 'inactive'">Personal Details</li>
+                <li [ngClass]="step>=2 ? 'active' : 'inactive'">Social Profiles</li>
+                <li [ngClass]="step==3 ? 'active' : 'inactive'">Account Setup</li>
+            </ul>
+       
+            <fieldset  *ngIf="step == 1" >
+                <h2 class="fs-title">Personal Details</h2>
+                <input type="text" formControlName="name"  [ngClass]="{ 'is-invalid': personal_step && personal['name'].errors }" placeholder="Full Name"/>
+                <div *ngIf="personal_step && personalDetails.controls['name'].errors">
+                    <div *ngIf="personal['name'].errors">Name is required</div>
+                </div>
+                <input type="text" formControlName="email" name="email" placeholder="Email"/>
+                <div *ngIf="personal_step && personalDetails.controls['email'].errors">
+                  <div *ngIf="personal['email'].errors">Email is required</div>
+               </div>
+                <input type="text" formControlName="phone" name="phone" placeholder="Phone"/>
+                <div *ngIf="personal_step && personalDetails.controls['phone'].errors">
+                  <div *ngIf="personal['phone'].errors">Phone is required</div>
+              </div>
+                <input (click)="next()" type="button" name="next" class="next action-button" value="Next"/>
+            </fieldset>
+        </form>
+         <form [formGroup]="addressDetails" id="msform">
+            <fieldset *ngIf="step == 2" >
+                <h2 class="fs-title">Address Details</h2>
+                <input type="text" formControlName="city"  placeholder="City"/>
+                <div *ngIf="address_step && addressDetails.controls['city'].errors">
+                    <div *ngIf="address['city'].errors">City is required</div>
+                </div>
+                <textarea rows="5" cols="5" formControlName="address"  placeholder="address"></textarea>
+                <div *ngIf="address_step && addressDetails.controls['address'].errors">
+                    <div *ngIf="address['address'].errors">Address is required</div>
+                </div>
+                <input type="text" formControlName="pincode"  placeholder="Pincode"/>
+                <div *ngIf="address_step && addressDetails.controls['pincode'].errors">
+                    <div *ngIf="address['pincode'].errors">Pincode is required</div>
+                </div>
+                <input (click)="previous()" type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                <input  (click)="next()" type="button" name="next" class="next action-button" value="Next"/>
+            </fieldset>
+        </form>
+         <form [formGroup]="educationalDetails" id="msform">
+            <fieldset *ngIf="step == 3">
+                <h2 class="fs-title">Educational Details</h2>
+                <input type="text" formControlName="highest_qualification" placeholder="Highest Qualification"/>
+                <div *ngIf="education_step && educationalDetails.controls['highest_qualification'].errors">
+                    <div *ngIf="education['highest_qualification'].errors">Highest qualification is required</div>
+                </div>
+                <input type="text" formControlName="university"  placeholder="University"/>
+                <div *ngIf="education_step && educationalDetails.controls['university'].errors">
+                    <div *ngIf="education['university'].errors">University is required</div>
+                </div>
+                <input type="text" formControlName="total_marks" placeholder="Total Marks"/>
+                <div *ngIf="education_step && educationalDetails.controls['total_marks'].errors">
+                    <div *ngIf="education['total_marks'].errors">Total marks is required</div>
+                </div>
+                <input (click)="previous()" type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                <input (click)="submit()"type="submit" name="submit" class="submit action-button" value="Submit"/>
+            </fieldset>
+        </form>
+    </div>
+</div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <section>
   <div class="container-fluid p-3">
     <div class="row">
@@ -5,14 +112,17 @@
       <div class="col-md-3 " style="background-color: #09977C;">
         <div class="container mt-5 mb-3 ">
           <a href="" class="btn btn-light " style="width: 100%; border-radius: 4rem; font-size: 28px; color: #09977C;">
-            Emploi
+            Emploi Afrique
 
 
           </a>
         </div>
+
         <div class="logo mt-5 mb-5 text-center">
-          <img src="../../../../../assets/images/forms/forms1.jpg" alt="" srcset=""
-            style="width: 92%; border-radius: 50%; height: 50vh;  " class="m-3">
+
+
+          <img [src]="imagee ? imagee : '../../../../../assets/images/forms/forms1.jpg'" alt="" srcset=""
+            style="width: 92%; border-radius: 50%; height: 50vh;  ">
         </div>
         <div class="container mb-5">
           <a href="" class="btn btn-light" style="width: 100%; border-radius: 4rem;">
@@ -22,80 +132,157 @@
           </a>
         </div>
 
-        <p class="text-white text-justify m-3" style="font-size: 22px; font-weight: 400;">Lorem ipsum dolor sit a
+        <p class="text-white text-justify m-2"
+          style="font-size: 16px; font-weight: 400;  font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif ;">Lorem
+          ipsum dolor sit a
           quaerat vitae, sint pariatur quidem beatae obcaecati tenetur, ipsam magnam a eos ullam.</p>
 
       </div>
       <div class="col-md-9  " style="background-color: #09977C;">
-
         <div class="container">
-          <div class="card shadow mt-5 m-3  text-black" >
-           <form action="">
+          <div class="card shadow mt-5 m-3  text-black">
+            <form action="" [formGroup]="personelDetails">
+              <fieldset *ngIf="stepp == 1">
 
-            <div class="row d-flex p-4">
-              <div class="col-md-8 ">
+                <div class="row d-flex p-4">
+                  <div class="col-md-8 ">
 
-                <div class="form-row mt-5 ">
-                  <div class="col">
-                    <input type="text" class="form-control" placeholder="Prenom">
+
+                    <div class="form-row mt-5 ">
+                      <div class="col">
+                        <input type="text" class="form-control"
+                          [ngClass]="{ 'is-invalid':  persenal_step && personalInformation['prenom'].errors }"
+                          placeholder="Prenom" formControlName="prenom">
+                        <div *ngIf="persenal_step && personelDetails.controls['prenom'].errors">
+                          <div *ngIf="personalInformation['prenom'].errors">prenom is required</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <input type="text" class="form-control" placeholder="Nom" formControlName="name">
+                        <div *ngIf="persenal_step && personelDetails.controls['name'].errors">
+                          <div *ngIf="personalInformation['name'].errors">name is required</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <input type="email" class="form-control" placeholder="Email" formControlName="email">
+                        <div *ngIf="persenal_step && personelDetails.controls['email'].errors">
+                          <div *ngIf="personalInformation['email'].errors">email is required</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-row mt-5">
+                      <div class="col">
+                        <input type="text" class="form-control" placeholder="Adresse" formControlName="adresse">
+                        <div *ngIf="persenal_step && personelDetails.controls['adresse'].errors">
+                          <div *ngIf="personalInformation['adresse'].errors">adresse is required</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <input type="Date" class="form-control" placeholder="Date de naissance" formControlName="dob">
+                        <div *ngIf="persenal_step && personelDetails.controls['dob'].errors">
+                          <div *ngIf="personalInformation['dob'].errors">date naiss is required</div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <input type="email" class="form-control" placeholder="Tel" formControlName="phone">
+                        <div *ngIf="persenal_step && personelDetails.controls['phone'].errors">
+                          <div *ngIf="personalInformation['phone'].errors">phone naiss is required</div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="form-group mt-5">
+                      <div class="row">
+                        <div class="col">
+
+                          <select class="form-control" id="exampleFormControlSelect1" formControlName="genre">
+                            <option value="">Genre</option>
+                            <option>masculin</option>
+                            <option>feminin</option>
+                          </select>
+                          <div *ngIf="persenal_step && personelDetails.controls['genre'].errors">
+                            <div *ngIf="personalInformation['genre'].errors">genre is required</div>
+                          </div>
+                        </div>
+                        <div class="col">
+
+                          <select class="form-control" id="exampleFormControlSelect1" formControlName="secteur">
+                            <option value="">Vous etes ?</option>
+                            <option>stagiaire</option>
+                            <option>employeur</option>
+                            <option>recruteur</option>
+                          </select>
+                          <div *ngIf="persenal_step && personelDetails.controls['secteur'].errors">
+                            <div *ngIf="personalInformation['secteur'].errors">secteur is required</div>
+                          </div>
+                        </div>
+                        <div class="col ">
+
+                          <select class=" form-control" formControlName="domaine">
+                            <option value="">Domaine</option>
+                            <option value="2">Option 1</option>
+                            <option value="3">Option 2</option>
+                            <option value="4">Option 3</option>
+                          </select>
+                          <div *ngIf="persenal_step && personelDetails.controls['domaine'].errors">
+                            <div *ngIf="personalInformation['domaine'].errors">domaine is required</div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="col">
-                    <input type="text" class="form-control" placeholder="Nom">
+                  <div class="col-md-4 text-justify p-5">
+                    <label for="">Choissez une image</label>
+
+                    <ngp-image-picker ($imageChanged)="onImageChanged($event)" class="shadow img-fluid"
+                      [_config]="imagePickerConf"></ngp-image-picker>
+
+
+
+
+
+                    <div class="mt-5 text-justify">
+                      <label for="">Enregistrer votre cv</label>
+                      <file-upload formControlName="files"></file-upload>
+                      
+
+
+                    </div>
+                    <input (click)="onNext()" type="button" name="next" class="btn up-btn mt-5" value="suivant" />
+
+
+
+
                   </div>
-                  <div class="col">
-                    <input type="email" class="form-control" placeholder="Email">
-                  </div>
+
+
                 </div>
-                <div class="form-row mt-5">
-                  <div class="col">
-                    <input type="text" class="form-control" placeholder="Adresse">
+
+              </fieldset>
+            </form>
+            <form action="" [formGroup]="payementDetails">
+              <fieldset *ngIf="stepp == 2">
+                <div class="row d-flex pb-3">
+
+                  <div class=" justify-content-center ">
+                    <app-achat-compte></app-achat-compte>
+
+                    <div class="mt-2 col-3 m-2">
+
+                      <button (click)="Oneprevious()" name="previous" class="btn up-btn  ">Retour</button>
+
+                    </div>
+
+
                   </div>
-                  <div class="col">
-                    <input type="Date" class="form-control" placeholder="Date de naissance">
-                  </div>
-                  <div class="col">
-                    <input type="email" class="form-control" placeholder="Tel">
-                
-                  </div>
+
                 </div>
-                <div class="form-group">
-                  <label for = "name">Tel#: </label>
-                 
-                  <ngx-intl-tel-input
-                  [cssClass]="'form-control form-control-lg'"
-                  [preferredCountries]="preferredCountries"
-                  [enableAutoCountrySelect]="true"
-                  [enablePlaceholder]="true"
-                  [searchCountryFlag]="true"
-                  [searchCountryField]="[
-                    SearchCountryField.Iso2,
-                    SearchCountryField.Name
-                  ]"
-                  [selectFirstCountry]="false"
-                  [selectedCountryISO]="CountryISO.Togo"
-                  [maxLength]="15"
-                  [phoneValidation]="true"
-                  [separateDialCode]="separateDialCode"
-                  [numberFormat]="PhoneNumberFormat.National"
-                  name="phone"
-                  formControlName="telephone"
-                >
-                </ngx-intl-tel-input>
 
 
-                  
-                </div>
-              </div>
-              <div class="col-md-4 text-justify p-5">
-                <label for="">hirfififgjfgjhogfigjopjogiopgjgijgfijfgigf</label>
-
-
-
-                <ngp-image-picker ($imageChanged)="onImageChanged($event)" class="shadow img-fluid"
-                  [_config]="imagePickerConf"></ngp-image-picker>
-              </div>
-            </div>
-           </form>
+              </fieldset>
+            </form>
 
           </div>
         </div>
@@ -129,119 +316,7 @@
       </div>
       <div class="row">
         <div class="col-sm-0 col-md-3"></div>
-        <!-- <div class="col-sm-12 col-md-6 shadow pt-3 ">
-          <div class="container ">
-             <div class="body-forms">
-               <form action="" class="justify-content-center">
-                <div class="row input-group input-group-default example-container mb-3">
-                  <mat-form-field hintLabel="Max 10 characters" appearance="fill"class="col-sm-12 col-md-6 ">
-                    <mat-label>Enter votre nom</mat-label>
-                    <input matInput #input maxlength="20" placeholder="Ex. Manes" >
-                  </mat-form-field>
-                  <mat-form-field hintLabel="Max 10 characters" appearance="fill" class="col-sm-12 col-md-6 ">
-                    <mat-label>Enter votre prenom</mat-label>
-                    <input matInput #input maxlength="20" placeholder="Ex. Mana" >
-                  </mat-form-field>
-                </div>
-                <div class="row input-group input-group-default example-container mb-3">
-                  <mat-form-field  appearance="fill"class="col-sm-12 col-md-6 ">
-                    <mat-label>Adresse</mat-label>
-                    <input matInput #input  placeholder="Ex. lomé" >
-                  </mat-form-field>
-                  <mat-form-field class="example-container col-sm-12 col-md-6" appearance="fill" >
-                    <mat-label>Telephone</mat-label>
-                    <span matPrefix>+228 &nbsp;</span>
-                    <input type="text" matInput placeholder="555-555-1234">
-                    <mat-icon matSuffix><i class="fa fa-phone"></i></mat-icon>
-                  </mat-form-field>
 
-                  <mat-form-field class="example-full-width col-sm-12 col-md-6 mb-2" appearance="fill">
-                    <mat-label>Email</mat-label>
-                    <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
-                           placeholder="Ex. ma@example.com" >
-                    <mat-hint>Errors appear instantly!</mat-hint>
-                    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                      Svp entrer un email valide
-                    </mat-error>
-                    <mat-error *ngIf="emailFormControl.hasError('required')">
-                      Email is <strong>required</strong>
-                    </mat-error>
-                  </mat-form-field>
-                  <mat-form-field color="primary" appearance="fill">
-                    <mat-label>Date de naissance</mat-label>
-                    <input matInput [matDatepicker]="picker2">
-                    <mat-hint>MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-                    <mat-datepicker #picker2 color="primary"></mat-datepicker>
-                  </mat-form-field>
-
-                  <mat-form-field appearance="fill" class="col-sm-12 col-md-6">
-                    <mat-label>Enter votre mot de passe</mat-label>
-                    <input matInput [type]="hide ? 'password' : 'text'">
-                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                    </button>
-                  </mat-form-field>
-                  <mat-form-field appearance="fill" class="col-sm-12 col-md-6">
-                    <mat-label>Comfirmer votre mot de passe</mat-label>
-                    <input matInput [type]="hide1 ? 'password' : 'text'">
-                    <button mat-icon-button matSuffix (click)="hide1 = !hide1" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide1">
-                      <mat-icon>{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
-                    </button>
-                  </mat-form-field>
-                  <file-upload [control]="control" class="col-12 ngx-file-drop__drop-zone">
-                    <ng-template let-isFileDragDropAvailable="isFileDragDropAvailable" #placeholder>
-                        <div *ngIf="control.size === 0">
-                            <div class="icon">
-                                <svg>...</svg>
-                            </div>
-
-                            <div class="upload-text">
-                                <ng-container *ngIf="isFileDragDropAvailable; else isNotDragDropAvailable">
-                                    <b>Drag and drop</b> files<br> ou click ici
-                                </ng-container>
-                                <ng-template #isNotDragDropAvailable>
-                                    <b>Click ici</b> pour <br> choisir un photo
-                                </ng-template>
-                            </div>
-                        </div>
-                    </ng-template>
-
-                    <ng-template let-i="index" let-file="file" let-control="control" #item>
-                        <div class="overlay">
-                            <span class="delete-button" (click)="control.removeFile(file)">
-                                <svg>...</svg>
-                            </span>
-                            <img *ngIf="control.valid" [src]="uploadedFile | async">
-                        </div>
-                    </ng-template>
-                </file-upload>
-
-                </div>
-
-                 <div class="example-container">
-                   <mat-form-field hintLabel="Max 10 characters" appearance="fill">
-                     <mat-label>Enterr votre nom</mat-label>
-                     <input matInput #input maxlength="20" placeholder="Ex. Nougat">
-                   </mat-form-field>
-
-
-
-
-                   <mat-form-field appearance="fill" floatLabel="always">
-                     <mat-label>Amount</mat-label>
-                     <input matInput type="number" class="example-right-align" placeholder="0">
-                     <span matPrefix>$&nbsp;</span>
-                     <span matSuffix>.00</span>
-                   </mat-form-field>
-                 </div>
-
-
-               </form>
-             </div>
-         </div>
-
-        </div> -->
 
 
         <div class="col-xl-6">

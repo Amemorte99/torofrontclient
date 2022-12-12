@@ -105,7 +105,7 @@ input[type=email], input[type=password], input[type=text], input[type=tel] {
   input[type=password],
   input[type=tel],
   input[type=date],
-  input[type="text"]{
+  input[type="text"],select{
     box-shadow: none;
     height: 45px;
     outline: none;
@@ -119,13 +119,27 @@ input[type=password]:focus,
 input[type=text]:focus,
 input[type=tel]:focus,
 input[type=date]:focus,
-textarea:focus {
+textarea:focus ,select:focus{
     box-shadow: none;
     border: 1px solid #09977C;
     border-radius: 0.3em;
 }
 
+
 textarea {
     box-shadow: none;
     border-radius: 0.3em;
+}
+
+.up-btn{
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #09977C; /* Set a background color */
+  width: 100%;
+  box-shadow: 2px;
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 10px; /* Some padding */
+  border-radius: 2rem; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
 }

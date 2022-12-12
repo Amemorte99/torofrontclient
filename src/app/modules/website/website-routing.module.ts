@@ -9,6 +9,7 @@ import { DetEmploiComponent } from './components/det-emploi/det-emploi.component
 import { DetRecruteurComponent } from './components/det-recruteur/det-recruteur.component';
 import { DetStagiaireComponent } from './components/det-stagiaire/det-stagiaire.component';
 import { FormationComponent } from './components/formation/formation.component';
+import { AchatCompteComponent } from './components/formulaire/achat-compte/achat-compte.component';
 import { FormulaireComponent } from './components/formulaire/formulaire.component';
 import { HomeComponent } from './components/home/home.component';
 import { NewsletterComponent } from './components/newsletter/newsletter.component';
@@ -35,7 +36,8 @@ const routes: Routes = [
   {path:'cv5',component:CvType5Component},
   {path:'detailStagiaire',component:DetStagiaireComponent},
   {path:'detailRecruteur',component:DetRecruteurComponent},
-  {path:'detailEmploi',component:DetEmploiComponent}
+  {path:'detailEmploi',component:DetEmploiComponent},
+  {path:'paye',component:AchatCompteComponent}
 
 ];
 
