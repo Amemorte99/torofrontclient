@@ -25,8 +25,8 @@ export class AchatCompteComponent implements OnInit {
   SearchCountryField = SearchCountryField;
   CountryISO = CountryISO;
   preferredCountries: CountryISO[] = [
-    CountryISO.UnitedStates,
-    CountryISO.UnitedKingdom
+    CountryISO.Togo,
+    CountryISO.Togo
   ];
 
 }

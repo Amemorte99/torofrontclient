@@ -48,8 +48,8 @@
                         </li>
                         <li class="nav-item mabtn">
                             <a class="nav-link  text-center" id="pills-contact-tab" (click)="choixPayement(3)"
-                                data-toggle="pill" role="tab" aria-controls="pills-contact"
-                                aria-selected="false">Contact</a>
+                                data-toggle="pill" role="tab" aria-controls="pills-contact" aria-selected="false">Carte
+                                visa</a>
                         </li>
                         <li class="nav-item mabtn">
                             <a class="nav-link  text-center" id="pills-contact-tab" (click)="choixPayement(3)"
@@ -64,186 +64,216 @@
 
                     <section *ngIf="value == 1">
                         <div _ngcontent-jlx-c234="" role="tabpanel" aria-labelledby="pills-home-tab"
-                        class="tab-pane active">
-                        <div _ngcontent-jlx-c234="" class="card card-body p-4 shadow-lg border-0">
-                            <div _ngcontent-jlx-c234="" class="my-4">
-                                <h6  class="fw-bold text-primar text-center"> Paiement par TMoney
-                                     </h6>
-                                <div  class="flex">
-                                    <div  class="bar">
-                                        <div  class="bar-in"></div>
+                            class="tab-pane active">
+                            <div _ngcontent-jlx-c234="" class="card card-body p-4 shadow-lg border-0">
+                                <div _ngcontent-jlx-c234="" class="my-4">
+                                    <h6 class="fw-bold text-primar text-center"> Paiement par TMoney
+                                    </h6>
+                                    <div class="flex">
+                                        <div class="bar">
+                                            <div class="bar-in"></div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div  class="my-4">
-                                <div  class="row">
-                                    <div  class="col-md-6">
-                                        <div  class="d-flex justify-content-center"><img
-                                                 src="../../../../../../assets/images/paye/Logo-TMONEY_Fond-Jaune-Togocom-11.png" alt=""
-                                                class="img-fluid"></div>
-                                    </div>
-                                    <div  class="col-md-6">
-                                        <form  novalidate=""
-                                            class="ng-untouched ng-dirty ng-invalid">
-                                            <div  class="row">
-                                                <div  class="col-md-12 mb-3 form-group">
-                                                    <label  for="telephone"
-                                                        class="form-label">Numero de
-                                                        telephone</label>
-                                                        <ngx-intl-tel-input
-                                                         name="phone"
-                                                        formcontrolname="telephone" _nghost-jlx-c107=""
-                                                        class="ng-untouched ng-dirty ng-invalid">
-                                                        <div _ngcontent-jlx-c107=""
-                                                            class="iti iti--allow-dropdown separate-dial-code iti-sdc-4">
-                                                            <div _ngcontent-jlx-c107="" dropdown=""
-                                                                class="iti__flag-container">
-                                                                <div _ngcontent-jlx-c107="" dropdowntoggle=""
-                                                                    class="iti__selected-flag dropdown-toggle"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    <div _ngcontent-jlx-c107=""
-                                                                        class="iti__flag iti__tg"></div>
-                                                                    <div _ngcontent-jlx-c107=""
-                                                                        class="selected-dial-code">+228</div>
-                                                                    
-                                                                    <div _ngcontent-jlx-c107=""
-                                                                        class="iti__arrow"></div>
-                                                                </div>
-                                                            </div><input _ngcontent-jlx-c107=""
-                                                                type="tel" autocomplete="off" id="phone"
-                                                                placeholder="22 21 23 45" maxlength="15"
-                                                                validation="true"
-                                                                class="form-control w-100 ng-untouched ng-pristine ng-valid">
-                                                        </div>
-                                                      </ngx-intl-tel-input> 
-                                                    <div  class="invalid-feedback">
-                                                        Veuillez saisir votre numero de telephone! </div>
+                                <div class="my-4">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="d-flex justify-content-center"><img
+                                                    src="../../../../../../assets/images/paye/Logo-TMONEY_Fond-Jaune-Togocom-11.png"
+                                                    alt="" class="img-fluid"></div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <form novalidate="" class="ng-untouched ng-dirty ng-invalid">
+                                                <div class="row">
+                                                    <div class="col-md-12 mb-3 form-group">
+                                                        <label for="telephone" class="form-label">Numero de
+                                                            telephone</label>
+                                                        <ngx-intl-tel-input name="phone" formcontrolname="telephone"
+                                                            _nghost-jlx-c107=""
+                                                            class="ng-untouched ng-dirty ng-invalid">
+                                                            <div _ngcontent-jlx-c107=""
+                                                                class="iti iti--allow-dropdown separate-dial-code iti-sdc-4">
+                                                                <div _ngcontent-jlx-c107="" dropdown=""
+                                                                    class="iti__flag-container">
+                                                                    <div _ngcontent-jlx-c107="" dropdowntoggle=""
+                                                                        class="iti__selected-flag dropdown-toggle"
+                                                                        aria-haspopup="true" aria-expanded="false">
+                                                                        <div _ngcontent-jlx-c107=""
+                                                                            class="iti__flag iti__tg"></div>
+                                                                        <div _ngcontent-jlx-c107=""
+                                                                            class="selected-dial-code">+228</div>
+
+                                                                        <div _ngcontent-jlx-c107="" class="iti__arrow">
+                                                                        </div>
+                                                                    </div>
+                                                                </div><input _ngcontent-jlx-c107="" type="tel"
+                                                                    autocomplete="off" id="phone"
+                                                                    placeholder="22 21 23 45" maxlength="15"
+                                                                    validation="true"
+                                                                    class="form-control w-100 ng-untouched ng-pristine ng-valid">
+                                                            </div>
+                                                        </ngx-intl-tel-input>
+                                                        <div class="invalid-feedback">
+                                                            Veuillez saisir votre numero de telephone! </div>
+                                                    </div>
+                                                    <div class="col-md-12 mb-3 form-group">
+                                                        <label for="" class="form-label">Confirmer le n° de
+                                                            téléphone</label>
+                                                        <ngx-intl-tel-input name="phone" formcontrolname="confirmation"
+                                                            _nghost-jlx-c107=""
+                                                            class="ng-untouched ng-dirty ng-invalid">
+                                                            <div _ngcontent-jlx-c107=""
+                                                                class="iti iti--allow-dropdown separate-dial-code iti-sdc-4">
+                                                                <div _ngcontent-jlx-c107="" dropdown=""
+                                                                    class="iti__flag-container">
+                                                                    <div _ngcontent-jlx-c107="" dropdowntoggle=""
+                                                                        class="iti__selected-flag dropdown-toggle"
+                                                                        aria-haspopup="true" aria-expanded="false">
+                                                                        <div _ngcontent-jlx-c107=""
+                                                                            class="iti__flag iti__tg"></div>
+                                                                        <div _ngcontent-jlx-c107=""
+                                                                            class="selected-dial-code">+228</div>
+
+                                                                        <div _ngcontent-jlx-c107="" class="iti__arrow">
+                                                                        </div>
+                                                                    </div>
+                                                                </div><input _ngcontent-jlx-c107="" type="tel"
+                                                                    autocomplete="off" id="phone"
+                                                                    placeholder="22 21 23 45" maxlength="15"
+                                                                    validation="true"
+                                                                    class="form-control w-100 ng-untouched ng-pristine ng-valid">
+                                                            </div>
+                                                        </ngx-intl-tel-input>
+                                                        <div class="invalid-feedback">
+                                                            Veuillez saisir votre numero de telephone! </div>
+                                                    </div>
+                                                    <div>
+                                                        <ngx-intl-tel-input [cssClass]="'custom'"
+                                                            [preferredCountries]="[CountryISO.UnitedStates, CountryISO.UnitedKingdom]"
+                                                            [enableAutoCountrySelect]="true" [enablePlaceholder]="true"
+                                                            [searchCountryFlag]="true"
+                                                            [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+                                                            [selectedCountryISO]="CountryISO.UnitedKingdom"
+                                                            [phoneValidation]="true" name="phone"
+                                                            formControlName="phone">
+                                                        </ngx-intl-tel-input>
+                                                    </div>
+                                                    <div class="col-md-12 my-4 form-group d-flex justify-content-end">
+                                                        <button type="submit" class="btn btn-primary" disabled="false">
+                                                            Valider le paiement
+                                                            <!----></button>
+                                                    </div>
                                                 </div>
-                                                <div  class="col-md-12 mb-3 form-group">
-                                                    <label  for=""
-                                                        class="form-label">Confirmer le n° de
-                                                        téléphone</label>
-                                                <ngx-intl-tel-input
-                                                         name="phone"
-                                                        formcontrolname="confirmation" _nghost-jlx-c107=""
-                                                        class="ng-untouched ng-dirty ng-invalid">
-                                                        <div _ngcontent-jlx-c107=""
-                                                            class="iti iti--allow-dropdown separate-dial-code iti-sdc-4">
-                                                            <div _ngcontent-jlx-c107="" dropdown=""
-                                                                class="iti__flag-container">
-                                                                <div _ngcontent-jlx-c107="" dropdowntoggle=""
-                                                                    class="iti__selected-flag dropdown-toggle"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    <div _ngcontent-jlx-c107=""
-                                                                        class="iti__flag iti__tg"></div>
-                                                                    <div _ngcontent-jlx-c107=""
-                                                                        class="selected-dial-code">+228</div>
-                                                                    
-                                                                    <div _ngcontent-jlx-c107=""
-                                                                        class="iti__arrow"></div>
-                                                                </div>
-                                                            </div><input _ngcontent-jlx-c107=""
-                                                                type="tel" autocomplete="off" id="phone"
-                                                                placeholder="22 21 23 45" maxlength="15"
-                                                                validation="true"
-                                                                class="form-control w-100 ng-untouched ng-pristine ng-valid">
-                                                        </div>
-                                                    </ngx-intl-tel-input> 
-                                                    <div  class="invalid-feedback">
-                                                        Veuillez saisir votre numero de telephone! </div>
-                                                </div>
-                                                <div 
-                                                    class="col-md-12 my-4 form-group d-flex justify-content-end">
-                                                    <button  type="submit"
-                                                        class="btn btn-primary" disabled="false"> Valider le paiement
-                                                        <!----></button>
-                                                </div>
-                                            </div>
-                                        </form>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
                     </section>
                     <section *ngIf="value == 2">
                         <div _ngcontent-jlx-c234="" role="tabpanel" aria-labelledby="pills-home-tab"
-                        class="tab-pane active">
-                        <div  class="card card-body p-4 shadow-lg border-0">
-                            <div  class="my-4">
-                                <h6  class="fw-bold text-primar text-center"> Paiement par
-                                    PayGate</h6>
-                                <div  class="flex">
-                                    <div  class="bar">
-                                        <div  class="bar-in"></div>
+                            class="tab-pane active">
+                            <div class="card card-body p-4 shadow-lg border-0">
+                                <div class="my-4">
+                                    <h6 class="fw-bold text-primar text-center"> Paiement par
+                                        PayGate</h6>
+                                    <div class="flex">
+                                        <div class="bar">
+                                            <div class="bar-in"></div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div  class="my-4">
-                                <div  class="row">
-                                    <div class="col-3"></div>
-                                    <div  class="col-md-6 bordered-1 p-3" style=" border: 1px solid #09977C; ">
-                                        <div  class="d-flex justify-content-center"><img
-                                                 src="../../../../../../assets/images/paye/payeGate.png" alt=""
-                                                class="img-fluid">
-                                                
-                                            
-                                        </div>
+                                <div class="my-4">
+                                    <div class="row">
+                                        <div class="col-3"></div>
+                                        <div class="col-md-6 bordered-1 p-3" style=" border: 1px solid #09977C; ">
+                                            <div class="d-flex justify-content-center"><img
+                                                    src="../../../../../../assets/images/paye/payeGate.png" alt=""
+                                                    class="img-fluid">
 
-                                        <div class="mt-5 justify-content-center">
-                                            <button class="btn btn-main">Proceder</button>
-                                        </div>
 
-                                              
+                                            </div>
+
+                                            <div class="mt-5 justify-content-center">
+                                                <button class="btn btn-main">Proceder</button>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="col-3"></div>
+
                                     </div>
-                                    <div class="col-3"></div>
-
                                 </div>
                             </div>
                         </div>
-                    </div>
 
                     </section>
 
                     <section *ngIf="value == 3">
                         <div _ngcontent-jlx-c234="" role="tabpanel" aria-labelledby="pills-home-tab"
-                        class="tab-pane active">
-                        <div  class="card card-body p-4 shadow-lg border-0">
-                            <div  class="my-4">
-                                <h6  class="fw-bold text-primar text-center"> Paiement par
-                                    Carte Visa</h6>
-                                <div  class="flex">
-                                    <div  class="bar">
-                                        <div  class="bar-in"></div>
+                            class="tab-pane active">
+                            <div class="card card-body p-4 shadow-lg border-0">
+                                <div class="my-4">
+                                    <h6 class="fw-bold text-primar text-center"> Paiement par
+                                        Carte Visa</h6>
+                                    <div class="flex">
+                                        <div class="bar">
+                                            <div class="bar-in"></div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div  class="my-4">
-                                <div  class="row">
-                                    <div  class="col-md-6">
-                                        <div  class="d-flex justify-content-center"><img
-                                                 src="../../../../../../assets/images/paye/MasterCard_Logo.svg.png" alt=""
-                                                class="img-fluid">
-                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <form action="">
+                                <div class="my-4">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="d-flex justify-content-center"><img
+                                                    src="../../../../../../assets/images/paye/MasterCard_Logo.svg.png"
+                                                    alt="" class="img-fluid">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <form action="">
+                                                <div class="form-row mb-3">
+                                                    <div class="col">
+                                                        <input type="text" class="form-control"
+                                                            placeholder="numero de card">
 
-                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row mb-3">
+
+                                                    <div class="col">
+                                                        <input type="text" class="form-control" placeholder="nom">
+
+                                                    </div>
+                                                    <div class="col">
+                                                        <input type="email" class="form-control" placeholder="surnom">
+
+                                                    </div>
+                                                </div>
+                                                <div class="form-row ">
+
+                                                    <div class="col">
+                                                        <input type="text" class="form-control"
+                                                            placeholder="date d'expiration">
+
+                                                    </div>
+                                                    <div class="col">
+                                                        <input type="email" class="form-control" placeholder="CVV/CSC">
+
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
                                     </div>
-                                   
                                 </div>
                             </div>
                         </div>
-                    </div>
 
                     </section>
 
-
-
-                    <p *ngIf="value == 2">mana</p>
-                    <p *ngIf="value == 3">koisonn</p>
 
                 </div>
 

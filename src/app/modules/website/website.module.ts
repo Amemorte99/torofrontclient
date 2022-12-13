@@ -220,7 +220,7 @@ import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
     NgxSummernoteModule,
     NgxPrintElementModule,
     NgxExtendedPdfViewerModule,
-    NgxIntlTelInputModule
+    NgxIntlTelInputModule,
 
 
 
