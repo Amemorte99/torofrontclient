@@ -92,6 +92,7 @@ import { DetStagiaireComponent } from './components/det-stagiaire/det-stagiaire.
 import { DetEmploiComponent } from './components/det-emploi/det-emploi.component';
 import { DetRecruteurComponent } from './components/det-recruteur/det-recruteur.component';
 import { AchatCompteComponent } from './components/formulaire/achat-compte/achat-compte.component';
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 
 
 
@@ -219,7 +220,7 @@ import { AchatCompteComponent } from './components/formulaire/achat-compte/achat
     NgxSummernoteModule,
     NgxPrintElementModule,
     NgxExtendedPdfViewerModule,
-
+    NgxIntlTelInputModule
 
 
 
