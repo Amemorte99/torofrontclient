@@ -93,6 +93,7 @@ import { DetEmploiComponent } from './components/det-emploi/det-emploi.component
 import { DetRecruteurComponent } from './components/det-recruteur/det-recruteur.component';
 import { AchatCompteComponent } from './components/formulaire/achat-compte/achat-compte.component';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+import { FormuComponent } from './components/formu/formu.component';
 
 
 
@@ -139,6 +140,7 @@ import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
     DetEmploiComponent,
     DetRecruteurComponent,
     AchatCompteComponent,
+    FormuComponent,
 
   ],
   imports: [

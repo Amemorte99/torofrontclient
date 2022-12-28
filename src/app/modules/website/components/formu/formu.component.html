@@ -1,0 +1,61 @@
+<form [formGroup]="creationForm">
+    <div class="card-body">
+      <h2>inscription</h2>
+      <input
+      type="text"
+      class="mt-3 form-control text-center"
+      formControlName="email"
+      [ngClass]="
+      email?.['invalid'] &&
+      email?.['touched']
+      ? 'form-control is-invalid'
+      : 'form-control'
+  "
+      id="de"
+      placeholder="email"
+    />
+    <input
+      type="text"
+      class="mt-3 form-control text-center"
+      formControlName="username"
+      [ngClass]="
+      username?.['invalid'] &&
+      username?.['touched']
+      ? 'form-control is-invalid'
+      : 'form-control'
+  "
+      id="de"
+      placeholder="username"
+    />
+    <input
+      type="text"
+      class="mt-3 form-control text-center"
+      formControlName="password"
+      [ngClass]="
+      password?.['invalid'] &&
+      password?.['touched']
+      ? 'form-control is-invalid'
+      : 'form-control'
+  "
+      id="de"
+      placeholder="password"
+    />
+
+    <input
+    type="text"
+    class="mt-3 form-control text-center"
+    formControlName="roleName"
+    [ngClass]="
+    roleName?.['invalid'] &&
+    roleName?.['touched']
+    ? 'form-control is-invalid'
+    : 'form-control'
+"
+    id="de"
+    placeholder="roleName"
+  />
+  </div>
+
+
+      <button class="btn btn-primary mb-2 mt-5 col-md-6 justify-content-end"   (click)="soumettreCode()">Valider</button>
+      </form>

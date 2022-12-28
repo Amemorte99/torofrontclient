@@ -1,74 +1,3 @@
-<!-- <div class="container py-5">
-      
-  <div class="row"> 
-    <div class="col-md-12 col-md-offset-3">
-        <form [formGroup]="personalDetails" id="msform">
-          
-            <ul id="progressbar">
-                <li [ngClass]="step>=1 ? 'active ' : 'inactive'">Personal Details</li>
-                <li [ngClass]="step>=2 ? 'active' : 'inactive'">Social Profiles</li>
-                <li [ngClass]="step==3 ? 'active' : 'inactive'">Account Setup</li>
-            </ul>
-       
-            <fieldset  *ngIf="step == 1" >
-                <h2 class="fs-title">Personal Details</h2>
-                <input type="text" formControlName="name"  [ngClass]="{ 'is-invalid': personal_step && personal['name'].errors }" placeholder="Full Name"/>
-                <div *ngIf="personal_step && personalDetails.controls['name'].errors">
-                    <div *ngIf="personal['name'].errors">Name is required</div>
-                </div>
-                <input type="text" formControlName="email" name="email" placeholder="Email"/>
-                <div *ngIf="personal_step && personalDetails.controls['email'].errors">
-                  <div *ngIf="personal['email'].errors">Email is required</div>
-               </div>
-                <input type="text" formControlName="phone" name="phone" placeholder="Phone"/>
-                <div *ngIf="personal_step && personalDetails.controls['phone'].errors">
-                  <div *ngIf="personal['phone'].errors">Phone is required</div>
-              </div>
-                <input (click)="next()" type="button" name="next" class="next action-button" value="Next"/>
-            </fieldset>
-        </form>
-         <form [formGroup]="addressDetails" id="msform">
-            <fieldset *ngIf="step == 2" >
-                <h2 class="fs-title">Address Details</h2>
-                <input type="text" formControlName="city"  placeholder="City"/>
-                <div *ngIf="address_step && addressDetails.controls['city'].errors">
-                    <div *ngIf="address['city'].errors">City is required</div>
-                </div>
-                <textarea rows="5" cols="5" formControlName="address"  placeholder="address"></textarea>
-                <div *ngIf="address_step && addressDetails.controls['address'].errors">
-                    <div *ngIf="address['address'].errors">Address is required</div>
-                </div>
-                <input type="text" formControlName="pincode"  placeholder="Pincode"/>
-                <div *ngIf="address_step && addressDetails.controls['pincode'].errors">
-                    <div *ngIf="address['pincode'].errors">Pincode is required</div>
-                </div>
-                <input (click)="previous()" type="button" name="previous" class="previous action-button-previous" value="Previous"/>
-                <input  (click)="next()" type="button" name="next" class="next action-button" value="Next"/>
-            </fieldset>
-        </form>
-         <form [formGroup]="educationalDetails" id="msform">
-            <fieldset *ngIf="step == 3">
-                <h2 class="fs-title">Educational Details</h2>
-                <input type="text" formControlName="highest_qualification" placeholder="Highest Qualification"/>
-                <div *ngIf="education_step && educationalDetails.controls['highest_qualification'].errors">
-                    <div *ngIf="education['highest_qualification'].errors">Highest qualification is required</div>
-                </div>
-                <input type="text" formControlName="university"  placeholder="University"/>
-                <div *ngIf="education_step && educationalDetails.controls['university'].errors">
-                    <div *ngIf="education['university'].errors">University is required</div>
-                </div>
-                <input type="text" formControlName="total_marks" placeholder="Total Marks"/>
-                <div *ngIf="education_step && educationalDetails.controls['total_marks'].errors">
-                    <div *ngIf="education['total_marks'].errors">Total marks is required</div>
-                </div>
-                <input (click)="previous()" type="button" name="previous" class="previous action-button-previous" value="Previous"/>
-                <input (click)="submit()"type="submit" name="submit" class="submit action-button" value="Submit"/>
-            </fieldset>
-        </form>
-    </div>
-</div>
-</div> -->
-
 
 
 
@@ -111,7 +40,7 @@
 
       <div class="col-md-3 " style="background-color: #09977C;">
         <div class="container mt-5 mb-3 ">
-          <a href="" class="btn btn-light " style="width: 100%; border-radius: 4rem; font-size: 28px; color: #09977C;">
+          <a href="" class="btn btn-light " id="btn-v1">
             Emploi Afrique
 
 
@@ -140,98 +69,191 @@
       </div>
       <div class="col-md-9  " style="background-color: #09977C;">
         <div class="container">
-          <div class="card shadow mt-5 m-3  text-black">
+          <div class="card shadow mt-5 m-3 p-5 text-black">
             <form action="" [formGroup]="personelDetails">
-              <fieldset *ngIf="stepp == 1">
 
+
+              <fieldset >
                 <div class="row d-flex p-4">
+
+
                   <div class="col-md-8 ">
 
-
-                    <div class="form-row mt-5 ">
-                      <div class="col">
-                        <input type="text" class="form-control"
-                          [ngClass]="{ 'is-invalid':  persenal_step && personalInformation['prenom'].errors }"
-                          placeholder="Prenom" formControlName="prenom">
-                        <div *ngIf="persenal_step && personelDetails.controls['prenom'].errors">
-                          <div *ngIf="personalInformation['prenom'].errors">prenom is required</div>
+                    <div class="form-row">
+                      <div class="col-4 mr-0">
+                        <div class="inputGroup " (click)="setepChoix(1)">
+                          <input id="radio1" name="radio" type="radio" class="form-control" />
+                          <label for="radio1" >Stagaire</label>
                         </div>
                       </div>
-                      <div class="col">
-                        <input type="text" class="form-control" placeholder="Nom" formControlName="name">
-                        <div *ngIf="persenal_step && personelDetails.controls['name'].errors">
-                          <div *ngIf="personalInformation['name'].errors">name is required</div>
+                      <div class="col-4">
+                        <div class="inputGroup" (click)="setepChoix(2)">
+                          <input id="radio2" name="radio" type="radio" />
+                          <label for="radio2">Demandeur d'emploi</label>
                         </div>
                       </div>
-                      <div class="col">
-                        <input type="email" class="form-control" placeholder="Email" formControlName="email">
-                        <div *ngIf="persenal_step && personelDetails.controls['email'].errors">
-                          <div *ngIf="personalInformation['email'].errors">email is required</div>
+                      <div class="col-4">
+                        <div class="inputGroup" (click)="setepChoix(3)">
+                          <input id="radio3" name="radio" type="radio" />
+                          <label for="radio3">Recruteur </label>
                         </div>
                       </div>
                     </div>
-                    <div class="form-row mt-5">
-                      <div class="col">
-                        <input type="text" class="form-control" placeholder="Adresse" formControlName="adresse">
-                        <div *ngIf="persenal_step && personelDetails.controls['adresse'].errors">
-                          <div *ngIf="personalInformation['adresse'].errors">adresse is required</div>
-                        </div>
-                      </div>
-                      <div class="col">
-                        <input type="Date" class="form-control" placeholder="Date de naissance" formControlName="dob">
-                        <div *ngIf="persenal_step && personelDetails.controls['dob'].errors">
-                          <div *ngIf="personalInformation['dob'].errors">date naiss is required</div>
-                        </div>
-                      </div>
-                      <div class="col">
-                        <input type="email" class="form-control" placeholder="Tel" formControlName="phone">
-                        <div *ngIf="persenal_step && personelDetails.controls['phone'].errors">
-                          <div *ngIf="personalInformation['phone'].errors">phone naiss is required</div>
-                        </div>
 
-                      </div>
-                    </div>
 
-                    <div class="form-group mt-5">
-                      <div class="row">
+                    <div class="" *ngIf="stepp == 1">
+                      <div class="form-row mt-5 ">
                         <div class="col">
-
-                          <select class="form-control" id="exampleFormControlSelect1" formControlName="genre">
-                            <option value="">Genre</option>
-                            <option>masculin</option>
-                            <option>feminin</option>
-                          </select>
-                          <div *ngIf="persenal_step && personelDetails.controls['genre'].errors">
-                            <div *ngIf="personalInformation['genre'].errors">genre is required</div>
+                          <input type="text" class="form-control"
+                            [ngClass]="{ 'is-invalid':  persenal_step && personalInformation['prenom'].errors }"
+                            placeholder="Prenom" formControlName="prenom">
+                          <div *ngIf="persenal_step && personelDetails.controls['prenom'].errors">
+                            <div *ngIf="personalInformation['prenom'].errors">prenom is required</div>
                           </div>
                         </div>
                         <div class="col">
-
-                          <select class="form-control" id="exampleFormControlSelect1" formControlName="secteur">
-                            <option value="">Vous etes ?</option>
-                            <option>stagiaire</option>
-                            <option>employeur</option>
-                            <option>recruteur</option>
-                          </select>
-                          <div *ngIf="persenal_step && personelDetails.controls['secteur'].errors">
-                            <div *ngIf="personalInformation['secteur'].errors">secteur is required</div>
+                          <input type="text" class="form-control" placeholder="Nom" formControlName="name">
+                          <div *ngIf="persenal_step && personelDetails.controls['name'].errors">
+                            <div *ngIf="personalInformation['name'].errors">name is required</div>
                           </div>
                         </div>
-                        <div class="col ">
-
-                          <select class=" form-control" formControlName="domaine">
-                            <option value="">Domaine</option>
-                            <option value="2">Option 1</option>
-                            <option value="3">Option 2</option>
-                            <option value="4">Option 3</option>
-                          </select>
-                          <div *ngIf="persenal_step && personelDetails.controls['domaine'].errors">
-                            <div *ngIf="personalInformation['domaine'].errors">domaine is required</div>
+                        <div class="col">
+                          <input type="email" class="form-control" placeholder="Email" formControlName="email">
+                          <div *ngIf="persenal_step && personelDetails.controls['email'].errors">
+                            <div *ngIf="personalInformation['email'].errors">email is required</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-row mt-5">
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="Adresse" formControlName="adresse">
+                          <div *ngIf="persenal_step && personelDetails.controls['adresse'].errors">
+                            <div *ngIf="personalInformation['adresse'].errors">adresse is required</div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <input type="Date" class="form-control" placeholder="Date de naissance" formControlName="dob">
+                          <div *ngIf="persenal_step && personelDetails.controls['dob'].errors">
+                            <div *ngIf="personalInformation['dob'].errors">date naiss is required</div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <input type="email" class="form-control" placeholder="Tel" formControlName="phone">
+                          <div *ngIf="persenal_step && personelDetails.controls['phone'].errors">
+                            <div *ngIf="personalInformation['phone'].errors">phone naiss is required</div>
                           </div>
 
                         </div>
                       </div>
+
+                      <div class="form-group mt-5">
+                        <div class="row">
+                          <div class="col">
+
+                            <select class="form-control" id="exampleFormControlSelect1" formControlName="genre">
+                              <option value="">Genre</option>
+                              <option>masculin</option>
+                              <option>feminin</option>
+                            </select>
+                            <div *ngIf="persenal_step && personelDetails.controls['genre'].errors">
+                              <div *ngIf="personalInformation['genre'].errors">genre is required</div>
+                            </div>
+                          </div>
+                          <div class="col ">
+
+                            <select class=" form-control" formControlName="domaine">
+                              <option value="">Domaine</option>
+                              <option value="2">Option 1</option>
+                              <option value="3">Option 2</option>
+                              <option value="4">Option 3</option>
+                            </select>
+                            <div *ngIf="persenal_step && personelDetails.controls['domaine'].errors">
+                              <div *ngIf="personalInformation['domaine'].errors">domaine is required</div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
                     </div>
+
+                    <div class="" *ngIf="stepp == 2">
+                      <h2></h2>
+                      <div class="form-row mt-5 ">
+                        <div class="col">
+                          <input type="text" class="form-control"
+                            [ngClass]="{ 'is-invalid':  persenal_step && personalInformation['prenom'].errors }"
+                            placeholder="Prenom" formControlName="prenom">
+                          <div *ngIf="persenal_step && personelDetails.controls['prenom'].errors">
+                            <div *ngIf="personalInformation['prenom'].errors">prenom is required</div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="Nom" formControlName="name">
+                          <div *ngIf="persenal_step && personelDetails.controls['name'].errors">
+                            <div *ngIf="personalInformation['name'].errors">name is required</div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <input type="email" class="form-control" placeholder="Email" formControlName="email">
+                          <div *ngIf="persenal_step && personelDetails.controls['email'].errors">
+                            <div *ngIf="personalInformation['email'].errors">email is required</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-row mt-5">
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="Adresse" formControlName="adresse">
+                          <div *ngIf="persenal_step && personelDetails.controls['adresse'].errors">
+                            <div *ngIf="personalInformation['adresse'].errors">adresse is required</div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <input type="Date" class="form-control" placeholder="Date de naissance" formControlName="dob">
+                          <div *ngIf="persenal_step && personelDetails.controls['dob'].errors">
+                            <div *ngIf="personalInformation['dob'].errors">date naiss is required</div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <input type="email" class="form-control" placeholder="Tel" formControlName="phone">
+                          <div *ngIf="persenal_step && personelDetails.controls['phone'].errors">
+                            <div *ngIf="personalInformation['phone'].errors">phone naiss is required</div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <div class="form-group mt-5">
+                        <div class="row">
+                          <div class="col">
+
+                            <select class="form-control" id="exampleFormControlSelect1" formControlName="genre">
+                              <option value="">Genre</option>
+                              <option>masculin</option>
+                              <option>feminin</option>
+                            </select>
+                            <div *ngIf="persenal_step && personelDetails.controls['genre'].errors">
+                              <div *ngIf="personalInformation['genre'].errors">genre is required</div>
+                            </div>
+                          </div>
+                          <div class="col ">
+
+                            <select class=" form-control" formControlName="domaine">
+                              <option value="">Domaine</option>
+                              <option value="2">Option 1</option>
+                              <option value="3">Option 2</option>
+                              <option value="4">Option 3</option>
+                            </select>
+                            <div *ngIf="persenal_step && personelDetails.controls['domaine'].errors">
+                              <div *ngIf="personalInformation['domaine'].errors">domaine is required</div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+
                   </div>
                   <div class="col-md-4 text-justify p-5">
                     <label for="">Choissez une image</label>
@@ -240,18 +262,8 @@
                       [_config]="imagePickerConf"></ngp-image-picker>
 
 
-
-
-
-                    <div class="mt-5 text-justify">
-                      <label for="">Enregistrer votre cv</label>
-                      <file-upload formControlName="files"></file-upload>
-                      
-
-
-                    </div>
-                    <input (click)="onNext()" type="button" name="next" class="btn up-btn mt-5" value="suivant" />
-
+                                      <button
+                    (click)="soumettre()" type="button" name="next" class="btn up-btn mt-5"  >Soumettre</button>
 
 
 
@@ -263,7 +275,7 @@
               </fieldset>
             </form>
             <form action="" [formGroup]="payementDetails">
-              <fieldset *ngIf="stepp == 2">
+              <fieldset *ngIf="stepp == 20">
                 <div class="row d-flex pb-3">
 
                   <div class=" justify-content-center ">
@@ -305,138 +317,3 @@
 
 
 
-<div class="container-fluid p-3">
-  <div class="row">
-
-    <div class="col-3 img-forms"></div>
-    <div class="col-9 mafroms ">
-      <div class="text-center my-5 maformstext">
-        <h3>Faire partie <span style="color: #09977C;  text-shadow: 1px 1px 1px #09977C, 2px 2px 1px #6F8BA4;">de notre
-            communauté mondiale</span> n'a jamais été aussi facile</h3>
-      </div>
-      <div class="row">
-        <div class="col-sm-0 col-md-3"></div>
-
-
-
-        <div class="col-xl-6">
-          <div class="card-body p-md-5 text-black">
-            <h3 class="mb-5 text-uppercase">Formulaire d'inscription</h3>
-
-            <div class="row">
-              <div class="col-md-6 mb-4">
-                <div class="form-outline">
-                  <input type="text" id="form3Example1m" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example1m">Prenom</label>
-                </div>
-              </div>
-              <div class="col-md-6 mb-4">
-                <div class="form-outline">
-                  <input type="text" id="form3Example1n" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example1n">Nom</label>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6 mb-4">
-                <div class="form-outline">
-                  <input type="text" id="form3Example1m1" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example1m1">Mother's name</label>
-                </div>
-              </div>
-              <div class="col-md-6 mb-4">
-                <div class="form-outline">
-                  <input type="text" id="form3Example1n1" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example1n1">Father's name</label>
-                </div>
-              </div>
-            </div>
-
-            <div class="form-outline mb-4">
-              <input type="text" id="form3Example8" class="form-control form-control-lg" />
-              <label class="form-label" for="form3Example8">Addresse</label>
-            </div>
-
-            <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
-
-              <h6 class="mb-0 me-4">Gender: </h6>
-
-              <div class="form-check form-check-inline mb-0 me-4">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
-                  value="option1" />
-                <label class="form-check-label" for="femaleGender">Feminin</label>
-              </div>
-
-              <div class="form-check form-check-inline mb-0 me-4">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
-                  value="option2" />
-                <label class="form-check-label" for="maleGender">Masculin</label>
-              </div>
-
-              <div class="form-check form-check-inline mb-0">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
-                  value="option3" />
-                <label class="form-check-label" for="otherGender">Autre</label>
-              </div>
-
-            </div>
-
-            <div class="row">
-              <div class="col-md-6 mb-4">
-
-                <select class="select">
-                  <option value="1">Pays</option>
-                  <option value="2">Option 1</option>
-                  <option value="3">Option 2</option>
-                  <option value="4">Option 3</option>
-                </select>
-
-              </div>
-              <div class="col-md-6 mb-4">
-
-                <select class="select">
-                  <option value="1">Ville</option>
-                  <option value="2">Option 1</option>
-                  <option value="3">Option 2</option>
-                  <option value="4">Option 3</option>
-                </select>
-
-              </div>
-            </div>
-
-            <div class="form-outline mb-4">
-              <input type="date" id="form3Example9" class="form-control form-control-lg" />
-              <label class="form-label" for="form3Example9">Date de Naisssance</label>
-            </div>
-
-            <div class="form-outline mb-4">
-              <input type="text" id="form3Example90" class="form-control form-control-lg" />
-              <label class="form-label" for="form3Example90">Pincode</label>
-            </div>
-
-            <div class="form-outline mb-4">
-              <input type="text" id="form3Example99" class="form-control form-control-lg" />
-              <label class="form-label" for="form3Example99">Course</label>
-            </div>
-
-            <div class="form-outline mb-4">
-              <input type="text" id="form3Example97" class="form-control form-control-lg" />
-              <label class="form-label" for="form3Example97">Email</label>
-            </div>
-
-            <div class="d-flex justify-content-end pt-3">
-              <button type="button" class="btn btn-light btn-lg">Reset all</button>
-              <button type="button" class="btn btn-warning btn-lg ms-2">Submit form</button>
-            </div>
-
-          </div>
-        </div>
-        <div class="col-sm-0 col-md-3"></div>
-
-      </div>
-
-    </div>
-
-  </div>
-</div>

@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { FileUploadModule } from '@iplab/ngx-file-upload';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+import { ConfigInterceptor } from './common/config.interceptor';
 // import { CreateComponent } from './modules/utd/components/create/create/create.component';
 
 
@@ -41,7 +42,7 @@ import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 
   ],
   providers: [
-    // { provide: HTTP_INTERCEPTORS, useClass: ConfigInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ConfigInterceptor, multi: true },
 
   ],
   bootstrap: [AppComponent]

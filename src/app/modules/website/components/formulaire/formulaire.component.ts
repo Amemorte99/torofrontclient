@@ -15,7 +15,7 @@ import { AccountService } from '../cvcontainer/account/account.service';
 export class FormulaireComponent implements OnInit {
 
 
-  
+
   hide = true;
   hide1 = true;
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
@@ -45,7 +45,12 @@ export class FormulaireComponent implements OnInit {
   persenal_step = false;
   payement_step = false;
 
-    stepp = 1;
+
+  loading = false;
+
+    stepp = 0;
+
+
 
 
 
@@ -76,8 +81,8 @@ export class FormulaireComponent implements OnInit {
 
 
   constructor(private formBuilder: FormBuilder,public accountService: AccountService) {
-    
-    
+
+
   }
   ngOnInit(): void {
     this.subscription = this.control.valueChanges.subscribe((values: Array<File>) => this.getImage(values[0]));
@@ -92,14 +97,14 @@ export class FormulaireComponent implements OnInit {
       genre: ['', Validators.required],
       domaine :['', Validators.required],
       secteur:['', Validators.required],
-      
-    
-      
+
+
+
   });
 
   this.payementDetails = this.formBuilder.group({
     pay: ['', Validators.required],
-  
+
 });
 
 
@@ -159,7 +164,7 @@ export class FormulaireComponent implements OnInit {
     localStorage.setItem("image",image)
 
     //let imagee=localStorage.getItem("image")
-   
+
     //alert(imagee)
 
     //this.imagee=localStorage.getItem("image")
@@ -176,11 +181,11 @@ export class FormulaireComponent implements OnInit {
 
 
   get personalInformation() { return this.personelDetails.controls; }
-    
+
   get payementInformation() { return this.payementDetails.controls; }
 
   oneSubmit(){
-    
+
     if(this.step==2){
       this.education_step = true;
       if (this.educationalDetails.invalid) { return }
@@ -190,25 +195,30 @@ export class FormulaireComponent implements OnInit {
 
   Oneprevious(){
     this.stepp--
-   
+
     if(this.stepp==1){
       this.payement_step = false;
     }
   }
-   
+
 
   onNext(){
 
     if(this.stepp==1){
           this.persenal_step = true;
           if (this.personelDetails.invalid) { return  }
-          this.stepp++
+          this.stepp=20
     }
+  }
 
-    
-    
+  soumettre(){
+    if (this.personelDetails.invalid) { return  }
+
+    this.stepp=20
 
   }
+
+
 
 
 
@@ -220,7 +230,7 @@ export class FormulaireComponent implements OnInit {
 
 
   get personal() { return this.personalDetails.controls; }
-    
+
   get address() { return this.addressDetails.controls; }
 
   get education() { return this.educationalDetails.controls; }
@@ -237,24 +247,24 @@ export class FormulaireComponent implements OnInit {
         if (this.addressDetails.invalid) { return }
             this.step++;
     }
-    
+
 
   }
 
   previous(){
     this.step--
-   
+
     if(this.step==1){
       this.address_step = false;
     }
     if(this.step==2){
       this.education_step = false;
     }
-   
+
   }
 
   submit(){
-    
+
     if(this.step==3){
       this.education_step = true;
       if (this.educationalDetails.invalid) { return }
@@ -262,7 +272,18 @@ export class FormulaireComponent implements OnInit {
     }
   }
 
-  
+
+
+  setepChoix(choix:number){
+
+    this.stepp=choix;
+
+  this.ngOnInit();
+
+
+  }
+
+
 
 
 

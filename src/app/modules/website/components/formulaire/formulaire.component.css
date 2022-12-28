@@ -97,7 +97,7 @@ input[type=email], input[type=password], input[type=text], input[type=tel] {
   .logo{
 
 
-    border: 20px solid white; 
+    border: 20px solid white;
     border-radius: 70%;
   }
 
@@ -143,3 +143,113 @@ textarea {
   border-radius: 2rem; /* Rounded corners */
   font-size: 18px; /* Increase font size */
 }
+
+
+#btn-v1{
+  width: 100%; border-radius: 4rem; font-size: 28px; color: #09977C;}
+
+
+
+
+
+
+
+
+
+
+
+
+.inputGroup {
+  background-color: #fff;
+  display: block;
+  margin: 0;
+  height: 63px;
+  position: relative;
+  border: 1px solid #E3E3E3;
+
+  border-radius: 8px;}
+
+
+ .inputGroup label {
+    padding: 18px 30px;
+    width: 100%;
+    border-radius: 0.75rem;
+    display: block;
+    text-align: left;
+    color: #3C454C;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: color 200ms ease-in;
+    overflow: hidden;}
+   .inputGroup   label:before {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      content: '';
+      background-color: #d9e0df;
+      background-size: 100%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale3d(1, 1, 1);
+      transition: all 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+      opacity: 0;
+      z-index: -1;
+    }
+   .inputGroup label:after {
+      width: 32px;
+      height: 32px;
+      content: '';
+
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='18.001' height='18.002' viewBox='0 0 18.001 18.002'%3e%3cpath id='choice' d='M7952-9658a9.011,9.011,0,0,1-9-9,9.01,9.01,0,0,1,9-9,9.011,9.011,0,0,1,9,9A9.012,9.012,0,0,1,7952-9658Zm0-13a4,4,0,0,0-4,4,4,4,0,0,0,4,4,4.006,4.006,0,0,0,4-4A4.005,4.005,0,0,0,7952-9671Z' transform='translate(-7943 9676.001)' fill='%23C1B7BA'/%3e%3c/svg%3e");
+
+      background-repeat: no-repeat;
+      background-position: 2px 3px;
+      border-radius: 50%;
+      z-index: 2;
+      position: absolute;
+      right: 8px;
+      top: 52%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      transition: all 200ms ease-in;
+    }
+
+
+  input:checked ~ label {
+    color: #09977C;
+    font-family: Ubuntu, Medium;
+    font-weight: 600;
+    font-size: 16px;}
+
+    input:checked ~ label:before {
+      transform: translate(-50%, -50%) scale3d(56, 56, 1);
+      opacity: 1;
+
+
+    }
+
+  .inputGroup  input:checked ~ label:after {
+
+      color: #09977C;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='20.001' height='18.002' viewBox='0 0 18.001 18.002'%3e%3cpath id='choice' d='M7952-9658a9.011,9.011,0,0,1-9-9,9.01,9.01,0,0,1,9-9,9.011,9.011,0,0,1,9,9A9.012,9.012,0,0,1,7952-9658Zm0-13a4,4,0,0,0-4,4,4,4,0,0,0,4,4,4.006,4.006,0,0,0,4-4A4.005,4.005,0,0,0,7952-9671Z' transform='translate(-7943 9676.001)' fill='%2309977C'/%3e%3c/svg%3e");
+    }
+
+
+ .inputGroup input {
+    width: 28px;
+    height: 8px;
+    order: 1;
+    z-index: 2;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    visibility: hidden;
+  }
+
+
+
+

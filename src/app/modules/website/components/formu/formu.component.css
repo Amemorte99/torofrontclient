@@ -1,0 +1,17 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+input[type="text"]{
+    border-radius: 0.5rem;
+   height: 46px;
+   font-size: 20px;
+   font-weight: 4500;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+h3{
+    font-size: 12px;
+}

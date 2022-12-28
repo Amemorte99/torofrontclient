@@ -14,7 +14,7 @@ export class HttpService {
   getRequest(url: string, option?: any): Observable<any> {
     return this.http.get(`${API_USERS_URL}${url}`, option).pipe(catchError(this.handleError))
   }
- 
+
   getServerRequest(url: string): Observable<any> {
     return this.http.get<any>(`${url}`).pipe(catchError(this.handleError))
   }
@@ -49,14 +49,14 @@ export class HttpService {
   getModifyRequest(url: string, data: any, option?: any): Observable<any> {
     return this.http.put(`${API_USERS_URL}${url}`, data, option).pipe(catchError(this.handleError))
   }
-  
+
 
   handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       console.log('An error occurred:', error.error.message);
     } else {
-      console.log(`Backend return code ${error.status},` +
-        `body was: ${error.error}`);
+      console.log(`Backend return code ${error.status},` ,
+        `body was:`, error.error);
     }
 
     return throwError(() =>

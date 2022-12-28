@@ -13,8 +13,8 @@ import { CurriculumtwoComponent } from './components/prototype/cvs/curriculumtwo
 @NgModule({
   declarations: [
     PrototypeComponent,
-    IndividuComponent, 
-    MoralComponent, PaiementComponent, CurriculumoneComponent, CurriculumtwoComponent,  
+    IndividuComponent,
+    MoralComponent, PaiementComponent, CurriculumoneComponent, CurriculumtwoComponent
   ],
   imports: [
     CommonModule,

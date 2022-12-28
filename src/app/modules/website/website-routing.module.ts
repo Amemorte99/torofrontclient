@@ -18,6 +18,7 @@ import { PartenaireComponent } from './components/partenaire/partenaire.componen
 import { RedactionComponent } from './components/redaction/redaction.component';
 import { TemoignageComponent } from './components/temoignage/temoignage.component';
 import { VisitetentrepriseComponent } from './components/visitetentreprise/visitetentreprise.component';
+import { FormuComponent } from './components/formu/formu.component';
 
 const routes: Routes = [
   {path:'',component: HomeComponent },
@@ -37,7 +38,8 @@ const routes: Routes = [
   {path:'detailStagiaire',component:DetStagiaireComponent},
   {path:'detailRecruteur',component:DetRecruteurComponent},
   {path:'detailEmploi',component:DetEmploiComponent},
-  {path:'paye',component:AchatCompteComponent}
+  {path:'paye',component:AchatCompteComponent},
+  {path:'formu',component:FormuComponent}
 
 ];
 
