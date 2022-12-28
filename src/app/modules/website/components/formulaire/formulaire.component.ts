@@ -95,7 +95,6 @@ export class FormulaireComponent implements OnInit {
       phone: ['',Validators.required],
       dob: ['', Validators.required],
       genre: ['', Validators.required],
-      domaine :['', Validators.required],
       secteur:['', Validators.required],
 
 
@@ -209,15 +208,23 @@ export class FormulaireComponent implements OnInit {
           if (this.personelDetails.invalid) { return  }
           this.stepp=20
     }
+
+
+
+
   }
 
   soumettre(){
-    if (this.personelDetails.invalid) { return  }
+    if(this.stepp==1){
+      this.persenal_step = true;
+      if (this.personelDetails.invalid) { return  }
 
-    this.stepp=20
+
+}
+
+
 
   }
-
 
 
 

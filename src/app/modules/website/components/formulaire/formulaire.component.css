@@ -1,8 +1,15 @@
 
 @import '../../../../../../node_modules/intl-tel-input/build/css/intlTelInput.css';
 
+*{
+  font-family: Ubuntu, Medium;
 
-
+}
+h2{
+  font-family: Ubuntu, Medium;
+    font-weight: 600;
+    font-size: 16px;
+}
 
 
 

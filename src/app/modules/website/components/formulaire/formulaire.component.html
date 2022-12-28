@@ -70,38 +70,54 @@
       <div class="col-md-9  " style="background-color: #09977C;">
         <div class="container">
           <div class="card shadow mt-5 m-3 p-5 text-black">
+
+
+            <div class="row">
+
+              <div class="col-md-8">
+
+                <div class="form-row">
+
+                  <div class="col-4 mr-0">
+                    <div class="inputGroup " (click)="setepChoix(1)">
+                      <input id="radio1" name="radio" type="radio" class="form-control" />
+                      <label for="radio1" >Stagaire</label>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="inputGroup" (click)="setepChoix(2)">
+                      <input id="radio2" name="radio" type="radio" />
+                      <label for="radio2">Demandeur d'emploi</label>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="inputGroup" (click)="setepChoix(3)">
+                      <input id="radio3" name="radio" type="radio" />
+                      <label for="radio3">Recruteur </label>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+              </div>
+              <div class="col-md-4">
+
+              </div>
+            </div>
             <form action="" [formGroup]="personelDetails">
 
 
-              <fieldset >
-                <div class="row d-flex p-4">
+              <fieldset  *ngIf="stepp == 1">
+                <h2 class="mt-5">Stagaire</h2>
+                <div class="row d-flex p-2">
 
 
                   <div class="col-md-8 ">
 
-                    <div class="form-row">
-                      <div class="col-4 mr-0">
-                        <div class="inputGroup " (click)="setepChoix(1)">
-                          <input id="radio1" name="radio" type="radio" class="form-control" />
-                          <label for="radio1" >Stagaire</label>
-                        </div>
-                      </div>
-                      <div class="col-4">
-                        <div class="inputGroup" (click)="setepChoix(2)">
-                          <input id="radio2" name="radio" type="radio" />
-                          <label for="radio2">Demandeur d'emploi</label>
-                        </div>
-                      </div>
-                      <div class="col-4">
-                        <div class="inputGroup" (click)="setepChoix(3)">
-                          <input id="radio3" name="radio" type="radio" />
-                          <label for="radio3">Recruteur </label>
-                        </div>
-                      </div>
-                    </div>
-
-
-                    <div class="" *ngIf="stepp == 1">
+                    <div class="">
                       <div class="form-row mt-5 ">
                         <div class="col">
                           <input type="text" class="form-control"
@@ -161,99 +177,20 @@
                           </div>
                           <div class="col ">
 
-                            <select class=" form-control" formControlName="domaine">
-                              <option value="">Domaine</option>
+                            <select class=" form-control" formControlName="secteur">
+                              <option value="">Secteur</option>
                               <option value="2">Option 1</option>
                               <option value="3">Option 2</option>
                               <option value="4">Option 3</option>
                             </select>
-                            <div *ngIf="persenal_step && personelDetails.controls['domaine'].errors">
-                              <div *ngIf="personalInformation['domaine'].errors">domaine is required</div>
+                            <div *ngIf="persenal_step && personelDetails.controls['secteur'].errors">
+                              <div *ngIf="personalInformation['secteur'].errors">domaine is required</div>
                             </div>
 
                           </div>
                         </div>
                       </div>
                     </div>
-
-                    <div class="" *ngIf="stepp == 2">
-                      <h2></h2>
-                      <div class="form-row mt-5 ">
-                        <div class="col">
-                          <input type="text" class="form-control"
-                            [ngClass]="{ 'is-invalid':  persenal_step && personalInformation['prenom'].errors }"
-                            placeholder="Prenom" formControlName="prenom">
-                          <div *ngIf="persenal_step && personelDetails.controls['prenom'].errors">
-                            <div *ngIf="personalInformation['prenom'].errors">prenom is required</div>
-                          </div>
-                        </div>
-                        <div class="col">
-                          <input type="text" class="form-control" placeholder="Nom" formControlName="name">
-                          <div *ngIf="persenal_step && personelDetails.controls['name'].errors">
-                            <div *ngIf="personalInformation['name'].errors">name is required</div>
-                          </div>
-                        </div>
-                        <div class="col">
-                          <input type="email" class="form-control" placeholder="Email" formControlName="email">
-                          <div *ngIf="persenal_step && personelDetails.controls['email'].errors">
-                            <div *ngIf="personalInformation['email'].errors">email is required</div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-row mt-5">
-                        <div class="col">
-                          <input type="text" class="form-control" placeholder="Adresse" formControlName="adresse">
-                          <div *ngIf="persenal_step && personelDetails.controls['adresse'].errors">
-                            <div *ngIf="personalInformation['adresse'].errors">adresse is required</div>
-                          </div>
-                        </div>
-                        <div class="col">
-                          <input type="Date" class="form-control" placeholder="Date de naissance" formControlName="dob">
-                          <div *ngIf="persenal_step && personelDetails.controls['dob'].errors">
-                            <div *ngIf="personalInformation['dob'].errors">date naiss is required</div>
-                          </div>
-                        </div>
-                        <div class="col">
-                          <input type="email" class="form-control" placeholder="Tel" formControlName="phone">
-                          <div *ngIf="persenal_step && personelDetails.controls['phone'].errors">
-                            <div *ngIf="personalInformation['phone'].errors">phone naiss is required</div>
-                          </div>
-
-                        </div>
-                      </div>
-
-                      <div class="form-group mt-5">
-                        <div class="row">
-                          <div class="col">
-
-                            <select class="form-control" id="exampleFormControlSelect1" formControlName="genre">
-                              <option value="">Genre</option>
-                              <option>masculin</option>
-                              <option>feminin</option>
-                            </select>
-                            <div *ngIf="persenal_step && personelDetails.controls['genre'].errors">
-                              <div *ngIf="personalInformation['genre'].errors">genre is required</div>
-                            </div>
-                          </div>
-                          <div class="col ">
-
-                            <select class=" form-control" formControlName="domaine">
-                              <option value="">Domaine</option>
-                              <option value="2">Option 1</option>
-                              <option value="3">Option 2</option>
-                              <option value="4">Option 3</option>
-                            </select>
-                            <div *ngIf="persenal_step && personelDetails.controls['domaine'].errors">
-                              <div *ngIf="personalInformation['domaine'].errors">domaine is required</div>
-                            </div>
-
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-
-
                   </div>
                   <div class="col-md-4 text-justify p-5">
                     <label for="">Choissez une image</label>
@@ -263,7 +200,8 @@
 
 
                                       <button
-                    (click)="soumettre()" type="button" name="next" class="btn up-btn mt-5"  >Soumettre</button>
+                    (click)="soumettre()" type="button" name="next" class="btn up-btn mt-5"  [disabled]="personelDetails.invalid" >Soumettre</button>
+
 
 
 
@@ -274,6 +212,114 @@
 
               </fieldset>
             </form>
+            <form action="" [formGroup]="personelDetails">
+
+
+              <fieldset  *ngIf="stepp == 2">
+                <div class="row d-flex p-2">
+
+
+                  <div class="col-md-8 ">
+                    <h2 class="mt-5">Demandeur d'emploi</h2>
+
+                    <div class="">
+                      <div class="form-row mt-5 ">
+                        <div class="col">
+                          <input type="text" class="form-control"
+                            [ngClass]="{ 'is-invalid':  persenal_step && personalInformation['prenom'].errors }"
+                            placeholder="Prenom" formControlName="prenom">
+                          <div *ngIf="persenal_step && personelDetails.controls['prenom'].errors">
+                            <div *ngIf="personalInformation['prenom'].errors">prenom is required</div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="Nom" formControlName="name">
+                          <div *ngIf="persenal_step && personelDetails.controls['name'].errors">
+                            <div *ngIf="personalInformation['name'].errors">name is required</div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <input type="email" class="form-control" placeholder="Email" formControlName="email">
+                          <div *ngIf="persenal_step && personelDetails.controls['email'].errors">
+                            <div *ngIf="personalInformation['email'].errors">email is required</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-row mt-5">
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="Adresse" formControlName="adresse">
+                          <div *ngIf="persenal_step && personelDetails.controls['adresse'].errors">
+                            <div *ngIf="personalInformation['adresse'].errors">adresse is required</div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <input type="Date" class="form-control" placeholder="Date de naissance" formControlName="dob">
+                          <div *ngIf="persenal_step && personelDetails.controls['dob'].errors">
+                            <div *ngIf="personalInformation['dob'].errors">date naiss is required</div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <input type="email" class="form-control" placeholder="Tel" formControlName="phone">
+                          <div *ngIf="persenal_step && personelDetails.controls['phone'].errors">
+                            <div *ngIf="personalInformation['phone'].errors">phone naiss is required</div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <div class="form-group mt-5">
+                        <div class="row">
+                          <div class="col">
+
+                            <select class="form-control" id="exampleFormControlSelect1" formControlName="genre">
+                              <option value="">Genre</option>
+                              <option>masculin</option>
+                              <option>feminin</option>
+                            </select>
+                            <div *ngIf="persenal_step && personelDetails.controls['genre'].errors">
+                              <div *ngIf="personalInformation['genre'].errors">genre is required</div>
+                            </div>
+                          </div>
+                          <div class="col ">
+
+                            <select class=" form-control" formControlName="secteur">
+                              <option value="">Secteur</option>
+                              <option value="2">Option 1</option>
+                              <option value="3">Option 2</option>
+                              <option value="4">Option 3</option>
+                            </select>
+                            <div *ngIf="persenal_step && personelDetails.controls['secteur'].errors">
+                              <div *ngIf="personalInformation['secteur'].errors">domaine is required</div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 text-justify p-5">
+                    <label for="">Choissez une image</label>
+
+                    <ngp-image-picker ($imageChanged)="onImageChanged($event)" class="shadow img-fluid"
+                      [_config]="imagePickerConf"></ngp-image-picker>
+
+
+                                      <button
+                    (click)="soumettre()" type="button" name="next" class="btn up-btn mt-5"  [disabled]="personelDetails.invalid" >Soumettre</button>
+
+
+
+
+                  </div>
+
+
+                </div>
+
+              </fieldset>
+            </form>
+
+
+
             <form action="" [formGroup]="payementDetails">
               <fieldset *ngIf="stepp == 20">
                 <div class="row d-flex pb-3">
