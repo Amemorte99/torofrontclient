@@ -258,5 +258,51 @@ textarea {
   }
 
 
+  @media (max-width: 768px) {
 
+    .inputGroup{
+      width: 230px;
+      height: 70px;
+      margin-bottom: 8px;
+      padding: 0;
+    }
+    .mpad{
+      padding: 0;
+      width: 100%;
+      margin: 0;
+    }
+    .maCo{
+      width: 360px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .inputGroup label {
+      width: 230px;
+
+    }
+    #formu{
+      padding: 0;
+      width: 100%;
+      margin: 0;
+    }
+
+
+
+    input[type=email], input[type=password], input[type=text], input[type=tel],input[type=date] {
+      margin: 0;
+      margin-bottom: 7px;
+
+    }
+    .btnma{
+      padding: 0;
+      text-align: center;
+    }
+    .btn{
+      width: 200px;
+      margin: 0;
+      text-align: center;
+    }
+
+  }
 

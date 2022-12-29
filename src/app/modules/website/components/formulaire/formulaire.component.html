@@ -67,30 +67,30 @@
           quaerat vitae, sint pariatur quidem beatae obcaecati tenetur, ipsam magnam a eos ullam.</p>
 
       </div>
-      <div class="col-md-9  " style="background-color: #09977C;">
-        <div class="container">
-          <div class="card shadow mt-5 m-3 p-5 text-black">
+      <div class="col-sm-12 col-md-9  " id="formu" style="background-color: #09977C;">
+        <div class="container maCo">
+          <div class="card shadow mt-5 m-3 p-5 text-black mpad">
 
 
             <div class="row">
 
-              <div class="col-md-8">
+              <div class="col-sm-12 col-md-8">
 
                 <div class="form-row">
 
-                  <div class="col-4 mr-0">
+                  <div class="col-sm-12 col-md-4 ">
                     <div class="inputGroup " (click)="setepChoix(1)">
                       <input id="radio1" name="radio" type="radio" class="form-control" />
                       <label for="radio1" >Stagaire</label>
                     </div>
                   </div>
-                  <div class="col-4">
+                  <div class="col-sm-12 col-md-4">
                     <div class="inputGroup" (click)="setepChoix(2)">
                       <input id="radio2" name="radio" type="radio" />
                       <label for="radio2">Demandeur d'emploi</label>
                     </div>
                   </div>
-                  <div class="col-4">
+                  <div class=" col-sm-12 col-md-4">
                     <div class="inputGroup" (click)="setepChoix(3)">
                       <input id="radio3" name="radio" type="radio" />
                       <label for="radio3">Recruteur </label>
@@ -115,11 +115,11 @@
                 <div class="row d-flex p-2">
 
 
-                  <div class="col-md-8 ">
+                  <div class="col-sm-12 col-md-8 ">
 
                     <div class="">
                       <div class="form-row mt-5 ">
-                        <div class="col">
+                        <div class="col-sm-6 col-md-4">
                           <input type="text" class="form-control"
                             [ngClass]="{ 'is-invalid':  persenal_step && personalInformation['prenom'].errors }"
                             placeholder="Prenom" formControlName="prenom">
@@ -127,13 +127,13 @@
                             <div *ngIf="personalInformation['prenom'].errors">prenom is required</div>
                           </div>
                         </div>
-                        <div class="col">
+                        <div class="col-sm-6 col-md-4">
                           <input type="text" class="form-control" placeholder="Nom" formControlName="name">
                           <div *ngIf="persenal_step && personelDetails.controls['name'].errors">
                             <div *ngIf="personalInformation['name'].errors">name is required</div>
                           </div>
                         </div>
-                        <div class="col">
+                        <div class="col-sm-6 col-md-4">
                           <input type="email" class="form-control" placeholder="Email" formControlName="email">
                           <div *ngIf="persenal_step && personelDetails.controls['email'].errors">
                             <div *ngIf="personalInformation['email'].errors">email is required</div>
@@ -141,20 +141,20 @@
                         </div>
                       </div>
                       <div class="form-row mt-5">
-                        <div class="col">
+                        <div class="col-sm-12 col-md-4 ">
                           <input type="text" class="form-control" placeholder="Adresse" formControlName="adresse">
                           <div *ngIf="persenal_step && personelDetails.controls['adresse'].errors">
                             <div *ngIf="personalInformation['adresse'].errors">adresse is required</div>
                           </div>
                         </div>
-                        <div class="col">
-                          <input type="Date" class="form-control" placeholder="Date de naissance" formControlName="dob">
+                        <div class="col-sm-12 col-md-4 ">
+                          <input type="date" class="form-control" placeholder="Date de naissance" formControlName="dob">
                           <div *ngIf="persenal_step && personelDetails.controls['dob'].errors">
                             <div *ngIf="personalInformation['dob'].errors">date naiss is required</div>
                           </div>
                         </div>
-                        <div class="col">
-                          <input type="email" class="form-control" placeholder="Tel" formControlName="phone">
+                        <div class="col-sm-12 col-md-4  ">
+                          <input type="tel" class="form-control" placeholder="Tel" formControlName="phone">
                           <div *ngIf="persenal_step && personelDetails.controls['phone'].errors">
                             <div *ngIf="personalInformation['phone'].errors">phone naiss is required</div>
                           </div>
@@ -190,9 +190,25 @@
                           </div>
                         </div>
                       </div>
+                      <div class="form-row mt-5 ">
+                        <div class="col">
+                          <input type="text" class="form-control"
+                            [ngClass]="{ 'is-invalid':  persenal_step && personalInformation['username'].errors }"
+                            placeholder="nom d'utilisateur" formControlName="username">
+                          <div *ngIf="persenal_step && personelDetails.controls['username'].errors">
+                            <div *ngIf="personalInformation['username'].errors">username is required</div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="password" formControlName="name">
+                          <div *ngIf="persenal_step && personelDetails.controls['password'].errors">
+                            <div *ngIf="personalInformation['password'].errors">password is required</div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div class="col-md-4 text-justify p-5">
+                  <div class="col-md-4 text-justify p-5 btnma">
                     <label for="">Choissez une image</label>
 
                     <ngp-image-picker ($imageChanged)="onImageChanged($event)" class="shadow img-fluid"
