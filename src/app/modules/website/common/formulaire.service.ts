@@ -14,6 +14,35 @@ export class FormulaireService {
     );
   }
 
+  listAllDetailSA() {
+    return this.httpService.getRequest("/api/detailsa/list");
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   saveExtrant(dataSupport: any) {
     return this.httpService.postRequest(

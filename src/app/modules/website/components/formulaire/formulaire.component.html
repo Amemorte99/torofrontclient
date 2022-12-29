@@ -110,7 +110,7 @@
             <form action="" [formGroup]="personelDetails">
 
 
-              <fieldset  *ngIf="stepp == 1">
+              <fieldset  *ngIf="stepp == 1 ">
                 <h2 class="mt-5">Stagaire</h2>
                 <div class="row d-flex p-2">
 
@@ -167,7 +167,7 @@
                           <div class="col">
 
                             <select class="form-control" id="exampleFormControlSelect1" formControlName="genre">
-                              <option value="">Genre</option>
+                              <option value=""  disabled selected>Genre</option>
                               <option>masculin</option>
                               <option>feminin</option>
                             </select>
@@ -178,10 +178,13 @@
                           <div class="col ">
 
                             <select class=" form-control" formControlName="secteur">
-                              <option value="">Secteur</option>
+                              <option value="" disabled selected>Secteur d'activité</option>
                               <option value="2">Option 1</option>
                               <option value="3">Option 2</option>
                               <option value="4">Option 3</option>
+                              <option *ngFor="let itemSA of listDetailSA" [value]="itemSA.id">
+                                {{ itemSA.libelle }}
+                              </option>
                             </select>
                             <div *ngIf="persenal_step && personelDetails.controls['secteur'].errors">
                               <div *ngIf="personalInformation['secteur'].errors">domaine is required</div>
@@ -200,7 +203,7 @@
                           </div>
                         </div>
                         <div class="col">
-                          <input type="text" class="form-control" placeholder="password" formControlName="name">
+                          <input type="text" class="form-control" placeholder="password" formControlName="password">
                           <div *ngIf="persenal_step && personelDetails.controls['password'].errors">
                             <div *ngIf="personalInformation['password'].errors">password is required</div>
                           </div>

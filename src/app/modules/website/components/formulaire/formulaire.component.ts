@@ -6,6 +6,9 @@ import { FileUploadControl, FileUploadValidators } from '@iplab/ngx-file-upload'
 import { ImagePickerConf } from 'ngp-image-picker';
 import { BehaviorSubject, Subscription, take } from 'rxjs';
 import { AccountService } from '../cvcontainer/account/account.service';
+import { FormulaireService } from '../../common/formulaire.service';
+import { SweetAlertService } from 'src/app/shared/common/sweet-alert.service';
+import { Stagiaire } from '../../../../models/stagiaire.model';
 
 @Component({
   selector: 'app-formulaire',
@@ -22,7 +25,12 @@ export class FormulaireComponent implements OnInit {
 
   matcher = new MyErrorStateMatcher();
 
- imagee: any
+ imagee: any;
+
+
+ listDetailSA:any;
+
+ typeU!:number
 
 
 
@@ -50,19 +58,7 @@ export class FormulaireComponent implements OnInit {
 
     stepp = 0;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    stagiaire!: Stagiaire
 
 
 
@@ -80,12 +76,18 @@ export class FormulaireComponent implements OnInit {
 
 
 
-  constructor(private formBuilder: FormBuilder,public accountService: AccountService) {
+  constructor(
+    private formBuilder: FormBuilder,
+    public accountService: AccountService,
+    private formService: FormulaireService,
+    private sweetAlert: SweetAlertService
+    ) {
 
 
   }
   ngOnInit(): void {
     this.subscription = this.control.valueChanges.subscribe((values: Array<File>) => this.getImage(values[0]));
+    this.listDetaiSA()
 
     this.personelDetails = this.formBuilder.group({
       prenom: ['', Validators.required],
@@ -96,6 +98,8 @@ export class FormulaireComponent implements OnInit {
       dob: ['', Validators.required],
       genre: ['', Validators.required],
       secteur:['', Validators.required],
+      username: ['', Validators.required],
+      password:['', Validators.required],
 
 
 
@@ -108,11 +112,7 @@ export class FormulaireComponent implements OnInit {
 
 
 
-    this.personalDetails = this.formBuilder.group({
-      name: ['', Validators.required],
-      email: ['', Validators.required],
-      phone: ['',Validators.required]
-  });
+
 
   this.addressDetails = this.formBuilder.group({
       city: ['', Validators.required],
@@ -183,6 +183,116 @@ export class FormulaireComponent implements OnInit {
 
   get payementInformation() { return this.payementDetails.controls; }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  get email (){
+    return this.personelDetails.get("email")
+  }
+
+  get username (){
+    return this.personelDetails.get("username")
+  }
+
+  get password (){localhost:8080
+    return this.personelDetails.get("password")
+  }
+
+
+  get name (){
+    return this.personelDetails.get("name")
+  }
+
+  get prenom (){
+    return this.personelDetails.get("prenom")
+  }
+
+  get adresse (){
+    return this.personelDetails.get("adresse")
+  }
+
+  get dateNaissance (){
+    return this.personelDetails.get("dob")
+  }
+
+
+  get genre (){
+    return this.personelDetails.get("genre")
+  }
+  get tel (){
+    return this.personelDetails.get("phone")
+  }
+  get detailSA (){
+    return this.personelDetails.get("detailSA")
+  }
+
+  get secteur (){
+    return this.personelDetails.get("secteur")
+  }
+
+
+
+
+  soumettre(){
+
+    this.typeU=this.stepp;
+
+
+    this.stagiaire = {
+      email: this.email?.value,
+      username: this.username?.value,
+      password:this.password?.value,
+      roleName: "ROLE_ADMIN",
+
+      nom:this.name?.value,
+      prenom: this.prenom?.value,
+      adresse: this.adresse?.value,
+      dateNaissance: this.dateNaissance?.value,
+      genre: this.genre?.value,
+      tel: this.tel?.value,
+      typeUEA: this.typeU,
+      detailSA: this.detailSA?.value,
+      secteur:this.secteur?.value
+
+    };
+
+
+
+
+    console.log("mannnnnnnes", this.stagiaire)
+
+   /*  this.formService.saveForm(this.body).subscribe((value) =>{
+      if(value){
+        console.log("koisonn"+JSON.stringify(value));
+        this.sweetAlert.showSuccessAlert(
+          "Code  Envoyer",
+          "Opération effectuer avec success"
+        );
+     }else{
+      this.sweetAlert.showErrorAlert(
+        "information erronée",
+        "Opération effectuer avec success"
+      );
+
+     }
+     })
+  } */
+
+}
+
   oneSubmit(){
 
     if(this.step==2){
@@ -214,16 +324,36 @@ export class FormulaireComponent implements OnInit {
 
   }
 
-  soumettre(){
-    if(this.stepp==1){
-      this.persenal_step = true;
-      if (this.personelDetails.invalid) { return  }
-
-
-}
 
 
 
+
+
+
+
+
+
+
+
+  listDetaiSA() {
+    this.formService.listAllDetailSA().subscribe((values) => {
+        console.log(values);
+        this.listDetailSA = values.data;
+
+
+        if(this.listDetailSA==null){
+          //showInformation
+
+          this.sweetAlert.showErrorAlert(
+            "Liste des candidats vide",
+            "Selectionnées des nouveaux candidats"
+          );
+
+
+
+
+        }
+      });
   }
 
 
