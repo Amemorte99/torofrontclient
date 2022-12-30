@@ -5,3 +5,28 @@
   overflow-anchor: initial;
 }
 
+
+
+@media (max-width: 768px) {
+
+
+
+  .fomrscv
+{
+  width: 440px;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  overflow-anchor: initial;
+  margin: 0%;
+  padding: 0;
+}
+
+
+  .btn{
+    width: 200px;
+    margin: 0;
+    text-align: center;
+  }
+
+}
+
