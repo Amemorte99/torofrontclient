@@ -309,6 +309,7 @@ export class FormulaireComponent implements OnInit {
           "Inscription réussi",
           "Connectez vous a votre boite email pour activer votre compte"
         );
+        this.ngOnInit();
 
       }else{
 

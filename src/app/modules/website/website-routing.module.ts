@@ -19,6 +19,7 @@ import { RedactionComponent } from './components/redaction/redaction.component';
 import { TemoignageComponent } from './components/temoignage/temoignage.component';
 import { VisitetentrepriseComponent } from './components/visitetentreprise/visitetentreprise.component';
 import { FormuComponent } from './components/formu/formu.component';
+import { AuthComponent } from './components/auth/auth.component';
 
 const routes: Routes = [
   {path:'',component: HomeComponent },
@@ -39,7 +40,7 @@ const routes: Routes = [
   {path:'detailRecruteur',component:DetRecruteurComponent},
   {path:'detailEmploi',component:DetEmploiComponent},
   {path:'paye',component:AchatCompteComponent},
-  {path:'formu',component:FormuComponent}
+  {path:'auth',component:AuthComponent}
 
 ];
 
