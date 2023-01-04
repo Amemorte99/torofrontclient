@@ -93,7 +93,7 @@ export class FormulaireComponent implements OnInit {
       prenom: ['', Validators.required],
       adresse: ['', Validators.required],
       name: ['', Validators.required],
-      email: ['', Validators.required],
+      email: ['', [Validators.required,Validators.email]],
       phone: ['',Validators.required],
       dob: ['', Validators.required],
       genre: ['', Validators.required],

@@ -1,38 +1,4 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<app-header></app-header>
 
 <section>
   <div class="container-fluid p-3">
@@ -120,44 +86,73 @@
                     <div class="">
                       <div class="form-row mt-5 ">
                         <div class="col-sm-6 col-md-4">
-                          <input type="text" class="form-control"
-                            [ngClass]="{ 'is-invalid':  persenal_step && personalInformation['prenom'].errors }"
-                            placeholder="Prenom" formControlName="prenom">
-                          <div *ngIf="persenal_step && personelDetails.controls['prenom'].errors">
-                            <div *ngIf="personalInformation['prenom'].errors">prenom is required</div>
-                          </div>
+                          <input type="text"
+                          [ngClass]="
+                          personelDetails.get('prenom')?.invalid &&
+                          personelDetails.get('prenom')?.touched
+                            ? 'form-control is-invalid'
+                            : 'form-control'
+                        " class="form-control" placeholder="prenom" formControlName="prenom">
+                        <div class="invalid-feedback">Veuillez saisir votre prenom!</div>
                         </div>
                         <div class="col-sm-6 col-md-4">
-                          <input type="text" class="form-control" placeholder="Nom" formControlName="name">
-                          <div *ngIf="persenal_step && personelDetails.controls['name'].errors">
-                            <div *ngIf="personalInformation['name'].errors">name is required</div>
-                          </div>
+                          <input type="text"
+                          [ngClass]="
+                          personelDetails.get('name')?.invalid &&
+                          personelDetails.get('name')?.touched
+                            ? 'form-control is-invalid'
+                            : 'form-control'
+                        " class="form-control" placeholder="Nom" formControlName="name">
+                        <div class="invalid-feedback">Veuillez saisir votre nom!</div>
+
+
+
                         </div>
                         <div class="col-sm-6 col-md-4">
-                          <input type="email" class="form-control" placeholder="Email" formControlName="email">
-                          <div *ngIf="persenal_step && personelDetails.controls['email'].errors">
-                            <div *ngIf="personalInformation['email'].errors">email is required</div>
-                          </div>
+
+
+                          <input type="text"
+                          [ngClass]="
+                          personelDetails.get('email')?.invalid &&
+                          personelDetails.get('email')?.touched
+                            ? 'form-control is-invalid'
+                            : 'form-control'
+                        " class="form-control" placeholder="Email" formControlName="email">
+                        <div class="invalid-feedback">Veuillez saisir un  Email valide!</div>
+
                         </div>
                       </div>
                       <div class="form-row mt-5">
                         <div class="col-sm-12 col-md-4 ">
-                          <input type="text" class="form-control" placeholder="Adresse" formControlName="adresse">
-                          <div *ngIf="persenal_step && personelDetails.controls['adresse'].errors">
-                            <div *ngIf="personalInformation['adresse'].errors">adresse is required</div>
-                          </div>
+                          <input type="text"
+                          [ngClass]="
+                          personelDetails.get('adresse')?.invalid &&
+                          personelDetails.get('adresse')?.touched
+                            ? 'form-control is-invalid'
+                            : 'form-control'
+                        " class="form-control" placeholder="adresse" formControlName="adresse">
+                        <div class="invalid-feedback">Veuillez saisir votre adresse!</div>
                         </div>
                         <div class="col-sm-12 col-md-4 ">
-                          <input type="date" class="form-control" placeholder="Date de naissance" formControlName="dob">
-                          <div *ngIf="persenal_step && personelDetails.controls['dob'].errors">
-                            <div *ngIf="personalInformation['dob'].errors">date naiss is required</div>
-                          </div>
+
+                          <input type="date"
+                          [ngClass]="
+                          personelDetails.get('dob')?.invalid &&
+                          personelDetails.get('dob')?.touched
+                            ? 'form-control is-invalid'
+                            : 'form-control'
+                        " class="form-control"  placeholder="Date de naissance" formControlName="dob">
+                        <div class="invalid-feedback">Veuillez saisir votre date de naissance!</div>
                         </div>
                         <div class="col-sm-12 col-md-4  ">
-                          <input type="tel" class="form-control" placeholder="Tel" formControlName="phone">
-                          <div *ngIf="persenal_step && personelDetails.controls['phone'].errors">
-                            <div *ngIf="personalInformation['phone'].errors">phone naiss is required</div>
-                          </div>
+                          <input type="text"
+                          [ngClass]="
+                          personelDetails.get('phone')?.invalid &&
+                          personelDetails.get('phone')?.touched
+                            ? 'form-control is-invalid'
+                            : 'form-control'
+                        " class="form-control"  placeholder="Tel :" formControlName="phone">
+                        <div class="invalid-feedback">Veuillez saisir votre numéro de téléphone!</div>
 
                         </div>
                       </div>
@@ -166,18 +161,28 @@
                         <div class="row">
                           <div class="col">
 
-                            <select class="form-control" id="exampleFormControlSelect1" formControlName="genre">
+                            <select class="form-control" id="exampleFormControlSelect1" formControlName="genre"  [ngClass]="
+                            personelDetails.get('genre')?.invalid &&
+                            personelDetails.get('genre')?.touched
+                              ? 'form-control is-invalid'
+                              : 'form-control'
+                          " class="form-control"   >
                               <option value=""  disabled selected>Genre</option>
-                              <option>masculin</option>
+                              <option >masculin</option>
                               <option>feminin</option>
                             </select>
-                            <div *ngIf="persenal_step && personelDetails.controls['genre'].errors">
-                              <div *ngIf="personalInformation['genre'].errors">genre is required</div>
-                            </div>
+                          <div class="invalid-feedback">genre svp</div>
+
+
                           </div>
                           <div class="col ">
 
-                            <select class=" form-control" formControlName="secteur">
+                            <select class=" form-control" formControlName="secteur" [ngClass]="
+                            personelDetails.get('secteur')?.invalid &&
+                            personelDetails.get('secteur')?.touched
+                              ? 'form-control is-invalid'
+                              : 'form-control'
+                          ">
                               <option value="" disabled selected>Secteur d'activité</option>
                               <option value="2">Option 1</option>
                               <option value="3">Option 2</option>
@@ -186,9 +191,9 @@
                                 {{ itemSA.libelle }}
                               </option>
                             </select>
-                            <div *ngIf="persenal_step && personelDetails.controls['secteur'].errors">
-                              <div *ngIf="personalInformation['secteur'].errors">domaine is required</div>
-                            </div>
+
+                            <div class="invalid-feedback">secteur d'activité svp!</div>
+
 
                           </div>
                         </div>
@@ -196,23 +201,37 @@
                       <div class="form-row mt-5 ">
                         <div class="col">
                           <input type="text" class="form-control"
-                            [ngClass]="{ 'is-invalid':  persenal_step && personalInformation['username'].errors }"
+                          [ngClass]="
+                          personelDetails.get('username')?.invalid &&
+                          personelDetails.get('username')?.touched
+                            ? 'form-control is-invalid'
+                            : 'form-control'
+                        "
                             placeholder="nom d'utilisateur" formControlName="username">
-                          <div *ngIf="persenal_step && personelDetails.controls['username'].errors">
-                            <div *ngIf="personalInformation['username'].errors">username is required</div>
-                          </div>
+                            <div class="invalid-feedback">nom d'utilisateur svp!</div>
+
                         </div>
                         <div class="col">
-                          <input type="text" class="form-control" placeholder="password" formControlName="password">
-                          <div *ngIf="persenal_step && personelDetails.controls['password'].errors">
-                            <div *ngIf="personalInformation['password'].errors">password is required</div>
-                          </div>
+                          <input type="text" class="form-control" placeholder="entrer sur le mot de passe" [ngClass]="
+                          personelDetails.get('password')?.invalid &&
+                          personelDetails.get('password')?.touched
+                            ? 'form-control is-invalid'
+                            : 'form-control'
+                        "
+                           formControlName="password">
+
+                           <div class="invalid-feedback">entrer sur le mot de passe svp!</div>
+
                         </div>
                         <div class="col">
-                          <input type="text" class="form-control" placeholder="confirm_password" formControlName="confirm_password">
-                          <div *ngIf="persenal_step && personelDetails.controls['confirm_password'].errors">
-                            <div *ngIf="personalInformation['confirm_password'].errors">password is required</div>
-                          </div>
+                          <input type="text" class="form-control" placeholder="confirmer le mot de passe " formControlName="confirm_password" [ngClass]="
+                          personelDetails.get('confirm_password')?.invalid &&
+                          personelDetails.get('confirm_password')?.touched
+                            ? 'form-control is-invalid'
+                            : 'form-control'
+                        " >
+                        <div class="invalid-feedback">confirmer le mot de passe svp!</div>
+
                         </div>
                       </div>
                     </div>
@@ -378,6 +397,7 @@
 
 </section>
 
+<app-footer></app-footer>
 
 
 
