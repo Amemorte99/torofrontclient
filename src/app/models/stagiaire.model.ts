@@ -3,14 +3,14 @@ export interface Stagiaire {
     prenom: string;
     username: string;
     email: string;
-    password: string;
+    password: any;
     roleName: string;
     adresse: string;
     dateNaissance: string;
     genre: string;
     tel: string;
     typeUEA: number;
-    detailSA: string;
+    detailSA: number;
     secteur:number;
 
 }

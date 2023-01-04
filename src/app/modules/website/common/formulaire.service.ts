@@ -7,6 +7,9 @@ import { HttpService } from 'src/app/common/http.service';
 export class FormulaireService {
 
   constructor(private httpService: HttpService) { }
+
+
+  
   saveForm(dataForm: any) {
     return this.httpService.postRequest(
       `/api/auth/register`,

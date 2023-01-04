@@ -208,6 +208,12 @@
                             <div *ngIf="personalInformation['password'].errors">password is required</div>
                           </div>
                         </div>
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="confirm_password" formControlName="confirm_password">
+                          <div *ngIf="persenal_step && personelDetails.controls['confirm_password'].errors">
+                            <div *ngIf="personalInformation['confirm_password'].errors">password is required</div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>

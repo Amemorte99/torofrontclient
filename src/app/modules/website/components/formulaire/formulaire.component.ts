@@ -101,6 +101,11 @@ export class FormulaireComponent implements OnInit {
       username: ['', Validators.required],
       password:['', Validators.required],
 
+      confirm_password: ['', [Validators.required]]
+
+    }, {
+
+      validator: this.ConfirmedValidator('password', 'confirm_password')
 
 
   });
@@ -207,8 +212,10 @@ export class FormulaireComponent implements OnInit {
     return this.personelDetails.get("username")
   }
 
-  get password (){localhost:8080
+  get password (){
     return this.personelDetails.get("password")
+
+
   }
 
 
@@ -254,9 +261,8 @@ export class FormulaireComponent implements OnInit {
     this.stagiaire = {
       email: this.email?.value,
       username: this.username?.value,
-      password:this.password?.value,
+      password: this.password?.value,
       roleName: "ROLE_ADMIN",
-
       nom:this.name?.value,
       prenom: this.prenom?.value,
       adresse: this.adresse?.value,
@@ -264,10 +270,12 @@ export class FormulaireComponent implements OnInit {
       genre: this.genre?.value,
       tel: this.tel?.value,
       typeUEA: this.typeU,
-      detailSA: this.detailSA?.value,
+      detailSA: 2,
       secteur:this.secteur?.value
 
     };
+
+
 
 
 
@@ -290,6 +298,31 @@ export class FormulaireComponent implements OnInit {
      }
      })
   } */
+
+    this.formService.saveForm(this.stagiaire).subscribe((dataValue) => {
+
+      console.log(dataValue);
+
+      if(dataValue.status == true){
+
+        this.sweetAlert.showSuccessAlert(
+          "Inscription réussi",
+          "Connectez vous a votre boite email pour activer votre compte"
+        );
+
+      }else{
+
+        this.sweetAlert.showErrorAlert(
+          "Inscription echouée",
+          "veuillez verifier  les informations entrées"
+        );
+
+      }
+
+    })
+
+
+
 
 }
 
@@ -359,7 +392,29 @@ export class FormulaireComponent implements OnInit {
 
 
 
+  ConfirmedValidator(controlName: string, matchingControlName: string){
 
+    return (formGroup: FormGroup) => {
+
+        const control = formGroup.controls[controlName];
+
+        const matchingControl = formGroup.controls[matchingControlName];
+
+
+
+        if (control.value !== matchingControl.value) {
+
+            matchingControl.setErrors({ confirmedValidator: true });
+
+        } else {
+
+            matchingControl.setErrors(null);
+
+        }
+
+    }
+
+  }
 
 
 
@@ -433,5 +488,6 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
     return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
   }
 }
+
 
 
