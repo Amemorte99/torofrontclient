@@ -262,7 +262,7 @@ export class FormulaireComponent implements OnInit {
       email: this.email?.value,
       username: this.username?.value,
       password: this.password?.value,
-      roleName: "ROLE_ADMIN",
+      roleName: "ROLE_USER",
       nom:this.name?.value,
       prenom: this.prenom?.value,
       adresse: this.adresse?.value,
@@ -292,8 +292,7 @@ export class FormulaireComponent implements OnInit {
      }else{
       this.sweetAlert.showErrorAlert(
         "information erronée",
-        "Opération effectuer avec success"
-      );
+        "Opératilogin template html   angular
 
      }
      })
