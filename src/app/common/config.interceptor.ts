@@ -17,7 +17,7 @@ const API_USERS_URL = `${environment.apiUrl}`;
   providedIn: 'root',
 })
 export class ConfigInterceptor implements HttpInterceptor {
-  loginUrl = `${API_USERS_URL}SECURITY-SERVICE/login`;
+ // loginUrl = `${API_USERS_URL}SECURITY-SERVICE/login`;
 
   constructor(private sweetAlertService: SweetAlertService) {}
 
@@ -37,16 +37,16 @@ export class ConfigInterceptor implements HttpInterceptor {
     // });
 
 
-    //commenter fanuel
+    //commenter par fanuel
 
-    // if (localStorage.getItem('token')) {
-    //   request = request.clone({
-    //     headers: request.headers.set(
-    //       'Authorization',
-    //       `${localStorage.getItem('token')}`
-    //     ),
-    //   });
-    // }
+    if (localStorage.getItem('token')) {
+       request = request.clone({
+        headers: request.headers.set(
+         'Authorization',
+          `${localStorage.getItem('token')}`
+         ),
+       });
+     }
 
     if (request.body instanceof File) {
       return next.handle(request).pipe(

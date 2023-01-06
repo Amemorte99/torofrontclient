@@ -11,22 +11,41 @@
 
               <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
 
-                <form style="width: 23rem;">
+                <form style="width: 23rem;" [formGroup]="loginForm">
 
                   <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h3>
 
                   <div class="form-outline mb-4">
-                    <input type="text" id="form2Example18" class="form-control form-control-lg" />
+                    <input type="text" id="form2Example18" formControlName="username"
+
+                    [ngClass]="
+                    loginForm.get('username')?.invalid &&
+                    loginForm.get('username')?.touched
+                      ? 'form-control is-invalid'
+                      : 'form-control'
+                  "
+                  class="form-control form-control-lg" />
                     <label class="form-label" for="form2Example18">Nom d'utilisateur</label>
                   </div>
 
                   <div class="form-outline mb-4">
-                    <input type="password" id="form2Example28" class="form-control form-control-lg" />
+                    <input type="password" id="form2Example28" formControlName="password"
+
+                    [ngClass]="
+                    loginForm.get('password')?.invalid &&
+                    loginForm.get('password')?.touched
+                      ? 'form-control is-invalid'
+                      : 'form-control'
+                  "
+                    class="form-control form-control-lg" />
                     <label class="form-label" for="form2Example28">Mot de passe</label>
                   </div>
 
                   <div class="pt-1 mb-4">
-                    <button class="btn btn-main btn-lg btn-block" type="button">Login</button>
+                    <button
+                    (click)="connexion()" type="button" name="next" class="btn btn-main btn-lg btn-block"  [disabled]="loginForm.invalid" >Soumettre</button>
+
+                   
                   </div>
 
                   <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Mot de passe perdu?</a></p>

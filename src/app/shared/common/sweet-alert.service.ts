@@ -38,7 +38,7 @@ export class SweetAlertService {
       title: title,
       text: message,
       icon: "success",
-      confirmButtonColor: "#ae3764",
+      confirmButtonColor: "#09977C",
       confirmButtonText: yesBtn,
     });
   }
@@ -55,13 +55,16 @@ export class SweetAlertService {
       },
     });
   }
+  closeSwal() {
+    return Swal.close();
+  }
 
   showErrorAlert(title: string, message: string) {
     return Swal.fire({
       title: title,
       text: message,
       icon: "error",
-      confirmButtonColor: "#ae3764",
+      confirmButtonColor: "#09977C",
     });
   }
 
@@ -85,7 +88,7 @@ export class SweetAlertService {
       input: "number",
       showCancelButton: true,
       confirmButtonText: action,
-      confirmButtonColor: "#ae3764",
+      confirmButtonColor: "#09977C",
       customClass: "swal-wide",
       showLoaderOnConfirm: true,
       reverseButtons: true,
@@ -100,7 +103,7 @@ export class SweetAlertService {
       inputLabel: label,
       showCancelButton: true,
       confirmButtonText: action,
-      confirmButtonColor: "#ae3764",
+      confirmButtonColor: "#09977C",
       customClass: "swal-wide",
       showLoaderOnConfirm: true,
       reverseButtons: true,
@@ -116,7 +119,7 @@ export class SweetAlertService {
       input: "number",
       showCancelButton: true,
       confirmButtonText: action,
-      confirmButtonColor: "#ae3764",
+      confirmButtonColor: "#09977C",
       customClass: "swal-wide",
       inputValue: amount,
       reverseButtons: true,
