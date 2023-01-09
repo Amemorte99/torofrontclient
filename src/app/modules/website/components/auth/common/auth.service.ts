@@ -63,7 +63,7 @@ export class AuthService {
                 "Appuyez pour acceder avotre compte"
               );
 
-              this.route.navigate(["utd"]);
+              this.route.navigate(["/utd/dashboard/"]);
 
             }
 
@@ -90,7 +90,7 @@ export class AuthService {
 
   logout() {
     localStorage.clear();
-    this.route.navigate(["/auth/login"], {
+    this.route.navigate([""], {
       queryParams: {},
     });
   }
