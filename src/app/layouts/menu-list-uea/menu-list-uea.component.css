@@ -17,6 +17,10 @@
   align-items: center;
   background-color: #e12454; 
 }
+.nav-item a:hover{
+  background-color: #e12454; 
+
+}
 
 .a-link {
   color: #fff !important;
