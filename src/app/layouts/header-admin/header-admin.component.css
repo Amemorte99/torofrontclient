@@ -42,10 +42,10 @@
     color: #AE3764;
     outline: none;
     background: transparent;
-    -moz-appearance: none;
   }
   
   option:hover {
     background-color: #AE3764 !important;
     color: white;
-  }/*# sourceMappingURL=header-admfranchise.component.css.map */
+  }
+/*# sourceMappingURL=header-admin.component.css.map */
