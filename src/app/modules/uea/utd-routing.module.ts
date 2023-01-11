@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ButtonsComponent } from './components/buttons/buttons.component';
-import { CreateComponent } from './components/create/create.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 import { FormsComponent } from './components/forms/forms.component';
@@ -12,7 +11,6 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { TablesComponent } from './components/tables/tables.component';
-import { UtdComponent } from './utd.component';
 import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [

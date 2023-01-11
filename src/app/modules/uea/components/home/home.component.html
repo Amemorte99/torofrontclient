@@ -1,78 +1,16 @@
-
-
-
-
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rich - Angular 14 Bootstrap 5 Dashboard</title>
-
-  <link rel="apple-touch-icon" sizes="120x120" href="../../../../../assets/assets/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="../../../../../assets/assets/img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../../../../../assets/assets/img/favicon-16x16.png">
-
-  <link rel="mask-icon" href="../../../../../assets/assets/img/safari-pinned-tab.svg" color="#ffffff">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="theme-color" content="#ffffff">
-
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-
-
-
-
-</head>
-<body>
-
-
-
-
-
-
-
-
-
-  <app-header-admin></app-header-admin>
-  <main class="content">
-     <router-outlet></router-outlet>
-   <app-footer></app-footer>
-  </main>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <script src="../../../../../assets/assets/js/popper.min.js"></script>
-  <script src="../../../../../assets/assets/js/bootstrap.min.js"></script>
-  <script src="../../../../../assets/assets/js/on-screen.umd.min.js"></script>
-  <script src="../../../../../assets/assets/js/nouislider.min.js"></script>
-  <script src="../../../../../assets/assets/js/smooth-scroll.polyfills.min.js"></script>
-  <script src="../../../../../assets/assets/js/chartist.min.js"></script>
-  <script src="../../../../../assets/assets/js/chartist-plugin-tooltip.min.js"></script>
-  <script src="../../../../../assets/assets/js/datepicker.min.js"></script>
-  <script src="../../../../../assets/assets/js/sweetalert2.all.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
-  <script src="../../../../../assets/assets/js/datepicker.min.js"></script>
-  <script src="../../../../../assets/assets/js/notyf.min.js"></script>
-  <script src="../../../../../assets/assets/js/simplebar.min.js"></script>
-  <script src="../../../../../assets/assets/js/volt.js"></script>
-  <script async defer="defer" src="https://buttons.github.io/buttons.js"></script>
-
-
-</body>
-</html>
-
+<div class="d-md-flex " >
+  <app-user-uea></app-user-uea>
+  <section class="d-flex row ">
+    <div class="side-width"></div>
+    <div class="col main-width">
+      <app-header-admin></app-header-admin>
+      <div class="container-fluid bg-primar"  style="height: 100vh !important;">
+        <div class="row">
+          <!-- Insérez ici le contenu principal du site ou de l'application -->
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+      <!-- <app-footer-admin></app-footer-admin> -->
+    </div>
+  </section>
+</div>

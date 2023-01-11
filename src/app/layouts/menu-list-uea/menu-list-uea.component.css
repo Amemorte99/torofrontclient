@@ -1,0 +1,53 @@
+.nav-card {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #009d8b; 
+}
+
+.nav-card:hover{
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e12454; 
+}
+
+.a-link {
+  color: #fff !important;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  background-color: red;
+}
+.a-link:hover {
+  color: #e12454 !important;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+i{
+  color: white;
+}
+.hover-view {
+  display: none;
+}
+
+.hover:hover .hover-view {
+  display: block;
+}
+
+h6{
+  color: white;
+}
+
+
+
+/*# sourceMappingURL=menu-list-admfranchise.component.css.map */
+
+
+
+

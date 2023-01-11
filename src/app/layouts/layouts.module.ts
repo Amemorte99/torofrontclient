@@ -7,6 +7,8 @@ import { HeaderAdminComponent } from './header-admin/header-admin.component';
 import { NavbarAdminComponent } from './navbar-admin/navbar-admin.component';
 import { FooterAdminComponent } from './footer-admin/footer-admin.component';
 import { WebsiteRoutingModule } from '../modules/website/website-routing.module';
+import { UserUEAComponent } from './user-uea/user-uea.component';
+import { MenuListUEAComponent } from './menu-list-uea/menu-list-uea.component';
 
 
 
@@ -18,6 +20,8 @@ import { WebsiteRoutingModule } from '../modules/website/website-routing.module'
     HeaderAdminComponent,
     NavbarAdminComponent,
     FooterAdminComponent,
+    UserUEAComponent,
+    MenuListUEAComponent,
   ],
   exports:[
     HeaderComponent,
@@ -26,6 +30,8 @@ import { WebsiteRoutingModule } from '../modules/website/website-routing.module'
     HeaderAdminComponent,
     NavbarAdminComponent,
     FooterAdminComponent,
+    UserUEAComponent,
+    MenuListUEAComponent,
   ],
   imports: [
     CommonModule,

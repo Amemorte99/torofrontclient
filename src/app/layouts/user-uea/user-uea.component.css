@@ -1,0 +1,83 @@
+.nav-link {
+    color: #fff !important;
+    transition: all 0.5s ease-in-out;
+  }
+  .nav-link:hover {
+    transform: scale(1.05);
+    transition: all 0.5s ease-in-out;
+    font-weight: bold;
+    color: #fff !important;
+  }
+  
+  .sm-block {
+    display: none;
+  }
+  
+  .sm-hidden {
+    display: block;
+  }
+  
+  @media screen and (max-width: 700px) {
+    .sm-block {
+      display: block;
+    }
+    .sm-hidden {
+      display: none;
+    }
+  }/*# sourceMappingURL=menu-admfranchise.component.css.map */
+
+.side-width{
+  width: 330px;
+}
+.img-logo{
+  width: 60px;
+  height: 60px;
+
+  border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

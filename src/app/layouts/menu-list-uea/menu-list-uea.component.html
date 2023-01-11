@@ -1,0 +1,336 @@
+<ul class="nav nav-pills item flex-column mb-auto my-4">
+    <li class="nav-item">
+      <a
+        [routerLink]="['/admin/agent/franchise']"
+        routerLinkActive="router-link-active"
+        [ngClass]="
+          route == '/admin/agent/franchise' ? 'nav-link active' : 'nav-link'
+        "
+      >
+        <div class="d-flex justify-content-start align-items-center">
+          <div class="nav-card bg-primar">
+            <i class="fas fa-home"></i>
+          </div>
+          <h6 class="mx-2 mt-2">Accueil</h6>
+        </div>
+      </a>
+    </li>
+    <!-- 
+      <li class="nav-item">
+          <a [routerLink]="['/admin/agent/franchise/agent/technopole']" routerLinkActive="router-link-active" [ngClass]="route == '/admin/agent/franchise/agent/technopole' ? 'nav-link active' : 'nav-link'">
+              <div class="d-flex justify-content-start align-items-center">
+                  <div class="nav-card bg-primar">
+                      <i class="fas fa-user-tie"></i>
+                  </div>
+                  <h6 class="mx-2 mt-2">Agent Technopole</h6>
+              </div>
+          </a>
+      </li>
+      <li class="nav-item">
+          <a [routerLink]="['/admin/agent/franchise/agent/filiere']" routerLinkActive="router-link-active" [ngClass]="route == '/admin/agent/franchise/agent/filiere' ? 'nav-link active' : 'nav-link'">
+              <div class="d-flex justify-content-start align-items-center">
+                  <div class="nav-card bg-primar">
+                      <i class="fas fa-user-tie"></i>
+                  </div>
+                  <h6 class="mx-2 mt-2">Agent Filière
+                  </h6>
+              </div>
+          </a>
+      </li>
+      <li class="nav-item">
+          <a [routerLink]="['/admin/agent/franchise/agent/operation']" routerLinkActive="router-link-active" [ngClass]="route == '/admin/agent/franchise/agent/operation' ? 'nav-link active' : 'nav-link'">
+              <div class="d-flex justify-content-start align-items-center">
+                  <div class="nav-card bg-primar">
+                      <i class="fas fa-user-tie"></i>
+                  </div>
+                  <h6 class="mx-2 mt-2">Agent Opération </h6>
+              </div>
+          </a>
+      </li>
+      <li class="nav-item">
+          <a [routerLink]="['/admin/agent/franchise/agent/cd']" routerLinkActive="router-link-active"  [ngClass]="route == '/admin/agent/franchise/agent/cd' ? 'nav-link active' : 'nav-link'">
+              <div class="d-flex justify-content-start align-items-center">
+                  <div class="nav-card bg-primar">
+                      <i class="fas fa-user-tie"></i>
+                  </div>
+                  <h6 class="mx-2 mt-2">Agent Cd</h6>
+              </div>
+          </a>
+      </li>
+      <li class="nav-item">
+          <a [routerLink]="['/admin/agent/franchise/agent/general']" routerLinkActive="router-link-active"  
+              [ngClass]="route == '/admin/agent/franchise/agent/general' ? 'nav-link active' : 'nav-link'">
+              <div class="d-flex justify-content-start align-items-center">
+                  <div class="nav-card bg-primar">
+                      <i class="fas fa-home"></i>
+                  </div>
+                  <h6 class="mx-2 mt-2">Agent Général </h6>
+              </div>
+          </a>
+      </li>
+      <li class="nav-item">
+          <a [routerLink]="['/admin/agent/franchise/agent/desendettement']" routerLinkActive="router-link-active" [ngClass]="route == '/admin/agent/franchise/agent/desendettement' ? 'nav-link active' : 'nav-link'">
+              <div class="d-flex justify-content-start align-items-center">
+                  <div class="nav-card bg-primar">
+                      <i class="fas fa-users"></i>
+                  </div>
+                  <h6 class="mx-2 mt-2">Agent SMCIPN désendettement</h6>
+              </div>
+          </a>
+      </li> -->
+    <!-- 
+      <li class="nav-item">
+          <a [routerLink]="['/admin/agent/franchise/agent-ksu']" routerLinkActive="router-link-active" [ngClass]="route == '/admin/agent/franchise/agent-ksu' ? 'nav-link active' : 'nav-link'">
+              <div class="d-flex justify-content-start align-items-center">
+                  <div class="nav-card bg-primar">
+                      <i class="fas fa-user-tie"></i>
+                  </div>
+                  <h6 class="mx-2 mt-2">Agent KSU</h6>
+              </div>
+          </a>
+      </li>
+      <li class="nav-item">
+          <a [routerLink]="['/admin/agent/franchise/']" routerLinkActive="router-link-active" [ngClass]="route == '/admin/avr' ? 'nav-link active' : 'nav-link'">
+              <div class="d-flex justify-content-start align-items-center">
+                  <div class="nav-card bg-primar">
+                      <i class="fas fa-user-tie"></i>
+                  </div>
+                  <h6 class="mx-2 mt-2">Agent ACNEV</h6>
+              </div>
+          </a>
+      </li>
+      <li class="nav-item">
+          <a [routerLink]="['/admin/agent/franchise/']" routerLinkActive="router-link-active" [ngClass]="route == '/admin/agent/franchise/' ? 'nav-link active' : 'nav-link'">
+              <div class="d-flex justify-content-start align-items-center">
+                  <div class="nav-card bg-primar">
+                      <i class="fas fa-user-tie"></i>
+                  </div>
+                  <h6 class="mx-2 mt-2">Agent Franchise</h6>
+              </div>
+          </a>
+      </li>
+      <li class="nav-item">
+          <a [routerLink]="['/admin/agent/franchise']" routerLinkActive="router-link-active"  [ngClass]="route == '/admin/agent/franchise' ? 'nav-link active' : 'nav-link'">
+              <div class="d-flex justify-content-start align-items-center">
+                  <div class="nav-card bg-primar">
+                      <i class="fas fa-user-tie"></i>
+                  </div>
+                  <h6 class="mx-2 mt-2">Agent Gestion des Agents</h6>
+              </div>
+          </a>
+      </li> -->
+    <!-- <li class="nav-item">
+          <a routerLink="/admin/agent/franchise/poste"
+              [ngClass]="route == '/admin/agent/franchise/poste' ? 'nav-link active' : 'nav-link'">
+              <div class="d-flex justify-content-start align-items-center">
+                  <div class="nav-card bg-primar">
+                      <i class="fas fa-users"></i>
+                  </div>
+                  <h6 class="mx-2 mt-2">Fiche de Poste</h6>
+              </div>
+          </a>
+      </li> -->
+  
+    <li class="nav-item hover">
+      <a
+        [href]="['/admin/agent/franchise/liste/agent/' + idAgent]"
+        routerLinkActive="router-link-active"
+        [ngClass]="
+          route == '/admin/agent/franchise/liste/agent/' + idAgent
+            ? 'nav-link active'
+            : 'nav-link'
+        "
+      >
+        <div class="d-flex justify-content-start align-items-center">
+          <div class="nav-card bg-primar">
+            <i class="fas fa-users"></i>
+          </div>
+          <h6 class="mx-2 mt-2">Listes des agents</h6>
+        </div>
+      </a>
+      <div class="hover-view">
+        <ul *ngIf="idAgent == 1">
+          <li class="nav-item" style="list-style: none">
+            <a
+              [href]="['/admin/agent/franchise/liste/agent/260']"
+              routerLinkActive="router-link-active"
+              [ngClass]="
+                route == '/admin/agent/franchise/agent-ksu'
+                  ? 'nav-link active'
+                  : 'nav-link'
+              "
+            >
+              <div class="d-flex justify-content-start align-items-center">
+                <div class="nav-card bg-primar">
+                  <i class="fas fa-user-tie"></i>
+                </div>
+                <h6 class="mx-2 mt-2">Agent KSU</h6>
+              </div>
+            </a>
+          </li>
+          <li class="nav-item" style="list-style: none">
+            <a
+              [routerLink]="['/admin/agent/franchise/liste/agent/2467']"
+              routerLinkActive="router-link-active"
+              [ngClass]="
+                route == '/admin/agent/franchise/agent-ksu'
+                  ? 'nav-link active'
+                  : 'nav-link'
+              "
+            >
+              <div class="d-flex justify-content-start align-items-center">
+                <div class="nav-card bg-primar">
+                  <i class="fas fa-user-tie"></i>
+                </div>
+                <h6 class="mx-2 mt-2">Agent Franchisés</h6>
+              </div>
+            </a>
+          </li>
+          <li class="nav-item" style="list-style: none">
+            <a
+              [href]="['/admin/agent/franchise/liste/agent/52']"
+              routerLinkActive="router-link-active"
+              [ngClass]="
+                route == 'liste/agent/general' ? 'nav-link active' : 'nav-link'
+              "
+            >
+              <div class="d-flex justify-content-start align-items-center">
+                <div class="nav-card bg-primar">
+                  <i class="fas fa-user-tie"></i>
+                </div>
+                <h6 class="mx-2 mt-2">Agent Gestion Des agents</h6>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <!--  <li class="nav-item">
+          <a [routerLink]="['/admin/agent/franchise/te']" routerLinkActive="router-link-active"
+              [ngClass]="route == '/admin/agent/franchise/te' ? 'nav-link active' : 'nav-link'" class="nav-link">
+              <div class="d-flex justify-content-start align-items-center">
+                  <div class="nav-card bg-primar">
+                      <i class="fa fa-credit-card"></i>
+                  </div>
+                  <h6 class="mx-2 mt-2">Fiche de postes</h6>
+              </div>
+          </a>
+      </li> -->
+    <li class="nav-item hover">
+      <a
+        [href]="['/admin/agent/franchise/agent/fiche/' + idAgent]"
+        routerLinkActive="router-link-active"
+        [ngClass]="
+          route == '/admin/agent/franchise/fiche/' + idAgent
+            ? 'nav-link active'
+            : 'nav-link'
+        "
+      >
+        <div class="d-flex justify-content-start align-items-center">
+          <div class="nav-card bg-primar">
+            <i class="fas fa-users"></i>
+          </div>
+          <h6 class="mx-2 mt-2">Fiche de postes</h6>
+        </div>
+      </a>
+      <div class="hover-view">
+        <!-- <ul>
+          <li class="nav-item" style="list-style: none">
+            <a
+              [routerLink]="['/admin/agent/franchise/agent-ksu']"
+              routerLinkActive="router-link-active"
+              [ngClass]="
+                route == '/admin/agent/franchise/agent-ksu'
+                  ? 'nav-link active'
+                  : 'nav-link'
+              "
+            >
+              <div class="d-flex justify-content-start align-items-center">
+                <div class="nav-card bg-primar">
+                  <i class="fas fa-user-tie"></i>
+                </div>
+                <h6 class="mx-2 mt-2">Suivi - Evaluation</h6>
+              </div>
+            </a>
+          </li>
+          <li class="nav-item" style="list-style: none">
+            <a
+              [routerLink]="['/admin/agent/franchise/agent-ksu']"
+              routerLinkActive="router-link-active"
+              [ngClass]="
+                route == '/admin/agent/franchise/agent-ksu'
+                  ? 'nav-link active'
+                  : 'nav-link'
+              "
+            >
+              <div class="d-flex justify-content-start align-items-center">
+                <div class="nav-card bg-primar">
+                  <i class="fas fa-user-tie"></i>
+                </div>
+                <h6 class="mx-2 mt-2">Suivi & Evaluation</h6>
+              </div>
+            </a>
+          </li>
+        </ul> -->
+        <!-- <ul style="float : right; margin-right: 50px;">
+                <li>Suivi - Evaluation</li> <br/>
+                <li>Suivi & Evaluation</li>
+            </ul> -->
+      </div>
+    </li>
+    <!-- <li class="nav-item">
+          <div class="dropdown nav-item dropy">
+            <a class="btn btn-secondary dropdown-toggle nav-link"
+              style="background-color:#ae3764;margin-right:77%; border-color:#ae3764;" role="button" data-toggle="dropdown"
+              aria-expanded="false">
+              Fiche de postes
+            </a>
+            <div class="dropdownMenuLink drop">
+             <a (click)="hideMenu()" class="nav-link" href="/ksu" routerLinkActive="router-link-active">{{ "header.h5" | translate}}</a>
+             <a (click)="hideMenu()" class="nav-link" href="/franchise"
+                routerLinkActive="router-link-active">{{ "header.h3" | translate}}</a>
+              <a (click)="hideMenu()" class="nav-link" href="certification"
+                routerLinkActive="router-link-active">{{ "header.h4" | translate}}</a>
+              
+              </div>
+          </div>
+        </li> -->
+    <li class="nav-item">
+      <a
+        [routerLink]="['/admin/agent/franchise/avr']"
+        routerLinkActive="router-link-active"
+        [ngClass]="
+          route == '/admin/agent/franchise/avr' ? 'nav-link active' : 'nav-link'
+        "
+        class="nav-link"
+      >
+        <div class="d-flex justify-content-start align-items-center">
+          <div class="nav-card bg-primar">
+            <i class="fas fa-running"></i>
+          </div>
+  
+          <h6 class="mx-2 mt-2">Achats Ventes Réciproques</h6>
+        </div>
+      </a>
+    </li>
+    <li class="nav-item ">
+      <a
+        [routerLink]="['/admin/agent/franchise/terminal']"
+        routerLinkActive="router-link-active"
+        [ngClass]="
+          route == '/admin/agent/franchise/terminal'
+            ? 'nav-link active'
+            : 'nav-link'
+        "
+        class="nav-link"
+      >
+        <div class="d-flex justify-content-start align-items-center">
+          <div class="nav-card bg-primar">
+            <i class="fa fa-credit-card"></i>
+          </div>
+          <h6 class="mx-2 mt-2 text-white">Terminal d'échange</h6>
+        </div>
+      </a>
+    </li>
+  </ul>
+  
