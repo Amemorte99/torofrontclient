@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserUEAComponent implements OnInit {
 
+  ueaConnecte:any;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.ueaConnecte=JSON.parse(localStorage.getItem("ueaInfo")!);
   }
 
 }

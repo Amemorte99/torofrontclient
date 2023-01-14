@@ -8,9 +8,14 @@ import { AuthService } from 'src/app/modules/website/components/auth/common/auth
 })
 export class HeaderAdminComponent implements OnInit {
 
+  ueaConnecte:any;
+
   constructor(private authService: AuthService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+    this.ueaConnecte=JSON.parse(localStorage.getItem("ueaInfo")!);
+  }
 
   logout() {
     this.authService.logout();

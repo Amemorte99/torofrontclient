@@ -18,12 +18,26 @@ export class HomeComponent implements OnInit {
 
 
   isCollapsed = false;
+
+
+  token:any
   ngOnInit(): void {
+
+    const token= localStorage.getItem("token");
+    console.log("manes token",token)
   }
 
   constructor() {
 
   }
+
+
+ 
+
+  
+
+
+
 }
 
 

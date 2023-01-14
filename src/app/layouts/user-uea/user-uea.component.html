@@ -3,7 +3,7 @@
         <a [routerLink]="['/']" routerLinkActive="router-link-active" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
             <img src="/assets/images/ma/loogo2.png" class="img-fluid img-logo" alt="">
             <span class="fs-4 mx-4">
-              <!--   {{'franchise.agfr' | translate}}        -->NOM     </span>
+              <!--   {{'franchise.agfr' | translate}}        --> {{ueaConnecte.nom + " " + ueaConnecte.prenom}}     </span>
         </a>
         <hr>
         <app-menu-list-uea></app-menu-list-uea>

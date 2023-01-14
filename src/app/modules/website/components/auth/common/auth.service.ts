@@ -9,6 +9,9 @@ import { SweetAlertService } from 'src/app/shared/common/sweet-alert.service';
 })
 export class AuthService {
 
+
+  infoUEA:any;
+
   isAuthenticate = false;
  /*  private headers = new Headers({
     "Content-Type": "application/x-www-form-urlencoded",
@@ -40,7 +43,11 @@ export class AuthService {
         map((value) => {
           console.log("mee",value)
           if(value.status==true){
-            const token = value.data;
+            const token =  value.data.token;
+            localStorage.setItem("ueaInfo", JSON.stringify(value.data.data));
+            
+
+            
             localStorage.setItem("token", `Bearer ${token}`);
             if (token) {
               // this.bnIdle.startWatching(300).subscribe(timeOut => {
@@ -55,6 +62,7 @@ export class AuthService {
               //     );
               //   }
               // })
+              
               localStorage.setItem("isAuthenticate", "1");
               //this.route.navigate(["/admin/dashboard"]);
 
