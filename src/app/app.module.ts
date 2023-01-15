@@ -23,6 +23,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FileUploadModule } from '@iplab/ngx-file-upload';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { ConfigInterceptor } from './common/config.interceptor';
+import { UserUEAComponent } from './layouts/user-uea/user-uea.component';
 // import { CreateComponent } from './modules/utd/components/create/create/create.component';
 
 
@@ -38,7 +39,8 @@ import { ConfigInterceptor } from './common/config.interceptor';
     BrowserAnimationsModule,
     MatIconModule,
     FileUploadModule,
-    NgxIntlTelInputModule
+    NgxIntlTelInputModule,
+    
 
   ],
   providers: [

@@ -1,7 +1,7 @@
 <ul class="nav nav-pills item flex-column mb-auto my-4">
     <li class="nav-item">
       <a
-        [routerLink]="['/admin/agent/franchise']"
+        [href]="['utd/dashboard']"
         routerLinkActive="router-link-active"
         [ngClass]="
           route == '/admin/agent/franchise' ? 'nav-link active' : 'nav-link'
@@ -29,14 +29,14 @@
       >
         <div class="d-flex justify-content-start align-items-center">
           <div class="nav-card bg-primar">
-            <i class="fas fa-users"></i>
+            <i class="fa-solid fa-briefcase"></i>
           </div>
           <h6 class="mx-2 mt-2">Listes des Offres</h6>
         </div>
       </a>
       <div class="hover-view">
-        <ul *ngIf="idAgent == 1">
-          <li class="nav-item" style="list-style: none">
+        <ul >
+          <li class="nav-item" *ngIf="idAgent == 1" style="list-style: none">
             <a
               [href]="['/admin/agent/franchise/liste/agent/260']"
               routerLinkActive="router-link-active"
@@ -54,7 +54,7 @@
               </div>
             </a>
           </li>
-          <li class="nav-item" style="list-style: none">
+          <li class="nav-item" *ngIf="idAgent == 1" style="list-style: none">
             <a
               [routerLink]="['/admin/agent/franchise/liste/agent/2467']"
               routerLinkActive="router-link-active"
@@ -72,7 +72,7 @@
               </div>
             </a>
           </li>
-          <li class="nav-item" style="list-style: none">
+          <li class="nav-item" style="list-style: none" *ngIf="idAgent == 1">
             <a
               [href]="['/admin/agent/franchise/liste/agent/52']"
               routerLinkActive="router-link-active"
@@ -94,7 +94,7 @@
 
     <li class="nav-item hover">
       <a
-        [href]="['/admin/agent/franchise/agent/fiche/' + idAgent]"
+        [href]="['utd/dashboard/settings']"
         routerLinkActive="router-link-active"
         [ngClass]="
           route == '/admin/agent/franchise/fiche/' + idAgent
@@ -104,7 +104,7 @@
       >
         <div class="d-flex justify-content-start align-items-center">
           <div class="nav-card bg-primar">
-            <i class="fas fa-user"></i>
+            <i class="fa-solid fa-address-card"></i>
           </div>
           <h6 class="mx-2 mt-2">Profil</h6>
         </div>
@@ -116,7 +116,7 @@
 
     <li class="nav-item">
       <a
-        [routerLink]="['/admin/agent/franchise/avr']"
+        [href]="['utd/dashboard/si']"
         routerLinkActive="router-link-active"
         [ngClass]="
           route == '/admin/agent/franchise/avr' ? 'nav-link active' : 'nav-link'
@@ -125,10 +125,10 @@
       >
         <div class="d-flex justify-content-start align-items-center">
           <div class="nav-card bg-primar">
-            <i class="fas fa-running"></i>
+            <i class="fa-solid fa-award"></i>
           </div>
   
-          <h6 class="mx-2 mt-2">Offre de travail</h6>
+          <h6 class="mx-2 mt-2">Formation</h6>
         </div>
       </a>
     </li>
@@ -147,7 +147,7 @@
           <div class="nav-card bg-primar">
             <i class="fa fa-credit-card"></i>
           </div>
-          <h6 class="mx-2 mt-2 text-white">Offre de  stage</h6>
+          <h6 class="mx-2 mt-2 text-white">Abonnement</h6>
         </div>
       </a>
     </li>

@@ -15,6 +15,7 @@ export class MenuListUEAComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit(): void {
+    this.idAgent=1;
 
     this.route = this.router.url
     console.log(this.route)

@@ -12,16 +12,25 @@ import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { TablesComponent } from './components/tables/tables.component';
 import { HomeComponent } from './components/home/home.component';
+import { UtdComponent } from './utd.component';
 
 const routes: Routes = [
   {
 
     path:"",
-    component : HomeComponent,
+    component : UtdComponent,
     children:[
       {
-        path: "create",
+        path: "",
+        component: HomeComponent,
+      },
+      {
+        path: "si",
         component: SigninComponent,
+      },
+      {
+        path: "settings",
+        component: SettingsComponent,
       },
     ]
   },

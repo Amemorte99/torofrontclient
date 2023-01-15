@@ -1,0 +1,13 @@
+.fiche-position {
+    display: flex;
+    align-items: center;
+    align-content: center;
+  }
+  .side-width{
+    width: 330px;
+  }
+  .main-width{
+  
+    width: 100vw;
+  }
+  

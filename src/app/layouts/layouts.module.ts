@@ -35,7 +35,7 @@ import { MenuListUEAComponent } from './menu-list-uea/menu-list-uea.component';
   ],
   imports: [
     CommonModule,
-    WebsiteRoutingModule
+    WebsiteRoutingModule,
 
   ]
 })
