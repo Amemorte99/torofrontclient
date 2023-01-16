@@ -22,12 +22,7 @@
 
 }
 
-.a-link {
-  color: #fff !important;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-  background-color: red;
-}
+
 .a-link:hover {
   color: #e12454 !important;
   font-weight: bold;
@@ -48,6 +43,10 @@ h6{
   color: white;
 }
 
+.nav-link.active {
+ 
+  background-color: red;
+}
 
 
 /*# sourceMappingURL=menu-list-admfranchise.component.css.map */

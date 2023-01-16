@@ -19,6 +19,7 @@ import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { TablesComponent } from './components/tables/tables.component';
 import { HomeComponent } from './components/home/home.component';
+import { ProfilComponent } from './components/profil/profil.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { HomeComponent } from './components/home/home.component';
     FormsComponent,
     ModalsComponent,
     NotificationsComponent,
-    HomeComponent
+    HomeComponent,
+    ProfilComponent
   ],
   imports: [
     CommonModule,

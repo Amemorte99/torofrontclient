@@ -94,10 +94,10 @@
 
     <li class="nav-item hover">
       <a
-        [href]="['utd/dashboard/settings']"
+        [href]="['utd/dashboard/profil']"
         routerLinkActive="router-link-active"
         [ngClass]="
-          route == '/admin/agent/franchise/fiche/' + idAgent
+          route == 'utd/dashboard/profil'
             ? 'nav-link active'
             : 'nav-link'
         "
@@ -119,7 +119,7 @@
         [href]="['utd/dashboard/si']"
         routerLinkActive="router-link-active"
         [ngClass]="
-          route == '/admin/agent/franchise/avr' ? 'nav-link active' : 'nav-link'
+          route == 'si' ? 'nav-link active' : 'nav-link'
         "
         class="nav-link"
       >
@@ -134,7 +134,7 @@
     </li>
     <li class="nav-item ">
       <a
-        [routerLink]="['/admin/agent/franchise/terminal']"
+        [href]="['/admin/agent/franchise/terminal']"
         routerLinkActive="router-link-active"
         [ngClass]="
           route == '/admin/agent/franchise/terminal'

@@ -13,6 +13,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { TablesComponent } from './components/tables/tables.component';
 import { HomeComponent } from './components/home/home.component';
 import { UtdComponent } from './utd.component';
+import { ProfilComponent } from './components/profil/profil.component';
 
 const routes: Routes = [
   {
@@ -32,20 +33,14 @@ const routes: Routes = [
         path: "settings",
         component: SettingsComponent,
       },
+      {
+        path: "profil",
+        component: ProfilComponent,
+      },
     ]
   },
 
-  { path: '', component: DashboardComponent },
-  { path: 'settings', component: SettingsComponent },
-  { path: 'tables', component: TablesComponent },
-  { path: 'sign-in', component: SigninComponent },
-  { path: 'sign-up', component: SignupComponent },
-  { path: 'forgotpassword', component: ForgotpasswordComponent },
-  { path: 'resetpassword', component: ResetpasswordComponent },
-  { path: 'buttons', component: ButtonsComponent },
-  { path: 'notifications', component: NotificationsComponent },
-  { path: 'modals', component: ModalsComponent },
-  { path: 'forms', component: FormsComponent },
+  
 ];
 
 @NgModule({

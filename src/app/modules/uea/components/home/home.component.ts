@@ -18,17 +18,16 @@ SwiperCore.use([Autoplay,Mousewheel, Pagination, Navigation]);
 })
 export class HomeComponent implements OnInit {
 
-
+  ueaConnecte:any;
   isCollapsed = false;
+  role!:number;
 
 
   token:any
   ngOnInit(): void {
 
-    const token= localStorage.getItem("token");
-    console.log("manes token",token)
-
-    this.listeFormation();
+  
+    
   }
 
   constructor(

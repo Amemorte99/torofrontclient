@@ -19,6 +19,8 @@ export class MenuListUEAComponent implements OnInit {
 
     this.route = this.router.url
     console.log(this.route)
+
+    
   }
 
 }
