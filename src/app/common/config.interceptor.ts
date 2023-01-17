@@ -27,10 +27,16 @@ export class ConfigInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     // alert("fflk");
     request = request.clone({
+      headers: request.headers.set("Access-Control-Allow-Origin", "*"),
+    });
+    request = request.clone({
       headers: request.headers.set('Content-Type', 'application/json'),
     });
     request = request.clone({
       headers: request.headers.set('Accept', 'application/json'),
+    });
+    request = request.clone({
+      headers: request.headers.set("Access-Control-Allow-Methods", "GET, POST, PATCH, PUT, DELETE, OPTIONS"),
     });
     // request = request.clone({
     //   headers: request.headers.set("Access-Control-Allow-Origin", "*"),

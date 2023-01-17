@@ -61,18 +61,7 @@ h5{
     margin: 0;
    
 }
-th{
-    font-size: 11px;
-    color: gray;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    
-}
-td{
 
-        font-size: 14px;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-
-}
  */
 
 
@@ -1495,11 +1484,11 @@ td{
   }
   
   .bg-gradient-default {
-    background: linear-gradient(87deg, #172b4d 0, #1a174d 100%) !important;
+    background: linear-gradient(87deg, #009d8b 0, #1a174d 100%) !important;
   }
   
   .bg-gradient-default {
-    background: linear-gradient(87deg, #172b4d 0, #1a174d 100%) !important;
+    background: linear-gradient(87deg, #009d8b 0, #1a174d 100%) !important;
   }
   
   @keyframes floating-lg {
@@ -2140,3 +2129,22 @@ td{
   #navbar .navbar {
     margin-bottom: 20px;
   }
+
+
+  th{
+    font-size: 11px;
+    color: gray;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+td{
+
+        font-size: 14px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.btn-up{
+  color: #fff;
+  background-color: #009d8b;
+}
+

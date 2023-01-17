@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormationService } from '../../common/formation.service';
 import { Router } from '@angular/router';
+import { UeaService } from '../../common/uea.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,6 +12,8 @@ export class DashboardComponent implements OnInit {
   ueaConnecte: any;
   isCollapsed = false;
   role!: number;
+  nombreUEA!:number;
+  nombreUEAAdmin!:number;
 
   token: any;
   ngOnInit(): void {
@@ -18,6 +21,9 @@ export class DashboardComponent implements OnInit {
     console.log('manes token', token);
 
     this.listeFormation();
+  
+    this.count();
+    this.countA();
 
     this.ueaConnecte = JSON.parse(localStorage.getItem('ueaInfo')!);
 
@@ -31,9 +37,24 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private formationService: FormationService,
-    private router: Router
+    private router: Router,
+    private ueaservice:UeaService
   ) {}
 
+  count(){
+    this.ueaservice.countUEA().subscribe((_value) => {
+
+      this.nombreUEA=_value;
+
+    });
+  }
+  countA(){
+    this.ueaservice.countUEAAdmin().subscribe((_value) => {
+
+      this.nombreUEAAdmin=_value;
+
+    });
+  }
   listeFormation() {
     this.formationService.ListFormation().subscribe((values) => {
       if (values) {
