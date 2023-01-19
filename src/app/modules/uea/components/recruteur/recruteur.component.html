@@ -12,8 +12,8 @@
                 </div>
             </div>
             <div class="mx-4">
-                <h4 class="text-primar">LANCER DES APPEL D'OFFRES & APPEL A CANDIDATURE</h4>
-                <p>Liste des appel d'offres et des appel a candidature</p>
+                <h4 class="text-white">LANCER DES APPEL D'OFFRES & APPEL A CANDIDATURE</h4>
+                <p class="text-white">Liste des appel d'offres et des appel a candidature</p>
             </div>
         </div>
     </div>
@@ -28,7 +28,7 @@
 <div class="card-body mt-5">
     <div class="infos-data p-1">
 
-        <div class="col-md-12  shadow p-1" style="border-radius: 0.5rem">
+        <div class="col-md-12  shadow p-1" style="border-radius: 0.5rem;background-color: #fff;">
 
             <div class="m-3">
                 <button class="btn btn-up btn-sm" data-toggle="modal" data-target="#modeAjoutaAppelCandidature">
@@ -37,7 +37,7 @@
             </div>
             <h3 class="mb-2 pt-3 fw-bold">Liste des utilisateurs</h3>
             <div class=" my-4">
-                <table class="table table-hover ">
+                <table class="table table-hover"style="background-color: #fff;">
                     <thead>
                         <tr class="text-center">
 
@@ -50,14 +50,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="text-center" *ngFor="let item of listAppelByIdUea ">
-                            <td>{{item.id}}</td>
-                            <td>{{item.libelle}}</td>
-                            <td>{{item.resume}}</td>
-                            <td>{{item.description}}</td>
-                            <td>{{item.adresse}}</td>
+                        <tr class="text-center" *ngFor="let item of listAppelByIdUea; let i = index" >
+                            <td>{{i+1}}</td>
+                            <td>{{item?.libelle}}</td>
+                            <td>{{item?.resume}}</td>
+                            <td>{{item?.description}}</td>
+                            <td>{{item?.adresse}}</td>
                             <td colspan="2" class="p-2 ">
-                                <button class="btn btn-up btn-sm m-1"><i class="fa fa-eye"></i></button>
+                                <button class="btn btn-up btn-sm m-1"(click)="voirUea(item)"><i class="fa fa-eye"></i></button>
                             </td>
 
 
@@ -71,71 +71,6 @@
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-<div class="modal fade " id="ueabyId" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Information sur g</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-
-                <div class="card-body pt-0 pt-md-4">
-                    <div class="text-center">
-                        <h3>g<span class="font-weight-light"></span></h3>
-                        <div class="h5 font-weight-300">
-                            <i class="fa-solid fa-location-dot"></i> g, Togo
-                        </div>
-                        <div class="h5 mt-4">
-                            <i class="fa-solid fa-briefcase"></i> g
-                        </div>
-
-
-                        <div>
-                            <h5>Status compte</h5>
-                            <i class="fa fa-globe"></i>g
-                        </div>
-                        <hr class="my-4" />
-                        <p>
-                            <i class="fa-solid fa-envelope"></i> g
-                        </p>
-                        <div class="mb-2">
-                            <h5>Phone</h5>
-                            <h4><i class="fa fa-phone"></i> g</h4>
-                        </div>
-                        <div class="mb-2">
-                            <h5>Etat compte</h5>
-                            <h4><i class="fa fa-stack"></i> f</h4>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
-            </div>
-
-        </div>
-    </div>
-</div>
 
 
 
@@ -207,7 +142,7 @@
                                                     </div>
 
                                                 </div>
-                                                <div class="col-md-6 mb-2">
+                                                <div class="col-md-3 mb-2">
 
 
                                                     <select class=" form-control" formControlName="detailSA"
@@ -226,6 +161,28 @@
                                                             [value]="itemSA.id">
                                                             {{ itemSA.libelle }}
                                                         </option>
+                                                    </select>
+                                                    <label class="form-label" for="form3Example1q">Secteur d'activité</label>
+
+                                                    <div class="invalid-feedback">secteur d'activité svp!</div>
+
+
+                                                </div>
+                                                <div class="col-md-3 mb-2">
+
+
+                                                    <select class=" form-control" formControlName="typeOffre"
+                                                        [ngClass]="
+                                                            offreForm.get('typeOffre')?.invalid &&
+                                                            offreForm.get('typeOffre')?.touched
+                                                              ? 'form-control is-invalid'
+                                                              : 'form-control'
+                                                          ">
+                                                        <option value="" disabled selected>type offre
+                                                        </option>
+                                                        <option value="stage">Stage</option>
+                                                        <option value="recrutement">Recrutement</option>
+                                                      
                                                     </select>
                                                     <label class="form-label" for="form3Example1q">Secteur d'activité</label>
 
@@ -277,3 +234,62 @@
         </div>
     </div>
 </div>
+
+
+
+  
+      <!--Modal: modalDiscount-->
+      <div class="modal fade right" id="modalDiscount" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true" data-backdrop="true">
+        <div class="modal-dialog modal-side modal-bottom-right modal-notify modal-danger" role="document">
+          <!--Content-->
+          <div class="modal-content">
+            <!--Header-->
+            <div class="modal-header">
+              <p class="heading">Offre
+                <strong> & appel candidature </strong>
+              </p>
+  
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" class="white-text">&times;</span>
+              </button>
+            </div>
+  
+            <!--Body-->
+            <div class="modal-body">
+  
+              <div class="row">
+                <div class="col-4">
+                  
+                  <p class="text-center">
+                    <i class="fas fa-briefcase fa-4x" ></i>
+                   
+                  </p>
+                  <h3 class="fw-bold text-center">Titre : {{listAppByid?.libelle}}</h3>
+                
+                </div>
+  
+                <div class="col-8">
+                  <p>{{listAppByid?.resume}}</p>
+                  <p>
+                    <strong>{{listAppByid?.description}}.</strong> 
+                  </p>
+                  <h3>{{"Adresse : "+listAppByid?.adresse}}</h3>
+                  <h2>
+                    <span class="badge">v52gs1</span>
+                  </h2>
+  
+                </div>
+              </div>
+            </div>
+  
+            <!--Footer-->
+            <div class="modal-footer flex-center">
+             
+              <a type="button" class="btn btn-outline-danger waves-effect" data-dismiss="modal">Fermer</a>
+            </div>
+          </div>
+          <!--/.Content-->
+        </div>
+      </div>
+      <!--Modal: modalDiscount-->

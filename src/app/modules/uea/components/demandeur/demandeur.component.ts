@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { FormulaireService } from 'src/app/modules/website/common/formulaire.service';
 import { AccountService } from 'src/app/modules/website/components/cvcontainer/account/account.service';
 import { SweetAlertService } from 'src/app/shared/common/sweet-alert.service';
 import { AppelOffreService } from '../../common/appel-offre.service';
 
 @Component({
-  selector: 'app-stage',
-  templateUrl: './stage.component.html',
-  styleUrls: ['./stage.component.css']
+  selector: 'app-demandeur',
+  templateUrl: './demandeur.component.html',
+  styleUrls: ['./demandeur.component.css']
 })
-export class StageComponent implements OnInit {
+export class DemandeurComponent implements OnInit {
 
 
-  listOffreStage:any;
+  listOffre:any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -30,9 +29,9 @@ export class StageComponent implements OnInit {
 
 
   listDetaiSA() {
-    this.appelService.getByTypeOffre().subscribe((values) => {
+    this.appelService.listAppel().subscribe((values) => {
         console.log("getByTypeOffre",values);
-        this.listOffreStage = values.data;
+        this.listOffre = values.data;
       });
   }
 

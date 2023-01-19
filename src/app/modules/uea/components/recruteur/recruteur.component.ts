@@ -5,6 +5,8 @@ import { AccountService } from 'src/app/modules/website/components/cvcontainer/a
 import { SweetAlertService } from 'src/app/shared/common/sweet-alert.service';
 import { AppelOffreService } from '../../common/appel-offre.service';
 
+
+declare var $:any
 @Component({
   selector: 'app-recruteur',
   templateUrl: './recruteur.component.html',
@@ -19,6 +21,8 @@ export class RecruteurComponent implements OnInit {
   ueaConnecte:any;
   dataAppeleOffre:any;
   listAppelByIdUea:any;
+
+  listAppByid:any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -42,6 +46,7 @@ export class RecruteurComponent implements OnInit {
       resume: ['', Validators.required],
       adresse: ['',Validators.required],
       detailSA:['', Validators.required],
+      typeOffre:['', Validators.required],
      
     });
 
@@ -108,5 +113,25 @@ export class RecruteurComponent implements OnInit {
 
 
   }
+
+  voirUea(data:any){
+
+    this.appelService.getById(data.id).subscribe((values) => {
+      if (values) {
+        // this.prof = data.filter((dt: { ids: number; }) => dt.ids == this.id)
+      
+        this.listAppByid=values.data;
+        console.log('uea by id',  this.listAppByid);
+        
+      }
+    });
+    setTimeout(() => {
+      $("#modalDiscount").modal("show");
+    }, 1000);
+
+
+  }
+
+  
 
 }

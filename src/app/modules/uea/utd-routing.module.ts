@@ -16,6 +16,7 @@ import { UeaComponent } from './components/uea/uea.component';
 import { FormationComponent } from './components/formation/formation.component';
 import { StageComponent } from './components/stage/stage.component';
 import { RecruteurComponent } from './components/recruteur/recruteur.component';
+import { DemandeurComponent } from './components/demandeur/demandeur.component';
 
 const routes: Routes = [
   {
@@ -54,6 +55,10 @@ const routes: Routes = [
       {
         path: "recruteur",
         component: RecruteurComponent,
+      },
+      {
+        path: "demandeur",
+        component: DemandeurComponent,
       },
     ]
   },

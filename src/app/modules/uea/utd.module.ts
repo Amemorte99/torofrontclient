@@ -24,6 +24,8 @@ import { UeaComponent } from './components/uea/uea.component';
 import { FormationComponent } from './components/formation/formation.component';
 import { StageComponent } from './components/stage/stage.component';
 import { RecruteurComponent } from './components/recruteur/recruteur.component';
+import { DemandeurComponent } from './components/demandeur/demandeur.component';
+import { OffreComponent } from './components/offre/offre.component';
 
 
 @NgModule({
@@ -46,7 +48,9 @@ import { RecruteurComponent } from './components/recruteur/recruteur.component';
     UeaComponent,
     FormationComponent,
     StageComponent,
-    RecruteurComponent
+    RecruteurComponent,
+    DemandeurComponent,
+    OffreComponent
   ],
   imports: [
     CommonModule,

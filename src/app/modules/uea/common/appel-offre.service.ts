@@ -22,4 +22,20 @@ export class AppelOffreService {
       `/api/appelCandidature/byIdUea/`+idDataUEA
     );
   }
+  getById(idapp : number): Observable<any> {
+    return this.httpService.getRequest(
+      `/api/appelCandidature/getBYid/`+idapp
+    );
+  }
+  getByTypeOffre(): Observable<any> {
+    return this.httpService.getRequest(
+      `/api/appelCandidature/typeOffre`
+    );
+  }
+
+  listAppel(): Observable<any> {
+    return this.httpService.getRequest(
+      `/api/appelCandidature/list`
+    );
+  }
 }
