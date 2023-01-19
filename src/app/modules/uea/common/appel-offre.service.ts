@@ -1,0 +1,25 @@
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HttpService } from 'src/app/common/http.service';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AppelOffreService {
+
+  
+  constructor(private httpService: HttpService) { }
+
+
+  addAppelOffre(data:any): Observable<any> {
+    return this.httpService.postRequest(
+      `/api/appelCandidature/register`,data
+    );
+  }
+
+  ListAppelCandidatureByIdUEA(idDataUEA : number): Observable<any> {
+    return this.httpService.getRequest(
+      `/api/appelCandidature/byIdUea/`+idDataUEA
+    );
+  }
+}

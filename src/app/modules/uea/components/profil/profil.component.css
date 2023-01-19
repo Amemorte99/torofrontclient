@@ -2146,5 +2146,10 @@ td{
 .btn-up{
   color: #fff;
   background-color: #009d8b;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-
+.btn-up:hover{
+  color: #fff;
+  background-color: #e12454;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}

@@ -1,0 +1,279 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+
+
+<section class="container-fluid top">
+    <div class="row">
+        <div class="col-md-12 d-flex">
+            <div>
+                <div class="card card-body bg-primar text-white title-card">
+                    <h3><i class="fas fa-certificate"></i></h3>
+                </div>
+            </div>
+            <div class="mx-4">
+                <h4 class="text-primar">LANCER DES APPEL D'OFFRES & APPEL A CANDIDATURE</h4>
+                <p>Liste des appel d'offres et des appel a candidature</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+<div class="card-body mt-5">
+    <div class="infos-data p-1">
+
+        <div class="col-md-12  shadow p-1" style="border-radius: 0.5rem">
+
+            <div class="m-3">
+                <button class="btn btn-up btn-sm" data-toggle="modal" data-target="#modeAjoutaAppelCandidature">
+                    Lancer un appel à candidature <i class="fa fa-plus-circle"></i>
+                </button>
+            </div>
+            <h3 class="mb-2 pt-3 fw-bold">Liste des utilisateurs</h3>
+            <div class=" my-4">
+                <table class="table table-hover ">
+                    <thead>
+                        <tr class="text-center">
+
+                            <th>N° d'ordre</th>
+                            <th>Titre</th>
+                            <th>Resumé</th>
+                            <th>Description</th>
+                            <th>Adresse</th>
+                            <th colspan="2">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="text-center" *ngFor="let item of listAppelByIdUea ">
+                            <td>{{item.id}}</td>
+                            <td>{{item.libelle}}</td>
+                            <td>{{item.resume}}</td>
+                            <td>{{item.description}}</td>
+                            <td>{{item.adresse}}</td>
+                            <td colspan="2" class="p-2 ">
+                                <button class="btn btn-up btn-sm m-1"><i class="fa fa-eye"></i></button>
+                            </td>
+
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="modal fade " id="ueabyId" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Information sur g</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+
+                <div class="card-body pt-0 pt-md-4">
+                    <div class="text-center">
+                        <h3>g<span class="font-weight-light"></span></h3>
+                        <div class="h5 font-weight-300">
+                            <i class="fa-solid fa-location-dot"></i> g, Togo
+                        </div>
+                        <div class="h5 mt-4">
+                            <i class="fa-solid fa-briefcase"></i> g
+                        </div>
+
+
+                        <div>
+                            <h5>Status compte</h5>
+                            <i class="fa fa-globe"></i>g
+                        </div>
+                        <hr class="my-4" />
+                        <p>
+                            <i class="fa-solid fa-envelope"></i> g
+                        </p>
+                        <div class="mb-2">
+                            <h5>Phone</h5>
+                            <h4><i class="fa fa-phone"></i> g</h4>
+                        </div>
+                        <div class="mb-2">
+                            <h5>Etat compte</h5>
+                            <h4><i class="fa fa-stack"></i> f</h4>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- The Modal -->
+<div class="modal fade " id="modeAjoutaAppelCandidature" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog modal-xl">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Lancer une offre</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <section class="h-100 h-custom" style="background-color: #8fc4b7;">
+                    <div class="container py-5 h-100">
+                        <div class="row d-flex justify-content-center align-items-center h-100">
+                            <div class="col-lg-12 col-xl-12 col-sm-12">
+                                <div class="card rounded-3">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp"
+                                        class="w-100"
+                                        style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+                                        alt="Sample photo">
+                                    <div class="card-body p-4 p-md-5">
+                                        <form class="px-md-2" [formGroup]="offreForm">
+
+                                            <div class="row">
+                                                <div class="form-outline mb-2 col-md-6">
+                                                    <input type="text" id="form3Example1q" class="form-control mb-2"
+                                                        formControlName="libelle" [ngClass]="
+                                                    offreForm.get('libelle')?.invalid &&
+                                                    offreForm.get('libelle')?.touched
+                                                      ? 'form-control is-invalid'
+                                                      : 'form-control'
+                                                  "/> 
+                                                    <label class="form-label" for="form3Example1q">Titre</label>
+                                                </div>
+                                                <div class="form-outline mb-2 col-md-6">
+                                                    <input type="text" id="form3Example1q" class="form-control"
+                                                    formControlName="adresse"
+                                                    [ngClass]="
+                                                offreForm.get('adresse')?.invalid &&
+                                                offreForm.get('adresse')?.touched
+                                                  ? 'form-control is-invalid'
+                                                  : 'form-control'
+                                              " />
+                                                    <label class="form-label" for="form3Example1q">Adresse</label>
+                                                </div>
+
+                                                <div class="col-md-6 mb-2">
+
+                                                    <div class="form-outline datepicker">
+                                                        <textarea type="text" class="form-control"
+                                                            id="exampleDatepicker1" formControlName="resume"
+                                                            [ngClass]="
+                                                            offreForm.get('resume')?.invalid &&
+                                                            offreForm.get('resume')?.touched
+                                                              ? 'form-control is-invalid'
+                                                              : 'form-control'
+                                                          " rows="2" cols="2">
+
+                                                            </textarea>
+                                                        <label for="exampleDatepicker1" class="form-label">
+                                                            Resumé</label>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-md-6 mb-2">
+
+
+                                                    <select class=" form-control" formControlName="detailSA"
+                                                        [ngClass]="
+                                                            offreForm.get('detailSA')?.invalid &&
+                                                            offreForm.get('detailSA')?.touched
+                                                              ? 'form-control is-invalid'
+                                                              : 'form-control'
+                                                          ">
+                                                        <option value="" disabled selected>Secteur d'activité
+                                                        </option>
+                                                        <option value="2">Option 1</option>
+                                                        <option value="3">Option 2</option>
+                                                        <option value="4">Option 3</option>
+                                                        <option *ngFor="let itemSA of listDetailSA"
+                                                            [value]="itemSA.id">
+                                                            {{ itemSA.libelle }}
+                                                        </option>
+                                                    </select>
+                                                    <label class="form-label" for="form3Example1q">Secteur d'activité</label>
+
+                                                    <div class="invalid-feedback">secteur d'activité svp!</div>
+
+
+                                                </div>
+                                                <div class="col-md-12  mb-2">
+
+                                                    <div class="form-outline datepicker">
+                                                        <textarea type="text" class="form-control"
+                                                            id="exampleDatepicker1"  formControlName="description" [ngClass]="
+                                                            offreForm.get('description')?.invalid &&
+                                                            offreForm.get('description')?.touched
+                                                              ? 'form-control is-invalid'
+                                                              : 'form-control'
+                                                          " rows="4" cols="4" ></textarea>
+                                                        <label for="exampleDatepicker1" class="form-label">
+                                                            Description</label>
+                                                    </div>
+
+                                                </div>
+
+                                         
+                                              
+
+                                                <button type="submit"
+                                                    class="btn btn-up btn-sm mb-1 col-md-4"   (click)="soumettre()" type="button"   [disabled]="offreForm.invalid">Lancer l'offre</button>
+                                            </div>
+
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+            </div>
+
+        </div>
+    </div>
+</div>

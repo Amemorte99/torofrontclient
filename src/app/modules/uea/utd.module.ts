@@ -20,6 +20,10 @@ import { SignupComponent } from './components/signup/signup.component';
 import { TablesComponent } from './components/tables/tables.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProfilComponent } from './components/profil/profil.component';
+import { UeaComponent } from './components/uea/uea.component';
+import { FormationComponent } from './components/formation/formation.component';
+import { StageComponent } from './components/stage/stage.component';
+import { RecruteurComponent } from './components/recruteur/recruteur.component';
 
 
 @NgModule({
@@ -38,7 +42,11 @@ import { ProfilComponent } from './components/profil/profil.component';
     ModalsComponent,
     NotificationsComponent,
     HomeComponent,
-    ProfilComponent
+    ProfilComponent,
+    UeaComponent,
+    FormationComponent,
+    StageComponent,
+    RecruteurComponent
   ],
   imports: [
     CommonModule,

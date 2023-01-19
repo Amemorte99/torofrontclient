@@ -18,9 +18,23 @@ export class UeaService {
     );
   }
 
+ 
+
   countUEAAdmin() : Observable<any> {
     return this.httpService.getRequest(
       `/api/uea/countA`,
     );
   }
+
+  listUea() : Observable<any> {
+    return this.httpService.getRequest(
+      `/api/uea/list`,
+    );
+  }
+  getById(idUEA:number) : Observable<any> {
+    return this.httpService.getRequest(
+      `/api/uea/getById/`+idUEA
+    );
+  }
+  
 }

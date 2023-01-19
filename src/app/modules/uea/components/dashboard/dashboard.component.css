@@ -20939,3 +20939,11 @@
     background-size: 100%;
   }
   
+  .btn-up{
+    color: #fff;
+    background-color: #009d8b;
+  }
+  .btn-up:hover{
+    color: #fff;
+    background-color: #AE3764;
+  }

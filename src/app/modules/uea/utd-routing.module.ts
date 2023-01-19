@@ -9,11 +9,13 @@ import { NotificationsComponent } from './components/notifications/notifications
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { SigninComponent } from './components/signin/signin.component';
-import { SignupComponent } from './components/signup/signup.component';
-import { TablesComponent } from './components/tables/tables.component';
 import { HomeComponent } from './components/home/home.component';
 import { UtdComponent } from './utd.component';
 import { ProfilComponent } from './components/profil/profil.component';
+import { UeaComponent } from './components/uea/uea.component';
+import { FormationComponent } from './components/formation/formation.component';
+import { StageComponent } from './components/stage/stage.component';
+import { RecruteurComponent } from './components/recruteur/recruteur.component';
 
 const routes: Routes = [
   {
@@ -36,6 +38,22 @@ const routes: Routes = [
       {
         path: "profil",
         component: ProfilComponent,
+      },
+      {
+        path: "uea",
+        component: UeaComponent,
+      },
+      {
+        path: "formation",
+        component: FormationComponent,
+      },
+      {
+        path: "stage",
+        component: StageComponent,
+      },
+      {
+        path: "recruteur",
+        component: RecruteurComponent,
       },
     ]
   },

@@ -1,0 +1,79 @@
+th{
+    font-size: 11px;
+    color: gray;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+td{
+
+        font-size: 14px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.btn-up{
+  color: #fff;
+  background-color: #009d8b;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.btn-up:hover{
+    color: #fff;
+    background-color: #e12454;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+h2{
+    color: #323f55;
+    font-size: 23px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+}
+h3{
+    color: #323f55;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+h4{
+    color: #323f55;
+    font-size: 17px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+
+}
+h5{
+    color: gray;
+    font-size: 12px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+   
+}
+
+td .btn{
+
+    text-align: center;
+}
+
+
+
+input[type=email],
+input[type=password],
+input[type=tel],
+input[type=date],
+input[type="text"],select{
+  box-shadow: none;
+  height: 38px;
+  outline: none;
+  font-size: 14px;
+  border-radius: 0.3em;
+  background-color: #f5f5f5;
+}
+
+input[type=email]:focus,
+input[type=password]:focus,
+input[type=text]:focus,
+input[type=tel]:focus,
+input[type=date]:focus,
+textarea:focus ,select:focus{
+  box-shadow: none;
+  border: 1px solid #09977C;
+  border-radius: 0.3em;
+}
