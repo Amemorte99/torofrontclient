@@ -130,32 +130,24 @@
                   </div>
                 </div>
               <div class="col-md-12  shadow " style="border-radius: 0.5rem">
-                <h3 class="mb-2 pt-3 fw-bold">Historique connection</h3>
+                <h3 class="mb-2 pt-3 fw-bold">Historique de connection</h3>
                 <div class=" my-4">
                   <table class="table table-hover ">
                     <thead >
                       <tr class="text-center">
                         <th>N° d'ordre</th>
                         <th>Ref</th>
-                        <th colspan="2">Durée</th>
+                        <th colspan="2">Derniere connection</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr class="text-center">
-                        <td>01</td>
+                      <tr class="text-center" *ngFor="let item of histUEAConnecte;let i = index">
+                        <td>{{i+1}}</td>
                         <td>130</td>
-                        <td colspan="2">Lorem ipsum dolor sit.</td>
+                        <td colspan="2">{{item?.dateCreation | date:'medium' }}</td>
                         <td>
-                          <button class="btn btn-up">voir</button>
-                        </td>
-                      </tr>
-                      <tr class="text-center">
-                        <td>02</td>
-                        <td>13000</td>
-                        <td colspan="2">Lorem ipsum dolor sit.</td>
-                        <td>
-                          <button class="btn btn-up">voir</button>
+                          <button class="btn btn-up btn-sm"  (click)="voirHisto(item.id)">voir</button>
                         </td>
                       </tr>
                     </tbody>
@@ -216,4 +208,57 @@ aria-hidden="true">
 
     </div>
   </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="modal fade " id="ueabyId" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Historique connection N° {{listHistoAByid?.uea.id }}</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+
+                <div class="card-body pt-0 pt-md-4">
+                    <div class="text-center">
+                      <h3>{{ listHistoAByid?.uea.prenom + " " + listHistoAByid?.uea.nom }}<span class="font-weight-light"></span></h3>
+                      <div class="h5 font-weight-300">
+                        <i class="fa-solid fa-globe-africa"></i> {{ listHistoAByid?.dateUpdate | date:'medium' }}, Togo
+                      </div>
+                     
+        
+  
+                    </div>
+                  </div>
+                
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+            </div>
+
+        </div>
+    </div>
 </div>

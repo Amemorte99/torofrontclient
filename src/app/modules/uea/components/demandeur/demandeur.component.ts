@@ -3,6 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { AccountService } from 'src/app/modules/website/components/cvcontainer/account/account.service';
 import { SweetAlertService } from 'src/app/shared/common/sweet-alert.service';
 import { AppelOffreService } from '../../common/appel-offre.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-demandeur',
@@ -18,7 +19,8 @@ export class DemandeurComponent implements OnInit {
     private formBuilder: FormBuilder,
     public accountService: AccountService,
     private sweetAlert: SweetAlertService,
-    private appelService:AppelOffreService
+    private appelService:AppelOffreService,
+    private routers: Router,
   ) { }
 
   ngOnInit(): void {
@@ -37,8 +39,8 @@ export class DemandeurComponent implements OnInit {
 
   voirDetailOffre(e:any){
 
-  
-
+    //this.routers.navigate(['/utd/dashboard/offre'+e.id])
+    this.routers.navigate(['/utd/dashboard/offre', e.id])
   }
 
 

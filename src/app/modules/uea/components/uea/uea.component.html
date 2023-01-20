@@ -25,8 +25,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="text-center" *ngFor="let item of listUEA ">
-                            <td>{{item.id}}</td>
+                        <tr class="text-center" *ngFor="let item of listUEA ;let i = index">
+                            <td>{{i+1}}</td>
                             <td>{{item.code}}</td>
                             <td>{{item.prenom}}</td>
                             <td>{{item.nom}}</td>

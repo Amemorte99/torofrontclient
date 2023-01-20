@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { first, map, Observable } from 'rxjs';
 import { HttpService } from 'src/app/common/http.service';
+import { HistoriqueUEAService } from 'src/app/modules/uea/common/historique-uea.service';
 import { SweetAlertService } from 'src/app/shared/common/sweet-alert.service';
 
 @Injectable({
@@ -11,6 +12,7 @@ export class AuthService {
 
 
   infoUEA:any;
+  ueaConnecte:any;
 
   isAuthenticate = false;
  /*  private headers = new Headers({
@@ -24,7 +26,8 @@ export class AuthService {
     private httpService: HttpService,
     private route: Router,
     private sweetAlertService: SweetAlertService,
-    private router: Router
+    private router: Router,
+    private histoService:HistoriqueUEAService
   ) { }
 
 
@@ -45,6 +48,9 @@ export class AuthService {
           if(value.status==true){
             const token =  value.data.token;
             localStorage.setItem("ueaInfo", JSON.stringify(value.data.data));
+
+
+            this.ueaConnecte = JSON.parse(localStorage.getItem('ueaInfo')!);
             
 
             
@@ -66,10 +72,13 @@ export class AuthService {
               localStorage.setItem("isAuthenticate", "1");
               //this.route.navigate(["/admin/dashboard"]);
 
+
+
               this.sweetAlertService.showSuccessAlert(
                 "authentification réussie.",
                 "Appuyez pour acceder avotre compte"
               );
+              this.save(this.ueaConnecte.id);
 
               this.route.navigate(["/utd/dashboard/"]);
 
@@ -101,6 +110,25 @@ export class AuthService {
     this.route.navigate([""], {
       queryParams: {},
     });
+  }
+
+  save(e:any){
+    
+
+    let bodyData: any = {
+      uea:{
+        id:parseInt(e)
+      }
+    }
+
+
+  
+    this.histoService.saveHisto(bodyData).subscribe((dataValue) => {
+
+    })
+
+
+  
   }
 
 }

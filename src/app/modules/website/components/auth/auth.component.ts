@@ -4,6 +4,7 @@ import { SweetAlertService } from 'src/app/shared/common/sweet-alert.service';
 import { FormulaireService } from '../../common/formulaire.service';
 import { AccountService } from '../cvcontainer/account/account.service';
 import { AuthService } from './common/auth.service';
+import { HistoriqueUEAService } from 'src/app/modules/uea/common/historique-uea.service';
 
 @Component({
   selector: 'app-auth',
@@ -19,7 +20,8 @@ export class AuthComponent implements OnInit {
     private formBuilder: FormBuilder,
     private formService: FormulaireService,
     private authService: AuthService,
-    private sweetAlert: SweetAlertService
+    private sweetAlert: SweetAlertService,
+    private histoService:HistoriqueUEAService
   ) { }
 
   ngOnInit(): void {

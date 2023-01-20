@@ -17,6 +17,7 @@ import { FormationComponent } from './components/formation/formation.component';
 import { StageComponent } from './components/stage/stage.component';
 import { RecruteurComponent } from './components/recruteur/recruteur.component';
 import { DemandeurComponent } from './components/demandeur/demandeur.component';
+import { OffreComponent } from './components/offre/offre.component';
 
 const routes: Routes = [
   {
@@ -59,6 +60,10 @@ const routes: Routes = [
       {
         path: "demandeur",
         component: DemandeurComponent,
+      },
+      {
+        path: "offre/:id",
+        component: OffreComponent,
       },
     ]
   },

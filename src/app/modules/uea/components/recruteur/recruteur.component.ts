@@ -115,7 +115,6 @@ export class RecruteurComponent implements OnInit {
   }
 
   voirUea(data:any){
-
     this.appelService.getById(data.id).subscribe((values) => {
       if (values) {
         // this.prof = data.filter((dt: { ids: number; }) => dt.ids == this.id)
@@ -133,5 +132,4 @@ export class RecruteurComponent implements OnInit {
   }
 
   
-
 }

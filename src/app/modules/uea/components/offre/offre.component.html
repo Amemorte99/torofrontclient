@@ -12,18 +12,18 @@
     <div class="row">
       <div class="col-md-12 d-flex">
         <div>
-          <div class="card card-body bg-primar text-white title-card">
-            <h3><i class="fas fa-certificate"></i></h3>
+          <div class="card card-body bg-white  title-card">
+            <h3><i class="fas fa-map-marker"></i></h3>
           </div>
         </div>
-        <div class="mx-4">
-          <h4 class="text-primar">APPEL D'OFFRES & APPEL A CANDIDATURE</h4>
+        <div  class=" mx-4 text-white">
+          <h4 >APPEL D'OFFRES & APPEL A CANDIDATURE</h4>
           <p>details de l'offre</p>
         </div>
       </div>
     </div>
   </section>
-  <section class="container-fluid top">
+  <section class="container-fluid mt-5">
     <div class="row">
    
       <div class="col-md-5">
@@ -32,23 +32,23 @@
         </div>
       </div>
       <div class="col-md-7">
-        <a [routerLink]="['/admin/offre/passation']" class="a my-4">
-          <div class="btn-up d-flex justify-content-end align-content-center">
-            <h6 class="text-white m-4">Voir la liste des offres chargés</h6>
+        <div [routerLink]="['/admin/offre/passation']" class="my-4 ">
+          <div class="btn-up2 d-flex justify-content-end align-content-center">
+            <h6 class="m-4">Voir la liste des offres chargés</h6>
           </div>
-        </a>
+        </div>
         <div class="my-4">
-          <h4>eggfg</h4>
+          <h4>{{"Titre: "+listAppByid?.libelle}}</h4>
           <h4></h4>
           <hr />
         </div>
         <div class="my-4">
           <div class="row my-4">
        
-            <div class="col-md-4">
-              <button class="d-grid gap-2 col-6 mx-auto my-4" type="button" class="btn btn-up btn-lg"
+            <div class="col-md-6">
+              <button class="d-grid gap-2 col- mx-auto my-4" type="button" class="btn btn-up2 btn-lg"
                 data-bs-toggle="modal" data-bs-target="#conditions">
-                Voir les conditions
+               Charger l'offre
   
               </button>
             </div>
@@ -56,8 +56,8 @@
         </div>
       </div>
       <div class="col-md-8 my-4">
-        <h5>Description:</h5>
-        <p>eggg</p>
+        <h5>Information :</h5>
+        <p class="text-justify">{{listAppByid?.description}}</p>
       </div>
      
     </div>
