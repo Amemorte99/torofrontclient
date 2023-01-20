@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { HttpService } from 'src/app/common/http.service';
 
 @Injectable({
@@ -19,6 +20,15 @@ export class FormulaireService {
 
   listAllDetailSA() {
     return this.httpService.getRequest("/api/detailsa/list");
+  }
+
+
+  uploadFile(data: any): Observable<any> {
+   
+    return this.httpService.postUploadRequest(
+      "/api/uploads/saveFile",
+      data
+    );
   }
 
 

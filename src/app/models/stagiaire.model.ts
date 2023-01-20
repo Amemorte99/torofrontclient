@@ -10,7 +10,7 @@ export interface Stagiaire {
     genre: string;
     tel: string;
     typeUEA: number;
-    detailSA: number;
+    detailSA: any;
     secteur:number;
 
 }

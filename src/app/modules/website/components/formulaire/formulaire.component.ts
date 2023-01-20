@@ -1,10 +1,20 @@
 import { CdkTextareaAutosize } from '@angular/cdk/text-field';
 import { Component, NgZone, OnInit, ViewChild } from '@angular/core';
-import { FormControl, Validators, FormGroupDirective, NgForm, FormGroup, FormBuilder } from '@angular/forms';
+import {
+  FormControl,
+  Validators,
+  FormGroupDirective,
+  NgForm,
+  FormGroup,
+  FormBuilder,
+} from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
-import { FileUploadControl, FileUploadValidators } from '@iplab/ngx-file-upload';
+import {
+  FileUploadControl,
+  FileUploadValidators,
+} from '@iplab/ngx-file-upload';
 import { ImagePickerConf } from 'ngp-image-picker';
-import { BehaviorSubject, Subscription, take } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription, take } from 'rxjs';
 import { AccountService } from '../cvcontainer/account/account.service';
 import { FormulaireService } from '../../common/formulaire.service';
 import { SweetAlertService } from 'src/app/shared/common/sweet-alert.service';
@@ -13,28 +23,26 @@ import { Stagiaire } from '../../../../models/stagiaire.model';
 @Component({
   selector: 'app-formulaire',
   templateUrl: './formulaire.component.html',
-  styleUrls: ['./formulaire.component.css']
+  styleUrls: ['./formulaire.component.css'],
 })
 export class FormulaireComponent implements OnInit {
-
-
-
   hide = true;
   hide1 = true;
-  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+  ]);
 
   matcher = new MyErrorStateMatcher();
 
- imagee: any;
+  imagee: any;
+  img:any;
 
+  mesImage:any ={};
 
- listDetailSA:any;
+  listDetailSA: any;
 
- typeU!:number
-
-
-
-
+  typeU!: number;
 
   personalDetails!: FormGroup;
   addressDetails!: FormGroup;
@@ -46,448 +54,423 @@ export class FormulaireComponent implements OnInit {
 
 
 
+
+  selectedFiles?: FileList;
+  currentFile?: File;
+  progress = 0;
+  message = '';
+  preview = '';
+
+  imageInfos?: Observable<any>;
+
+  imageData: any = [];
+
   //formulaire
 
-  personelDetails!: FormGroup
-  payementDetails! : FormGroup
+  personelDetails!: FormGroup;
+  payementDetails!: FormGroup;
   persenal_step = false;
   payement_step = false;
 
-
   loading = false;
 
-    stepp = 0;
+  stepp = 0;
 
-    stagiaire!: Stagiaire
-
-
+  stagiaire!: Stagiaire;
 
   imagePickerConf: ImagePickerConf = {
-    borderRadius: "6px",
-    language: "fr",
-    width: "240PX",
-    height: "240PX",
+    borderRadius: '6px',
+    language: 'fr',
+    width: '240PX',
+    height: '240PX',
     //hideDeleteBtn: true,
     //hideDownloadBtn: true,
     //hideEditBtn: true,
   };
-
-
-
-
 
   constructor(
     private formBuilder: FormBuilder,
     public accountService: AccountService,
     private formService: FormulaireService,
     private sweetAlert: SweetAlertService
-    ) {
-
-
-  }
+  ) {}
   ngOnInit(): void {
-    this.subscription = this.control.valueChanges.subscribe((values: Array<File>) => this.getImage(values[0]));
-    this.listDetaiSA()
+    this.subscription = this.control.valueChanges.subscribe(
+      (values: Array<File>) => this.getImage(values[0])
+    );
+    this.listDetaiSA();
 
-    this.personelDetails = this.formBuilder.group({
-      prenom: ['', Validators.required],
-      adresse: ['', Validators.required],
-      name: ['', Validators.required],
-      email: ['', [Validators.required,Validators.email]],
-      phone: ['',Validators.required],
-      dob: ['', Validators.required],
-      genre: ['', Validators.required],
-      secteur:['', Validators.required],
-      username: ['', Validators.required],
-      password:['', Validators.required],
+    this.personelDetails = this.formBuilder.group(
+      {
+        prenom: ['', Validators.required],
+        adresse: ['', Validators.required],
+        name: ['', Validators.required],
+        email: ['', [Validators.required, Validators.email]],
+        phone: ['', Validators.required],
+        dob: ['', Validators.required],
+        genre: ['', Validators.required],
+        secteur: ['', Validators.required],
+        username: ['', Validators.required],
+        password: ['', Validators.required],
 
-      confirm_password: ['', [Validators.required]]
+        confirm_password: ['', [Validators.required]],
+      },
+      {
+        validator: this.ConfirmedValidator('password', 'confirm_password'),
+      }
+    );
 
-    }, {
+    this.payementDetails = this.formBuilder.group({
+      pay: ['', Validators.required],
+    });
 
-      validator: this.ConfirmedValidator('password', 'confirm_password')
-
-
-  });
-
-  this.payementDetails = this.formBuilder.group({
-    pay: ['', Validators.required],
-
-});
-
-
-
-
-
-  this.addressDetails = this.formBuilder.group({
+    this.addressDetails = this.formBuilder.group({
       city: ['', Validators.required],
       address: ['', Validators.required],
-      pincode: ['',Validators.required]
-  });
+      pincode: ['', Validators.required],
+    });
 
-  this.educationalDetails = this.formBuilder.group({
+    this.educationalDetails = this.formBuilder.group({
       highest_qualification: ['', Validators.required],
       university: ['', Validators.required],
-      total_marks: ['',Validators.required]
-  });
-
+      total_marks: ['', Validators.required],
+    });
   }
   selectedFile: any = null;
 
   onFileSelected(event: any): void {
-      this.selectedFile = event.target.files[0] ?? null;
-
+    this.selectedFile = event.target.files[0] ?? null;
   }
 
-  public readonly uploadedFile: BehaviorSubject<String | any> = new BehaviorSubject(null);
+  public readonly uploadedFile: BehaviorSubject<String | any> =
+    new BehaviorSubject(null);
 
   private subscription!: Subscription;
 
   public readonly control = new FileUploadControl(
-      { listVisible: true, accept: ['image/*'], discardInvalid: true, multiple: false },
-      [FileUploadValidators.accept(['image/*']), FileUploadValidators.filesLimit(1)]
+    {
+      listVisible: true,
+      accept: ['image/*'],
+      discardInvalid: true,
+      multiple: false,
+    },
+    [
+      FileUploadValidators.accept(['image/*']),
+      FileUploadValidators.filesLimit(1),
+    ]
   );
 
-
-
   public ngOnDestroy(): void {
-      this.subscription.unsubscribe();
+    this.subscription.unsubscribe();
   }
 
   private getImage(file: File): void {
-      if (FileReader && file) {
-          const fr = new FileReader();
-          fr.onload = (e : any) => this.uploadedFile.next(e.target.result);
-          fr.readAsDataURL(file);
-      } else {
-          this.uploadedFile.next(null);
+    if (FileReader && file) {
+      const fr = new FileReader();
+      fr.onload = (e: any) => this.uploadedFile.next(e.target.result);
+      fr.readAsDataURL(file);
+    } else {
+      this.uploadedFile.next(null);
+    }
+  }
+
+  onImageChanged(image: any) {
+    localStorage.setItem('image', image);
+
+    this.imagee = localStorage.getItem('image');
+
+    console.log("imaaaaaaaaaaaaage",image)
+
+
+
+  }
+
+
+  selectFile(event: any): void {
+    this.message = '';
+    this.preview = '';
+    this.progress = 0;
+    this.selectedFiles = event.target.files;
+
+
+    console.log("iiiiiii",this.selectedFiles)
+
+    this.imageData.push(this.selectedFiles);
+
+    if (this.selectedFiles) {
+      const file: File | null = this.selectedFiles.item(0);
+
+      if (file) {
+        this.preview = '';
+        this.currentFile = file;
+
+        const reader = new FileReader();
+
+        reader.onload = (e: any) => {
+         
+          this.preview = e.target.result;
+          this.mesImage.img.push(this.preview);
+
+          localStorage.setItem('image', this.preview);
+          this.imagee = localStorage.getItem('image');
+        };
+
+        reader.readAsDataURL(this.currentFile);
       }
-  }
-
-  onImageChanged(image:any){
-    localStorage.setItem("image",image)
-
-    //let imagee=localStorage.getItem("image")
-
-    //alert(imagee)
-
-    //this.imagee=localStorage.getItem("image")
-
-    //let cv = this.accountService.cvInfo;
-
-
-    this.imagee=localStorage.getItem("image")
-
+    }
   }
 
 
 
 
 
-  get personalInformation() { return this.personelDetails.controls; }
-
-  get payementInformation() { return this.payementDetails.controls; }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  get email (){
-    return this.personelDetails.get("email")
+  
+  get personalInformation() {
+    return this.personelDetails.controls;
   }
 
-  get username (){
-    return this.personelDetails.get("username")
+  get payementInformation() {
+    return this.payementDetails.controls;
   }
 
-  get password (){
-    return this.personelDetails.get("password")
-
-
+  get email() {
+    return this.personelDetails.get('email');
   }
 
-
-  get name (){
-    return this.personelDetails.get("name")
+  get username() {
+    return this.personelDetails.get('username');
   }
 
-  get prenom (){
-    return this.personelDetails.get("prenom")
+  get password() {
+    return this.personelDetails.get('password');
   }
 
-  get adresse (){
-    return this.personelDetails.get("adresse")
+  get name() {
+    return this.personelDetails.get('name');
   }
 
-  get dateNaissance (){
-    return this.personelDetails.get("dob")
+  get prenom() {
+    return this.personelDetails.get('prenom');
   }
 
-
-  get genre (){
-    return this.personelDetails.get("genre")
-  }
-  get tel (){
-    return this.personelDetails.get("phone")
-  }
-  get detailSA (){
-    return this.personelDetails.get("detailSA")
+  get adresse() {
+    return this.personelDetails.get('adresse');
   }
 
-  get secteur (){
-    return this.personelDetails.get("secteur")
+  get dateNaissance() {
+    return this.personelDetails.get('dob');
   }
 
+  get genre() {
+    return this.personelDetails.get('genre');
+  }
+  get tel() {
+    return this.personelDetails.get('phone');
+  }
+  get detailSA() {
+    return this.personelDetails.get('detailSA');
+  }
 
+  get secteur() {
+    return this.personelDetails.get('secteur');
+  }
 
-
-  soumettre(){
-
-    this.typeU=this.stepp;
-
+  soumettre() {
+    this.typeU = this.stepp;
 
     this.stagiaire = {
       email: this.email?.value,
       username: this.username?.value,
       password: this.password?.value,
-      roleName: "ROLE_USER",
-      nom:this.name?.value,
+      roleName: 'ROLE_USER',
+      nom: this.name?.value,
       prenom: this.prenom?.value,
       adresse: this.adresse?.value,
       dateNaissance: this.dateNaissance?.value,
       genre: this.genre?.value,
       tel: this.tel?.value,
       typeUEA: this.typeU,
-      detailSA: 2,
-      secteur:this.secteur?.value
-
+      detailSA: this.stepp,
+      secteur: this.secteur?.value,
     };
 
+    console.log('infos inscription', this.stagiaire);
+
+
+    // this.formService.saveForm(this.stagiaire).subscribe((dataValue) => {
+    //   console.log(dataValue);
+
+    //   if (dataValue.status == true) {
+    //     this.sweetAlert.showSuccessAlert(
+    //       'Inscription réussi',
+    //       'Connectez vous a votre boite email pour activer votre compte'
+    //     );
+    //     this.ngOnInit();
+    //   } else {
+    //     this.sweetAlert.showErrorAlert(
+    //       'Inscription echouée',
+    //       'veuillez verifier  les informations entrées'
+    //     );
+    //   }
+    // });
+
+    this.mesImage.img=[];
+    let dataF = this.imageData;
+    console.log(this.imageData);
+
+
+    
+
+   
+   
+ 
+
+    setTimeout(() => {
+      this.formService
+        .uploadFile(this.imageData)
+        .subscribe((valueOfFile) => {
+          console.log(valueOfFile.data);
+
+   
+        });
+    }, 300);
+ 
 
 
 
 
 
-    console.log("mannnnnnnes", this.stagiaire)
-
-   /*  this.formService.saveForm(this.body).subscribe((value) =>{
-      if(value){
-        console.log("koisonn"+JSON.stringify(value));
-        this.sweetAlert.showSuccessAlert(
-          "Code  Envoyer",
-          "Opération effectuer avec success"
-        );
-     }else{
-      this.sweetAlert.showErrorAlert(
-        "information erronée",
-        "Opératilogin template html   angular
-
-     }
-     })
-  } */
-
-    this.formService.saveForm(this.stagiaire).subscribe((dataValue) => {
-
-      console.log(dataValue);
-
-      if(dataValue.status == true){
-
-        this.sweetAlert.showSuccessAlert(
-          "Inscription réussi",
-          "Connectez vous a votre boite email pour activer votre compte"
-        );
-        this.ngOnInit();
-
-      }else{
-
-        this.sweetAlert.showErrorAlert(
-          "Inscription echouée",
-          "veuillez verifier  les informations entrées"
-        );
-
-      }
-
-    })
 
 
 
+  }
 
-}
-
-  oneSubmit(){
-
-    if(this.step==2){
+  oneSubmit() {
+    if (this.step == 2) {
       this.education_step = true;
-      if (this.educationalDetails.invalid) { return }
-      alert("Well done!!")
+      if (this.educationalDetails.invalid) {
+        return;
+      }
+      alert('Well done!!');
     }
   }
 
-  Oneprevious(){
-    this.stepp--
+  Oneprevious() {
+    this.stepp--;
 
-    if(this.stepp==1){
+    if (this.stepp == 1) {
       this.payement_step = false;
     }
   }
 
-
-  onNext(){
-
-    if(this.stepp==1){
-          this.persenal_step = true;
-          if (this.personelDetails.invalid) { return  }
-          this.stepp=20
+  onNext() {
+    if (this.stepp == 1) {
+      this.persenal_step = true;
+      if (this.personelDetails.invalid) {
+        return;
+      }
+      this.stepp = 20;
     }
-
-
-
-
   }
-
-
-
-
-
-
-
-
-
-
-
 
   listDetaiSA() {
     this.formService.listAllDetailSA().subscribe((values) => {
-        console.log(values);
-        this.listDetailSA = values.data;
+      console.log(values);
+      this.listDetailSA = values.data;
 
+      if (this.listDetailSA == null) {
+        //showInformation
 
-        if(this.listDetailSA==null){
-          //showInformation
-
-          this.sweetAlert.showErrorAlert(
-            "Liste des candidats vide",
-            "Selectionnées des nouveaux candidats"
-          );
-
-
-
-
-        }
-      });
+        this.sweetAlert.showErrorAlert(
+          'Liste des candidats vide',
+          'Selectionnées des nouveaux candidats'
+        );
+      }
+    });
   }
 
-
-
-
-  ConfirmedValidator(controlName: string, matchingControlName: string){
-
+  ConfirmedValidator(controlName: string, matchingControlName: string) {
     return (formGroup: FormGroup) => {
+      const control = formGroup.controls[controlName];
 
-        const control = formGroup.controls[controlName];
+      const matchingControl = formGroup.controls[matchingControlName];
 
-        const matchingControl = formGroup.controls[matchingControlName];
-
-
-
-        if (control.value !== matchingControl.value) {
-
-            matchingControl.setErrors({ confirmedValidator: true });
-
-        } else {
-
-            matchingControl.setErrors(null);
-
-        }
-
-    }
-
+      if (control.value !== matchingControl.value) {
+        matchingControl.setErrors({ confirmedValidator: true });
+      } else {
+        matchingControl.setErrors(null);
+      }
+    };
   }
 
-
-
-
-
-
-  get personal() { return this.personalDetails.controls; }
-
-  get address() { return this.addressDetails.controls; }
-
-  get education() { return this.educationalDetails.controls; }
-  next(){
-
-    if(this.step==1){
-          this.personal_step = true;
-          if (this.personalDetails.invalid) { return  }
-          this.step++
-    }
-
-    else if(this.step==2){
-        this.address_step = true;
-        if (this.addressDetails.invalid) { return }
-            this.step++;
-    }
-
-
+  get personal() {
+    return this.personalDetails.controls;
   }
 
-  previous(){
-    this.step--
+  get address() {
+    return this.addressDetails.controls;
+  }
 
-    if(this.step==1){
+  get education() {
+    return this.educationalDetails.controls;
+  }
+  next() {
+    if (this.step == 1) {
+      this.personal_step = true;
+      if (this.personalDetails.invalid) {
+        return;
+      }
+      this.step++;
+    } else if (this.step == 2) {
+      this.address_step = true;
+      if (this.addressDetails.invalid) {
+        return;
+      }
+      this.step++;
+    }
+  }
+
+  previous() {
+    this.step--;
+
+    if (this.step == 1) {
       this.address_step = false;
     }
-    if(this.step==2){
+    if (this.step == 2) {
       this.education_step = false;
     }
-
   }
 
-  submit(){
-
-    if(this.step==3){
+  submit() {
+    if (this.step == 3) {
       this.education_step = true;
-      if (this.educationalDetails.invalid) { return }
-      alert("Well done!!")
+      if (this.educationalDetails.invalid) {
+        return;
+      }
+      alert('Well done!!');
     }
   }
 
+  setepChoix(choix: number) {
+    this.stepp = choix;
 
-
-  setepChoix(choix:number){
-
-    this.stepp=choix;
-
-  this.ngOnInit();
-
-
+    this.ngOnInit();
   }
-
-
-
-
-
-
 }
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+  isErrorState(
+    control: FormControl | null,
+    form: FormGroupDirective | NgForm | null
+  ): boolean {
     const isSubmitted = form && form.submitted;
-    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+    return !!(
+      control &&
+      control.invalid &&
+      (control.dirty || control.touched || isSubmitted)
+    );
   }
 }
-
-
-
