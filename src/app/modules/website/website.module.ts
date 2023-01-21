@@ -16,7 +16,6 @@ import { RedactionComponent } from './components/redaction/redaction.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ListcvComponent } from './components/gestionCv/listcv/listcv.component';
 import { DetailcvComponent } from './components/gestionCv/detailcv/detailcv.component';
-import { FormsModule } from '@angular/forms';
 import { NgpImagePickerModule } from 'ngp-image-picker';
 import { FormulaireComponent } from './components/formulaire/formulaire.component';
 import { SwiperModule } from 'swiper/angular';
@@ -95,6 +94,7 @@ import { AchatCompteComponent } from './components/formulaire/achat-compte/achat
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { FormuComponent } from './components/formu/formu.component';
 import { AuthComponent } from './components/auth/auth.component';
+import { FormsModule } from '@angular/forms';
 
 
 

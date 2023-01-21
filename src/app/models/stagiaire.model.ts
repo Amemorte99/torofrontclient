@@ -12,5 +12,7 @@ export interface Stagiaire {
     typeUEA: number;
     detailSA: any;
     secteur:number;
+    photoPiece:string;
+
 
 }
