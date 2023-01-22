@@ -38,4 +38,11 @@ export class AppelOffreService {
       `/api/appelCandidature/list`
     );
   }
+  listTypeJob(): Observable<any> {
+    return this.httpService.getRequest(
+      `/api/jobtype/list`
+    );
+  }
+
+  
 }

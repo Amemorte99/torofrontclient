@@ -17,7 +17,7 @@
 
 
           <img [src]="imagee ? imagee : '/assets/images/forms/forms1.jpg'" alt="" srcset=""
-            style="width: 100%; border-radius: 50%; height: 50vh;  ">
+            style="width: 100%; border-radius: 50%; height: 50vh;  " >
         </div>
         <div class="container mb-5">
           <a href="" class="btn btn-light" style="width: 100%; border-radius: 4rem;">
@@ -233,7 +233,7 @@
                     <label for="">Choissez une image</label>
                     <div class="col-8">
                       <label class="btn btn-default p-0">
-                        <input type="file" accept="image/*" (change)="selectFile($event)" />
+                        <input type="file" accept="image/*" (change)="selectFile($event)" formControlName="file" id="file" />
                       </label>
                     </div>
 

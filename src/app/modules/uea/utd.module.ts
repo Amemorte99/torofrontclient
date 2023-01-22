@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { UtdRoutingModule } from './utd-routing.module';
 import { CreateComponent } from './components/create/create.component';
 import { LayoutsModule } from 'src/app/layouts/layouts.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UtdComponent } from './utd.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ButtonsComponent } from './components/buttons/buttons.component';
@@ -26,6 +26,8 @@ import { StageComponent } from './components/stage/stage.component';
 import { RecruteurComponent } from './components/recruteur/recruteur.component';
 import { DemandeurComponent } from './components/demandeur/demandeur.component';
 import { OffreComponent } from './components/offre/offre.component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+
 
 
 @NgModule({
@@ -58,7 +60,10 @@ import { OffreComponent } from './components/offre/offre.component';
     LayoutsModule,
     SharedModule,
     ReactiveFormsModule,
+    NgMultiSelectDropDownModule.forRoot(),
+    FormsModule 
 
-  ]
+  ],
+
 })
 export class UtdModule { }

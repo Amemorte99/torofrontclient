@@ -38,7 +38,7 @@ export class FormulaireComponent implements OnInit {
   imagee: any;
   img:any;
 
-  mesImage:any ={};
+  mesImage:any;
 
   listDetailSA: any;
 
@@ -112,6 +112,7 @@ export class FormulaireComponent implements OnInit {
         secteur: ['', Validators.required],
         username: ['', Validators.required],
         password: ['', Validators.required],
+        file: ['', Validators.required],
 
         confirm_password: ['', [Validators.required]],
       },
@@ -124,17 +125,7 @@ export class FormulaireComponent implements OnInit {
       pay: ['', Validators.required],
     });
 
-    this.addressDetails = this.formBuilder.group({
-      city: ['', Validators.required],
-      address: ['', Validators.required],
-      pincode: ['', Validators.required],
-    });
-
-    this.educationalDetails = this.formBuilder.group({
-      highest_qualification: ['', Validators.required],
-      university: ['', Validators.required],
-      total_marks: ['', Validators.required],
-    });
+    
   }
   selectedFile: any = null;
 
@@ -213,6 +204,8 @@ export class FormulaireComponent implements OnInit {
 
           localStorage.setItem('image', this.preview);
           this.imagee = localStorage.getItem('image');
+
+          console.log("imagee",this.imagee)
         };
 
         reader.readAsDataURL(this.currentFile);
@@ -278,6 +271,10 @@ export class FormulaireComponent implements OnInit {
     return this.personelDetails.get('secteur');
   }
 
+  get imgg() {
+    return this.personelDetails.get('file');
+  }
+
   soumettre() {
     this.typeU = this.stepp;
 
@@ -317,9 +314,7 @@ export class FormulaireComponent implements OnInit {
     //   }
     // });
 
-    this.mesImage.img=[];
-    let dataF = this.imageData;
-    console.log(this.imageData);
+
 
 
     
@@ -330,7 +325,7 @@ export class FormulaireComponent implements OnInit {
 
     setTimeout(() => {
       this.formService
-        .uploadFile(this.imageData)
+        .uploadFile(this.imgg?.value)
         .subscribe((valueOfFile) => {
           console.log(valueOfFile.data);
 

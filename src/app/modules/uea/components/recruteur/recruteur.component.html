@@ -205,6 +205,24 @@
                                                     </div>
 
                                                 </div>
+                                                <!-- [(ngModel)]="selectedItems" -->
+                                                <div class="col-md-12 mb-sm-4">
+
+                                                    <ng-multiselect-dropdown
+                                                    placeholder="Type d'emploi"
+                                                    [settings]="dropdownSettings"
+                                                    [data]="dropdownList"
+                                                    formControlName="jobTypes"
+                                                    [(ngModel)]="selectedItems"
+                                                    (onSelect)="onItemSelect($event)"
+                                                    (onSelectAll)="onSelectAll($event)"
+                                                   
+                                                  >
+                                                  </ng-multiselect-dropdown>
+
+                                                    
+                                                   
+                                                </div>
 
                                          
                                               

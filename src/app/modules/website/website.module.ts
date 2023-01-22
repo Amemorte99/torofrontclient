@@ -69,7 +69,6 @@ import { InformationFormComponent } from './components/cvcontainer/form-containe
 import { ProfilFromComponent } from './components/cvcontainer/form-container/components/profil-from/profil-from.component';
 import { FormationFromComponent } from './components/cvcontainer/form-container/components/formation-from/formation-from.component';
 import { ExperienceFromComponent } from './components/cvcontainer/form-container/components/experience-from/experience-from.component';
-import { NgxSummernoteModule } from 'ngx-summernote';
 import { CompetenceComponent } from './components/cvcontainer/form-container/components/competence/competence.component';
 import { LangueFormComponent } from './components/cvcontainer/form-container/components/langue-form/langue-form.component';
 import { CentreFromComponent } from './components/cvcontainer/form-container/components/centre-from/centre-from.component';
@@ -221,7 +220,6 @@ import { AuthComponent } from './components/auth/auth.component';
     MatTooltipModule,
     MatTableModule,
     FileUploadModule,
-    NgxSummernoteModule,
     NgxPrintElementModule,
     NgxExtendedPdfViewerModule,
     NgxIntlTelInputModule,
