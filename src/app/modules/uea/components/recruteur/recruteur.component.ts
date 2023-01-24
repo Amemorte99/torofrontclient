@@ -118,7 +118,7 @@ export class RecruteurComponent implements OnInit {
 
     this.offreForm.patchValue({
       detailSA:{
-        id:parseInt(this.offreForm.get("detailSA")?.value)
+        id:this.offreForm.get("detailSA")?.value
       },
       jobTypes:this.selectedItems
       
