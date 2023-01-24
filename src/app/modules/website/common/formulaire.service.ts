@@ -7,7 +7,7 @@ import { HttpService } from 'src/app/common/http.service';
 })
 export class FormulaireService {
 
-  constructor(private httpService: HttpService) { }
+  constructor(private  httpService: HttpService) { }
 
 
   
@@ -23,14 +23,14 @@ export class FormulaireService {
   }
 
 
-  uploadFile(data: any): Observable<any> {
-   
+  uploadFile(data: FormData): Observable<any> {
     return this.httpService.postUploadRequest(
       "/api/uploads/saveFile",
       data
     );
   }
 
+  
 
 
 

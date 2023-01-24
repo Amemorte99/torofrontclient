@@ -26,33 +26,57 @@ export class ConfigInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     // alert("fflk");
-    request = request.clone({
-      headers: request.headers.set("Access-Control-Allow-Origin", "*"),
-    });
-    request = request.clone({
-      headers: request.headers.set('Content-Type', 'application/json'),
-    });
-    request = request.clone({
-      headers: request.headers.set('Accept', 'application/json'),
-    });
-    request = request.clone({
-      headers: request.headers.set("Access-Control-Allow-Methods", "GET, POST, PATCH, PUT, DELETE, OPTIONS"),
-    });
+    
     // request = request.clone({
     //   headers: request.headers.set("Access-Control-Allow-Origin", "*"),
     // });
 
+  
 
-    //commenter par fanuel
+   if (request.url.includes('/api/uploads/saveFile')) {
+      console.log("config interceptor : vous enregistrer un fichier",'file')
+      // request = request.clone({
+      //   headers: request.headers.set(
+      //     "Content-Type",
+      //     "multipart/form-data"
+      //   ),
+      // });
+      if (localStorage.getItem("token")) {
+        request = request.clone({
+          headers: request.headers.set(
+            "Authorization",
+            `${localStorage.getItem("token")}`
+          ),
+        });
+      }
+    }
+    else {
+      request = request.clone({
+        headers: request.headers.set("Access-Control-Allow-Origin", "*"),
+      });
+      request = request.clone({
+        headers: request.headers.set('Content-Type', 'application/json'),
+      });
+      request = request.clone({
+        headers: request.headers.set('Accept', 'application/json'),
+      });
+      request = request.clone({
+        headers: request.headers.set("Access-Control-Allow-Methods", "GET, POST, PATCH, PUT, DELETE, OPTIONS"),
+      });
 
-    if (localStorage.getItem('token')) {
-       request = request.clone({
-        headers: request.headers.set(
-         'Authorization',
-          `${localStorage.getItem('token')}`
-         ),
-       });
-     }
+       //commenter par fanuel
+      if (localStorage.getItem('token')) {
+        request = request.clone({
+         headers: request.headers.set(
+          'Authorization',
+           `${localStorage.getItem('token')}`
+          ),
+        });
+      }
+    }
+   
+
+  
 
     if (request.body instanceof File) {
       return next.handle(request).pipe(

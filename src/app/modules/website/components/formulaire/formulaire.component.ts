@@ -1,13 +1,6 @@
 import { CdkTextareaAutosize } from '@angular/cdk/text-field';
 import { Component, NgZone, OnInit, ViewChild } from '@angular/core';
-import {
-  FormControl,
-  Validators,
-  FormGroupDirective,
-  NgForm,
-  FormGroup,
-  FormBuilder,
-} from '@angular/forms';
+import {FormControl,Validators,FormGroupDirective,NgForm,FormGroup,FormBuilder} from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import {
   FileUploadControl,
@@ -28,22 +21,13 @@ import { Stagiaire } from '../../../../models/stagiaire.model';
 export class FormulaireComponent implements OnInit {
   hide = true;
   hide1 = true;
-  emailFormControl = new FormControl('', [
-    Validators.required,
-    Validators.email,
-  ]);
-
+  emailFormControl = new FormControl('', [Validators.required,Validators.email,]);
   matcher = new MyErrorStateMatcher();
-
   imagee: any;
   img:any;
-
-  mesImage:any;
-
+  mesImage:any ={};
   listDetailSA: any;
-
   typeU!: number;
-
   personalDetails!: FormGroup;
   addressDetails!: FormGroup;
   educationalDetails!: FormGroup;
@@ -52,30 +36,21 @@ export class FormulaireComponent implements OnInit {
   education_step = false;
   step = 1;
 
-
-
-
   selectedFiles?: FileList;
   currentFile?: File;
   progress = 0;
   message = '';
   preview = '';
-
   imageInfos?: Observable<any>;
-
   imageData: any = [];
 
   //formulaire
-
   personelDetails!: FormGroup;
   payementDetails!: FormGroup;
   persenal_step = false;
   payement_step = false;
-
   loading = false;
-
   stepp = 0;
-
   stagiaire!: Stagiaire;
 
   imagePickerConf: ImagePickerConf = {
@@ -83,10 +58,15 @@ export class FormulaireComponent implements OnInit {
     language: 'fr',
     width: '240PX',
     height: '240PX',
-    //hideDeleteBtn: true,
-    //hideDownloadBtn: true,
-    //hideEditBtn: true,
+   
   };
+
+  // code by wonder 
+  fichier1!: File;
+  leFichierSelectionnee!: any;
+  leNomDuFichierSelectionnee!: any
+  dataFichier: any = [];
+  dataFichierName: any = [];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -112,7 +92,6 @@ export class FormulaireComponent implements OnInit {
         secteur: ['', Validators.required],
         username: ['', Validators.required],
         password: ['', Validators.required],
-        file: ['', Validators.required],
 
         confirm_password: ['', [Validators.required]],
       },
@@ -125,7 +104,17 @@ export class FormulaireComponent implements OnInit {
       pay: ['', Validators.required],
     });
 
-    
+    this.addressDetails = this.formBuilder.group({
+      city: ['', Validators.required],
+      address: ['', Validators.required],
+      pincode: ['', Validators.required],
+    });
+
+    this.educationalDetails = this.formBuilder.group({
+      highest_qualification: ['', Validators.required],
+      university: ['', Validators.required],
+      total_marks: ['', Validators.required],
+    });
   }
   selectedFile: any = null;
 
@@ -204,8 +193,6 @@ export class FormulaireComponent implements OnInit {
 
           localStorage.setItem('image', this.preview);
           this.imagee = localStorage.getItem('image');
-
-          console.log("imagee",this.imagee)
         };
 
         reader.readAsDataURL(this.currentFile);
@@ -271,72 +258,100 @@ export class FormulaireComponent implements OnInit {
     return this.personelDetails.get('secteur');
   }
 
-  get imgg() {
-    return this.personelDetails.get('file');
-  }
-
   soumettre() {
     this.typeU = this.stepp;
 
-    this.stagiaire = {
-      email: this.email?.value,
-      username: this.username?.value,
-      password: this.password?.value,
-      roleName: 'ROLE_USER',
-      nom: this.name?.value,
-      prenom: this.prenom?.value,
-      adresse: this.adresse?.value,
-      dateNaissance: this.dateNaissance?.value,
-      genre: this.genre?.value,
-      tel: this.tel?.value,
-      typeUEA: this.typeU,
-      detailSA: this.stepp,
-      secteur: this.secteur?.value,
-    };
 
     console.log('infos inscription', this.stagiaire);
 
 
-    // this.formService.saveForm(this.stagiaire).subscribe((dataValue) => {
-    //   console.log(dataValue);
+    
 
-    //   if (dataValue.status == true) {
-    //     this.sweetAlert.showSuccessAlert(
-    //       'Inscription réussi',
-    //       'Connectez vous a votre boite email pour activer votre compte'
-    //     );
-    //     this.ngOnInit();
-    //   } else {
-    //     this.sweetAlert.showErrorAlert(
-    //       'Inscription echouée',
-    //       'veuillez verifier  les informations entrées'
-    //     );
-    //   }
-    // });
-
-
+    this.mesImage.img=[];
+    let dataF = this.imageData;
+    console.log(this.imageData);
 
 
     
-
-   
-   
  
+    if (this.leFichierSelectionnee != null) {
 
-    setTimeout(() => {
-      this.formService
-        .uploadFile(this.imgg?.value)
-        .subscribe((valueOfFile) => {
-          console.log(valueOfFile.data);
+      // --------------------- verifions  si fçichier selectionné n'est pas null afin de le stocker
+      this.dataFichier.push(this.leFichierSelectionnee);
+      this.dataFichierName.push(this.leNomDuFichierSelectionnee);
+      console.log(this.dataFichier);
+      console.log(this.dataFichierName);
+  
+      this.leFichierSelectionnee = null;
 
-   
-        });
-    }, 300);
- 
+  
+    } else {
+      console.log("Veuillez selectionner un fichier");
+    }
+
+    let data = this.dataFichier;
+    console.log(this.dataFichier);
+    console.log(data);
+    const formData = new FormData();
+    for (let i = 0; i < data.length; i++) {
+      console.log(data[i]);
+      formData.append("file", data[i], data[i].name);
+      formData.forEach((values) => console.log(values));
+    }
+
+    setTimeout(()=>{
+
+      //********************** Sauvegarde des fichiers dans un intervalle de temps******************************
+
+      this.formService.uploadFile(formData).subscribe((response)=>{
+        if(response.status == true){
+        console.log("upload de fichier effectuez avec succès",response.data)
 
 
 
+        this.stagiaire = {
+          email: this.email?.value,
+          username: this.username?.value,
+          password: this.password?.value,
+          roleName: 'ROLE_USER',
+          nom: this.name?.value,
+          prenom: this.prenom?.value,
+          adresse: this.adresse?.value,
+          dateNaissance: this.dateNaissance?.value,
+          genre: this.genre?.value,
+          tel: this.tel?.value,
+          typeUEA: this.typeU,
+          detailSA: this.stepp,
+          secteur: this.secteur?.value,
+          photoPiece : response.data.toString()
+        };
+        console.log(this.stagiaire)
+            // -------- enregistrement des informations du formulaire------------
 
+        this.formService.saveForm(this.stagiaire).subscribe((value) => {
+      console.log(value);
+
+      if (value.status == true) {
+        this.sweetAlert.showSuccessAlert(
+          'Inscription réussi',
+          'Connectez vous a votre boite email pour activer votre compte'
+        );
+        this.ngOnInit();
+      } else {
+        this.sweetAlert.showErrorAlert(
+          'Inscription echouée',
+          'veuillez verifier  les informations entrées'
+        );
+      }
+       });
+      }
+      })
+          //---------- Fin de l'enregistrement des informations du formulaire-----------
+
+    
+      //****************************Fin de la sauvegarde des fichiers************************************** 
+
+    },300)
 
 
 
@@ -454,6 +469,78 @@ export class FormulaireComponent implements OnInit {
 
     this.ngOnInit();
   }
+
+
+
+
+
+
+//  merveil code 
+onFileChange(event:any){
+  this.leFichierSelectionnee = event.target.files[0];
+  console.log("le fichier selectionné",this.leFichierSelectionnee);
+  this.fichier1 = this.leFichierSelectionnee
+  console.log("le premier fichier", this.fichier1)
+  this.leNomDuFichierSelectionnee = event.target.files[0].name;
+  console.log("nom du fichier selectionnee",  this.leNomDuFichierSelectionnee);
+
+
+//------------------Gestion de l'affichage de l'image selectionnee ----------------------------------------
+
+  this.message = '';
+    this.preview = '';
+    this.progress = 0;
+    this.selectedFiles = event.target.files;
+
+
+    console.log("iiiiiii",this.selectedFiles)
+
+    this.imageData.push(this.selectedFiles);
+
+    if (this.selectedFiles) {
+      const file: File | null = this.selectedFiles.item(0);
+
+      if (file) {
+        this.preview = '';
+        this.currentFile = file;
+
+        const reader = new FileReader();
+
+        reader.onload = (e: any) => {
+         
+          this.preview = e.target.result;
+          this.mesImage.img.push(this.preview);
+
+          localStorage.setItem('image', this.preview);
+          this.imagee = localStorage.getItem('image');
+        };
+
+        reader.readAsDataURL(this.currentFile);
+      }
+    }
+
+//------------------Fin de la gestion de l'affichage de l'image selectionnee ----------------------------------------
+
+}
+
+uploadFiles(){
+  if (this.leFichierSelectionnee != null) {
+    this.dataFichier.push(this.leFichierSelectionnee);
+    this.dataFichierName.push(this.leNomDuFichierSelectionnee);
+    console.log(this.dataFichier);
+    console.log(this.dataFichierName);
+
+    this.leFichierSelectionnee = null;
+
+  } else {
+    console.log("Veuillez selectionner un fichier");
+  }
+}
+
+
+
+
+
 }
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {

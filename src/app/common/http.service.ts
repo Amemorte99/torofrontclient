@@ -27,7 +27,8 @@ export class HttpService {
     return this.http.post(`${API_USERS_URL}${url}`, data, option).pipe(catchError(this.handleError));
   }
   //upload post file
-  postUploadRequest(url: string ,data : FormData, option?: any): Observable<any> {
+
+  postUploadRequest(url: string, data: FormData, option?: any): Observable<any> {
     return this.http.post(`${API_USERS_URL}${url}`, data, option).pipe(catchError(this.handleError));
   }
   // postDiffRequestt(url: string ,option?: any):Promise<any> {
