@@ -61,12 +61,7 @@
           <label for="mail">Email</label>
           <input #mail="ngModel" [(ngModel)]="cvInformationPersnnelleData.mail" name="mail" id="mail" type="text" class="form-control"
           (input)="launchValueOne($event, 'mail')" />
-          <!-- <div
-                  class="alert alert-danger"
-                  *ngIf="mail.touched && mail.invalid"
-                >
-                  Email is required.
-                </div> -->
+          
         </div>
       </div>
     </div>

@@ -2,6 +2,7 @@
   width: 40px !important;
   height: 40px !important;
   border-radius: 10px;
+  margin-right: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,7 +19,7 @@
   background-color: #e12454; 
 }
 .nav-item a:hover{
-  background-color: #e12454; 
+  background-color: #85a3a1; 
 
 }
 

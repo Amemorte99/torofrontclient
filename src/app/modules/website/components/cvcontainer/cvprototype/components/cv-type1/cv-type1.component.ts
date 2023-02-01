@@ -23,6 +23,7 @@ export class CvType1Component implements OnInit {
 
   ngOnInit(): void {
     this.imagee=localStorage.getItem("image")
+
    
     //alert("MANES MANA"+this.imagee)
   }

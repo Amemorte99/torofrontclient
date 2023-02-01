@@ -92,6 +92,7 @@ export class FormulaireComponent implements OnInit {
         secteur: ['', Validators.required],
         username: ['', Validators.required],
         password: ['', Validators.required],
+        typeUEA:['', Validators.required],
 
         confirm_password: ['', [Validators.required]],
       },
@@ -257,9 +258,14 @@ export class FormulaireComponent implements OnInit {
   get secteur() {
     return this.personelDetails.get('secteur');
   }
+  get typeUEA() {
+    return this.personelDetails.get('typeUEA');
+  }
+
+  
 
   soumettre() {
-    this.typeU = this.stepp;
+   
 
 
     console.log('infos inscription', this.stagiaire);
@@ -320,7 +326,7 @@ export class FormulaireComponent implements OnInit {
           dateNaissance: this.dateNaissance?.value,
           genre: this.genre?.value,
           tel: this.tel?.value,
-          typeUEA: this.typeU,
+          typeUEA: parseInt(this.typeUEA?.value),
           detailSA: this.stepp,
           secteur: this.secteur?.value,
           photoPiece : response.data.toString()

@@ -14,6 +14,8 @@ export class AccountService {
 
   public nomfamille?:string;
 
+  
+
   public cvInfo : {
     photoUrl?: any,
     prenom?: string,

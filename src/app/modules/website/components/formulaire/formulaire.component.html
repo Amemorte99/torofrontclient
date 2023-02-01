@@ -38,26 +38,20 @@
           <div class="card shadow mt-5 m-3 p-5 text-black mpad">
 
 
-            <div class="row">
+            <div class="row ">
 
-              <div class="col-sm-12 col-md-8">
+              <div class="col-sm-12 col-md-12">
 
-                <div class="form-row">
+                <div class="form-row ">
 
-                  <div class="col-sm-12 col-md-4 ">
+                  <div class="col-sm-12 col-md-6 ">
                     <div class="inputGroup " (click)="setepChoix(1)">
                       <input id="radio1" name="radio" type="radio" class="form-control" />
-                      <label for="radio1">Stagiaire</label>
+                      <label for="radio1">Stagiaire && Demandeur d'emploi</label>
                     </div>
                   </div>
-                  <div class="col-sm-12 col-md-4">
+                  <div class=" col-sm-12 col-md-6">
                     <div class="inputGroup" (click)="setepChoix(2)">
-                      <input id="radio2" name="radio" type="radio" />
-                      <label for="radio2">Demandeur d'emploi</label>
-                    </div>
-                  </div>
-                  <div class=" col-sm-12 col-md-4">
-                    <div class="inputGroup" (click)="setepChoix(3)">
                       <input id="radio3" name="radio" type="radio" />
                       <label for="radio3">Recruteur </label>
                     </div>
@@ -191,6 +185,24 @@
 
 
                           </div>
+                          <div class="col ">
+
+                            <select class=" form-control" formControlName="typeUEA" [ngClass]="
+                            personelDetails.get('typeUEA')?.invalid &&
+                            personelDetails.get('typeUEA')?.touched
+                              ? 'form-control is-invalid'
+                              : 'form-control'
+                          ">
+                              <option value="" disabled selected>Type de compte</option>
+                              <option value="1">Stagiaire</option>
+                              <option value="2">Demandeur d'emploi</option>
+                             
+                            </select>
+
+                            <div class="invalid-feedback">type d'activité svp!</div>
+
+
+                          </div>
                         </div>
                       </div>
                       <div class="form-row mt-5 ">
@@ -251,27 +263,14 @@
                       <img [src]="preview" class="preview" />
                     </div>
 
-                    <!-- <div class="my-4">
-                      <embed src="" type="" class="embeded" id="pdfprofileThree" class="embeded">
-                  </div> -->
-
-                    <ngp-image-picker ($imageChanged)="onImageChanged($event)" class="shadow img-fluid"
-                      [_config]="imagePickerConf"></ngp-image-picker>
+                
+                    
 
 
                     <button (click)="soumettre()" type="button" name="next" class="btn up-btn mt-5"
                       [disabled]="!leFichierSelectionnee">Soumettre</button>
 
-                      <!-- <button
-                          type="button"
-                          id="pdfbtn"
-                          class="btn up-btn mt-5"
-                          (click)="uploadFiles()"
-                          [disabled]="!leFichierSelectionnee"
-                        >
-                          <i class="fa fa-file-pdf"></i>upload
-                        </button> -->
-
+                  
 
 
 
@@ -283,187 +282,12 @@
 
               </fieldset>
             </form>
-            <form action="" [formGroup]="personelDetails">
-
-
-              <fieldset *ngIf="stepp == 2 ">
-                <h2 class="mt-5">Stagiaire</h2>
-                <div class="row d-flex p-2">
-
-
-                  <div class="col-sm-12 col-md-8 ">
-
-                    <div class="">
-                      <div class="form-row mt-5 ">
-                        <div class="col-sm-6 col-md-4">
-                          <input type="text" [ngClass]="
-                          personelDetails.get('prenom')?.invalid &&
-                          personelDetails.get('prenom')?.touched
-                            ? 'form-control is-invalid'
-                            : 'form-control'
-                        " class="form-control" placeholder="prenom" formControlName="prenom">
-                          <div class="invalid-feedback">Veuillez saisir votre prenom!</div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                          <input type="text" [ngClass]="
-                          personelDetails.get('name')?.invalid &&
-                          personelDetails.get('name')?.touched
-                            ? 'form-control is-invalid'
-                            : 'form-control'
-                        " class="form-control" placeholder="Nom" formControlName="name">
-                          <div class="invalid-feedback">Veuillez saisir votre nom!</div>
-
-
-
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-
-
-                          <input type="text" [ngClass]="
-                          personelDetails.get('email')?.invalid &&
-                          personelDetails.get('email')?.touched
-                            ? 'form-control is-invalid'
-                            : 'form-control'
-                        " class="form-control" placeholder="Email" formControlName="email">
-                          <div class="invalid-feedback">Veuillez saisir un Email valide!</div>
-
-                        </div>
-                      </div>
-                      <div class="form-row mt-5">
-                        <div class="col-sm-12 col-md-4 ">
-                          <input type="text" [ngClass]="
-                          personelDetails.get('adresse')?.invalid &&
-                          personelDetails.get('adresse')?.touched
-                            ? 'form-control is-invalid'
-                            : 'form-control'
-                        " class="form-control" placeholder="adresse" formControlName="adresse">
-                          <div class="invalid-feedback">Veuillez saisir votre adresse!</div>
-                        </div>
-                        <div class="col-sm-12 col-md-4 ">
-
-                          <input type="date" [ngClass]="
-                          personelDetails.get('dob')?.invalid &&
-                          personelDetails.get('dob')?.touched
-                            ? 'form-control is-invalid'
-                            : 'form-control'
-                        " class="form-control" placeholder="Date de naissance" formControlName="dob">
-                          <div class="invalid-feedback">Veuillez saisir votre date de naissance!</div>
-                        </div>
-                        <div class="col-sm-12 col-md-4  ">
-                          <input type="text" [ngClass]="
-                          personelDetails.get('phone')?.invalid &&
-                          personelDetails.get('phone')?.touched
-                            ? 'form-control is-invalid'
-                            : 'form-control'
-                        " class="form-control" placeholder="Tel :" formControlName="phone">
-                          <div class="invalid-feedback">Veuillez saisir votre numéro de téléphone!</div>
-
-                        </div>
-                      </div>
-
-                      <div class="form-group mt-5">
-                        <div class="row">
-                          <div class="col">
-
-                            <select class="form-control" id="exampleFormControlSelect1" formControlName="genre"
-                              [ngClass]="
-                            personelDetails.get('genre')?.invalid &&
-                            personelDetails.get('genre')?.touched
-                              ? 'form-control is-invalid'
-                              : 'form-control'
-                          " class="form-control">
-                              <option value="" disabled selected>Genre</option>
-                              <option>masculin</option>
-                              <option>feminin</option>
-                            </select>
-                            <div class="invalid-feedback">genre svp</div>
-
-
-                          </div>
-                          <div class="col ">
-
-                            <select class=" form-control" formControlName="secteur" [ngClass]="
-                            personelDetails.get('secteur')?.invalid &&
-                            personelDetails.get('secteur')?.touched
-                              ? 'form-control is-invalid'
-                              : 'form-control'
-                          ">
-                              <option value="" disabled selected>Secteur d'activité</option>
-                              <option value="2">Option 1</option>
-                              <option value="3">Option 2</option>
-                              <option value="4">Option 3</option>
-                              <option *ngFor="let itemSA of listDetailSA" [value]="itemSA.id">
-                                {{ itemSA.libelle }}
-                              </option>
-                            </select>
-
-                            <div class="invalid-feedback">secteur d'activité svp!</div>
-
-
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-row mt-5 ">
-                        <div class="col">
-                          <input type="text" class="form-control" [ngClass]="
-                          personelDetails.get('username')?.invalid &&
-                          personelDetails.get('username')?.touched
-                            ? 'form-control is-invalid'
-                            : 'form-control'
-                        " placeholder="nom d'utilisateur" formControlName="username">
-                          <div class="invalid-feedback">nom d'utilisateur svp!</div>
-
-                        </div>
-                        <div class="col">
-                          <input type="text" class="form-control" placeholder="entrer sur le mot de passe" [ngClass]="
-                          personelDetails.get('password')?.invalid &&
-                          personelDetails.get('password')?.touched
-                            ? 'form-control is-invalid'
-                            : 'form-control'
-                        " formControlName="password">
-
-                          <div class="invalid-feedback">entrer sur le mot de passe svp!</div>
-
-                        </div>
-                        <div class="col">
-                          <input type="text" class="form-control" placeholder="confirmer le mot de passe "
-                            formControlName="confirm_password" [ngClass]="
-                          personelDetails.get('confirm_password')?.invalid &&
-                          personelDetails.get('confirm_password')?.touched
-                            ? 'form-control is-invalid'
-                            : 'form-control'
-                        ">
-                          <div class="invalid-feedback">confirmer le mot de passe svp!</div>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 text-justify p-5 btnma">
-                    <label for="">Choissez une image</label>
-
-                    <ngp-image-picker ($imageChanged)="onImageChanged($event)" class="shadow img-fluid"
-                      [_config]="imagePickerConf"></ngp-image-picker>
-
-
-                    <button (click)="soumettre()" type="button" name="next" class="btn up-btn mt-5"
-                      [disabled]="personelDetails.invalid">Soumettre</button>
-
-
-
-
-                  </div>
-
-
-                </div>
-
-              </fieldset>
-            </form>
+        
 
 
 
             <form action="" [formGroup]="payementDetails">
-              <fieldset *ngIf="stepp == 20">
+              <fieldset *ngIf="stepp == 2">
                 <div class="row d-flex pb-3">
 
                   <div class=" justify-content-center ">

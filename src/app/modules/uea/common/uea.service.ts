@@ -36,5 +36,14 @@ export class UeaService {
       `/api/uea/getById/`+idUEA
     );
   }
+
+  getPhotoprofil(nameFile:string) : Observable<any> {
+    return this.httpService.getRequest(
+      `/api/uploads/file/`+nameFile,{ responseType: 'blob' }
+    );
+  }
+
+
+ 
   
 }

@@ -27,21 +27,8 @@ export class InformationFormComponent implements OnInit  {
 
 
   cvInformationPersnnelleData: InformationsPersonnelleModel = {
-    photoUrl: '',
     photoUrl2: './assets/images/cvimg/cv.jpg',
-    prenom: '',
-    nomfamille: '',
-    mail: '',
-    titreprofil: '',
-    tel: '',
-    adresse: '',
-    codepostal: '',
-    ville: '',
-
-    dateNaissance: '',
-    lieuNaissance: '',
-    etatCivil: '',
-    permisConduire: '',
+    
   };
 
   imagePickerConf: ImagePickerConf = {
@@ -68,7 +55,7 @@ export class InformationFormComponent implements OnInit  {
     console.log(cv);
     console.log(e.target.value);
     if (type == 'prenom') {
-      cv.prenom = e.target.value;
+      cv!.prenom = e.target.value;
     }  else if (type == 'nom') {
       cv.nomfamille = e.target.value;
     }

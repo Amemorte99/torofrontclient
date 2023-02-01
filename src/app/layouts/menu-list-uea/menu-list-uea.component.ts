@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class MenuListUEAComponent implements OnInit {
 
   route: string | undefined;
+ 
 
   idAgent!: number;
 

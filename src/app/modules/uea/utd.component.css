@@ -4,10 +4,14 @@
     align-content: center;
   }
   .side-width{
-    width: 330px;
+    width: 100px;
   }
   .main-width{
   
     width: 100vw;
+  }
+
+  .div-changed{
+    width: 8000px;
   }
   

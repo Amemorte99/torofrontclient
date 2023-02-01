@@ -27,7 +27,14 @@
   }/*# sourceMappingURL=menu-admfranchise.component.css.map */
 
 .side-width{
-  width: 330px;
+  width: 101px;
+  overflow: hidden;
+}
+.side-width:hover{
+  width: 310px;
+  transition: 1s;
+
+ 
 }
 .img-logo{
   width: 60px;

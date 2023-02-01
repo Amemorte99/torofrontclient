@@ -75,7 +75,7 @@ export class AuthService {
 
 
               this.sweetAlertService.showSuccessAlert(
-                "authentification réussie.",
+                "Authentification réussie.",
                 "Appuyez pour acceder avotre compte"
               );
               this.save(this.ueaConnecte.id);
@@ -84,6 +84,11 @@ export class AuthService {
 
             }
 
+          }else{
+            this.sweetAlertService.showErrorAlert(
+              "Authentification échouée.",
+              "Mot de passe ou nom d'utilisateur icorrecte"
+            );
           }
 
         })

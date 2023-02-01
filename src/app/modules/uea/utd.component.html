@@ -2,7 +2,7 @@
 <div class="d-md-flex "style="background-color: #009d8b;" >
     <app-user-uea></app-user-uea>
     <section class="d-flex row ">
-      <div class="side-width"></div>
+      <div  [ngClass]="[divStyle]" (click) ="mouse()"></div>
       <div class="col main-width">
         <app-header-admin></app-header-admin>
         <div class="container-fluid bg-primar"  style="height: 100vh !important;">
