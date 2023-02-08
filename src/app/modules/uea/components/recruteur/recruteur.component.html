@@ -23,52 +23,147 @@
 
 
 
-
-
-<div class="card-body mt-5">
-    <div class="infos-data p-1">
-
-        <div class="col-md-12  shadow p-1" style="border-radius: 0.5rem;background-color: #fff;">
-
-            <div class="m-3">
-                <button class="btn btn-up btn-sm" data-toggle="modal" data-target="#modeAjoutaAppelCandidature">
-                    Lancer un appel à candidature <i class="fa fa-plus-circle"></i>
-                </button>
+<section class="main">
+    <div class="main-top my-4 text-white">
+      <h1>Meilleurs profile</h1>
+      <i class="fa fa-user-cog fa-2x text-white"></i>
+    </div>
+    <div class="users row">
+        <div class="col-md-3 col-12 ">
+            <div class="card ">
+                <img src="/assets/images/ma/16.jpg" >
+                <h4>Sam David</h4>
+                <p>Ui designer</p>
+                <div class="per">
+                  <table>
+                    <tr>
+                      <td><span>85%</span></td>
+                      <td><span>87%</span></td>
+                    </tr>
+                    <tr>
+                      <td>Month</td>
+                      <td>Year</td>
+                    </tr>
+                  </table>
+                </div>
+                <button>Profile</button>
+              </div>
+        </div>
+      <div class="col-md-3 col-12">
+        <div class="card ">
+            <img src="./pic/img2.jpg">
+            <h4>Balbina kherr</h4>
+            <p>Progammer</p>
+            <div class="per">
+              <table>
+                <tr>
+                  <td><span>82%</span></td>
+                  <td><span>85%</span></td>
+                </tr>
+                <tr>
+                  <td>Month</td>
+                  <td>Year</td>
+                </tr>
+              </table>
             </div>
-            <h3 class="mb-2 pt-3 fw-bold">Liste des utilisateurs</h3>
-            <div class=" my-4">
-                <table class="table table-hover"style="background-color: #fff;">
-                    <thead>
-                        <tr class="text-center">
+            <button>Profile</button>
+          </div>
+      </div>
+  <div class="col-md-3 col-12">
+    <div class="card ">
+        <img src="./pic/img3.jpg">
+        <h4>Badan John</h4>
+        <p>tester</p>
+        <div class="per">
+          <table>
+            <tr>
+              <td><span>94%</span></td>
+              <td><span>92%</span></td>
+            </tr>
+            <tr>
+              <td>Month</td>
+              <td>Year</td>
+            </tr>
+          </table>
+        </div>
+        <button>Profile</button>
+      </div>
+  </div>
+      <div class="col-md-3 col-12">
+        <div class="card ">
+            <img src="./pic/img4.jpg">
+            <h4>Salina micheal</h4>
+            <p>Ui designer</p>
+            <div class="per">
+              <table>
+                <tr>
+                  <td><span>85%</span></td>
+                  <td><span>82%</span></td>
+                </tr>
+                <tr>
+                  <td>Month</td>
+                  <td>Year</td>
+                </tr>
+              </table>
+            </div>
+            <button>Profile</button>
+          </div>
+      </div>
+      
+    </div>
 
-                            <th>N° d'ordre</th>
-                            <th>Titre</th>
-                            <th>Resumé</th>
-                            <th>Description</th>
-                            <th>Adresse</th>
-                            <th colspan="2">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="text-center" *ngFor="let item of listAppelByIdUea; let i = index" >
-                            <td>{{i+1}}</td>
-                            <td>{{item?.libelle}}</td>
-                            <td>{{item?.resume}}</td>
-                            <td>{{item?.description}}</td>
-                            <td>{{item?.adresse}}</td>
-                            <td colspan="2" class="p-2 ">
-                                <button class="btn btn-up btn-sm m-1"(click)="voirUea(item)"><i class="fa fa-eye"></i></button>
-                            </td>
-
-
-                        </tr>
-
-                    </tbody>
-                </table>
+    <section class="attendance">
+        <div class="card-body mt-5">
+            <div class="infos-data p-1">
+        
+                <div class="col-md-12  shadow p-1" style="border-radius: 0.5rem;background-color: #fff;">
+        
+                    <div class="m-3">
+                        <button class="btn btn-up btn-sm" data-toggle="modal" data-target="#modeAjoutaAppelCandidature">
+                            Lancer un appel à candidature <i class="fa fa-plus-circle"></i>
+                        </button>
+                    </div>
+                    <h3 class="mb-2 pt-3 fw-bold">Liste des utilisateurs</h3>
+                    <div class=" my-4">
+                        <table class="table table-hover"style="background-color: #fff;">
+                            <thead>
+                                <tr class="text-center">
+        
+                                    <th>N° d'ordre</th>
+                                    <th>Titre</th>
+                                    <th>Resumé</th>
+                                    <th>Description</th>
+                                    <th>Adresse</th>
+                                    <th colspan="2">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="text-center" *ngFor="let item of listAppelByIdUea; let i = index" >
+                                    <td>{{i+1}}</td>
+                                    <td>{{item?.libelle}}</td>
+                                    <td>{{item?.resume}}</td>
+                                    <td>{{item?.description}}</td>
+                                    <td>{{item?.adresse}}</td>
+                                    <td colspan="2" class="p-2 ">
+                                        <button class="btn btn-up btn-sm m-1"(click)="voirUea(item)"><i class="fa fa-eye"></i></button>
+                                    </td>
+        
+        
+                                </tr>
+        
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+   
+    </section>
+  </section>
+
+
+
+
 
 
 

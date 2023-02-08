@@ -44,6 +44,11 @@ export class UeaService {
   }
 
 
+  resetPassord(speudo: string,data: any)  {
+    return this.httpService.putRequest(
+      `/api/auth/reset/${speudo}`,data
+    );
+  }
  
   
 }

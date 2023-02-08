@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HistoriqueUEAService } from '../../common/historique-uea.service';
 import { SweetAlertService } from 'src/app/shared/common/sweet-alert.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UeaService } from '../../common/uea.service';
+import { AuthService } from 'src/app/modules/website/components/auth/common/auth.service';
 declare var $:any
 @Component({
   selector: 'app-profil',
@@ -12,13 +15,17 @@ export class ProfilComponent implements OnInit {
   age:any;
   histUEAConnecte:any;
   listHistoAByid:any;
+  bodyData:any;
 
   
-  
+  resetForm!: FormGroup;
 
   constructor(
    private histoService:HistoriqueUEAService,
     private sweetAlert: SweetAlertService,
+    private formBuilder: FormBuilder,
+    private ueaservice:UeaService,
+    private authService: AuthService,
   ) { }
 
   ngOnInit(): void {
@@ -28,6 +35,15 @@ export class ProfilComponent implements OnInit {
     this.listDetaiSA(this.ueaConnecte.id);
     console.log("Age", this.ueaConnecte.dateNaissance);
     this.age=this.calculAge(`${this.ueaConnecte.dateNaissance}`);
+
+
+    this.resetForm = this.formBuilder.group({
+      old_password: ['', Validators.required],
+      new_password: ['', Validators.required],
+      confirm_password: ['', Validators.required],
+      
+     
+    });
    
 
 
@@ -55,6 +71,9 @@ return age;
       });
   }
 
+
+
+ 
   voirHisto(e:any){
 
     this.histoService.getById(e).subscribe((values) => {
@@ -71,6 +90,41 @@ return age;
     }, 1000);
 
 
+  }
+
+  resetPassword(){
+
+    let speudo=this.ueaConnecte!.username;
+
+    this.bodyData=this.resetForm.value;
+
+    console.log("reset info ",this.bodyData,"username",speudo);
+
+
+    this.ueaservice.resetPassord(speudo,this.bodyData).subscribe( (value)=>{
+
+    
+
+      if(value.status == true){
+        this.sweetAlert.showSuccessAlert(
+          value.message,
+          "Modification  mot de passe  avec succces"
+        );
+        this.authService.logout();
+
+      }else{
+        this.sweetAlert.showErrorAlert(
+          value.message,
+          "Modifiacation echouée  "
+        );
+      }
+
+    })
+
+  
+
+
+    
   }
 
   
