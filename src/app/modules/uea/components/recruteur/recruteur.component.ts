@@ -6,6 +6,13 @@ import { SweetAlertService } from 'src/app/shared/common/sweet-alert.service';
 import { AppelOffreService } from '../../common/appel-offre.service';
 
 import {  IDropdownSettings } from 'ng-multiselect-dropdown';
+import SwiperCore, {Autoplay, Navigation, Pagination ,Mousewheel} from 'swiper';
+
+
+
+
+// install Swiper modules
+SwiperCore.use([Autoplay,Mousewheel, Pagination, Navigation]);
 
 
 declare var $:any
@@ -34,6 +41,8 @@ export class RecruteurComponent implements OnInit {
 
   va:any
 
+  option!:number;
+
 
 
   constructor(
@@ -60,6 +69,8 @@ export class RecruteurComponent implements OnInit {
     });
 
     this.listTypeJob();
+
+    this.option=1;
 
 
    
@@ -135,7 +146,7 @@ export class RecruteurComponent implements OnInit {
 
         this.sweetAlert.showSuccessAlert(
           "Appel Offre lancer",
-          "Appel offre lancer avec succces"
+          "Appel offre lancer avec succès"
         );
         this.ngOnInit();
 
@@ -171,7 +182,13 @@ export class RecruteurComponent implements OnInit {
 
 
 
- 
+  optionChoix(){
+    if(this.option==1){
+      this.option=10;
+    }else{
+      this.option=1;
+    }
+  }
 
   
   

@@ -4,6 +4,7 @@ import { AccountService } from 'src/app/modules/website/components/cvcontainer/a
 import { SweetAlertService } from 'src/app/shared/common/sweet-alert.service';
 import { AppelOffreService } from '../../common/appel-offre.service';
 import { Router } from '@angular/router';
+import { ChargerOffreService } from '../../common/charger-offre.service';
 
 @Component({
   selector: 'app-demandeur',
@@ -14,6 +15,9 @@ export class DemandeurComponent implements OnInit {
 
 
   listOffre:any;
+  ueaConnecte:any;
+
+  listeOffreCharger:any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -21,11 +25,16 @@ export class DemandeurComponent implements OnInit {
     private sweetAlert: SweetAlertService,
     private appelService:AppelOffreService,
     private routers: Router,
+    private chargerOffreService: ChargerOffreService
   ) { }
 
   ngOnInit(): void {
 
     this.listDetaiSA();
+
+    this.ueaConnecte = JSON.parse(localStorage.getItem('ueaInfo')!);
+
+    this.listChargerByIdUea(this.ueaConnecte.id);
   }
 
 
@@ -41,6 +50,26 @@ export class DemandeurComponent implements OnInit {
 
     //this.routers.navigate(['/utd/dashboard/offre'+e.id])
     this.routers.navigate(['/utd/dashboard/offre', e.id])
+  }
+
+
+  listChargerByIdUea(idUea:any){
+    
+
+    this.chargerOffreService.listChargerAppelOffreByIdUea(idUea).subscribe((_values)=>{
+
+
+      if(_values){
+        this.listeOffreCharger=_values.data;
+
+      }
+    })
+
+  }
+
+
+  voirOffreChargerByUea(e:any){
+
   }
 
 

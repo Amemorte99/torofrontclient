@@ -114,11 +114,7 @@ textarea:focus ,select:focus{
 
 
 /* MAin Section */
-.main{
-  position: relative;
-  padding: 20px;
-  width: 100%;
-}
+
 .main-top{
   display: flex;
   width: 100%;
@@ -131,8 +127,9 @@ textarea:focus ,select:focus{
   cursor: pointer;
 }
 
+
 .users .card{
-  margin: auto;
+ 
   background: #fff;
   text-align: center;
   border-radius: 10px;
@@ -179,3 +176,160 @@ textarea:focus ,select:focus{
   color: #fff;
   transition: 0.5s;
 }
+
+.btn-up3{
+
+  border: 2px solid #09977C;
+
+  font-size: 15px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.card {
+  background-color: #fff;
+  color: #162046;
+  padding: 25px 10px 20px;
+    padding-bottom: 20px;
+  border: none;
+  border-radius: 40px;
+  height: 100%;
+  cursor: default;
+  transition: all 0.3s ease-in-out;
+}
+
+.job-card {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+ /* width: 320px;*/
+ width: 100%;
+ height: 310px;
+  margin: auto;
+  background-color: transparent;
+  box-shadow: none;
+  padding-bottom: 0;
+  filter: drop-shadow(4px 4px 7px rgb(0 0 0 / 12%));
+
+  position: relative;
+}
+
+
+.job-card::before {
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  display: block;
+  height: 100.7%;
+  width: 100.5%;
+  background-color: #fff;
+  border-radius: 40px 40px 0 50px;
+  clip-path: polygon(100% 0%,0% 0%,0% calc(100% - 8.03px),1% calc(100% - 7.09px),2% calc(100% - 6.20px),3% calc(100% - 5.37px),4% calc(100% - 4.59px),5% calc(100% - 3.86px),6% calc(100% - 3.20px),7% calc(100% - 2.59px),8% calc(100% - 2.04px),9% calc(100% - 1.56px),10% calc(100% - 1.14px),11% calc(100% - 0.78px),12% calc(100% - 0.49px),13% calc(100% - 0.27px),14% calc(100% - 0.11px),15% calc(100% - 0.02px),16% calc(100% - 0.00px),17% calc(100% - 0.05px),18% calc(100% - 0.16px),19% calc(100% - 0.34px),20% calc(100% - 0.58px),21% calc(100% - 0.90px),22% calc(100% - 1.27px),23% calc(100% - 1.72px),24% calc(100% - 2.22px),25% calc(100% - 2.79px),26% calc(100% - 3.41px),27% calc(100% - 4.10px),28% calc(100% - 4.84px),29% calc(100% - 5.64px),30% calc(100% - 6.50px),31% calc(100% - 7.40px),32% calc(100% - 8.35px),33% calc(100% - 9.35px),34% calc(100% - 10.39px),35% calc(100% - 11.48px),36% calc(100% - 12.60px),37% calc(100% - 13.76px),38% calc(100% - 14.96px),39% calc(100% - 16.18px),40% calc(100% - 17.43px),41% calc(100% - 18.70px),42% calc(100% - 20.00px),43% calc(100% - 21.31px),44% calc(100% - 22.63px),45% calc(100% - 23.97px),46% calc(100% - 25.32px),47% calc(100% - 26.67px),48% calc(100% - 28.02px),49% calc(100% - 29.36px),50% calc(100% - 30.70px),51% calc(100% - 32.04px),52% calc(100% - 33.36px),53% calc(100% - 34.66px),54% calc(100% - 35.94px),55% calc(100% - 37.21px),56% calc(100% - 38.44px),57% calc(100% - 39.65px),58% calc(100% - 40.83px),59% calc(100% - 41.97px),60% calc(100% - 43.07px),61% calc(100% - 44.14px),62% calc(100% - 45.16px),63% calc(100% - 46.13px),64% calc(100% - 47.06px),65% calc(100% - 47.94px),66% calc(100% - 48.77px),67% calc(100% - 49.54px),68% calc(100% - 50.25px),69% calc(100% - 50.91px),70% calc(100% - 51.51px),71% calc(100% - 52.04px),72% calc(100% - 52.52px),73% calc(100% - 52.92px),74% calc(100% - 53.27px),75% calc(100% - 53.55px),76% calc(100% - 53.76px),77% calc(100% - 53.91px),78% calc(100% - 53.99px),79% calc(100% - 54.00px),80% calc(100% - 53.94px),81% calc(100% - 53.82px),82% calc(100% - 53.63px),83% calc(100% - 53.37px),84% calc(100% - 53.04px),85% calc(100% - 52.66px),86% calc(100% - 52.20px),87% calc(100% - 51.69px),88% calc(100% - 51.11px),89% calc(100% - 50.47px),90% calc(100% - 49.78px),91% calc(100% - 49.02px),92% calc(100% - 48.22px),93% calc(100% - 47.36px),94% calc(100% - 46.44px),95% calc(100% - 45.48px),96% calc(100% - 44.48px),97% calc(100% - 43.43px),98% calc(100% - 42.33px),99% calc(100% - 41.20px),100% calc(100% - 40.04px));
+  transition: all 0.3s ease-in-out;
+
+}
+
+
+
+.job-card .job-title {
+  height: 99px;
+  overflow: hidden;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-left: 22%;
+  margin-bottom: 10px;
+  line-height: 1.4;
+
+}
+
+.job-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #009d8b;
+  position: relative;
+
+  margin-left: 50px;
+  
+}
+
+.job-card .tags {
+  height: 70px;
+  margin-bottom: 10px;
+  padding: 0 20px;
+}
+
+.tags {
+  padding: 5px 0;
+  overflow: hidden;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: inherit;
+  position: relative;
+}
+
+.tags > span, .tags > a {
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 15px;
+  background-color: #CFEFF8;
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-bottom: 8px;
+}
+
+
+
+#freelance-informatique .btn-light {
+
+    color: #F68929;
+    padding: .7em 0 5px;
+    border-radius: 0 !important;
+    border-bottom: 2px solid #F68929;
+    margin: 5px auto;
+    background-color: transparent;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    box-shadow: none;
+
+}
+#freelance-informatique .btn {
+
+    font-weight: 700;
+    border-radius: 10px;
+    padding: .7em 1.4em;
+    letter-spacing: .06em;
+    transition: all 0.3s ease-in-out;
+
+    
+
+}
+#freelance-informatique .btn:hover{
+  color: #fff;
+  border-bottom: 2px solid #fff;
+}
+
+
+.job-card .btn {
+  margin: 25px 0 0 auto !important;
+}
+
+

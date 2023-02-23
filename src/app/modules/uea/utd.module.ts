@@ -27,6 +27,7 @@ import { RecruteurComponent } from './components/recruteur/recruteur.component';
 import { DemandeurComponent } from './components/demandeur/demandeur.component';
 import { OffreComponent } from './components/offre/offre.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { SwiperModule } from 'swiper/angular';
 
 
 
@@ -61,7 +62,8 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     SharedModule,
     ReactiveFormsModule,
     NgMultiSelectDropDownModule.forRoot(),
-    FormsModule 
+    FormsModule,
+    SwiperModule
 
   ],
 

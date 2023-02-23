@@ -123,3 +123,44 @@ height: 30px;
 border-radius: 0.25rem;
 
 }
+
+
+.btn-up{
+    color: #fff;
+    background-color: #009d8b;
+  }
+
+  .btn-up:hover{
+    color: #fff;
+    background-color: #e12454;
+  }
+
+
+  .btn-up2{
+    color: #009d8b;
+    background-color: #fff;
+  }
+
+  .btn-up2:hover{
+    color: #009d8b;
+    border:1px solid #e12454;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    
+  }
+
+  i{
+    color: #009d8b;
+  }
+  h6{
+    color: #009d8b;
+    font-size: 22px;
+    font-weight: 600;
+   
+  }
+  th{
+    color: #009d8b;
+  }
+  td{
+    color: black;
+  }
