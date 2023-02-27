@@ -267,7 +267,6 @@ export class FormulaireComponent implements OnInit {
   soumettre() {
    
 
-
     console.log('infos inscription', this.stagiaire);
 
 

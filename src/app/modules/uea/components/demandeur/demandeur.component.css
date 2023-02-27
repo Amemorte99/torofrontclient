@@ -125,7 +125,6 @@ border-radius: 0.25rem;
 }
 
 
-
 .btn-up{
     color: #fff;
     background-color: #009d8b;
@@ -165,3 +164,26 @@ border-radius: 0.25rem;
   td{
     color: black;
   }
+
+  .btn-up4{
+    
+
+    color: #009d8b;
+    border:1px solid #009d8b;
+    border-radius: 0.25rem;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  .btn-up4:hover{
+    color: #fff;
+    background-color: #009d8b;
+   
+    
+  }
+
+
+  .embeded {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+  }/*# sourceMappingURL=postuler.component.css.map */

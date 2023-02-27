@@ -123,10 +123,8 @@ export class ConfigInterceptor implements HttpInterceptor {
           status: error.status,
         };
         if (error.status == 500) {
-          this.sweetAlertService.showErrorAlert(
-            'Warning !',
-            "une erreur s'est produite , nous vous reviendrons plus tard "
-          );
+         
+          console.log("erreur serveur")
         }
 
         console.log('data: ', data);

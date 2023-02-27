@@ -75,12 +75,12 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
     <!-- Modal Header -->
     <div class="modal-header">
-      <h4 class="modal-title">Lancer une offre</h4>
+      <h4 class="modal-title">Liste des offre chargés</h4>
       <button type="button" class="close" data-dismiss="modal">&times;</button>
     </div>
 
     <!-- Modal body -->
-    <div class="modal-body">
+    <div class="modal-body" *ngIf="type==1">
       <section class="h-100 h-custom" style="background-color: #8fc4b7;">
         <div class="container py-5 h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
@@ -119,6 +119,73 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                   </table>
 
                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="modal-body" *ngIf="type==2">
+      <div class="m-2">
+        <a class="btn btn-up2" (click)="retourModal()" style="border:1px solid #8fc4b7 "><i
+            class="fa fa-arrow-left"></i> retour</a>
+      </div>
+
+      <section class="h-100 h-custom" style="background-color: #8fc4b7; 
+    font-size: 17px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-12 col-xl-12 col-sm-12">
+              <div class="card rounded-3">
+                <!--image-->
+                <div class="card-body p-4 p-md-5 text-black">
+
+
+                  <form class="row justify-content-center" method="post" enctype="multipart/form-data">
+                    <div class="col-md-6" >
+                        <button type="button" id="pdfbtn" class="btn btn-up4 btn-block w-100" (click)="sendimage()">
+                            <i class="fa fa-file-pdf"></i> Lettre de motivation
+                        </button>
+                        <input type="file" name="profile" class="form-control" id="addprofile" accept=".pdf" (change)="mettreImage()" hidden/>
+                        <div class="my-4">
+                            <embed src="" type="application/pdf" id="pdfprofile" class="embeded">
+                        </div>
+                    </div>
+                    <div class="col-md-6"  >
+                        <button type="button"  id="pdfbtnTwo" class="btn btn-up4 btn-block w-100" (click)="sendimageTwo()">
+                            <i class="fa fa-file-pdf"></i> Un curriculum vitae
+                        </button>
+                        <input type="file" name="profile" id="addprofileTwo" accept=".pdf" (change)="mettreImageTwo()"  hidden/>
+                        <div class="my-4">
+                            <embed src="" type="" class="embeded" id="pdfprofileTwo" class="embeded">
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-3">                                                            
+                        <button type="button"  id="pdfbtnThree" class="btn btn-up btn-block w-100" (click)="sendimageThree()">
+                            <i class="fa fa-file-pdf"></i> Diplôme & attestation invoqué
+                        </button>
+                        <input type="file" name="profile" id="addprofileThree" accept="pdf" (change)="mettreImageThree()"  hidden/>
+                        <div class="my-4">
+                            <embed src="" type="" class="embeded" id="pdfprofileThree" class="embeded">
+                        </div>
+                    </div> -->
+                    <div class="mt-4">
+                      <button class="btn btn-up" id="enregistrer_fichier_cv" (click)="postulerSaveFile()">Postuler</button>
+                    </div>
+                    
+                   
+                </form>
+
+
+
+
+
+
+
                 </div>
               </div>
             </div>

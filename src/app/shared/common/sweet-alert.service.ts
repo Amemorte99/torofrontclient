@@ -42,6 +42,17 @@ export class SweetAlertService {
       confirmButtonText: yesBtn,
     });
   }
+  showInformation(title: string, message: string) {
+    return Swal.fire({
+      title: title,
+      text: message,
+      icon: "warning",
+      showCancelButton: false,
+      confirmButtonColor: "#ae3764",
+      reverseButtons: false,
+    });
+  }
+
   showLoadingAlert() {
     return Swal.fire({
       title: 'Decaissement en cours...',
