@@ -15,7 +15,8 @@ export class UeaComponent implements OnInit {
 
 
   listUEA:any;
-  listUEAByid:any
+  listUEAByid:any;
+  ueaConnecte:any;
 
   constructor(
     private router: Router,
@@ -25,6 +26,8 @@ export class UeaComponent implements OnInit {
 
   ngOnInit(): void {
     this.listUea();
+    
+    this.ueaConnecte = JSON.parse(localStorage.getItem('ueaInfo')!);
   }
 
 
@@ -58,5 +61,8 @@ export class UeaComponent implements OnInit {
 
 
   }
+
+  
+ 
 
 }

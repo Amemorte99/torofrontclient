@@ -12,6 +12,7 @@ export class MenuListUEAComponent implements OnInit {
  
 
   idAgent!: number;
+  ueaConnecte:any;
 
   constructor(private router: Router) {}
 
@@ -19,9 +20,33 @@ export class MenuListUEAComponent implements OnInit {
     this.idAgent=1;
 
     this.route = this.router.url
-    console.log(this.route)
+    
+
+    this.ueaConnecte = JSON.parse(localStorage.getItem('ueaInfo')!);
 
     
   }
+
+
+  public userHasRoleOrIsOfTypeUEA1(): boolean {
+    return this.ueaConnecte.typeUEA.id === 1 || this.ueaConnecte.roles.some((role: { id: number; }) => role.id === 1);
+  }
+
+  
+  public userHasRoleOrIsOfTypeUEA2(): boolean {
+    return this.ueaConnecte.typeUEA.id === 2 || this.ueaConnecte.roles.some((role: { id: number; }) => role.id === 1);
+  }
+
+  public userHasRoleOrIsOfTypeUEA3(): boolean {
+    return this.ueaConnecte.typeUEA.id === 3 || this.ueaConnecte.roles.some((role: { id: number; }) => role.id === 1);
+  }
+
+  public ueaDroit(): boolean {
+    return this.ueaConnecte.roles.some((role: { id: number; }) => role.id === 1);
+  }
+  
+ 
+
+  
 
 }

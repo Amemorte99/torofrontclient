@@ -143,13 +143,38 @@
           </li>
 
 
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="isAuthenticateUea !=1">
             <a class="btn btn-main-2 btn-round-full btn-icon m-1 " [routerLink]="['/auth']">Connexion</a>
           </li>
-          <li class="nav-item">
+          
+          <li class="nav-item" *ngIf="isAuthenticateUea !=1">
             <a class="btn btn-main-2 btn-round-full btn-icon m-1 " [routerLink]="['/inscription']"
               style="background-color:#09977C ; border:  #09977C;">Inscription</a>
           </li>
+
+
+          
+          <li class="nav-item dropdown justify-content-end" *ngIf="isAuthenticateUea==1">
+            <a href="#" class="d-flex align-items-center text-dark text-decoration-none" id="dropdownUser1"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <img [src]="imageProfil" alt="" width="50" height="50" class="rounded-circle me-2">
+              
+                
+                <div class="row m-2">
+                
+                <h4>{{ueaConnecte?.nom}} {{ueaConnecte?.prenom}}</h4>
+                <span class="m-1">Dashboard</span>
+                </div>
+            </a>
+            <ul class="dropdown-menu  text-small shadow dropy" aria-labelledby="dropdownUser1">
+                <li><a class="dropdown-item" [routerLink]="['/utd/dashboard']">Dashboard</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" style="cursor: pointer;" (click)="logout()" >Deconnexion</a></li>
+            </ul>
+        </li>
+     
 
         </ul>
 

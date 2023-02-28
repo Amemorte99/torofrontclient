@@ -43,6 +43,7 @@ export class AuthComponent implements OnInit {
 
     console.log(localStorage.getItem("token"));
     this.authService.login("amemorte", "1234ma").subscribe();
+    //this.authService.login("ma", "1234").subscribe();
 
   }
 

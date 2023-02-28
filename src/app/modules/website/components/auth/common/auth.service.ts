@@ -115,6 +115,11 @@ export class AuthService {
     this.route.navigate([""], {
       queryParams: {},
     });
+    this.sweetAlertService.showSuccessAlert(
+      "deconnexion réussie.",
+      "Connectez vous pour acceder à avotre compte"
+    );
+    
   }
 
   save(e:any){

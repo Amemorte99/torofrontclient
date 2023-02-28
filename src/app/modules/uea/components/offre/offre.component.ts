@@ -94,10 +94,13 @@ export class OffreComponent implements OnInit {
           "offre  déja charger",
           "chargement de l'offre échouée"
         );
-        this.ngOnInit();
+        
 
       }
     })
+
+    this.ngOnInit();
+  
     
   }
 

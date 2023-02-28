@@ -143,7 +143,7 @@
                     </thead>
                     <tbody>
                       <tr class="text-center" *ngFor="let item of histUEAConnecte;let i = index">
-                        <td>{{item.id}}</td>
+                        <td>{{i+1}}</td>
                         <td>130</td>
                         <td colspan="2">{{item?.dateCreation | date:'medium' }}</td>
                         <td>

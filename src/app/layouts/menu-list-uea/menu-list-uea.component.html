@@ -37,7 +37,7 @@
       </a>
       <div class="hover-view">
         <ul >
-          <li class="nav-item" *ngIf="idAgent == 1" style="list-style: none">
+          <li class="nav-item" *ngIf="userHasRoleOrIsOfTypeUEA1()" style="list-style: none">
             <a
               [href]="['utd/dashboard/demandeur']"
               routerLinkActive="router-link-active"
@@ -55,7 +55,7 @@
               </div>
             </a>
           </li>
-          <li class="nav-item" *ngIf="idAgent == 1" style="list-style: none">
+          <li class="nav-item" *ngIf="userHasRoleOrIsOfTypeUEA2()" style="list-style: none">
             <a
               [href]="['utd/dashboard/stage']"
               routerLinkActive="router-link-active"
@@ -73,7 +73,8 @@
               </div>
             </a>
           </li>
-          <li class="nav-item" style="list-style: none" *ngIf="idAgent == 1">
+          <li class="nav-item" style="list-style: none" *ngIf="userHasRoleOrIsOfTypeUEA3()"
+          >
             <a
               [href]="['utd/dashboard/recruteur']"
               routerLinkActive="router-link-active"
@@ -130,7 +131,7 @@
         </div>
       </a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="ueaDroit()">
       <a
         [href]="['utd/dashboard/uea']"
         routerLinkActive="router-link-active"
