@@ -301,7 +301,7 @@ export class OffreComponent implements OnInit {
        
 
         }
-      
+        //$("#file").val("");
        
         $('#showListCharger').modal('hide');
 

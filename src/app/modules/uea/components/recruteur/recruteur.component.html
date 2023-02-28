@@ -309,10 +309,10 @@
 
             <div class="col-6 text-end">
 
-              <button class="btn btn-up3 btn-sm"  *ngIf="option==1" (click)="optionChoix()" >
+              <button class="btn btn-up3 btn-sm" *ngIf="option==1" (click)="optionChoix()">
                 Voir la liste des candidats <i class="fa fa-eye"></i>
               </button>
-              <button class="btn btn-up3 btn-sm" *ngIf="option==10" (click)="optionChoix()">
+              <button class="btn btn-up3 btn-sm" *ngIf="option==2" (click)="optionChoix()">
                 Voir la liste des offres lancés <i class="fa fa-eye"></i>
               </button>
             </div>
@@ -358,28 +358,27 @@
               </tbody>
             </table>
           </div>
-          <div class=" my-4" *ngIf="option==10">
+          <div class=" my-4" *ngIf="option==2">
             <table class="table table-hover " style="background-color: #fff;">
               <thead>
                 <tr class="text-center">
 
                   <th>N° d'ordre</th>
-                  <th>Titre</th>
-                  <th>Resumé</th>
-                  <th>Description</th>
-                  <th>Adresse</th>
+                  <th>Offre</th>
+                  <th>Date dépot</th>
+                  <th colspan="2">Nom et prenom du candidat</th>
                   <th colspan="2">Action</th>
                 </tr>
               </thead>
               <tbody>
-                <tr class="text-center" *ngFor="let item of listAppelByIdUea; let i = index">
+                <tr class="text-center" *ngFor="let item of listPostulantByUea; let i = index">
                   <td>{{i+1}}</td>
-                  <td>{{item?.libelle}}</td>
-                  <td>{{item?.resume}}</td>
-                  <td>{{item?.description}}</td>
-                  <td>{{item?.adresse}}</td>
+                  <td>{{item?.appelCandidature.libelle}}</td>
+                  <td>{{item?.dateCreation}}</td>
+                  <td colspan="2">{{item?.uea.nom}} {{item?.uea.prenom}}</td>
                   <td colspan="2" class="p-2 ">
-                    <button class="btn btn-up btn-sm m-1" (click)="voirUea(item)"><i class="fa fa-eye"></i></button>
+                    <button class="btn btn-up4 btn-sm m-1" (click)="detailPostulant(item)"><i class="fa fa-eye"></i>
+                      Detail</button>
                   </td>
 
 
@@ -391,6 +390,11 @@
         </div>
       </div>
     </div>
+
+
+
+
+
 
   </section>
 </section>
@@ -627,3 +631,117 @@
   </div>
 </div>
 <!--Modal: modalDiscount-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="modal fade " id="postulant" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Information du candidat</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+
+
+        <section class="h-100 h-custom" style="background-color: #8fc4b7; 
+    font-size: 17px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;">
+          <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+              <div class="col-lg-12 col-xl-12 col-sm-12">
+                <div class="card rounded-3">
+                  <!--image-->
+                  <div class="card-body p-4 p-md-5 text-black">
+
+
+
+
+                    <div class="row">
+                      <div class="col-sm-12 col-md-4">
+                        <div class="card p-4 mt-4">
+                          <div class="row mb-3">
+                            <h2 class="mb-3"><small>Informations du candidat</small></h2>
+                            <div class="col-6 mb-2">
+                              <h3>Noms</h3>
+                              <h2>{{ OnePostulant?.uea?.nom }}</h2>
+                            </div>
+                            <div class="col-6">
+                              <h3>Prénoms</h3>
+                              <h2>{{ OnePostulant?.uea?.prenom }}</h2>
+                            </div>
+                          </div>
+                          <h3 class="mb-2">E-mail</h3>
+                          <h2>{{ OnePostulant?.uea?.email }}</h2>
+                          <h3 class="mb-2">Telephone</h3>
+                          <h2>{{ OnePostulant?.uea?.tel }}</h2>
+                          <div class="row mb-3">
+                            <h2 class="mb-3"><small>Decription de l'offre</small></h2>
+                            <div class="col-6 mb-2">
+                              <h3>le Titre de l'offre</h3>
+                              <h2>{{ OnePostulant?.appelCandidature.libelle }}</h2>
+                            </div>
+                            <div class="col-6">
+                              <h3>Resumé</h3>
+                              <h2>
+                                {{ OnePostulant?.appelCandidature.resume }}
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-8">
+                        <div class="my-4">
+                          <embed [src]="pdfcv" type="application/pdf" id="pdfprofile" class="embeded">
+                        </div>
+
+
+
+                      </div>
+                      <div class="col-sm-12 col-md-8">
+                        <div class="my-4">
+                          <embed [src]="pdflm" type="application/pdf" id="pdfprofile" class="embeded">
+                        </div>
+
+
+
+                      </div>
+                    </div>
+
+
+
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+      </div>
+    </div>
+  </div>
+</div>

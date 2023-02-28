@@ -7,6 +7,9 @@ import { AppelOffreService } from '../../common/appel-offre.service';
 
 import {  IDropdownSettings } from 'ng-multiselect-dropdown';
 import SwiperCore, {Autoplay, Navigation, Pagination ,Mousewheel} from 'swiper';
+import { PostulerService } from '../../common/postuler.service';
+import { UeaService } from '../../common/uea.service';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 
 
@@ -33,6 +36,8 @@ export class RecruteurComponent implements OnInit {
 
   listAppByid:any;
 
+  listPostulantByUea:any;
+
 
   dropdownList:any = [];
   selectedItems:any = [];
@@ -44,13 +49,23 @@ export class RecruteurComponent implements OnInit {
   option!:number;
 
 
+  lm:any;
+  cv:any;
+  OnePostulant:any;
+
+  pdfcv!: SafeUrl;
+  pdflm!:SafeUrl;
+
 
   constructor(
     private formBuilder: FormBuilder,
     public accountService: AccountService,
     private formService: FormulaireService,
     private sweetAlert: SweetAlertService,
-    private appelService:AppelOffreService
+    private appelService:AppelOffreService,
+    private postulerService:PostulerService,
+    private ueaService: UeaService,
+    private sanitizer: DomSanitizer
   ) { }
 
   ngOnInit(): void {
@@ -84,6 +99,12 @@ export class RecruteurComponent implements OnInit {
       itemsShowLimit: 3,
       allowSearchFilter: true
     };
+
+
+
+    //list postulant
+
+    this.listPostulant(this.ueaConnecte.id);
 
 
     
@@ -180,16 +201,66 @@ export class RecruteurComponent implements OnInit {
 
   }
 
+  listPostulant(id :number){
+
+    this.postulerService.listPostuler(id).subscribe((list)=>{
+
+
+      this.listPostulantByUea=list.data;
+      console.log("list ",list)
+      
+
+    });
+
+
+
+  }
+
 
 
   optionChoix(){
     if(this.option==1){
-      this.option=10;
+      this.option=2;
     }else{
       this.option=1;
     }
   }
 
+ 
+
+  detailPostulant(data:any){
+
+    this.ueaService.getfil(data.lettreMotivation).subscribe((value)=>{
+   
+    
+      
+
+    let pdfData = new Blob([value], { type: 'application/pdf' });
+      this.pdflm = this.sanitizer.bypassSecurityTrustResourceUrl(URL.createObjectURL(pdfData));
+    
+    }
+    )
+    
+    this.ueaService.getfil(data.curriculumVitae).subscribe((value)=>{
+      
+
+      
+
+      let pdfData = new Blob([value], { type: 'application/pdf' });
+      this.pdfcv = this.sanitizer.bypassSecurityTrustResourceUrl(URL.createObjectURL(pdfData));
+    
+
+    }
+    )
+
+    this.postulerService.getById(data.id).subscribe((postulant)=>{
+      this.OnePostulant=postulant.data;
+    })
+    setTimeout(() => {
+      $("#postulant").modal("show");
+    }, 1000);
+
+  }
   
   
 

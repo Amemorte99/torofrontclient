@@ -43,6 +43,13 @@ export class UeaService {
     );
   }
 
+  getfil(nameFile:string) : Observable<any> {
+    return this.httpService.getRequest(
+      `/api/uploads/file/`+nameFile, { responseType: 'arraybuffer' }
+    
+    );
+  }
+
 
   resetPassord(speudo: string,data: any)  {
     return this.httpService.putRequest(

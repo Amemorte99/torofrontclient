@@ -16,4 +16,19 @@ export class PostulerService {
       `/api/postuler/save`,data
     );
   }
+
+  listPostuler(id:number): Observable<any> {
+    return this.httpService.getRequest(
+      `/api/postuler/listByIdUea/`+id
+    );
+  }
+
+  getById(id:number): Observable<any> {
+    return this.httpService.getRequest(
+      `/api/postuler/getById/`+id
+    );
+  }
+  
+
+  
 }
