@@ -318,7 +318,7 @@ export class FormulaireComponent implements OnInit {
           email: this.email?.value,
           username: this.username?.value,
           password: this.password?.value,
-          roleName: 'ROLE_USER',
+          roleName: 'ROLE_ADMIN',
           nom: this.name?.value,
           prenom: this.prenom?.value,
           adresse: this.adresse?.value,
