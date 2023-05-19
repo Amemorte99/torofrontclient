@@ -64,7 +64,8 @@ export class FormuComponent implements OnInit {
     console.log("mannnnnnnes", JSON.stringify(this.body))
 
     this.formService.saveForm(this.body).subscribe((value) =>{
-      if(value){
+      if(value.status==true){
+
         console.log("koisonn"+JSON.stringify(value));
         this.sweetAlert.showSuccessAlert(
           "Code  Envoyer",
@@ -73,7 +74,7 @@ export class FormuComponent implements OnInit {
      }else{
       this.sweetAlert.showErrorAlert(
         "information erronée",
-        "Opération effectuer avec success"
+        "Opération échouée"
       );
 
      }
