@@ -155,15 +155,13 @@ export class FormulaireComponent implements OnInit {
     }
   }
 
-  onImageChanged(image: any) {
-    localStorage.setItem('image', image);
-
-    this.imagee = localStorage.getItem('image');
-
-    console.log("imaaaaaaaaaaaaage",image)
-
-
-
+  onImageChanged(event: any) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      this.imagee = reader.result as string;
+    };
   }
 
 
@@ -193,7 +191,7 @@ export class FormulaireComponent implements OnInit {
           this.mesImage.img.push(this.preview);
 
           localStorage.setItem('image', this.preview);
-          this.imagee = localStorage.getItem('image');
+         // this.imagee = localStorage.getItem('image');
         };
 
         reader.readAsDataURL(this.currentFile);
@@ -302,6 +300,8 @@ export class FormulaireComponent implements OnInit {
       console.log(data[i]);
       formData.append("file", data[i], data[i].name);
       formData.forEach((values) => console.log(values));
+
+
     }
 
     setTimeout(()=>{
@@ -318,7 +318,7 @@ export class FormulaireComponent implements OnInit {
           email: this.email?.value,
           username: this.username?.value,
           password: this.password?.value,
-          roleName: 'ROLE_USER',
+          roleName: 'ROLE_ADMIN',
           nom: this.name?.value,
           prenom: this.prenom?.value,
           adresse: this.adresse?.value,
@@ -505,6 +505,8 @@ onFileChange(event:any){
     if (this.selectedFiles) {
       const file: File | null = this.selectedFiles.item(0);
 
+     
+
       if (file) {
         this.preview = '';
         this.currentFile = file;
@@ -517,7 +519,6 @@ onFileChange(event:any){
           this.mesImage.img.push(this.preview);
 
           localStorage.setItem('image', this.preview);
-          this.imagee = localStorage.getItem('image');
         };
 
         reader.readAsDataURL(this.currentFile);

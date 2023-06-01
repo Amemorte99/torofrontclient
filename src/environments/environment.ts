@@ -5,10 +5,8 @@
 export const environment = {
   production: true,
  //apiUrl: 'http://192.168.17.86:8888/',
-
-  apiUrl: "http://127.0.0.1:8845"
+  apiUrl: "http://127.0.0.1:8080"
  // apiUrl:"https://amemorte99.github.io/torofull"
-
 
 };
 
