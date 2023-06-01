@@ -1701,7 +1701,7 @@ a:focus {
   left: 0px;
   top: 0px;
   width: 45%;
-  min-height: 650px;
+  min-height: 500px;
   border-radius: 2%;
   background: url("/assets/images/ma/kT4.jpg") no-repeat;
   background-size: contain;
@@ -1999,7 +1999,6 @@ a:focus {
 --------------------------------------------------------------*/
 .portfolio .portfolio-flters {
   padding: 0 0 20px 0;
-  margin: 0 auto;
   list-style: none;
   text-align: center;
 

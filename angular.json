@@ -18,6 +18,10 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "allowedCommonJsDependencies": [
+              "google-libphonenumber",
+              "sweetalert2"
+            ],
             "assets": ["src/favicon.ico", "src/assets",{
               "glob": "**/*",
               "input": "node_modules/ngx-extended-pdf-viewer/assets/",
